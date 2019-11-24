@@ -3,22 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>island-perimeter | Simon的个人博客</title>
+  <title>find-mode-in-binary-search-tree | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="463. Island PerimeterYou are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.">
+  <meta name="description" content="501. Find Mode in Binary Search TreeGiven a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.">
 <meta name="keywords" content="Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="island-perimeter">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/19/island-perimeter/index.html">
+<meta property="og:title" content="find-mode-in-binary-search-tree">
+<meta property="og:url" content="https://sky1blue.github.io/2019/11/24/find-mode-in-binary-search-tree/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="463. Island PerimeterYou are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.">
+<meta property="og:description" content="501. Find Mode in Binary Search TreeGiven a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/12/island.png">
-<meta property="og:updated_time" content="2019-11-19T00:45:48.000Z">
+<meta property="og:updated_time" content="2019-11-24T13:55:41.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="island-perimeter">
-<meta name="twitter:description" content="463. Island PerimeterYou are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.">
-<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2018/10/12/island.png">
+<meta name="twitter:title" content="find-mode-in-binary-search-tree">
+<meta name="twitter:description" content="501. Find Mode in Binary Search TreeGiven a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -200,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-island-perimeter" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-find-mode-in-binary-search-tree" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/19/island-perimeter/" class="article-date">
-      <time datetime="2019-11-19T00:41:25.000Z" itemprop="datePublished">2019-11-19</time>
+      <a href="/2019/11/24/find-mode-in-binary-search-tree/" class="article-date">
+      <time datetime="2019-11-24T13:52:14.000Z" itemprop="datePublished">2019-11-24</time>
 </a>
     </div>
   
@@ -217,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      island-perimeter
+      find-mode-in-binary-search-tree
     </h1>
   
 
@@ -242,15 +240,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="463-Island-Perimeter"><a href="#463-Island-Perimeter" class="headerlink" title="463. Island Perimeter"></a>463. Island Perimeter</h3><p>You are given a map in form of a two-dimensional integer grid where 1 represents land and 0 represents water.<a id="more"></a></p>
+        <h3 id="501-Find-Mode-in-Binary-Search-Tree"><a href="#501-Find-Mode-in-Binary-Search-Tree" class="headerlink" title="501. Find Mode in Binary Search Tree"></a>501. Find Mode in Binary Search Tree</h3><p>Given a binary search tree (BST) with duplicates, find all the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">mode(s)</a> (the most frequently occurred element) in the given BST.<a id="more"></a></p>
 
 
 
-<p>Grid cells are connected horizontally/vertically (not diagonally). The grid is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).</p>
+<p>Assume a BST is defined as follows:</p>
 
 
 
-<p>The island doesn&#39;t have &quot;lakes&quot; (water inside that isn&#39;t connected to the water around the island). One cell is a square with side length 1. The grid is rectangular, width and height don&#39;t exceed 100. Determine the perimeter of the island.</p>
+<ul>
+
+<pre><code>&lt;li&gt;The left subtree of a node contains only nodes with keys &lt;b&gt;less than or equal to&lt;/b&gt; the node&amp;#39;s key.&lt;/li&gt;
+
+&lt;li&gt;The right subtree of a node contains only nodes with keys &lt;b&gt;greater than or equal to&lt;/b&gt; the node&amp;#39;s key.&lt;/li&gt;
+
+&lt;li&gt;Both the left and right subtrees must also be binary search trees.&lt;/li&gt;</code></pre></ul>
 
 
 
@@ -258,48 +262,44 @@
 
 
 
-<p><b>Example:</b></p>
+<p>For example:<br>
 
-
-
+</p><p>Given BST <code>[1,null,2,2]</code>,</p><p></p>
 <pre>
 
-<strong>Input:</strong>
+   1
 
-[[0,1,0,0],
+    \
 
- [1,1,1,0],
+     2
 
- [0,1,0,0],
+    /
 
- [1,1,0,0]]
-
-
-
-<strong>Output:</strong> 16
-
-
-
-<strong>Explanation:</strong> The perimeter is the 16 yellow stripes in the image below:
-
-
-
-<img src="https://assets.leetcode.com/uploads/2018/10/12/island.png" style="width: 221px; height: 213px;">
+   2
 
 </pre>
 
 
 
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：对每个island统计有多少个邻居，每有一个邻居，最终的周长减一，</p>
-<p>最终周长 $c = island * 4 - neighbours$，其中 island代表land总数，neighbours代表相邻总次数。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islandPerimeter</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = grid.size(), n = grid[<span class="number">0</span>].size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> sum1 = <span class="number">0</span>, sum2 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j])</span><br><span class="line">                &#123;</span><br><span class="line">                    ++sum1;</span><br><span class="line">                    <span class="keyword">if</span> (i - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[i - <span class="number">1</span>][j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++sum2;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (i + <span class="number">1</span> &lt; m &amp;&amp; grid[i + <span class="number">1</span>][j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++sum2;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">if</span> (j - <span class="number">1</span> &gt;= <span class="number">0</span> &amp;&amp; grid[i][j - <span class="number">1</span>])</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++sum2;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; grid[i][j + <span class="number">1</span>])</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++sum2;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (sum1 * <span class="number">4</span> - sum2);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>&nbsp;</p>
 
-<p>解法二：与解法1类似</p>
-<p>1.计算所有方格的周长之和</p>
-<p>2.减去方格相接因而不算入周长的部分，由于相接会同时减少两个相接方格的周长，故每一单位长度都要乘以2, $c = island * 4 - neighbours * 2$</p>
-<p>3.先计算横向相接的长度，再计算纵向相接的长度</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">islandPerimeter</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>, repeat=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;grid.size();i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;grid[i].size();j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(grid[i][j]==<span class="number">1</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        count ++;</span><br><span class="line">                        <span class="keyword">if</span>(i!=<span class="number">0</span> &amp;&amp; grid[i<span class="number">-1</span>][j] == <span class="number">1</span>) repeat++;</span><br><span class="line">                        <span class="keyword">if</span>(j!=<span class="number">0</span> &amp;&amp; grid[i][j<span class="number">-1</span>] == <span class="number">1</span>) repeat++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">4</span>*count-repeat*<span class="number">2</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>return <code>[2]</code>.</p>
+
+
+
+<p><b>Note:</b> If a tree has more than one mode, you can return them in any order.</p>
+
+
+
+<p><b>Follow up:</b> Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).</p>
+
+
+
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法： 使用一个map统计每个值对应的出现次数，找出最大。getModeCount用来返回出现频率最高的次数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; findMode(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> count = getModeCount(root, um);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rv;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; p : um)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p.second == count)</span><br><span class="line">            &#123;</span><br><span class="line">                rv.push_back(p.first);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getModeCount</span><span class="params">(TreeNode* root, <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &amp;<span class="built_in">map</span>)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">map</span>[root-&gt;val]++;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(<span class="built_in">map</span>[root-&gt;val], max(getModeCount(root-&gt;left, <span class="built_in">map</span>), getModeCount(root-&gt;right, <span class="built_in">map</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -356,13 +356,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/19/island-perimeter/">island-perimeter</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月19日 - 08时41分</p>
-        <p><span>最后更新:</span>2019年11月19日 - 08时45分</p>
+        <p><span>发布时间:</span>2019年11月24日 - 21时52分</p>
+        <p><span>最后更新:</span>2019年11月24日 - 21时55分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/19/island-perimeter/" title="island-perimeter">https://sky1blue.github.io/2019/11/19/island-perimeter/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/19/island-perimeter/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/24/find-mode-in-binary-search-tree/" title="find-mode-in-binary-search-tree">https://sky1blue.github.io/2019/11/24/find-mode-in-binary-search-tree/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/24/find-mode-in-binary-search-tree/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -375,18 +375,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/19/heaters/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          heaters
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/18/hamming-distance/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hamming-distance</div>
+    <a href="/2019/11/24/keyboard-row/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">keyboard-row</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -397,7 +388,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#463-Island-Perimeter"><span class="toc-number">1.</span> <span class="toc-text">463. Island Perimeter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#501-Find-Mode-in-Binary-Search-Tree"><span class="toc-number">1.</span> <span class="toc-text">501. Find Mode in Binary Search Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -448,13 +439,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/19/heaters/" title="上一篇: heaters">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/18/hamming-distance/" title="下一篇: hamming-distance">
+            <a href="/2019/11/24/keyboard-row/" title="下一篇: keyboard-row">
                 <i class="fa fa-angle-right"></i>
             </a>
         
