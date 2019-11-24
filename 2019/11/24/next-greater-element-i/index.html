@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>power-of-four | Simon的个人博客</title>
+  <title>next-greater-element-i | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+  <meta name="description" content="496. Next Greater Element I  You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1‘s elements in the cor">
 <meta name="keywords" content="Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="power-of-four">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/power-of-four/index.html">
+<meta property="og:title" content="next-greater-element-i">
+<meta property="og:url" content="https://sky1blue.github.io/2019/11/24/next-greater-element-i/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta property="og:description" content="496. Next Greater Element I  You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1‘s elements in the cor">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T03:18:42.000Z">
+<meta property="og:updated_time" content="2019-11-24T03:08:56.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="power-of-four">
-<meta name="twitter:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta name="twitter:title" content="next-greater-element-i">
+<meta name="twitter:description" content="496. Next Greater Element I  You are given two arrays (without duplicates) nums1 and nums2 where nums1’s elements are subset of nums2. Find all the next greater numbers for nums1‘s elements in the cor">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-power-of-four" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-next-greater-element-i" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/power-of-four/" class="article-date">
-      <time datetime="2019-11-17T03:18:41.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2019/11/24/next-greater-element-i/" class="article-date">
+      <time datetime="2019-11-24T03:07:04.000Z" itemprop="datePublished">2019-11-24</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      power-of-four
+      next-greater-element-i
     </h1>
   
 
@@ -240,50 +240,83 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="342-Power-of-Four"><a href="#342-Power-of-Four" class="headerlink" title="342. Power of Four"></a>342. Power of Four</h3><p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.<a id="more"></a></p>
+        <h3 id="496-Next-Greater-Element-I"><a href="#496-Next-Greater-Element-I" class="headerlink" title="496. Next Greater Element I"></a>496. Next Greater Element I</h3><p>
 
-<p><strong>Example 1:</strong></p>
+</p><p>You are given two arrays <b>(without duplicates)</b> <code>nums1</code> and <code>nums2</code> where <code>nums1</code>’s elements are subset of <code>nums2</code>. Find all the next greater numbers for <code>nums1</code>‘s elements in the corresponding places of <code>nums2</code>. </p>
+<a id="more"></a><p></p>
+
+
+
+<p>
+
+</p><p>The Next Greater Number of a number <b>x</b> in <code>nums1</code> is the first greater number to its right in <code>nums2</code>. If it does not exist, output -1 for this number.</p>
+<p></p>
+
+
+
+<p><b>Example 1:</b><br>
 
 <pre>
-<strong>Input: </strong><span id="example-input-1-1">16</span>
-<strong>Output: </strong><span id="example-output-1">true</span>
+
+<b>Input:</b> <b>nums1</b> = [4,1,2], <b>nums2</b> = [1,3,4,2].
+
+<b>Output:</b> [-1,3,-1]
+
+<b>Explanation:</b>
+
+    For number 4 in the first array, you cannot find the next greater number for it in the second array, so output -1.
+
+    For number 1 in the first array, the next greater number for it in the second array is 3.
+
+    For number 2 in the first array, there is no next greater number for it in the second array, so output -1.
+
 </pre>
 
-<div>
-<p><strong>Example 2:</strong></p>
+</p>
+
+
+
+<p><b>Example 2:</b><br>
 
 <pre>
-<strong>Input: </strong><span id="example-input-2-1">5</span>
-<strong>Output: </strong><span id="example-output-2">false</span></pre>
-</div>
 
-<p><b>Follow up</b>: Could you solve it without loops/recursion?</p>
+<b>Input:</b> <b>nums1</b> = [2,4], <b>nums2</b> = [1,2,3,4].
+
+<b>Output:</b> [3,-1]
+
+<b>Explanation:</b>
+
+    For number 2 in the first array, the next greater number for it in the second array is 3.
+
+    For number 4 in the first array, there is no next greater number for it in the second array, so output -1.
+
+</pre>
+
+</p>
+
+
+
+
+
+<p><b>Note:</b><br>
+
+<ol>
+
+<li>All elements in <code>nums1</code> and <code>nums2</code> are unique.</li>
+
+<li>The length of both <code>nums1</code> and <code>nums2</code> would not exceed 1000.</li>
+
+</ol>
+
+</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：与 题231 Power of Two 类似，区别在于 4 ^ n = 2 ^ (2n)为2的偶数次幂，所以只要在加上一个判断条件，判断二进制的奇数位上为0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//                   判断是二的倍数         筛选其中为4的倍数</span></span><br><span class="line">        <span class="keyword">return</span> num &gt; <span class="number">0</span> &amp;&amp; (num &amp; (num - <span class="number">1</span>)) == <span class="number">0</span> &amp;&amp; (num &amp; <span class="number">0x55555555</span>) != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：使用一个map用来记录每个值的下一个大于值的索引，没有就设为-1；从后往前遍历，每个值与下一个值比较，如果大于，就取出下个值对应的最大值索引，再进行比较。最坏的情况为 $O(n^2)$ ：有序数组。</p>
+<p><em>例外需要注意的是：vector.size()返回的是无符号数，如果int与它比较的话，要统一数据类型为有符号数比较，否则会出现意想不到的bug（太坑）</em></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nextGreaterElement(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums2.size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// m 用来存储nums2中每个值的下一个大于它的值的索引，如果没有就设为-1</span></span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        m[nums2[nums2.size() - <span class="number">1</span>]] = <span class="number">-1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 每次与当前值的下一个比，如果大于，取出下一个值对应的第一个最大值的索引。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums2.size() - <span class="number">2</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums2[i] &lt; nums2[i + <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                m[nums2[i]] = i + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> j = m[nums2[i + <span class="number">1</span>]];</span><br><span class="line">                <span class="keyword">while</span>(j &lt; (<span class="keyword">int</span>)nums2.size())</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (j == <span class="number">-1</span> || nums2[i] &lt; nums2[j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        m[nums2[i]] = j;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        j = m[nums2[j]];                        </span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v(nums1.size());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums1.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            v[i] = (m[nums1[i]] == <span class="number">-1</span>) ? <span class="number">-1</span> : nums2[m[nums1[i]]];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：将int转成double型</p>
-<p>double数的组成：</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号位(s)</th>
-<th align="center">阶码 (e)</th>
-<th align="center">尾数(m)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">11</td>
-<td align="center">52</td>
-</tr>
-</tbody></table>
-<p>最终数 = $(-1)^s * 2^{e - 1023} * (1 + 2^{-1} + 2^{-2}………………)$</p>
-<p>所以的2的幂的数的尾数一定为0，</p>
-<p>所以4的幂 $4^n = 2^{2 * n}$</p>
-<p>阶码一定是奇数，因为e - 1023是偶数，且小数位为0，所以只要保证阶码的最低位为1（保证为奇数），小数位为0（后52位），并且为正（最高位为0）。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> n = num;</span><br><span class="line">        <span class="keyword">return</span> (*(<span class="keyword">long</span>*)&amp;n &amp; <span class="number">0x801FFFFFFFFFFFFF</span>) == <span class="number">0x10000000000000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>参考解法2：使用stack存储比当前值大的数。时间复杂度：$O(n)$，n为nums2的长度。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nextGreaterElement(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums2) &#123;</span><br><span class="line">       <span class="keyword">int</span> len1 = nums1.size();</span><br><span class="line">       <span class="keyword">int</span> len2 = nums2.size();</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nextGreater(len2);</span><br><span class="line">       <span class="comment">/* 记录nums2中每个值对应的index */</span></span><br><span class="line">       <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">       <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = len2 - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">       &#123;</span><br><span class="line">           m[nums2[i]] = i;</span><br><span class="line">           </span><br><span class="line">           <span class="keyword">while</span>(!s.empty() &amp;&amp; nums2[i] &gt; s.top())</span><br><span class="line">           &#123;</span><br><span class="line">               s.pop();</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           <span class="keyword">if</span> (s.empty())</span><br><span class="line">           &#123;</span><br><span class="line">               nextGreater[i] = <span class="number">-1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           &#123;</span><br><span class="line">               nextGreater[i] = s.top();</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           s.push(nums2[i]);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rv(len1);</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len1; ++i)</span><br><span class="line">       &#123;</span><br><span class="line">           rv[i] = nextGreater[m[nums1[i]]];</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> rv;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -340,13 +373,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/power-of-four/">power-of-four</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时18分</p>
-        <p><span>最后更新:</span>2019年11月17日 - 11时18分</p>
+        <p><span>发布时间:</span>2019年11月24日 - 11时07分</p>
+        <p><span>最后更新:</span>2019年11月24日 - 11时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/power-of-four/" title="power-of-four">https://sky1blue.github.io/2019/11/17/power-of-four/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/power-of-four/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/24/next-greater-element-i/" title="next-greater-element-i">https://sky1blue.github.io/2019/11/24/next-greater-element-i/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/24/next-greater-element-i/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -359,18 +392,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/repeated-substring-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          repeated-substring-pattern
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/power-of-three/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">power-of-three</div>
+    <a href="/2019/11/22/construct-the-rectangle/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">construct-the-rectangle</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -381,7 +405,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#342-Power-of-Four"><span class="toc-number">1.</span> <span class="toc-text">342. Power of Four</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#496-Next-Greater-Element-I"><span class="toc-number">1.</span> <span class="toc-text">496. Next Greater Element I</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -432,13 +456,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/repeated-substring-pattern/" title="上一篇: repeated-substring-pattern">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/power-of-three/" title="下一篇: power-of-three">
+            <a href="/2019/11/22/construct-the-rectangle/" title="下一篇: construct-the-rectangle">
                 <i class="fa fa-angle-right"></i>
             </a>
         
