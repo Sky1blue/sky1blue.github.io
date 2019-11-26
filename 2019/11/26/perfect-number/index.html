@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>k分位数 | Simon的个人博客</title>
+  <title>perfect-number | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The $k$th quantiles of an $n$-element set are the $k - 1$ order statistics that divide the sorted set into $k$ equal-sized sets (to within $1$). Give an $O(n\lg k)$-time algorithm to list the $k$th q">
-<meta name="keywords" content="算法">
+  <meta name="description" content="507. Perfect NumberWe define the Perfect Number is a positive integer that is equal to the sum of all its positive divisors except itself.">
+<meta name="keywords" content="Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="k分位数">
-<meta property="og:url" content="https://sky1blue.github.io/2019/07/10/k分位数/index.html">
+<meta property="og:title" content="perfect-number">
+<meta property="og:url" content="https://sky1blue.github.io/2019/11/26/perfect-number/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="The $k$th quantiles of an $n$-element set are the $k - 1$ order statistics that divide the sorted set into $k$ equal-sized sets (to within $1$). Give an $O(n\lg k)$-time algorithm to list the $k$th q">
+<meta property="og:description" content="507. Perfect NumberWe define the Perfect Number is a positive integer that is equal to the sum of all its positive divisors except itself.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-10T10:38:30.000Z">
+<meta property="og:updated_time" content="2019-11-26T14:12:16.520Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="k分位数">
-<meta name="twitter:description" content="The $k$th quantiles of an $n$-element set are the $k - 1$ order statistics that divide the sorted set into $k$ equal-sized sets (to within $1$). Give an $O(n\lg k)$-time algorithm to list the $k$th q">
+<meta name="twitter:title" content="perfect-number">
+<meta name="twitter:description" content="507. Perfect NumberWe define the Perfect Number is a positive integer that is equal to the sum of all its positive divisors except itself.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-k分位数" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-perfect-number" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/07/10/k分位数/" class="article-date">
-      <time datetime="2019-07-10T10:29:29.000Z" itemprop="datePublished">2019-07-10</time>
+      <a href="/2019/11/26/perfect-number/" class="article-date">
+      <time datetime="2019-11-26T14:11:48.000Z" itemprop="datePublished">2019-11-26</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      k分位数
+      perfect-number
     </h1>
   
 
@@ -224,13 +224,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法导论/">算法导论</a>
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,21 +240,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <blockquote>
-<p>The $k$th <strong><em>quantiles</em></strong> of an $n$-element set are the $k - 1$ order statistics that divide the sorted set into $k$ equal-sized sets (to within $1$). Give an $O(n\lg k)$-time algorithm to list the $k$th quantiles of a set.</p>
-</blockquote>
-<ul>
-<li>题目意思：给定一个$n$个元素的数组，要求找出该数组的已排序的情况下，将数组划分为$k$个大小相等的集合的$k - 1$个统计量。<br>例如：$k$为4，$n$为12.<br>给定数组为：11   23   21    9   11    9   13   13   21   17   11   11<br>排序后数组为：23   21   21   <strong><em>17</em></strong>   13   13   <strong><em>11</em></strong>   11   11   <strong><em>11</em></strong>    9    9<br>所求的$k$分位数即为图中加粗倾斜的3个数：11，11，17。</li>
-<li><em>注意*</em>：题目所给的数组并不是已排序的数组。</li>
-<li>解决思路如下：</li>
-</ul>
-<blockquote>
-<p>Pre-calculate the positions of the quantiles in $O(k)$, we use the $O(n)$ select algorithm to find the $\lfloor k / 2 \rfloor$th position, after that the elements are divided into two sets by the pivot the $\lfloor k / 2 \rfloor$th position, we do it recursively in the two sets to find other positions. Since the maximum depth is $\lceil \lg k \rceil$, the total running time is $O(n\lg k)$.</p>
-</blockquote>
-<ul>
-<li>参考代码（C语言）<br>其中insertSort(int *num, int  len)为插入排序，num为数组，len为数组长度。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最坏的情况下，以O(n)运行时间选择出第i小的数</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sort.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INTERVAL 7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">median</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = r - p + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> n = len / INTERVAL;</span><br><span class="line">    <span class="keyword">int</span> mod = len % INTERVAL;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断中位数的个数</span></span><br><span class="line">    <span class="keyword">int</span> flag = (mod == <span class="number">0</span>) ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> *med = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (n + flag));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        insertSort(num + p + i * INTERVAL, INTERVAL);</span><br><span class="line">        med[i] = num[p + i * INTERVAL + INTERVAL / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (flag)</span><br><span class="line">    &#123;</span><br><span class="line">        insertSort(num + p + n * INTERVAL, mod);</span><br><span class="line">        med[n] = num[p + n * INTERVAL + mod / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    insertSort(med, n + flag);</span><br><span class="line">    ret = med[(n + flag) / <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">free</span>(med);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">begin</span> = p - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = p; i &lt;= r; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num[i] &lt; x)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">begin</span>++;</span><br><span class="line">            <span class="keyword">int</span> temp = num[<span class="built_in">begin</span>];</span><br><span class="line">            num[<span class="built_in">begin</span>] = num[i];</span><br><span class="line">            num[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = p; i &lt;= r; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num[i] == x)</span><br><span class="line">        &#123;</span><br><span class="line">            index = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> temp = num[<span class="built_in">begin</span> + <span class="number">1</span>];</span><br><span class="line">    num[<span class="built_in">begin</span> + <span class="number">1</span>] = num[index];</span><br><span class="line">    num[index] = temp;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">begin</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * function：选出数组第i小的元素(i = 1, 2, ....)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> num[p];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> x = median(num, p, r);</span><br><span class="line">    <span class="keyword">int</span> q = partition(num, p, r, x);</span><br><span class="line">    <span class="keyword">int</span> k = q - p + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (k == i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> select(num, p, q - <span class="number">1</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> select(num, q + <span class="number">1</span>, r, i - k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// k分位数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">the_kth_quantile</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> *result, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (k &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> pivotIndex = ((r - p + <span class="number">1</span>) / k) * (k / <span class="number">2</span>);</span><br><span class="line">        result[j++] = select(num, p, r, pivotIndex);</span><br><span class="line"></span><br><span class="line">        the_kth_quantile(num, result, p, p + pivotIndex - <span class="number">1</span>, k / <span class="number">2</span>);</span><br><span class="line">        the_kth_quantile(num, result, p + pivotIndex, r, k - k / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="507-Perfect-Number"><a href="#507-Perfect-Number" class="headerlink" title="507. Perfect Number"></a>507. Perfect Number</h3><p>We define the Perfect Number is a <b>positive</b> integer that is equal to the sum of all its <b>positive</b> divisors except itself. 
+
+<a id="more"></a></p>
+
+<p>Now, given an <b>integer</b> n, write a function that returns true when it is a perfect number and false when it is not.</p>
+<p></p>
+
+
+
+<p><b>Example:</b><br>
+
+<pre>
+
+<b>Input:</b> 28
+
+<b>Output:</b> True
+
+<b>Explanation:</b> 28 = 1 + 2 + 4 + 7 + 14
+
+</pre>
+
+</p>
+
+
+
+<p><b>Note:</b>
+
+</p><p>The input number <b>n</b> will not exceed 100,000,000. (1e8)</p>
+<p></p>
+
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题解法：要注意研所范围为sqrt(n)，每次加上除数和被除数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">bool checkPerfectNumber(int num) &#123;</span><br><span class="line">        if (num &lt;= 1)</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        int sum = 1;</span><br><span class="line">        </span><br><span class="line">        for(int i = 2 ; i &lt;= sqrt(num) ; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(num % i == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                if (i == num / i)</span><br><span class="line">                &#123;</span><br><span class="line">                    sum += i;                   </span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    sum += (i + num / i);                    </span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return (sum == num);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -311,13 +329,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/10/k分位数/">k分位数</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/26/perfect-number/">perfect-number</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年07月10日 - 18时29分</p>
-        <p><span>最后更新:</span>2019年07月10日 - 18时38分</p>
+        <p><span>发布时间:</span>2019年11月26日 - 22时11分</p>
+        <p><span>最后更新:</span>2019年11月26日 - 22时12分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/10/k分位数/" title="k分位数">https://sky1blue.github.io/2019/07/10/k分位数/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/07/10/k分位数/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/26/perfect-number/" title="perfect-number">https://sky1blue.github.io/2019/11/26/perfect-number/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/26/perfect-number/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -330,15 +348,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/07/11/栈和队列/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          栈和队列
-        
-      </div>
-    </a>
   
+    <a href="/2019/11/25/relative-ranks/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">relative-ranks</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -347,7 +361,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#507-Perfect-Number"><span class="toc-number">1.</span> <span class="toc-text">507. Perfect Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -398,13 +412,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/11/栈和队列/" title="上一篇: 栈和队列">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/11/25/relative-ranks/" title="下一篇: relative-ranks">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">C语言中，static关键字作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
