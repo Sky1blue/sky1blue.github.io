@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>base-7 | Simon的个人博客</title>
+  <title>detect-capital | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="504. Base 7Given an integer, return its base 7 string representation.">
+  <meta name="description" content="520. Detect CapitalGiven a word, you need to judge whether the usage of capitals in it is right or not.">
 <meta name="keywords" content="Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="base-7">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/25/base-7/index.html">
+<meta property="og:title" content="detect-capital">
+<meta property="og:url" content="https://sky1blue.github.io/2019/11/28/detect-capital/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="504. Base 7Given an integer, return its base 7 string representation.">
+<meta property="og:description" content="520. Detect CapitalGiven a word, you need to judge whether the usage of capitals in it is right or not.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-25T14:25:49.440Z">
+<meta property="og:updated_time" content="2019-11-28T14:19:50.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="base-7">
-<meta name="twitter:description" content="504. Base 7Given an integer, return its base 7 string representation.">
+<meta name="twitter:title" content="detect-capital">
+<meta name="twitter:description" content="520. Detect CapitalGiven a word, you need to judge whether the usage of capitals in it is right or not.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-base-7" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-detect-capital" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/25/base-7/" class="article-date">
-      <time datetime="2019-11-25T14:24:50.000Z" itemprop="datePublished">2019-11-25</time>
+      <a href="/2019/11/28/detect-capital/" class="article-date">
+      <time datetime="2019-11-28T14:18:29.000Z" itemprop="datePublished">2019-11-28</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      base-7
+      detect-capital
     </h1>
   
 
@@ -240,53 +240,80 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="504-Base-7"><a href="#504-Base-7" class="headerlink" title="504. Base 7"></a>504. Base 7</h3><p>Given an integer, return its base 7 string representation.<a id="more"></a></p>
+        <h3 id="520-Detect-Capital"><a href="#520-Detect-Capital" class="headerlink" title="520. Detect Capital"></a>520. Detect Capital</h3><p>Given a word, you need to judge whether the usage of capitals in it is right or not.<a id="more"></a></p>
 
 
 
-<p><b>Example 1:</b><br>
+<p>We define the usage of capitals in a word to be right when one of the following cases holds:</p>
+
+
+
+<ol>
+
+<pre><code>&lt;li&gt;All letters in this word are capitals, like &amp;quot;USA&amp;quot;.&lt;/li&gt;
+
+&lt;li&gt;All letters in this word are not capitals, like &amp;quot;leetcode&amp;quot;.&lt;/li&gt;
+
+&lt;li&gt;Only the first letter in this word is capital, like &amp;quot;Google&amp;quot;.&lt;/li&gt;</code></pre></ol>
+
+<p>Otherwise, we define that this word doesn&#39;t use capitals in a right way.</p>
+<p>&nbsp;</p>
+
+
+
+<p><b>Example 1:</b></p>
+
+
 
 <pre>
 
-<b>Input:</b> 100
+<b>Input:</b> &quot;USA&quot;
 
-<b>Output:</b> "202"
+<b>Output:</b> True
 
 </pre>
 
-</p>
+
+
+<p>&nbsp;</p>
 
 
 
-<p><b>Example 2:</b><br>
+<p><b>Example 2:</b></p>
+
+
 
 <pre>
 
-<b>Input:</b> -7
+<b>Input:</b> &quot;FlaG&quot;
 
-<b>Output:</b> "-10"
+<b>Output:</b> False
 
 </pre>
 
-</p>
+
+
+<p>&nbsp;</p>
 
 
 
-<p><b>Note:</b>
+<p><b>Note:</b> The input will be a non-empty word consisting of uppercase and lowercase latin letters.</p>
 
-</p><p>The input will be in range of [-1e7, 1e7].</p>
-<p></p>
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题的意思：求给定的数除以7的余数组成的字符串。</p>
-<p>如 输入100：</p>
-<p>100 / 7 = 14 余2</p>
-<p>14  /  7 = 2  余0</p>
-<p>2    /  7 = 0  余2</p>
-<p>组成的字符串为“202”。</p>
-<p>所以思路很明确：每次除7，直到商为0。<strong>重点要注意为0和为负数的情况</strong>，负数直接转为正数，最后加上符号就行。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convertToBase7</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (num == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (num &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'-'</span> + convertToBase7(-num);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(num &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            rv = rv + to_string(num % <span class="number">7</span>);</span><br><span class="line">            num = num / <span class="number">7</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        reverse(rv.begin(), rv.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题思路很明确：根据首字母和第二个字母来判断所有情况。</p>
+<ul>
+<li><p>不管首字母大写还是小写，剩下的字母必须要跟第二字母，同大写或同小写。</p>
+</li>
+<li><p>如果首字母小写，剩下的字母必须小写。</p>
+</li>
+</ul>
+<p>高赞解：很简洁</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">detectCapitalUse</span><span class="params">(<span class="built_in">string</span> word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; word.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">isupper</span>(word[<span class="number">1</span>]) != <span class="built_in">isupper</span>(word[i]) || </span><br><span class="line">               <span class="built_in">islower</span>(word[<span class="number">0</span>]) &amp;&amp; <span class="built_in">isupper</span>(word[i])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
+<p>本人的解：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">detectCapitalUse</span><span class="params">(<span class="built_in">string</span> word)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (word.size() &lt; <span class="number">2</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 首字母小写</span></span><br><span class="line">        <span class="keyword">if</span> (word[<span class="number">0</span>] &gt;= <span class="number">97</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, n = word.size(); i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (word[i] &lt; <span class="number">97</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 首字母大写</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 第二个字母小写</span></span><br><span class="line">            <span class="keyword">if</span> (word[<span class="number">1</span>] &gt;= <span class="number">97</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, n = word.size(); i &lt; n; ++i)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (word[i] &lt; <span class="number">97</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, n = word.size(); i &lt; n; ++i)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (word[i] &gt; <span class="number">90</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -343,13 +370,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/25/base-7/">base-7</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/28/detect-capital/">detect-capital</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月25日 - 22时24分</p>
-        <p><span>最后更新:</span>2019年11月25日 - 22时25分</p>
+        <p><span>发布时间:</span>2019年11月28日 - 22时18分</p>
+        <p><span>最后更新:</span>2019年11月28日 - 22时19分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/25/base-7/" title="base-7">https://sky1blue.github.io/2019/11/25/base-7/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/25/base-7/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/28/detect-capital/" title="detect-capital">https://sky1blue.github.io/2019/11/28/detect-capital/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/28/detect-capital/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -362,18 +389,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/25/relative-ranks/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/11/28/fibonacci-number/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          relative-ranks
+          fibonacci-number
         
       </div>
     </a>
   
   
-    <a href="/2019/11/24/find-mode-in-binary-search-tree/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">find-mode-in-binary-search-tree</div>
+    <a href="/2019/11/26/perfect-number/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">perfect-number</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -384,7 +411,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#504-Base-7"><span class="toc-number">1.</span> <span class="toc-text">504. Base 7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#520-Detect-Capital"><span class="toc-number">1.</span> <span class="toc-text">520. Detect Capital</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -435,13 +462,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/25/relative-ranks/" title="上一篇: relative-ranks">
+            <a href="/2019/11/28/fibonacci-number/" title="上一篇: fibonacci-number">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/24/find-mode-in-binary-search-tree/" title="下一篇: find-mode-in-binary-search-tree">
+            <a href="/2019/11/26/perfect-number/" title="下一篇: perfect-number">
                 <i class="fa fa-angle-right"></i>
             </a>
         
