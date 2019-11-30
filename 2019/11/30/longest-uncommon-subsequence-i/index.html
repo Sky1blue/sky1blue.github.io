@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>relative-ranks | Simon的个人博客</title>
+  <title>longest-uncommon-subsequence-i | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="506. Relative Ranks  Given scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”">
+  <meta name="description" content="521. Longest Uncommon Subsequence I  Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings. The longest uncommon subsequence is defined as the lo">
 <meta name="keywords" content="Easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="relative-ranks">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/25/relative-ranks/index.html">
+<meta property="og:title" content="longest-uncommon-subsequence-i">
+<meta property="og:url" content="https://sky1blue.github.io/2019/11/30/longest-uncommon-subsequence-i/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="506. Relative Ranks  Given scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”">
+<meta property="og:description" content="521. Longest Uncommon Subsequence I  Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings. The longest uncommon subsequence is defined as the lo">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-25T15:10:30.993Z">
+<meta property="og:updated_time" content="2019-11-30T15:07:08.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="relative-ranks">
-<meta name="twitter:description" content="506. Relative Ranks  Given scores of N athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”">
+<meta name="twitter:title" content="longest-uncommon-subsequence-i">
+<meta name="twitter:description" content="521. Longest Uncommon Subsequence I  Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings. The longest uncommon subsequence is defined as the lo">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-relative-ranks" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-longest-uncommon-subsequence-i" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/25/relative-ranks/" class="article-date">
-      <time datetime="2019-11-25T15:10:02.000Z" itemprop="datePublished">2019-11-25</time>
+      <a href="/2019/11/30/longest-uncommon-subsequence-i/" class="article-date">
+      <time datetime="2019-11-30T15:03:15.000Z" itemprop="datePublished">2019-11-30</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      relative-ranks
+      longest-uncommon-subsequence-i
     </h1>
   
 
@@ -240,18 +240,37 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="506-Relative-Ranks"><a href="#506-Relative-Ranks" class="headerlink" title="506. Relative Ranks"></a>506. Relative Ranks</h3><p>
+        <h3 id="521-Longest-Uncommon-Subsequence-I"><a href="#521-Longest-Uncommon-Subsequence-I" class="headerlink" title="521. Longest Uncommon Subsequence I"></a>521. Longest Uncommon Subsequence I</h3><p>
 
-</p><p>Given scores of <b>N</b> athletes, find their relative ranks and the people with the top three highest scores, who will be awarded medals: “Gold Medal”, “Silver Medal” and “Bronze Medal”.<a id="more"></a></p><p></p>
+</p><p>Given a group of two strings, you need to find the longest uncommon subsequence of this group of two strings.</p>
+<p>The longest uncommon subsequence is defined as the longest subsequence of one of these strings and this subsequence should not be <b>any</b> subsequence of the other strings.</p>
+<a id="more"></a><p></p>
+
+
+
+<p>
+
+</p><p>A <b>subsequence</b> is a sequence that can be derived from one sequence by deleting some characters without changing the order of the remaining elements. Trivially, any string is a subsequence of itself and an empty string is a subsequence of any string.</p>
+<p></p>
+
+
+
+<p>
+
+</p><p>The input will be two strings, and the output needs to be the length of the longest uncommon subsequence. If the longest uncommon subsequence doesn’t exist, return -1.</p>
+<p></p>
+
+
+
 <p><b>Example 1:</b><br>
 
 <pre>
 
-<b>Input:</b> [5, 4, 3, 2, 1]
+<b>Input:</b> "aba", "cdc"
 
-<b>Output:</b> ["Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"]
+<b>Output:</b> 3
 
-<b>Explanation:</b> The first three athletes got the top three highest scores, so they got "Gold Medal", "Silver Medal" and "Bronze Medal". <br>For the left two athletes, you just need to output their relative ranks according to their scores.
+<b>Explanation:</b> The longest uncommon subsequence is "aba" (or "cdc"), <br>because "aba" is a subsequence of "aba", <br>but not a subsequence of any other strings in the group of two strings. 
 
 </pre>
 
@@ -259,26 +278,23 @@
 
 
 
-<p><b>Note:</b><br>
+<p><b>Note:</b>
 
 <ol>
 
-<li>N is a positive integer and won't exceed 10,000.</li>
+<li>Both strings' lengths will not exceed 100.</li>
 
-<li>All the scores of athletes are guaranteed to be unique.</li>
+<li>Only letters from a ~ z will appear in input strings. </li>
 
 </ol>
 
 </p>
 
-
-
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：先排序，然后用map记录每个值排序后的序号，然后按照原来数组的顺序，一次查找排序后的序号。时间复杂度为排序的复杂度。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findRelativeRanks(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rv(nums.size());</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">                </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; copy(nums);</span><br><span class="line">        sort(nums.begin(), nums.end(), comp);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            um[nums[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">switch</span>(um[copy[i]])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    rv[i] = <span class="string">"Gold Medal"</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    rv[i] = <span class="string">"Silver Medal"</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    rv[i] = <span class="string">"Bronze Medal"</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    rv[i] = to_string(um[copy[i]] + <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">comp</span> <span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span></span><br><span class="line"><span class="function">    </span>&#123; </span><br><span class="line">        <span class="keyword">return</span> (i &gt; j); </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题思路明确：如果两个字符串相同，那么不存在任何不相同的字串，如果字符串不相同，那么字符串长度长的那一个永远不会是短字符串的子串，所以只要返回长度大的一方。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findLUSlength</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (a == b)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(a.size(), b.size());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法2：使用优先级对列，构造最大堆时间复杂度为$O(nlg(n))$，根据值排序。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findRelativeRanks(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result(nums.size());</span><br><span class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; pq;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">            pq.push(&#123;nums[i],i&#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Gold Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Silver Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Bronze Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            result[pq.top().second] = to_string(i + <span class="number">1</span>);</span><br><span class="line">            pq.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
       
       
         <div class="page-reward">
@@ -333,13 +349,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/25/relative-ranks/">relative-ranks</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月25日 - 23时10分</p>
-        <p><span>最后更新:</span>2019年11月25日 - 23时10分</p>
+        <p><span>发布时间:</span>2019年11月30日 - 23时03分</p>
+        <p><span>最后更新:</span>2019年11月30日 - 23时07分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/25/relative-ranks/" title="relative-ranks">https://sky1blue.github.io/2019/11/25/relative-ranks/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/25/relative-ranks/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/30/longest-uncommon-subsequence-i/" title="longest-uncommon-subsequence-i">https://sky1blue.github.io/2019/11/30/longest-uncommon-subsequence-i/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/30/longest-uncommon-subsequence-i/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -352,18 +368,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/26/perfect-number/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          perfect-number
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/25/base-7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">base-7</div>
+    <a href="/2019/11/28/fibonacci-number/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">fibonacci-number</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -374,7 +381,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#506-Relative-Ranks"><span class="toc-number">1.</span> <span class="toc-text">506. Relative Ranks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#521-Longest-Uncommon-Subsequence-I"><span class="toc-number">1.</span> <span class="toc-text">521. Longest Uncommon Subsequence I</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -425,13 +432,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/26/perfect-number/" title="上一篇: perfect-number">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/25/base-7/" title="下一篇: base-7">
+            <a href="/2019/11/28/fibonacci-number/" title="下一篇: fibonacci-number">
                 <i class="fa fa-angle-right"></i>
             </a>
         
