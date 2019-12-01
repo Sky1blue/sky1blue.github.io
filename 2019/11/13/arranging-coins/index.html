@@ -5,17 +5,18 @@
   
   <title>arranging-coins | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.  Given n, find the total number of full staircase rows that">
+  <meta name="description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.    Given n, find the total number of full staircase rows tha">
+<meta name="keywords" content="easy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="arranging-coins">
 <meta property="og:url" content="https://sky1blue.github.io/2019/11/13/arranging-coins/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.  Given n, find the total number of full staircase rows that">
+<meta property="og:description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.    Given n, find the total number of full staircase rows tha">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T12:54:06.000Z">
+<meta property="og:updated_time" content="2019-12-01T04:17:27.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="arranging-coins">
-<meta name="twitter:description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.  Given n, find the total number of full staircase rows that">
+<meta name="twitter:description" content="441. Arranging CoinsYou have a total of n coins that you want to form in a staircase shape, where every k-th row must have exactly k coins.    Given n, find the total number of full staircase rows tha">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -133,7 +134,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 10px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 10px;">tree</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 13.33px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 16.67px;">tree</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -228,6 +229,10 @@
 
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/">easy</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -237,25 +242,67 @@
           
         <h3 id="441-Arranging-Coins"><a href="#441-Arranging-Coins" class="headerlink" title="441. Arranging Coins"></a>441. Arranging Coins</h3><p>You have a total of <i>n</i> coins that you want to form in a staircase shape, where every <i>k</i>-th row must have exactly <i>k</i> coins.</p>
 
+
+
 <p>Given <i>n</i>, find the total number of <b>full</b> staircase rows that can be formed.</p>
+
+
 
 <p><i>n</i> is a non-negative integer and fits within the range of a 32-bit signed integer.</p>
 
+
+
 <p><b>Example 1:</b>
+
 <pre>
+
 n = 5
 
-<p>The coins can form the following rows:<br>¤<br>¤ ¤<br>¤ ¤</p>
-<p>Because the 3rd row is incomplete, we return 2.<br></p></pre></p>
-<p></p>
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤
+
+
+
+Because the 3rd row is incomplete, we return 2.
+
+</pre>
+
+</p>
+
+
 
 <p><b>Example 2:</b>
+
 <pre>
+
 n = 8
 
-<p>The coins can form the following rows:<br>¤<br>¤ ¤<br>¤ ¤ ¤<br>¤ ¤</p>
-<p>Because the 4th row is incomplete, we return 3.<br></p></pre></p>
-<p></p>
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤ ¤
+
+¤ ¤
+
+
+
+Because the 4th row is incomplete, we return 3.
+
+</pre>
+
+</p>
 
 <hr>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题解法1：时间复杂度O(sqrt(n)) 思路求和</p>
@@ -325,7 +372,7 @@ n = 8
         <p><span>本文标题:</span><a href="/2019/11/13/arranging-coins/">arranging-coins</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
         <p><span>发布时间:</span>2019年11月13日 - 20时54分</p>
-        <p><span>最后更新:</span>2019年11月13日 - 20时54分</p>
+        <p><span>最后更新:</span>2019年12月01日 - 12时17分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/13/arranging-coins/" title="arranging-coins">https://sky1blue.github.io/2019/11/13/arranging-coins/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/13/arranging-coins/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
