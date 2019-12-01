@@ -201,6 +201,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-tf-app-flags使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/14/tf-app-flags使用/" class="article-date">
+      <time datetime="2019-08-14T07:59:04.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="tf-app-flags作用"><a href="#tf-app-flags作用" class="headerlink" title="tf.app.flags作用"></a>tf.app.flags作用</h3><p><code>tf.app.flags.DEFINE_xxx()</code>就是添加命令行的<code>optional</code><br><code>argument</code>（可选参数），而<code>tf.app.flags.FLAGS</code>可以从对应的命令行参数取出参数。</p>
+<h3 id="使用意义"><a href="#使用意义" class="headerlink" title="使用意义"></a>使用意义</h3><p>机器学习模型是丑陋的并且通常需要在模型的开头设置很多参数。同时，这些参数易于调节可能是有益的。例如是神经网络中的神经元数量，学习率甚至优化器的情况，因为其中很多都将受到优化</p>
+<h3 id="参数选项"><a href="#参数选项" class="headerlink" title="参数选项"></a>参数选项</h3><p><code>tf.app.flags.DEFINE_xxx()</code></p>
+<p>第一个参数为参数名；第二个为默认值；第三个为描述.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.app.flags.DEFINE_string(&apos;string&apos;, &apos;hello&apos;, &apos;description1&apos;)</span><br><span class="line">tf.app.flags.DEFINE_integer(&apos;int&apos;, 20, &apos;description2&apos;)</span><br><span class="line">tf.app.flags.DEFINE_boolean(&apos;bool&apos;, False, &apos;description3&apos;)</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-C语言中，static关键字作用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -218,7 +286,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/28/C语言中，static关键字作用/">C语言中，static关键字作用</a>
+      <a class="article-title" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a>
     </h1>
   
 
@@ -231,11 +299,10 @@
         <h3 id="static修饰变量"><a href="#static修饰变量" class="headerlink" title="static修饰变量"></a>static修饰变量</h3><p>1 在块中使用static修饰变量</p>
 <ul>
 <li><p>它具有静态存储持续时间、块范围和无链接。<br> 即作用域只能在块中，无法被块外的程序调用；变量在程序加载时创建，在程序终止时结束。</p>
-<ul>
-<li>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void trystat(void);</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">	int count;</span><br><span class="line">	for (count = 1; count &lt;= 3; count++)</span><br><span class="line">	&#123;</span><br><span class="line">			printf(&quot;Here comes iteration %d:\n&quot;, count);</span><br><span class="line">			trystat();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void trystat(void)</span><br><span class="line">&#123;</span><br><span class="line">	int fade = 1;</span><br><span class="line">	static int stay = 1;</span><br><span class="line">	</span><br><span class="line">	printf(&quot;fade = %d and stay = %d\n&quot;, fade++, stay++);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 </li>
-</ul>
+<li><p>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">	<span class="keyword">for</span> (count = <span class="number">1</span>; count &lt;= <span class="number">3</span>; count++)</span><br><span class="line">	&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"Here comes iteration %d:\n"</span>, count);</span><br><span class="line">			trystat();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fade = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> stay = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"fade = %d and stay = %d\n"</span>, fade++, stay++);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p><strong>程序执行结果</strong>：<br>Here comes iteration 1:<br>fade = 1 and stay = 1<br>Here comes iteration 2:<br>fade = 1 and stay = 2<br>Here comes iteration 3:<br>fade = 1 and stay = 3</p>
 </li>
 </ul>
@@ -251,7 +318,7 @@
 </li>
 </ul>
 <p>上述为某平台使用DA播放wav的程序片段，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">static uint8_t *Wav_GetFileName(WAV_TYPE_t wav_type);</span><br><span class="line">static bool Wav_GetFileInfo(WAV_FILE_INFO_t *pFileInfo, uint8_t *pFileName);</span><br><span class="line">static bool Wav_GetVersion_Internal(WAV_FILE_INFO_t *pFileInfo);</span><br><span class="line">static bool Wav_ReadFile(uint8_t *pData, uint32_t offset, uint32_t size);</span><br><span class="line">static bool Wav_SendToDA(uint8_t *pFile, uint32_t size,  uint32_t volume);</span><br><span class="line">static BOOL Wav_Put_Queue(WAV_TYPE_t wav_type, BOOL fromISR);</span><br><span class="line">static BOOL Wav_Get_Queue(WAV_TYPE_t *pWavType);</span><br><span class="line">static bool Wav_Play_Inernal(WAV_TYPE_t wav_type);</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> uint8_t *<span class="title">Wav_GetFileName</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetFileInfo</span><span class="params">(WAV_FILE_INFO_t *pFileInfo, <span class="keyword">uint8_t</span> *pFileName)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetVersion_Internal</span><span class="params">(WAV_FILE_INFO_t *pFileInfo)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_ReadFile</span><span class="params">(<span class="keyword">uint8_t</span> *pData, <span class="keyword">uint32_t</span> offset, <span class="keyword">uint32_t</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_SendToDA</span><span class="params">(<span class="keyword">uint8_t</span> *pFile, <span class="keyword">uint32_t</span> <span class="built_in">size</span>,  <span class="keyword">uint32_t</span> volume)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Put_Queue</span><span class="params">(WAV_TYPE_t wav_type, BOOL fromISR)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Get_Queue</span><span class="params">(WAV_TYPE_t *pWavType)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_Play_Inernal</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br></pre></td></tr></table></figure>
 
 <p>上述函数为内部函数使用<code>static</code>修饰。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Wav_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Wav_Play</span><span class="params">(WAV_TYPE_t wav_type, <span class="keyword">bool</span> force)</span></span>;</span><br></pre></td></tr></table></figure>
