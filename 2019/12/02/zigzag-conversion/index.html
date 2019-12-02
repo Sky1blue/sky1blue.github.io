@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>fibonacci-number | Simon的个人博客</title>
+  <title>zigzag-conversion | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="509. Fibonacci NumberThe&amp;nbsp;Fibonacci numbers, commonly denoted&amp;nbsp;F(n)&amp;nbsp;form a sequence, called the&amp;nbsp;Fibonacci sequence, such that each number is the sum of the two preceding ones, starti">
-<meta name="keywords" content="easy,动态规划">
+  <meta name="description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fibonacci-number">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/28/fibonacci-number/index.html">
+<meta property="og:title" content="zigzag-conversion">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/02/zigzag-conversion/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="509. Fibonacci NumberThe&amp;nbsp;Fibonacci numbers, commonly denoted&amp;nbsp;F(n)&amp;nbsp;form a sequence, called the&amp;nbsp;Fibonacci sequence, such that each number is the sum of the two preceding ones, starti">
+<meta property="og:description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-01T04:17:40.830Z">
+<meta property="og:updated_time" content="2019-12-02T15:06:03.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fibonacci-number">
-<meta name="twitter:description" content="509. Fibonacci NumberThe&amp;nbsp;Fibonacci numbers, commonly denoted&amp;nbsp;F(n)&amp;nbsp;form a sequence, called the&amp;nbsp;Fibonacci sequence, such that each number is the sum of the two preceding ones, starti">
+<meta name="twitter:title" content="zigzag-conversion">
+<meta name="twitter:description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-fibonacci-number" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-zigzag-conversion" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/28/fibonacci-number/" class="article-date">
-      <time datetime="2019-11-28T14:22:55.000Z" itemprop="datePublished">2019-11-28</time>
+      <a href="/2019/12/02/zigzag-conversion/" class="article-date">
+      <time datetime="2019-12-02T14:51:59.000Z" itemprop="datePublished">2019-12-02</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      fibonacci-number
+      zigzag-conversion
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/">easy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,54 +240,95 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="509-Fibonacci-Number"><a href="#509-Fibonacci-Number" class="headerlink" title="509. Fibonacci Number"></a>509. Fibonacci Number</h3><p>The&nbsp;<b>Fibonacci numbers</b>, commonly denoted&nbsp;<code>F(n)</code>&nbsp;form a sequence, called the&nbsp;<b>Fibonacci sequence</b>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,<a id="more"></a></p>
+        <h3 id="6-ZigZag-Conversion"><a href="#6-ZigZag-Conversion" class="headerlink" title="6. ZigZag Conversion"></a>6. ZigZag Conversion</h3><p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<a id="more"></a></p>
+
+
 
 <pre>
-F(0) = 0,&nbsp; &nbsp;F(1)&nbsp;= 1
-F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
+
+P   A   H   N
+
+A P L S I I G
+
+Y   I   R
+
 </pre>
 
-<p>Given <code>N</code>, calculate <code>F(N)</code>.</p>
 
-<p>&nbsp;</p>
+
+<p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>
+
+
+
+<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+
+
+
+<pre>
+
+string convert(string s, int numRows);</pre>
+
+
 
 <p><strong>Example 1:</strong></p>
 
+
+
 <pre>
-<strong>Input:</strong> 2
-<strong>Output:</strong> 1
-<strong>Explanation:</strong> F(2) = F(1) + F(0) = 1 + 0 = 1.
+
+<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows = 3
+
+<strong>Output:</strong> &quot;PAHNAPLSIIGYIR&quot;
+
 </pre>
+
+
 
 <p><strong>Example 2:</strong></p>
 
-<pre>
-<strong>Input:</strong> 3
-<strong>Output:</strong> 2
-<strong>Explanation:</strong> F(3) = F(2) + F(1) = 1 + 1 = 2.
-</pre>
 
-<p><strong>Example 3:</strong></p>
 
 <pre>
-<strong>Input:</strong> 4
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> F(4) = F(3) + F(2) = 2 + 1 = 3.
-</pre>
 
-<p>&nbsp;</p>
+<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows =&nbsp;4
 
-<p><strong>Note:</strong></p>
+<strong>Output:</strong>&nbsp;&quot;PINALSIGYAHRPI&quot;
 
-<p>0 &le; <code>N</code> &le; 30.</p>
+<strong>Explanation:</strong>
+
+
+
+P     I    N
+
+A   L S  I G
+
+Y A   H R
+
+P     I</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题很简单。主要需要考虑空间的使用，一种生成一个N + 1的数组，储存每个值；另外一种，只储存3个值，因为每个值至于前一个和前前个有关。</p>
-<p>时间更快</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (N == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; F(N + <span class="number">1</span>);</span><br><span class="line">        </span><br><span class="line">        F[<span class="number">0</span>] = <span class="number">0</span>; F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            F[i] = F[i - <span class="number">1</span>] + F[i - <span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> F[N];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：首先决定字符串中的每个值属于第几行，然后将每行组成的字符串相加即可。</p>
+<p>如何决定属于第几行？</p>
+<p>方法：可以使用两个变量跟踪相应的行：当前行和当前方向。如果当前行为0，那么下面行号依次递增，如果当前行为numRows - 1，那么下面的行号一次递减。</p>
+<p>比如 给定”PAYPALISHIRING”, numRows = 4;</p>
+<p>那么<br>P 0<br>A 1<br>Y 2<br>P 3 改变方向，行号递减<br>A 2<br>L 1<br>I 0 改变方向，行号递增<br>。。。。</p>
+<p>参考方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rows(numRows);</span><br><span class="line">        <span class="keyword">int</span> step = <span class="number">1</span>, row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            rows[row] += s[i];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (row == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                step = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (row == numRows - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                step = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            row += step;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> str : rows)</span><br><span class="line">        &#123;</span><br><span class="line">            rv += str;</span><br><span class="line">        &#125;</span><br><span class="line">                     </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>空间更少</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; F(<span class="number">3</span>);</span><br><span class="line">        </span><br><span class="line">        F[<span class="number">0</span>] = <span class="number">0</span>; F[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            F[i % <span class="number">3</span>] = F[(i - <span class="number">1</span>) % <span class="number">3</span>] + F[(i - <span class="number">2</span>) % <span class="number">3</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> F[N % <span class="number">3</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>我的解比较繁琐，还是确定每个值在第几行。</p>
+<p>首先确定周期所占的个数，还是确定是在前半个周期还是后半个周期，来判断行数</p>
+
+
+
+
+<p>P     I    N</p>
+<p>A   L S  I G</p>
+<p>Y A   H R</p>
+<p>P     I</p>
+<p>上面给的实例周期为4 + 2 = 6，PAYP处于前半个周期，AL处于后半个周期。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rows(min(numRows, (<span class="keyword">int</span>)s.size()));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> cycleLen = numRows * <span class="number">2</span> - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = i % cycleLen;</span><br><span class="line">            <span class="keyword">int</span> rown = temp &gt;= numRows ? (cycleLen - temp) : temp;</span><br><span class="line">            rows[rown] += s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> str : rows)</span><br><span class="line">        &#123;</span><br><span class="line">            rv += str;</span><br><span class="line">        &#125;</span><br><span class="line">                     </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -342,13 +383,13 @@ F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/28/fibonacci-number/">fibonacci-number</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月28日 - 22时22分</p>
-        <p><span>最后更新:</span>2019年12月01日 - 12时17分</p>
+        <p><span>发布时间:</span>2019年12月02日 - 22时51分</p>
+        <p><span>最后更新:</span>2019年12月02日 - 23时06分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/28/fibonacci-number/" title="fibonacci-number">https://sky1blue.github.io/2019/11/28/fibonacci-number/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/28/fibonacci-number/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/02/zigzag-conversion/" title="zigzag-conversion">https://sky1blue.github.io/2019/12/02/zigzag-conversion/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/02/zigzag-conversion/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -361,18 +402,9 @@ F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
 
 <nav id="article-nav">
   
-    <a href="/2019/11/30/longest-uncommon-subsequence-i/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          longest-uncommon-subsequence-i
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/28/detect-capital/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">detect-capital</div>
+    <a href="/2019/12/01/k-diff-pairs-in-an-array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">k-diff-pairs-in-an-array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,7 +415,7 @@ F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#509-Fibonacci-Number"><span class="toc-number">1.</span> <span class="toc-text">509. Fibonacci Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">6. ZigZag Conversion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -434,13 +466,11 @@ F(N) = F(N - 1) + F(N - 2), for N &gt; 1.
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/30/longest-uncommon-subsequence-i/" title="上一篇: longest-uncommon-subsequence-i">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/28/detect-capital/" title="下一篇: detect-capital">
+            <a href="/2019/12/01/k-diff-pairs-in-an-array/" title="下一篇: k-diff-pairs-in-an-array">
                 <i class="fa fa-angle-right"></i>
             </a>
         
