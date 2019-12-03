@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-complement | Simon的个人博客</title>
+  <title>string-to-integer-atoi | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-complement">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/20/number-complement/index.html">
+<meta property="og:title" content="string-to-integer-atoi">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta property="og:description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-20T14:18:40.000Z">
+<meta property="og:updated_time" content="2019-12-03T14:34:06.295Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-complement">
-<meta name="twitter:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta name="twitter:title" content="string-to-integer-atoi">
+<meta name="twitter:description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-complement" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-string-to-integer-atoi" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/20/number-complement/" class="article-date">
-      <time datetime="2019-11-20T14:18:39.000Z" itemprop="datePublished">2019-11-20</time>
+      <a href="/2019/12/03/string-to-integer-atoi/" class="article-date">
+      <time datetime="2019-12-03T14:32:40.000Z" itemprop="datePublished">2019-12-03</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-complement
+      string-to-integer-atoi
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,39 +240,127 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="476-Number-Complement"><a href="#476-Number-Complement" class="headerlink" title="476. Number Complement"></a>476. Number Complement</h3><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<a id="more"></a></p>
+        <h3 id="8-String-to-Integer-atoi"><a href="#8-String-to-Integer-atoi" class="headerlink" title="8. String to Integer (atoi)"></a>8. String to Integer (atoi)</h3><p>Implement <code><span>atoi</span></code> which&nbsp;converts a string to an integer.<a id="more"></a></p>
 
-<p><b>Note:</b><br>
-<ol>
-<li>The given integer is guaranteed to fit within the range of a 32-bit signed integer.</li>
-<li>You could assume no leading zero bit in the integer’s binary representation.</li>
-</ol>
-</p>
 
-<p><b>Example 1:</b><br>
+
+<p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+
+
+
+<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+
+
+
+<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+
+
+
+<p>If no valid conversion could be performed, a zero value is returned.</p>
+
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<ul>
+
+<pre><code>&lt;li&gt;Only the space character &lt;code&gt;&amp;#39; &amp;#39;&lt;/code&gt; is considered as whitespace character.&lt;/li&gt;
+
+&lt;li&gt;Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [&amp;minus;2&lt;sup&gt;31&lt;/sup&gt;,&amp;nbsp; 2&lt;sup&gt;31&amp;nbsp;&lt;/sup&gt;&amp;minus; 1]. If the numerical value is out of the range of representable values, INT_MAX (2&lt;sup&gt;31&amp;nbsp;&lt;/sup&gt;&amp;minus; 1) or INT_MIN (&amp;minus;2&lt;sup&gt;31&lt;/sup&gt;) is returned.&lt;/li&gt;</code></pre></ul>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> 5
-<b>Output:</b> 2
-<b>Explanation:</b> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
-</pre>
-</p>
 
-<p><b>Example 2:</b><br>
-<pre>
-<b>Input:</b> 1
-<b>Output:</b> 0
-<b>Explanation:</b> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+<strong>Input:</strong> &quot;42&quot;
+
+<strong>Output:</strong> 42
+
 </pre>
-</p>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;   -42&quot;
+
+<strong>Output:</strong> -42
+
+<strong>Explanation:</strong> The first non-whitespace character is &#39;-&#39;, which is the minus sign.
+
+&nbsp;            Then take as many numerical digits as possible, which gets 42.
+
+</pre>
+
+
+
+<p><strong>Example 3:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;4193 with words&quot;
+
+<strong>Output:</strong> 4193
+
+<strong>Explanation:</strong> Conversion stops at digit &#39;3&#39; as the next character is not a numerical digit.
+
+</pre>
+
+
+
+<p><strong>Example 4:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;words and 987&quot;
+
+<strong>Output:</strong> 0
+
+<strong>Explanation:</strong> The first non-whitespace character is &#39;w&#39;, which is not a numerical 
+
+&nbsp;            digit or a +/- sign. Therefore no valid conversion could be performed.</pre>
+
+
+
+<p><strong>Example 5:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;-91283472332&quot;
+
+<strong>Output:</strong> -2147483648
+
+<strong>Explanation:</strong> The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer.
+
+&nbsp;            Thefore INT_MIN (&minus;2<sup>31</sup>) is returned.</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：找到给定数bit为1的最高位置，将原数取反后，取该位置以后的数。  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> mask = ~<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (num &amp; mask)</span><br><span class="line">        &#123;</span><br><span class="line">            mask &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ~mask &amp; ~num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>解法二：同样是找最高bit为1的位置，找大于给定数的最小2的幂。</p>
-<p>例如：输入5    0x101</p>
-<p>最小2的幂为n = 0x1000, n - 1 = 0xfff</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> t=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(t&lt;=num)</span><br><span class="line">            t=t&lt;&lt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> (t<span class="number">-1</span>)^num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题主要考虑四种情况：</p>
+<ul>
+<li>丢弃所有前面无效空格</li>
+<li>处理数字的符号</li>
+<li>溢出 <strong>(当数值大于INT_MAX，需要输出INT_MAX;小于INT_MIN也一样）</strong></li>
+<li>输入无效</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.size() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, n = str.size(), sign = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 去除前面的空格</span></span><br><span class="line">        <span class="keyword">while</span>(str[i] == <span class="string">' '</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 处理符号位</span></span><br><span class="line">        <span class="keyword">if</span> (str[i] == <span class="string">'-'</span> || str[i] == <span class="string">'+'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            sign = <span class="number">1</span> - <span class="number">2</span> * (str[i++] == <span class="string">'-'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isdigit</span>(str[i]) == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            rv = rv * <span class="number">10</span> + str[i] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="comment">// 处理溢出</span></span><br><span class="line">            <span class="keyword">if</span>(rv * sign &gt;= INT_MAX) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">            <span class="keyword">if</span>(rv * sign &lt;= INT_MIN) <span class="keyword">return</span> INT_MIN; </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv * sign;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -329,13 +417,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/20/number-complement/">number-complement</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月20日 - 22时18分</p>
-        <p><span>最后更新:</span>2019年11月20日 - 22时18分</p>
+        <p><span>发布时间:</span>2019年12月03日 - 22时32分</p>
+        <p><span>最后更新:</span>2019年12月03日 - 22时34分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/20/number-complement/" title="number-complement">https://sky1blue.github.io/2019/11/20/number-complement/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/20/number-complement/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/03/string-to-integer-atoi/" title="string-to-integer-atoi">https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,18 +436,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          license-key-formatting
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/19/heaters/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">heaters</div>
+    <a href="/2019/12/02/zigzag-conversion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">zigzag-conversion</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -370,7 +449,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#476-Number-Complement"><span class="toc-number">1.</span> <span class="toc-text">476. Number Complement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-String-to-Integer-atoi"><span class="toc-number">1.</span> <span class="toc-text">8. String to Integer (atoi)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -421,13 +500,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/21/license-key-formatting/" title="上一篇: license-key-formatting">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/19/heaters/" title="下一篇: heaters">
+            <a href="/2019/12/02/zigzag-conversion/" title="下一篇: zigzag-conversion">
                 <i class="fa fa-angle-right"></i>
             </a>
         
