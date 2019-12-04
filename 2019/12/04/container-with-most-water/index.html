@@ -3,20 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>license-key-formatting | Simon的个人博客</title>
+  <title>container-with-most-water | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="482. License Key FormattingYou are given a license key represented as a string S which consists only alphanumeric character and dashes. The string is separated into N+1 groups by N dashes.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="license-key-formatting">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/21/license-key-formatting/index.html">
+<meta property="og:title" content="container-with-most-water">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/04/container-with-most-water/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="482. License Key FormattingYou are given a license key represented as a string S which consists only alphanumeric character and dashes. The string is separated into N+1 groups by N dashes.">
+<meta property="og:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-21T15:12:42.000Z">
+<meta property="og:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
+<meta property="og:updated_time" content="2019-12-04T14:55:15.585Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="license-key-formatting">
-<meta name="twitter:description" content="482. License Key FormattingYou are given a license key represented as a string S which consists only alphanumeric character and dashes. The string is separated into N+1 groups by N dashes.">
+<meta name="twitter:title" content="container-with-most-water">
+<meta name="twitter:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+<meta name="twitter:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +200,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-license-key-formatting" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-container-with-most-water" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/21/license-key-formatting/" class="article-date">
-      <time datetime="2019-11-21T15:12:40.000Z" itemprop="datePublished">2019-11-21</time>
+      <a href="/2019/12/04/container-with-most-water/" class="article-date">
+      <time datetime="2019-12-04T14:54:30.000Z" itemprop="datePublished">2019-12-04</time>
 </a>
     </div>
   
@@ -215,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      license-key-formatting
+      container-with-most-water
     </h1>
   
 
@@ -230,7 +232,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,44 +242,50 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="482-License-Key-Formatting"><a href="#482-License-Key-Formatting" class="headerlink" title="482. License Key Formatting"></a>482. License Key Formatting</h3><p>You are given a license key represented as a string S which consists only alphanumeric character and dashes. The string is separated into N+1 groups by N dashes.<a id="more"></a></p>
+        <h3 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h3><p>Given <i>n</i> non-negative integers <i>a<sub>1</sub></i>, <i>a<sub>2</sub></i>, ..., <i>a<sub>n&nbsp;</sub></i>, where each represents a point at coordinate (<i>i</i>, <i>a<sub>i</sub></i>). <i>n</i> vertical lines are drawn such that the two endpoints of line <i>i</i> is at (<i>i</i>, <i>a<sub>i</sub></i>) and (<i>i</i>, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<a id="more"></a></p>
 
-<p>Given a number K, we would want to reformat the strings such that each group contains <i>exactly</i> K characters, except for the first group which could be shorter than K, but still must contain at least one character. Furthermore, there must be a dash inserted between two groups and all lowercase letters should be converted to uppercase.</p>
 
-<p>Given a non-empty string S and a number K, format the string according to the rules described above.</p>
 
-<p><b>Example 1:</b><br>
+<p><strong>Note:&nbsp;</strong>You may not slant the container and <i>n</i> is at least 2.</p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<p><img alt src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;"></p>
+
+
+
+<p><small>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain&nbsp;is 49. </small></p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> S = "5F3Z-2e-9-w", K = 4
 
-<p><b>Output:</b> “5F3Z-2E9W”</p>
-<p><b>Explanation:</b> The string S has been split into two parts, each part has 4 characters.<br>Note that the two extra dashes are not needed and can be removed.<br></p></pre></p>
-<p></p>
+<strong>Input:</strong> [1,8,6,2,5,4,8,3,7]
 
-
-<p><b>Example 2:</b><br>
-<pre>
-<b>Input:</b> S = "2-5g-3-J", K = 2
-
-<p><b>Output:</b> “2-5G-3J”</p>
-<p><b>Explanation:</b> The string S has been split into three parts, each part has 2 characters except the first part as it could be shorter as mentioned above.<br></p></pre></p>
-<p></p>
-
-<p><b>Note:</b><br>
-<ol>
-<li>The length of string S will not exceed 12,000, and K is a positive integer.</li>
-<li>String S consists only of alphanumerical characters (a-z and/or A-Z and/or 0-9) and dashes(-).</li>
-<li>String S is non-empty.</li>
-</ol>
-</p>
+<strong>Output:</strong> 49</pre>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：从后往前，每有k个非’-‘字符，添加一个’-‘</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">string licenseKeyFormatting(string s, int K) &#123;</span><br><span class="line">        string rv;</span><br><span class="line">        int n = 0;</span><br><span class="line">        </span><br><span class="line">        for(int i = s.size() - 1; i &gt;= 0; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            if (s[i] != &apos;-&apos;)</span><br><span class="line">            &#123;</span><br><span class="line">                if (n == K)</span><br><span class="line">                &#123;</span><br><span class="line">                    rv += &apos;-&apos;;</span><br><span class="line">                    n = 0;</span><br><span class="line">                &#125;</span><br><span class="line">                rv += toupper(s[i]);</span><br><span class="line">                ++n;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        reverse(rv.begin(), rv.end());</span><br><span class="line">        </span><br><span class="line">        return rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>将上述rv += toupper(s[i]);用rv = toupper(s[i]) + rv; 总是会出现memory limit exceeded错误，这是因为操作符+=重载string&amp; operator+= (const string&amp; str);不会申请新的堆空间，而操作符+，返回的是新的string</strong>。</p>
-<p>摘自高赞解：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">licenseKeyFormatting</span><span class="params">(<span class="built_in">string</span> S, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">      <span class="built_in">string</span> res;</span><br><span class="line">        </span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">auto</span> i = S.rbegin(); i &lt; S.rend(); i++)</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="keyword">if</span> (*i != <span class="string">'-'</span>)</span><br><span class="line">        &#123; <span class="comment">// ignore '-' in original string</span></span><br><span class="line">          <span class="keyword">if</span> (res.size()%(K+<span class="number">1</span>) == K) </span><br><span class="line">              res += <span class="string">'-'</span>; <span class="comment">// every (K+1)th char is '-' from tail</span></span><br><span class="line">          res += <span class="built_in">toupper</span>(*i);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      reverse(res.begin(), res.end());</span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：</p>
+<p>容器中的水量是由容器的宽度和高度决定的，高度是由容器两边中的较短边决定的，宽度越宽，高度越高，那么容器的容量越大。</p>
+<p>基于这样的思路，</p>
+<ul>
+<li>首先选择第一个和最后一个边作为容器候选，是个不错的选择，因为此时的宽度最宽，它的水位是第一行和最后一行中较小的一个的高度。</li>
+<li>那么其他容器的宽度一定比第一个容器宽度小，想要容量大，必须要提高容器的高度，即高度要高于此时容器的最短边，才有可能容量更大，所以从短边开始找，直到找到一个更大的边此时来计算容量是否更大，依次进行下去。</li>
+</ul>
+<p>时间复杂度为$O(n)$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = height.size() - <span class="number">1</span>, maxarea = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> h = min(height[l], height[r]);</span><br><span class="line">            maxarea = max(maxarea, h * (r - l));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (height[l] &lt;= h &amp;&amp; l &lt; r) ++l;</span><br><span class="line">            <span class="keyword">while</span> (height[r] &lt;= h &amp;&amp; l &lt; r) --r;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxarea;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -334,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/21/license-key-formatting/">license-key-formatting</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/04/container-with-most-water/">container-with-most-water</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月21日 - 23时12分</p>
-        <p><span>最后更新:</span>2019年11月21日 - 23时12分</p>
+        <p><span>发布时间:</span>2019年12月04日 - 22时54分</p>
+        <p><span>最后更新:</span>2019年12月04日 - 22时55分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/21/license-key-formatting/" title="license-key-formatting">https://sky1blue.github.io/2019/11/21/license-key-formatting/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/21/license-key-formatting/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/04/container-with-most-water/" title="container-with-most-water">https://sky1blue.github.io/2019/12/04/container-with-most-water/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/04/container-with-most-water/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,18 +361,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/22/max-consecutive-ones/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          max-consecutive-ones
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/20/number-complement/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">number-complement</div>
+    <a href="/2019/12/03/string-to-integer-atoi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">string-to-integer-atoi</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -375,7 +374,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#482-License-Key-Formatting"><span class="toc-number">1.</span> <span class="toc-text">482. License Key Formatting</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Container-With-Most-Water"><span class="toc-number">1.</span> <span class="toc-text">11. Container With Most Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -426,13 +425,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/22/max-consecutive-ones/" title="上一篇: max-consecutive-ones">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/20/number-complement/" title="下一篇: number-complement">
+            <a href="/2019/12/03/string-to-integer-atoi/" title="下一篇: string-to-integer-atoi">
                 <i class="fa fa-angle-right"></i>
             </a>
         
