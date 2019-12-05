@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-of-boomerangs | Simon的个人博客</title>
+  <title>integer-to-roman | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="12. Integer to RomanRoman numerals are represented by seven different symbols:&amp;nbsp;I, V, X, L, C, D and M.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-of-boomerangs">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/13/number-of-boomerangs/index.html">
+<meta property="og:title" content="integer-to-roman">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/05/integer-to-roman/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
+<meta property="og:description" content="12. Integer to RomanRoman numerals are represented by seven different symbols:&amp;nbsp;I, V, X, L, C, D and M.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T14:06:10.000Z">
+<meta property="og:updated_time" content="2019-12-05T14:00:14.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-of-boomerangs">
-<meta name="twitter:description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
+<meta name="twitter:title" content="integer-to-roman">
+<meta name="twitter:description" content="12. Integer to RomanRoman numerals are represented by seven different symbols:&amp;nbsp;I, V, X, L, C, D and M.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-of-boomerangs" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-integer-to-roman" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/13/number-of-boomerangs/" class="article-date">
-      <time datetime="2019-11-13T14:06:09.000Z" itemprop="datePublished">2019-11-13</time>
+      <a href="/2019/12/05/integer-to-roman/" class="article-date">
+      <time datetime="2019-12-05T13:59:02.000Z" itemprop="datePublished">2019-12-05</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-of-boomerangs
+      integer-to-roman
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,35 +240,121 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="447-Number-of-Boomerangs"><a href="#447-Number-of-Boomerangs" class="headerlink" title="447. Number of Boomerangs"></a>447. Number of Boomerangs</h3><p>Given <i>n</i> points in the plane that are all pairwise distinct, a &quot;boomerang&quot; is a tuple of points <code>(i, j, k)</code> such that the distance between <code>i</code> and <code>j</code> equals the distance between <code>i</code> and <code>k</code> (<b>the order of the tuple matters</b>).</p>
+        <h3 id="12-Integer-to-Roman"><a href="#12-Integer-to-Roman" class="headerlink" title="12. Integer to Roman"></a>12. Integer to Roman</h3><p>Roman numerals are represented by seven different symbols:&nbsp;<code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.<a id="more"></a></p>
 
-<p>Find the number of boomerangs. You may assume that <i>n</i> will be at most <b>500</b> and coordinates of points are all in the range <b>[-10000, 10000]</b> (inclusive).</p>
 
-<p><b>Example:</b></p>
 
 <pre>
-<b>Input:</b>
-[[0,0],[1,0],[2,0]]
 
-<b>Output:</b>
-2
+<strong>Symbol</strong>       <strong>Value</strong>
 
-<b>Explanation:</b>
-The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
+I             1
+
+V             5
+
+X             10
+
+L             50
+
+C             100
+
+D             500
+
+M             1000</pre>
+
+
+
+<p>For example,&nbsp;two is written as <code>II</code>&nbsp;in Roman numeral, just two one&#39;s added together. Twelve is written as, <code>XII</code>, which is simply <code>X</code> + <code>II</code>. The number twenty seven is written as <code>XXVII</code>, which is <code>XX</code> + <code>V</code> + <code>II</code>.</p>
+
+
+
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
+
+
+
+<ul>
+
+<pre><code>&lt;li&gt;&lt;code&gt;I&lt;/code&gt; can be placed before &lt;code&gt;V&lt;/code&gt; (5) and &lt;code&gt;X&lt;/code&gt; (10) to make 4 and 9.&amp;nbsp;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;X&lt;/code&gt; can be placed before &lt;code&gt;L&lt;/code&gt; (50) and &lt;code&gt;C&lt;/code&gt; (100) to make 40 and 90.&amp;nbsp;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;C&lt;/code&gt; can be placed before &lt;code&gt;D&lt;/code&gt; (500) and &lt;code&gt;M&lt;/code&gt; (1000) to make 400 and 900.&lt;/li&gt;</code></pre></ul>
+
+
+
+<p>Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong>&nbsp;3
+
+<strong>Output:</strong> &quot;III&quot;</pre>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong>&nbsp;4
+
+<strong>Output:</strong> &quot;IV&quot;</pre>
+
+
+
+<p><strong>Example 3:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong>&nbsp;9
+
+<strong>Output:</strong> &quot;IX&quot;</pre>
+
+
+
+<p><strong>Example 4:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong>&nbsp;58
+
+<strong>Output:</strong> &quot;LVIII&quot;
+
+<strong>Explanation:</strong> L = 50, V = 5, III = 3.
+
 </pre>
 
-<p>&nbsp;</p>
+
+
+<p><strong>Example 5:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong>&nbsp;1994
+
+<strong>Output:</strong> &quot;MCMXCIV&quot;
+
+<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.</pre>
+
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我的解法：暴力解法（Time Limit Exceeded）时间复杂度$O(n^{3})$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (points.size() &lt; <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = points.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == i) <span class="keyword">continue</span>;      </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> ((j == k) || (i == k)) <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span> (getDistance(points[i], points[j]) == getDistance(points[i], points[k]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++rv;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>)(point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) * (point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) +</span><br><span class="line">               (<span class="keyword">long</span>)(point1[<span class="number">1</span>] - point2[<span class="number">1</span>]) * (point1[<span class="number">1</span>] - point2[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>参考解法：时间复杂度$O(n^{2})$</p>
-<p>使用map记录每个距离出现的次数，对于次数m大于一的距离，</p>
-<p>排列数组合，m个中取2个 $A^{2}_{m}$ </p>
-<p>得到以当前点为第一点的组合数，依次类推。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// iterate over all the points</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; points.size(); ++i) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">unordered_map</span>&lt;<span class="keyword">long</span>, <span class="keyword">int</span>&gt; group(points.size());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 记录以i个点，为第一个点，到其他点的距离</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; points.size(); ++j) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (j == i) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">long</span> key = getDistance(points[i], points[j]);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 记录每个距离出现的次数，即得到距离相等点的个数</span></span><br><span class="line">                ++group[key];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : group) &#123;</span><br><span class="line">						    <span class="comment">// 对次数大于1 的做排列组合</span></span><br><span class="line">                <span class="keyword">if</span> (p.second &gt; <span class="number">1</span>) &#123; </span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                     * for all the groups of points, </span></span><br><span class="line"><span class="comment">                     * number of ways to select 2 from n = </span></span><br><span class="line"><span class="comment">                     * nP2 = n!/(n - 2)! = n * (n - 1)</span></span><br><span class="line"><span class="comment">                     */</span></span><br><span class="line">                    res += p.second * (p.second - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 计算距离</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>)(point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) * (point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) +</span><br><span class="line">               (<span class="keyword">long</span>)(point1[<span class="number">1</span>] - point2[<span class="number">1</span>]) * (point1[<span class="number">1</span>] - point2[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题思路很清晰：先列出所有单个数字或两个数字的组合，一共13种。然后从大到小，依次尝试。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">intToRoman</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; val = &#123;<span class="number">1000</span>, <span class="number">900</span>, <span class="number">500</span>, <span class="number">400</span>, <span class="number">100</span>, <span class="number">90</span>, <span class="number">50</span>, <span class="number">40</span>, <span class="number">10</span>, <span class="number">9</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">1</span>&#125;;</span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; sym = &#123;<span class="string">"M"</span>, <span class="string">"CM"</span>, <span class="string">"D"</span>, <span class="string">"CD"</span>, <span class="string">"C"</span>, <span class="string">"XC"</span>, <span class="string">"L"</span>, <span class="string">"XL"</span>, <span class="string">"X"</span>, <span class="string">"IX"</span>, <span class="string">"V"</span>, <span class="string">"IV"</span>, <span class="string">"I"</span>&#125;;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">int</span> i = <span class="number">0</span>, n = val.size();</span><br><span class="line">       <span class="built_in">string</span> rv;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">while</span>(i &lt; n &amp;&amp; num &gt; <span class="number">0</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (num / val[i])</span><br><span class="line">           &#123;</span><br><span class="line">               rv = rv + sym[i];</span><br><span class="line">               num -= val[i];</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           &#123;</span><br><span class="line">               ++i;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> rv;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -325,13 +411,13 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/05/integer-to-roman/">integer-to-roman</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月13日 - 22时06分</p>
-        <p><span>最后更新:</span>2019年11月13日 - 22时06分</p>
+        <p><span>发布时间:</span>2019年12月05日 - 21时59分</p>
+        <p><span>最后更新:</span>2019年12月05日 - 22时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/13/number-of-boomerangs/" title="number-of-boomerangs">https://sky1blue.github.io/2019/11/13/number-of-boomerangs/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/13/number-of-boomerangs/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/05/integer-to-roman/" title="integer-to-roman">https://sky1blue.github.io/2019/12/05/integer-to-roman/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/05/integer-to-roman/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -344,18 +430,18 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
 <nav id="article-nav">
   
-    <a href="/2019/11/13/find-all-numbers-disappeared-in-an-array/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/12/05/3sum/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          find-all-numbers-disappeared-in-an-array
+          3sum
         
       </div>
     </a>
   
   
-    <a href="/2019/11/13/string-compression/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">string-compression</div>
+    <a href="/2019/12/04/container-with-most-water/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">container-with-most-water</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -366,7 +452,7 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#447-Number-of-Boomerangs"><span class="toc-number">1.</span> <span class="toc-text">447. Number of Boomerangs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#12-Integer-to-Roman"><span class="toc-number">1.</span> <span class="toc-text">12. Integer to Roman</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -417,13 +503,13 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/13/find-all-numbers-disappeared-in-an-array/" title="上一篇: find-all-numbers-disappeared-in-an-array">
+            <a href="/2019/12/05/3sum/" title="上一篇: 3sum">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/13/string-compression/" title="下一篇: string-compression">
+            <a href="/2019/12/04/container-with-most-water/" title="下一篇: container-with-most-water">
                 <i class="fa fa-angle-right"></i>
             </a>
         

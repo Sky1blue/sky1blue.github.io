@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-of-boomerangs | Simon的个人博客</title>
+  <title>3sum | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-of-boomerangs">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/13/number-of-boomerangs/index.html">
+<meta property="og:title" content="3sum">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/05/3sum/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
+<meta property="og:description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T14:06:10.000Z">
+<meta property="og:updated_time" content="2019-12-05T14:00:57.433Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-of-boomerangs">
-<meta name="twitter:description" content="447. Number of BoomerangsGiven n points in the plane that are all pairwise distinct, a &amp;quot;boomerang&amp;quot; is a tuple of points (i, j, k) such that the distance between i and j equals the distance b">
+<meta name="twitter:title" content="3sum">
+<meta name="twitter:description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-of-boomerangs" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-3sum" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/13/number-of-boomerangs/" class="article-date">
-      <time datetime="2019-11-13T14:06:09.000Z" itemprop="datePublished">2019-11-13</time>
+      <a href="/2019/12/05/3sum/" class="article-date">
+      <time datetime="2019-12-05T13:59:12.000Z" itemprop="datePublished">2019-12-05</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-of-boomerangs
+      3sum
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,35 +240,44 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="447-Number-of-Boomerangs"><a href="#447-Number-of-Boomerangs" class="headerlink" title="447. Number of Boomerangs"></a>447. Number of Boomerangs</h3><p>Given <i>n</i> points in the plane that are all pairwise distinct, a &quot;boomerang&quot; is a tuple of points <code>(i, j, k)</code> such that the distance between <code>i</code> and <code>j</code> equals the distance between <code>i</code> and <code>k</code> (<b>the order of the tuple matters</b>).</p>
+        <h3 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15. 3Sum"></a>15. 3Sum</h3><p>Given an array <code>nums</code> of <em>n</em> integers, are there elements <em>a</em>, <em>b</em>, <em>c</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> = 0? Find all unique triplets in the array which gives the sum of zero.<a id="more"></a></p>
 
-<p>Find the number of boomerangs. You may assume that <i>n</i> will be at most <b>500</b> and coordinates of points are all in the range <b>[-10000, 10000]</b> (inclusive).</p>
 
-<p><b>Example:</b></p>
+
+<p><strong>Note:</strong></p>
+
+
+
+<p>The solution set must not contain duplicate triplets.</p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
 
 <pre>
-<b>Input:</b>
-[[0,0],[1,0],[2,0]]
 
-<b>Output:</b>
-2
+Given array nums = [-1, 0, 1, 2, -1, -4],
 
-<b>Explanation:</b>
-The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
+
+
+A solution set is:
+
+[
+
+  [-1, 0, 1],
+
+  [-1, -1, 2]
+
+]
+
 </pre>
 
-<p>&nbsp;</p>
-
-
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我的解法：暴力解法（Time Limit Exceeded）时间复杂度$O(n^{3})$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (points.size() &lt; <span class="number">3</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = points.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (j == i) <span class="keyword">continue</span>;      </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> ((j == k) || (i == k)) <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span> (getDistance(points[i], points[j]) == getDistance(points[i], points[k]))</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++rv;</span><br><span class="line">                    &#125;</span><br><span class="line">                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>)(point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) * (point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) +</span><br><span class="line">               (<span class="keyword">long</span>)(point1[<span class="number">1</span>] - point2[<span class="number">1</span>]) * (point1[<span class="number">1</span>] - point2[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>参考解法：时间复杂度$O(n^{2})$</p>
-<p>使用map记录每个距离出现的次数，对于次数m大于一的距离，</p>
-<p>排列数组合，m个中取2个 $A^{2}_{m}$ </p>
-<p>得到以当前点为第一点的组合数，依次类推。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// iterate over all the points</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; points.size(); ++i) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">unordered_map</span>&lt;<span class="keyword">long</span>, <span class="keyword">int</span>&gt; group(points.size());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 记录以i个点，为第一个点，到其他点的距离</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; points.size(); ++j) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (j == i) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">long</span> key = getDistance(points[i], points[j]);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 记录每个距离出现的次数，即得到距离相等点的个数</span></span><br><span class="line">                ++group[key];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : group) &#123;</span><br><span class="line">						    <span class="comment">// 对次数大于1 的做排列组合</span></span><br><span class="line">                <span class="keyword">if</span> (p.second &gt; <span class="number">1</span>) &#123; </span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                     * for all the groups of points, </span></span><br><span class="line"><span class="comment">                     * number of ways to select 2 from n = </span></span><br><span class="line"><span class="comment">                     * nP2 = n!/(n - 2)! = n * (n - 1)</span></span><br><span class="line"><span class="comment">                     */</span></span><br><span class="line">                    res += p.second * (p.second - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 计算距离</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>)(point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) * (point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) +</span><br><span class="line">               (<span class="keyword">long</span>)(point1[<span class="number">1</span>] - point2[<span class="number">1</span>]) * (point1[<span class="number">1</span>] - point2[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：$a + b + c = 0$，先固定a，那么最终变为解 $b+c = -a$，这样可能会出现重复的解，</p>
+<p>解决方法，先排序，然后依次固定a，从当前数往后找解。同时如果$a &gt; 0$，那么$b, c &gt; 0$，$b + c &gt; a &gt; 0$，所以 $b+c = -a$不可能存在解。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; threeSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::sort(num.begin(), num.end());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.size(); i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> target = -num[i];</span><br><span class="line">        <span class="keyword">int</span> front = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> back = num.size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (target &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (front &lt; back) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> sum = num[front] + num[back];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Finding answer which start from number num[i]</span></span><br><span class="line">            <span class="keyword">if</span> (sum &lt; target)</span><br><span class="line">                front++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target)</span><br><span class="line">                back--;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; triplet(<span class="number">3</span>, <span class="number">0</span>);</span><br><span class="line">                triplet[<span class="number">0</span>] = num[i];</span><br><span class="line">                triplet[<span class="number">1</span>] = num[front];</span><br><span class="line">                triplet[<span class="number">2</span>] = num[back];</span><br><span class="line">                res.push_back(triplet);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Processing duplicates of Number 2</span></span><br><span class="line">                <span class="comment">// Rolling the front pointer to the next different number forwards</span></span><br><span class="line">                <span class="keyword">while</span> (front &lt; back &amp;&amp; num[front] == triplet[<span class="number">1</span>]) ++front;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Processing duplicates of Number 3</span></span><br><span class="line">                <span class="comment">// Rolling the back pointer to the next different number backwards</span></span><br><span class="line">                <span class="keyword">while</span> (front &lt; back &amp;&amp; num[back] == triplet[<span class="number">2</span>]) --back;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Processing duplicates of Number 1</span></span><br><span class="line">        <span class="keyword">while</span> (i + <span class="number">1</span> &lt; num.size() &amp;&amp; num[i + <span class="number">1</span>] == num[i]) </span><br><span class="line">            i++;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -325,13 +334,13 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/05/3sum/">3sum</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月13日 - 22时06分</p>
-        <p><span>最后更新:</span>2019年11月13日 - 22时06分</p>
+        <p><span>发布时间:</span>2019年12月05日 - 21时59分</p>
+        <p><span>最后更新:</span>2019年12月05日 - 22时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/13/number-of-boomerangs/" title="number-of-boomerangs">https://sky1blue.github.io/2019/11/13/number-of-boomerangs/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/13/number-of-boomerangs/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/05/3sum/" title="3sum">https://sky1blue.github.io/2019/12/05/3sum/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/05/3sum/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -344,18 +353,9 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
 <nav id="article-nav">
   
-    <a href="/2019/11/13/find-all-numbers-disappeared-in-an-array/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          find-all-numbers-disappeared-in-an-array
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/13/string-compression/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">string-compression</div>
+    <a href="/2019/12/05/integer-to-roman/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">integer-to-roman</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -366,7 +366,7 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#447-Number-of-Boomerangs"><span class="toc-number">1.</span> <span class="toc-text">447. Number of Boomerangs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3Sum"><span class="toc-number">1.</span> <span class="toc-text">15. 3Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -417,13 +417,11 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/13/find-all-numbers-disappeared-in-an-array/" title="上一篇: find-all-numbers-disappeared-in-an-array">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/13/string-compression/" title="下一篇: string-compression">
+            <a href="/2019/12/05/integer-to-roman/" title="下一篇: integer-to-roman">
                 <i class="fa fa-angle-right"></i>
             </a>
         
