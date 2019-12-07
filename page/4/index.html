@@ -201,6 +201,74 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-assign-cookies" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/17/assign-cookies/" class="article-date">
+      <time datetime="2019-11-17T02:45:33.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/assign-cookies/">assign-cookies</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="455-Assign-Cookies"><a href="#455-Assign-Cookies" class="headerlink" title="455. Assign Cookies"></a>455. Assign Cookies</h3><p>
+Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor g<sub>i</sub>, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size s<sub>j</sub>. If s<sub>j</sub> >= g<sub>i</sub>, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/11/17/assign-cookies/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-minimum-moves-to-equal-array-elements" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1442,100 +1510,6 @@ Return false.</code></pre><p>本题要求判断所给的树是否为高度平衡
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/11/栈和队列/" class="article-date">
-      <time datetime="2019-07-11T07:21:59.000Z" itemprop="datePublished">2019-07-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/栈和队列/">栈和队列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="算法导论-10-1-6"><a href="#算法导论-10-1-6" class="headerlink" title="算法导论 10.1-6"></a>算法导论 10.1-6</h3><blockquote>
-<p>题目：说明如何用两个栈来实现一个队列，并分析有关队列操作的运行时间。</p>
-</blockquote>
-<ol>
-<li><p><strong>思考</strong></p>
-<p>栈实现的是先入后出策略，而队列实现的是先入先出策略。用栈实现队列重点是要实现出队。</p>
-<p>两个栈一个实现入队一个实现出队，要使出队的栈的栈顶为先入的元素，就要将入队的栈的元素弹出同时逆序压入出队的栈。</p>
-</li>
-<li><p><strong>实现</strong></p>
-<p>假定两个栈<code>A</code>和​<code>B</code>。</p>
-<p>入队：向栈<code>A</code>中压入元素。</p>
-<p>出队：从栈<code>B</code>中弹出元素。当<code>B</code>中为空时，将A中的所有元素弹出（此时得到的元素为压入的逆序）然后将这些元素压入栈<code>B</code>，在对<code>B</code>执行<code>pop</code>，完成出队。</p>
-</li>
-<li><p><strong>运行时间</strong></p>
-<p>入队：<code>O(1)</code></p>
-<p>出队：最差情况为<code>O(n)</code>，当栈<code>B</code>为空时。</p>
-</li>
-</ol>
-<h3 id="算法导论-10-1-7"><a href="#算法导论-10-1-7" class="headerlink" title="算法导论 10.1-7"></a>算法导论 10.1-7</h3><blockquote>
-<p>题目：说明如何用两个队列来实现一个栈，并分析有关栈操作的运行时间。</p>
-</blockquote>
-<ol>
-<li><p><strong>实现</strong></p>
-<p>假定两个队列<code>A</code>和<code>B</code>。先设定<code>A</code>为主队列，<code>B</code>为从队列</p>
-<p>压入：主队列（<code>A</code>）元素入队。</p>
-<p>弹出：只保留最后一个主队列（<code>A</code>）入队的元素，将<code>A</code>中的其他元素出队再入队从队列（<code>B</code>），将主队列（<code>A</code>）中最后最后一个元素出队，即为弹出的元素。此时主从队列角色互换。</p>
-</li>
-<li><p>运行时间</p>
-<p>压入：<code>O(1)</code></p>
-<p>弹出：<code>O(n)</code>，<code>n</code>为栈中元素的个数。</p>
-</li>
-</ol>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法导论/">算法导论</a><a class="article-category-link" href="/categories/算法导论/数据结构/">数据结构</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
     </div>
 
       
