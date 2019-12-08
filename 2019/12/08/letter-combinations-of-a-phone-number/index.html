@@ -3,20 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>hamming-distance | Simon的个人博客</title>
+  <title>letter-combinations-of-a-phone-number | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="461. Hamming DistanceThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="17. Letter Combinations of a Phone NumberGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hamming-distance">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/18/hamming-distance/index.html">
+<meta property="og:title" content="letter-combinations-of-a-phone-number">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/08/letter-combinations-of-a-phone-number/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="461. Hamming DistanceThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.">
+<meta property="og:description" content="17. Letter Combinations of a Phone NumberGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-18T14:08:52.000Z">
+<meta property="og:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png">
+<meta property="og:updated_time" content="2019-12-08T14:04:21.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hamming-distance">
-<meta name="twitter:description" content="461. Hamming DistanceThe Hamming distance between two integers is the number of positions at which the corresponding bits are different.">
+<meta name="twitter:title" content="letter-combinations-of-a-phone-number">
+<meta name="twitter:description" content="17. Letter Combinations of a Phone NumberGiven a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent.">
+<meta name="twitter:image" content="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +200,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hamming-distance" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-letter-combinations-of-a-phone-number" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/18/hamming-distance/" class="article-date">
-      <time datetime="2019-11-18T14:08:51.000Z" itemprop="datePublished">2019-11-18</time>
+      <a href="/2019/12/08/letter-combinations-of-a-phone-number/" class="article-date">
+      <time datetime="2019-12-08T14:04:09.000Z" itemprop="datePublished">2019-12-08</time>
 </a>
     </div>
   
@@ -215,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hamming-distance
+      letter-combinations-of-a-phone-number
     </h1>
   
 
@@ -230,7 +232,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,27 +242,45 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="461-Hamming-Distance"><a href="#461-Hamming-Distance" class="headerlink" title="461. Hamming Distance"></a>461. Hamming Distance</h3><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.<a id="more"></a></p>
+        <h3 id="17-Letter-Combinations-of-a-Phone-Number"><a href="#17-Letter-Combinations-of-a-Phone-Number" class="headerlink" title="17. Letter Combinations of a Phone Number"></a>17. Letter Combinations of a Phone Number</h3><p>Given a string containing digits from <code>2-9</code> inclusive, return all possible letter combinations that the number could represent.<a id="more"></a></p>
 
-<p>Given two integers <code>x</code> and <code>y</code>, calculate the Hamming distance.</p>
 
-<p><b>Note:</b><br>
-0 &le; <code>x</code>, <code>y</code> &lt; 2<sup>31</sup>.
-</p>
 
-<p><b>Example:</b>
+<p>A mapping of digit to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.</p>
+
+
+
+<p><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png"></p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> x = 1, y = 4
 
-<p><b>Output:</b> 2</p>
-<p><b>Explanation:</b><br>1   (0 0 0 1)<br>4   (0 1 0 0)<br>       &uarr;   &uarr;</p>
-<p>The above arrows point to positions where the corresponding bits are different.<br></p></pre></p>
-<p></p>
+<strong>Input: </strong>&quot;23&quot;
+
+<strong>Output:</strong> [&quot;ad&quot;, &quot;ae&quot;, &quot;af&quot;, &quot;bd&quot;, &quot;be&quot;, &quot;bf&quot;, &quot;cd&quot;, &quot;ce&quot;, &quot;cf&quot;].
+
+</pre>
+
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<p>Although the above answer is in lexicographical order, your answer could be in any order you want.</p>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：方法很明确，先将输入进行异或，然后统计输出的32位中有多少个bit1。</p>
-<p>与<a href="https://leetcode.com/problems/number-of-1-bits/" target="_blank" rel="noopener">题目191</a>类似。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingDistance</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> n = x ^ y, rv = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">while</span> (n != <span class="number">0</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           ++rv;</span><br><span class="line">           n &amp;= (n - <span class="number">1</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> rv;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：迭代法。</p>
+<p>第一想法是，n个循环，n为字符串的长度，但是没有想好每次循环得到的结果如何保存和处理，下面的解借鉴的discuss部分的解法：将每次的解放到新的vector中。</p>
+<p>时间复杂度：$O(n * 4^{n})$，n为字符串的长度。内层的两路循环，最终相当于一个等比数列求和，（前提是每个数字都值代表相同的字符个数）。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">char</span>, <span class="built_in">string</span>&gt; um = &#123;</span><br><span class="line">    &#123;<span class="string">'2'</span>, <span class="string">"abc"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'3'</span>, <span class="string">"def"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'4'</span>, <span class="string">"ghi"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'5'</span>, <span class="string">"jkl"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'6'</span>, <span class="string">"mno"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'7'</span>, <span class="string">"pqrs"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'8'</span>, <span class="string">"tuv"</span>&#125;,</span><br><span class="line">    &#123;<span class="string">'9'</span>, <span class="string">"wxyz"</span>&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; letterCombinations(<span class="built_in">string</span> digits) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rv;</span><br><span class="line">        <span class="keyword">if</span> (digits.size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> rv;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        rv.push_back(<span class="string">""</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = digits.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; temp;</span><br><span class="line">            <span class="built_in">string</span> chars = um[digits[i]];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>, m = chars.size(); j &lt; m; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>, l = rv.size(); k &lt; l; ++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    temp.push_back(rv[k] + chars[j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            rv = temp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -317,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/18/hamming-distance/">hamming-distance</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月18日 - 22时08分</p>
-        <p><span>最后更新:</span>2019年11月18日 - 22时08分</p>
+        <p><span>发布时间:</span>2019年12月08日 - 22时04分</p>
+        <p><span>最后更新:</span>2019年12月08日 - 22时04分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/18/hamming-distance/" title="hamming-distance">https://sky1blue.github.io/2019/11/18/hamming-distance/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/18/hamming-distance/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/08/letter-combinations-of-a-phone-number/" title="letter-combinations-of-a-phone-number">https://sky1blue.github.io/2019/12/08/letter-combinations-of-a-phone-number/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/08/letter-combinations-of-a-phone-number/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -336,18 +356,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/19/island-perimeter/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          island-perimeter
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/repeated-substring-pattern/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">repeated-substring-pattern</div>
+    <a href="/2019/12/07/3sum-closest/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">3sum-closest</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -358,7 +369,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#461-Hamming-Distance"><span class="toc-number">1.</span> <span class="toc-text">461. Hamming Distance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#17-Letter-Combinations-of-a-Phone-Number"><span class="toc-number">1.</span> <span class="toc-text">17. Letter Combinations of a Phone Number</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -409,13 +420,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/19/island-perimeter/" title="上一篇: island-perimeter">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/repeated-substring-pattern/" title="下一篇: repeated-substring-pattern">
+            <a href="/2019/12/07/3sum-closest/" title="下一篇: 3sum-closest">
                 <i class="fa fa-angle-right"></i>
             </a>
         
