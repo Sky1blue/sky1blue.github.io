@@ -201,6 +201,108 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-C语言中，static关键字作用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/28/C语言中，static关键字作用/" class="article-date">
+      <time datetime="2019-07-28T06:32:32.000Z" itemprop="datePublished">2019-07-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="static修饰变量"><a href="#static修饰变量" class="headerlink" title="static修饰变量"></a>static修饰变量</h3><ol>
+<li><p>在块中使用static修饰变量</p>
+<ul>
+<li><p>它具有静态存储持续时间、块范围和无链接。</p>
+<ul>
+<li>即作用域只能在块中，无法被块外的程序调用；变量在程序加载时创建，在程序终止时结束。</li>
+</ul>
+</li>
+<li><p>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0.</p>
+</li>
+</ul>
+</li>
+</ol>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">	<span class="keyword">for</span> (count = <span class="number">1</span>; count &lt;= <span class="number">3</span>; count++)</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Here comes iteration %d:\n"</span>, count);</span><br><span class="line">        trystat();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fade = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> stay = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"fade = %d and stay = %d\n"</span>, fade++, stay++);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>程序执行结果</strong>：</p>
+<p>Here comes iteration 1:<br>fade = 1 and stay = 1<br>Here comes iteration 2:<br>fade = 1 and stay = 2<br>Here comes iteration 3:<br>fade = 1 and stay = 3</p>
+<p>(1) 这里变量<code>stay</code> ,它从程序加载时开始存在，直到程序终止。但是它的范围仅限于<code>trystat()</code>函数块。只有当这个函数执行时，程序才能使用<code>stay</code>访问它指定的对象.<br>(2) 变量<code>stay</code>记得它的值增加了1，但是变量fade每次都会重新开始。这指出了初始化的不同之处:<code>fade</code>在<code>trystat()</code>每次调用都从新初始化，而<code>stay</code>变量只初始化一次。<br>(3) 静态变量在程序加载到内存之后就已经就位了。将语句<code>static int stay = 1;</code>放在trystat()函数中告诉编译器，只允许<code>trystat()</code>函数查看变量;它不是在运行时执行的语句。</p>
+<ol start="2">
+<li>在任何函数外部使用static修饰变量</li>
+</ol>
+<ul>
+<li><p>它具有静态存储时间、文件范围和内部链接。</p>
+<p>  即作用域在当前文件之中(只能被同一文件中的函数使用)，无法被其他文件调用</p>
+</li>
+<li><p>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0。</p>
+</li>
+</ul>
+<h3 id="使用static修饰函数"><a href="#使用static修饰函数" class="headerlink" title="使用static修饰函数"></a>使用static修饰函数</h3><ul>
+<li>作用域限制在当前定义的文件中使用，从而避免了多文件函数名称冲突的可能性。通常文件中不作为接口的函数，建议使用static修饰，这样避免不同文件使用相同的函数名发生冲突。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> BOOL wavTaskCreated = FALSE;</span><br><span class="line"><span class="keyword">static</span> QueueHandle_t wav_msg_queue = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">static</span> WAV_PLAY_QUEUE_t wavPlayQueue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">bool</span> wav_get_version_flag = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> wav_version[<span class="number">32</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> uint8_t *<span class="title">Wav_GetFileName</span><span class="params">(WAV_TYPE_t wav_type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetFileInfo</span><span class="params">(WAV_FILE_INFO_t *pFileInfo, <span class="keyword">uint8_t</span> *pFileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetVersion_Internal</span><span class="params">(WAV_FILE_INFO_t *pFileInfo)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_ReadFile</span><span class="params">(<span class="keyword">uint8_t</span> *pData, <span class="keyword">uint32_t</span> offset, <span class="keyword">uint32_t</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_SendToDA</span><span class="params">(<span class="keyword">uint8_t</span> *pFile, <span class="keyword">uint32_t</span> <span class="built_in">size</span>,  <span class="keyword">uint32_t</span> volume)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Put_Queue</span><span class="params">(WAV_TYPE_t wav_type, BOOL fromISR)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Get_Queue</span><span class="params">(WAV_TYPE_t *pWavType)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_Play_Inernal</span><span class="params">(WAV_TYPE_t wav_type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Wav_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    DA_Init(<span class="number">16000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!wavTaskCreated)</span><br><span class="line">    &#123;</span><br><span class="line">        wavTaskCreated = TRUE;</span><br><span class="line">        xTaskCreate(wav_task, <span class="string">"WAV"</span>, STACK_SIZE_TASK_WAV, <span class="literal">NULL</span>, PRIORITY_TASK_WAV, <span class="literal">NULL</span>);</span><br><span class="line">        wav_msg_queue = xQueueCreate(WAV_MSG_QUEUE_LENGTH, <span class="keyword">sizeof</span>(WAV_MESSAGE_t));</span><br><span class="line"></span><br><span class="line">        wavPlayQueue.pWavTypeTable = <span class="built_in">malloc</span>(WAV_PALY_QUEUE_MAX * <span class="keyword">sizeof</span>(WAV_TYPE_t));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wavPlayQueue.front = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.<span class="built_in">end</span> = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.sizeNow = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.totalSize = WAV_PALY_QUEUE_MAX;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Wav_Play</span><span class="params">(WAV_TYPE_t wav_type, <span class="keyword">bool</span> force)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!wavTaskCreated)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (force)</span><br><span class="line">    &#123;</span><br><span class="line">        vPortEnterCritical();</span><br><span class="line"></span><br><span class="line">        watchdog_feed();</span><br><span class="line">        </span><br><span class="line">        Wav_Play_Inernal(wav_type);</span><br><span class="line">        </span><br><span class="line">        vPortExitCritical();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">bool</span> rv = Wav_Put_Queue(wav_type, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    vTaskDelay(<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>上述为某平台使用DA播放wav的程序片段，</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> uint8_t *<span class="title">Wav_GetFileName</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetFileInfo</span><span class="params">(WAV_FILE_INFO_t *pFileInfo, <span class="keyword">uint8_t</span> *pFileName)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetVersion_Internal</span><span class="params">(WAV_FILE_INFO_t *pFileInfo)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_ReadFile</span><span class="params">(<span class="keyword">uint8_t</span> *pData, <span class="keyword">uint32_t</span> offset, <span class="keyword">uint32_t</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_SendToDA</span><span class="params">(<span class="keyword">uint8_t</span> *pFile, <span class="keyword">uint32_t</span> <span class="built_in">size</span>,  <span class="keyword">uint32_t</span> volume)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Put_Queue</span><span class="params">(WAV_TYPE_t wav_type, BOOL fromISR)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Get_Queue</span><span class="params">(WAV_TYPE_t *pWavType)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_Play_Inernal</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述函数为内部函数使用<code>static</code>修饰。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Wav_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Wav_Play</span><span class="params">(WAV_TYPE_t wav_type, <span class="keyword">bool</span> force)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述两个函数为模块接口（初始化DA和播放wav功能）供外部调用，没有使用static修饰。</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a><a class="article-category-link" href="/categories/编程语言/c/">c</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-javascript高级程序笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

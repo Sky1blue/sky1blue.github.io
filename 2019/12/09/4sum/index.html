@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>power-of-two | Simon的个人博客</title>
+  <title>4sum | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="231. Power of TwoGiven an integer, write a function to determine if it is a power of two.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="18. 4SumGiven an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the su">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="power-of-two">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/power-of-two/index.html">
+<meta property="og:title" content="4sum">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/09/4sum/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="231. Power of TwoGiven an integer, write a function to determine if it is a power of two.">
+<meta property="og:description" content="18. 4SumGiven an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the su">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T03:18:14.000Z">
+<meta property="og:updated_time" content="2019-12-09T14:40:51.206Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="power-of-two">
-<meta name="twitter:description" content="231. Power of TwoGiven an integer, write a function to determine if it is a power of two.">
+<meta name="twitter:title" content="4sum">
+<meta name="twitter:description" content="18. 4SumGiven an array nums of n integers and an integer target, are there elements a, b, c, and d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the su">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-power-of-two" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-4sum" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/power-of-two/" class="article-date">
-      <time datetime="2019-11-17T03:18:13.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2019/12/09/4sum/" class="article-date">
+      <time datetime="2019-12-09T14:40:23.000Z" itemprop="datePublished">2019-12-09</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      power-of-two
+      4sum
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,36 +240,47 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="231-Power-of-Two"><a href="#231-Power-of-Two" class="headerlink" title="231. Power of Two"></a>231. Power of Two</h3><p>Given an integer, write a function to determine if it is a power of two.<a id="more"></a></p>
+        <h3 id="18-4Sum"><a href="#18-4Sum" class="headerlink" title="18. 4Sum"></a>18. 4Sum</h3><p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, are there elements <em>a</em>, <em>b</em>, <em>c</em>, and <em>d</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> + <em>d</em> = <code>target</code>? Find all unique quadruplets in the array which gives the sum of <code>target</code>.<a id="more"></a></p>
 
-<p><strong>Example 1:</strong></p>
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<p>The solution set must not contain duplicate quadruplets.</p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
 
 <pre>
-<strong>Input:</strong> 1
-<strong>Output:</strong> true 
-<strong>Explanation: </strong>2<sup>0</sup>&nbsp;= 1
+
+Given array nums = [1, 0, -1, 0, -2, 2], and target = 0.
+
+
+
+A solution set is:
+
+[
+
+  [-1,  0, 0, 1],
+
+  [-2, -1, 1, 2],
+
+  [-2,  0, 0, 2]
+
+]
+
 </pre>
 
-<p><strong>Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> 16
-<strong>Output:</strong> true
-<strong>Explanation: </strong>2<sup>4</sup>&nbsp;= 16</pre>
-
-<p><strong>Example 3:</strong></p>
-
-<pre>
-<strong>Input:</strong> 218
-<strong>Output:</strong> false</pre>
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>常规解法：统计bit为1的位的个数，如果为1，即为2的幂。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> countbits = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">31</span>; ++i, n &gt;&gt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            countbits += (n &amp; <span class="number">0x01</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (countbits == <span class="number">1</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>高赞解法：主要思想如果一个数为2的幂，那么它的二进制表达一定可以写成1000..00，所以n-1可以写成0111..11，所以$n &amp; (n-1)$一定为0，同时排除为n为0的情况。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (n &gt; <span class="number">0</span>) &amp;&amp; !(n &amp; (n - <span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题其实就是<a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">题15 .Sum</a>的扩展，解法相似，先固定两个值，然后在用双指针解法，遍历整个数组，找到解，<strong>需要重点注意去掉重复的解</strong>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; fourSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; rv;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">4</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> rv;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> sum = target - nums[i] - nums[j];</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">int</span> l = j + <span class="number">1</span>, r = n - <span class="number">1</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = nums[l] + nums[r];</span><br><span class="line">                    <span class="keyword">if</span> (temp &lt; sum)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ++l;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span> (temp &gt; sum)</span><br><span class="line">                    &#123;</span><br><span class="line">                        --r;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v(<span class="number">4</span>);</span><br><span class="line">                        v[<span class="number">0</span>] = nums[i];</span><br><span class="line">                        v[<span class="number">1</span>] = nums[j];</span><br><span class="line">                        v[<span class="number">2</span>] = nums[l];</span><br><span class="line">                        v[<span class="number">3</span>] = nums[r];</span><br><span class="line">                        </span><br><span class="line">                        rv.push_back(v);</span><br><span class="line">                        </span><br><span class="line">                      	<span class="comment">// 去掉重复的解（第三、第四个值）</span></span><br><span class="line">                        <span class="keyword">while</span>(l &lt; r &amp;&amp; nums[l] == v[<span class="number">2</span>]) ++l;</span><br><span class="line">                        <span class="keyword">while</span>(l &lt; r &amp;&amp; nums[r] == v[<span class="number">3</span>]) --r;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 去掉重复的第2个值</span></span><br><span class="line">                <span class="keyword">int</span> temp = nums[j];</span><br><span class="line">                <span class="keyword">while</span>(j &lt; n &amp;&amp; nums[j] == temp) ++j;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 去掉重复的第1个值</span></span><br><span class="line">            <span class="keyword">int</span> temp = nums[i];</span><br><span class="line">            <span class="keyword">while</span>(i &lt; n &amp;&amp; nums[i] == temp) ++i;</span><br><span class="line">            --i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -326,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/power-of-two/">power-of-two</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/09/4sum/">4sum</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时18分</p>
-        <p><span>最后更新:</span>2019年11月17日 - 11时18分</p>
+        <p><span>发布时间:</span>2019年12月09日 - 22时40分</p>
+        <p><span>最后更新:</span>2019年12月09日 - 22时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/power-of-two/" title="power-of-two">https://sky1blue.github.io/2019/11/17/power-of-two/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/power-of-two/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/09/4sum/" title="4sum">https://sky1blue.github.io/2019/12/09/4sum/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/09/4sum/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -345,18 +356,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/power-of-three/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          power-of-three
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/number-of-1-bits/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">number-of-1-bits</div>
+    <a href="/2019/12/08/letter-combinations-of-a-phone-number/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">letter-combinations-of-a-phone-number</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -367,7 +369,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#231-Power-of-Two"><span class="toc-number">1.</span> <span class="toc-text">231. Power of Two</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#18-4Sum"><span class="toc-number">1.</span> <span class="toc-text">18. 4Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -418,13 +420,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/power-of-three/" title="上一篇: power-of-three">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/number-of-1-bits/" title="下一篇: number-of-1-bits">
+            <a href="/2019/12/08/letter-combinations-of-a-phone-number/" title="下一篇: letter-combinations-of-a-phone-number">
                 <i class="fa fa-angle-right"></i>
             </a>
         
