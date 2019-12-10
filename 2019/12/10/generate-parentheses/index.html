@@ -3,22 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>container-with-most-water | Simon的个人博客</title>
+  <title>generate-parentheses | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+  <meta name="description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="container-with-most-water">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/04/container-with-most-water/index.html">
+<meta property="og:title" content="generate-parentheses">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/10/generate-parentheses/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+<meta property="og:description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
-<meta property="og:updated_time" content="2019-12-04T14:55:15.585Z">
+<meta property="og:updated_time" content="2019-12-10T15:04:24.535Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="container-with-most-water">
-<meta name="twitter:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
-<meta name="twitter:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
+<meta name="twitter:title" content="generate-parentheses">
+<meta name="twitter:description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -200,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-container-with-most-water" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-generate-parentheses" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/04/container-with-most-water/" class="article-date">
-      <time datetime="2019-12-04T14:54:30.000Z" itemprop="datePublished">2019-12-04</time>
+      <a href="/2019/12/10/generate-parentheses/" class="article-date">
+      <time datetime="2019-12-10T15:02:47.000Z" itemprop="datePublished">2019-12-10</time>
 </a>
     </div>
   
@@ -217,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      container-with-most-water
+      generate-parentheses
     </h1>
   
 
@@ -242,50 +240,45 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h3><p>Given <i>n</i> non-negative integers <i>a<sub>1</sub></i>, <i>a<sub>2</sub></i>, ..., <i>a<sub>n&nbsp;</sub></i>, where each represents a point at coordinate (<i>i</i>, <i>a<sub>i</sub></i>). <i>n</i> vertical lines are drawn such that the two endpoints of line <i>i</i> is at (<i>i</i>, <i>a<sub>i</sub></i>) and (<i>i</i>, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<a id="more"></a></p>
+        <h3 id="22-Generate-Parentheses"><a href="#22-Generate-Parentheses" class="headerlink" title="22. Generate Parentheses"></a>22. Generate Parentheses</h3><p>
+
+</p><p>Given <i>n</i> pairs of parentheses, write a function to generate all combinations of well-formed parentheses.</p>
+<a id="more"></a><p></p>
 
 
 
-<p><strong>Note:&nbsp;</strong>You may not slant the container and <i>n</i> is at least 2.</p>
+<p>
 
-
-
-<p>&nbsp;</p>
-
-
-
-<p><img alt src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;"></p>
-
-
-
-<p><small>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain&nbsp;is 49. </small></p>
-
-
-
-<p>&nbsp;</p>
-
-
-
-<p><strong>Example:</strong></p>
-
-
+</p><p>For example, given <i>n</i> = 3, a solution set is:</p>
+<p></p>
 
 <pre>
 
-<strong>Input:</strong> [1,8,6,2,5,4,8,3,7]
+[
 
-<strong>Output:</strong> 49</pre>
+  "((()))",
+
+  "(()())",
+
+  "(())()",
+
+  "()(())",
+
+  "()()()"
+
+]
+
+</pre>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：</p>
-<p>容器中的水量是由容器的宽度和高度决定的，高度是由容器两边中的较短边决定的，宽度越宽，高度越高，那么容器的容量越大。</p>
-<p>基于这样的思路，</p>
-<ul>
-<li>首先选择第一个和最后一个边作为容器候选，是个不错的选择，因为此时的宽度最宽，它的水位是第一行和最后一行中较小的一个的高度。</li>
-<li>那么其他容器的宽度一定比第一个容器宽度小，想要容量大，必须要提高容器的高度，即高度要高于此时容器的最短边，才有可能容量更大，所以从短边开始找，直到找到一个更大的边此时来计算容量是否更大，依次进行下去。</li>
-</ul>
-<p>时间复杂度为$O(n)$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = height.size() - <span class="number">1</span>, maxarea = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> h = min(height[l], height[r]);</span><br><span class="line">            maxarea = max(maxarea, h * (r - l));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (height[l] &lt;= h &amp;&amp; l &lt; r) ++l;</span><br><span class="line">            <span class="keyword">while</span> (height[r] &lt;= h &amp;&amp; l &lt; r) --r;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxarea;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：<a href="https://www.youtube.com/watch?v=sz1qaKt0KGQ" target="_blank" rel="noopener">参考视频</a></p>
+<ol>
+<li>每次我们可以选择左括号和右括号</li>
+<li>限制条件，如果剩余的左括号数等于右括号数，说明之前的都是成对的，那么当前只能选择左括号；如果剩余的左括号数小于右括号数，那么当前既可以选择左括号又可以选择右括号。</li>
+<li>结束条件：左括号数+右括号数等于 $2 * n$</li>
+</ol>
+<p>在代码中，每次都是判断能否先放左括号，所以剩余的最括号数一定小于等于右括号数，所以只要判断左括号数是否小于n。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; generateParenthesis(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; v;</span><br><span class="line">        backtrack(n, <span class="string">""</span>, <span class="number">0</span>, <span class="number">0</span>, v);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> v;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> &amp;n, <span class="built_in">string</span> s, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;v)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.size() == <span class="number">2</span> * n)</span><br><span class="line">        &#123;</span><br><span class="line">            v.push_back(s);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (left &lt; n)</span><br><span class="line">        &#123;</span><br><span class="line">            backtrack(n, s + <span class="string">'('</span>, left + <span class="number">1</span>, right, v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (right &lt; left)</span><br><span class="line">        &#123;</span><br><span class="line">            backtrack(n, s + <span class="string">')'</span>, left, right + <span class="number">1</span>, v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -342,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/04/container-with-most-water/">container-with-most-water</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/10/generate-parentheses/">generate-parentheses</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月04日 - 22时54分</p>
-        <p><span>最后更新:</span>2019年12月04日 - 22时55分</p>
+        <p><span>发布时间:</span>2019年12月10日 - 23时02分</p>
+        <p><span>最后更新:</span>2019年12月10日 - 23时04分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/04/container-with-most-water/" title="container-with-most-water">https://sky1blue.github.io/2019/12/04/container-with-most-water/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/04/container-with-most-water/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/10/generate-parentheses/" title="generate-parentheses">https://sky1blue.github.io/2019/12/10/generate-parentheses/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/10/generate-parentheses/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -361,18 +354,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/05/integer-to-roman/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          integer-to-roman
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/03/string-to-integer-atoi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">string-to-integer-atoi</div>
+    <a href="/2019/12/09/4sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">4sum</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,7 +367,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Container-With-Most-Water"><span class="toc-number">1.</span> <span class="toc-text">11. Container With Most Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#22-Generate-Parentheses"><span class="toc-number">1.</span> <span class="toc-text">22. Generate Parentheses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -434,13 +418,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/05/integer-to-roman/" title="上一篇: integer-to-roman">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/03/string-to-integer-atoi/" title="下一篇: string-to-integer-atoi">
+            <a href="/2019/12/09/4sum/" title="下一篇: 4sum">
                 <i class="fa fa-angle-right"></i>
             </a>
         
