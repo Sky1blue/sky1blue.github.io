@@ -6,14 +6,14 @@
   <title>generate-parentheses | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
-<meta name="keywords" content="Medium">
+<meta name="keywords" content="Medium,backtrack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="generate-parentheses">
 <meta property="og:url" content="https://sky1blue.github.io/2019/12/10/generate-parentheses/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
 <meta property="og:description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-10T15:14:35.346Z">
+<meta property="og:updated_time" content="2019-12-11T01:11:32.118Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="generate-parentheses">
 <meta name="twitter:description" content="22. Generate Parentheses  Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.">
@@ -134,7 +134,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/Medium/" style="font-size: 17.5px;">Medium</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 12.5px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 15px;">tree</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/Medium/" style="font-size: 17.5px;">Medium</a> <a href="/tags/backtrack/" style="font-size: 10px;">backtrack</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 12.5px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 15px;">tree</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/backtrack/">backtrack</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -272,6 +272,7 @@
 
 <hr>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：<a href="https://www.youtube.com/watch?v=sz1qaKt0KGQ" target="_blank" rel="noopener">参考视频</a></p>
+<p>这题是典型的backtrack问题。</p>
 <ol>
 <li>每次我们可以选择左括号和右括号</li>
 <li>限制条件，如果剩余的左括号数等于右括号数，说明之前的都是成对的，那么当前只能选择左括号；如果剩余的左括号数小于右括号数，那么当前既可以选择左括号又可以选择右括号。</li>
@@ -338,7 +339,7 @@
         <p><span>本文标题:</span><a href="/2019/12/10/generate-parentheses/">generate-parentheses</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
         <p><span>发布时间:</span>2019年12月10日 - 23时02分</p>
-        <p><span>最后更新:</span>2019年12月10日 - 23时14分</p>
+        <p><span>最后更新:</span>2019年12月11日 - 09时11分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/12/10/generate-parentheses/" title="generate-parentheses">https://sky1blue.github.io/2019/12/10/generate-parentheses/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/10/generate-parentheses/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
