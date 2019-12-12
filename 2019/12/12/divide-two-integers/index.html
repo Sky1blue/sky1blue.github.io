@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-complement | Simon的个人博客</title>
+  <title>divide-two-integers | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="29. Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.">
+<meta name="keywords" content="Medium,位操作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-complement">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/20/number-complement/index.html">
+<meta property="og:title" content="divide-two-integers">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/12/divide-two-integers/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta property="og:description" content="29. Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-20T14:18:40.000Z">
+<meta property="og:updated_time" content="2019-12-12T02:01:28.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-complement">
-<meta name="twitter:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta name="twitter:title" content="divide-two-integers">
+<meta name="twitter:description" content="29. Divide Two IntegersGiven two integers dividend and divisor, divide two integers without using multiplication, division and mod operator.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-complement" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-divide-two-integers" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/20/number-complement/" class="article-date">
-      <time datetime="2019-11-20T14:18:39.000Z" itemprop="datePublished">2019-11-20</time>
+      <a href="/2019/12/12/divide-two-integers/" class="article-date">
+      <time datetime="2019-12-12T02:00:45.000Z" itemprop="datePublished">2019-12-12</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-complement
+      divide-two-integers
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/位操作/">位操作</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,39 +240,64 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="476-Number-Complement"><a href="#476-Number-Complement" class="headerlink" title="476. Number Complement"></a>476. Number Complement</h3><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<a id="more"></a></p>
+        <h3 id="29-Divide-Two-Integers"><a href="#29-Divide-Two-Integers" class="headerlink" title="29. Divide Two Integers"></a>29. Divide Two Integers</h3><p>Given two integers <code>dividend</code> and <code>divisor</code>, divide two integers without using multiplication, division and mod operator.<a id="more"></a></p>
 
-<p><b>Note:</b><br>
-<ol>
-<li>The given integer is guaranteed to fit within the range of a 32-bit signed integer.</li>
-<li>You could assume no leading zero bit in the integer’s binary representation.</li>
-</ol>
-</p>
 
-<p><b>Example 1:</b><br>
+
+<p>Return the quotient after dividing <code>dividend</code> by <code>divisor</code>.</p>
+
+
+
+<p>The integer division should truncate toward zero.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> 5
-<b>Output:</b> 2
-<b>Explanation:</b> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
-</pre>
-</p>
 
-<p><b>Example 2:</b><br>
+<strong>Input:</strong> dividend = 10, divisor = 3
+
+<strong>Output:</strong> 3</pre>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> 1
-<b>Output:</b> 0
-<b>Explanation:</b> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
-</pre>
-</p>
+
+<strong>Input:</strong> dividend = 7, divisor = -3
+
+<strong>Output:</strong> -2</pre>
+
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<ul>
+
+<pre><code>&lt;li&gt;Both dividend and divisor&amp;nbsp;will be&amp;nbsp;32-bit&amp;nbsp;signed integers.&lt;/li&gt;
+
+&lt;li&gt;The divisor will never be 0.&lt;/li&gt;
+
+&lt;li&gt;Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [&amp;minus;2&lt;sup&gt;31&lt;/sup&gt;, &amp;nbsp;2&lt;sup&gt;31&lt;/sup&gt; &amp;minus; 1]. For the purpose of this problem, assume that your function returns 2&lt;sup&gt;31&lt;/sup&gt; &amp;minus; 1 when the division result&amp;nbsp;overflows.&lt;/li&gt;</code></pre></ul>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：找到给定数bit为1的最高位置，将原数取反后，取该位置以后的数。  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> mask = ~<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (num &amp; mask)</span><br><span class="line">        &#123;</span><br><span class="line">            mask &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ~mask &amp; ~num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：<br>题意，不使用乘法、除法、mod的运算，对两个数做除法，所以只能使用加法和减法。考虑到dividend和divisor符号可能不同，所以统一转成绝对值计算，最后加上符号位。</p>
+<p>两种想法：</p>
+<p>1)  每次对除数扩大2倍，与被除数比较，直到除数大于被除数，此时说明被除数至少是除数的(1 &lt;&lt; n)倍，减去最大的除数，再循环此操作，直到被除数小于除数。<br>2)  与第一种方法类似，不同的是，直接对被除数缩小（2^32 ~ 2^0)，与除数做判断，如果大于，那么商加上(1 &lt;&lt; n)，时间复杂度为$O(1)$，每个都需要循环相同的次数32.</p>
+<p>注意考虑溢出的情况：被除数=INT_MIN，除数=-1，此时结果为INT_MAX+1溢出，所以最终输出INT_MAX.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">long</span> <span class="keyword">int</span> dividend, <span class="keyword">long</span> <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (dividend == INT_MIN &amp;&amp; divisor == <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> INT_MAX;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> dvd = <span class="built_in">labs</span>(dividend), dvs = <span class="built_in">labs</span>(divisor), ans = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 判断符号</span></span><br><span class="line">        <span class="keyword">int</span> sign = dividend &gt; <span class="number">0</span> ^ divisor &gt; <span class="number">0</span> ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (dvd &gt;= dvs)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> temp = dvs, m = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span> (temp &lt;&lt; <span class="number">1</span> &lt;= dvd)</span><br><span class="line">            &#123;</span><br><span class="line">                temp &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">                m &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            dvd -= temp;</span><br><span class="line">            ans += m;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sign * ans;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：同样是找最高bit为1的位置，找大于给定数的最小2的幂。</p>
-<p>例如：输入5    0x101</p>
-<p>最小2的幂为n = 0x1000, n - 1 = 0xfff</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> t=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(t&lt;=num)</span><br><span class="line">            t=t&lt;&lt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> (t<span class="number">-1</span>)^num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (A == INT_MIN &amp;&amp; B == <span class="number">-1</span>) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="built_in">abs</span>(A), b = <span class="built_in">abs</span>(B), res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">31</span>; x &gt;= <span class="number">0</span>; x--)</span><br><span class="line">            <span class="keyword">if</span> ((<span class="keyword">signed</span>)((<span class="keyword">unsigned</span>)a &gt;&gt; x) - b &gt;= <span class="number">0</span>)</span><br><span class="line">                res += <span class="number">1</span> &lt;&lt; x, a -= b &lt;&lt; x;</span><br><span class="line">        <span class="keyword">return</span> (A &gt; <span class="number">0</span>) == (B &gt; <span class="number">0</span>) ? res : -res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -329,13 +354,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/20/number-complement/">number-complement</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/12/divide-two-integers/">divide-two-integers</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月20日 - 22时18分</p>
-        <p><span>最后更新:</span>2019年11月20日 - 22时18分</p>
+        <p><span>发布时间:</span>2019年12月12日 - 10时00分</p>
+        <p><span>最后更新:</span>2019年12月12日 - 10时01分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/20/number-complement/" title="number-complement">https://sky1blue.github.io/2019/11/20/number-complement/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/20/number-complement/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/12/divide-two-integers/" title="divide-two-integers">https://sky1blue.github.io/2019/12/12/divide-two-integers/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/12/divide-two-integers/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,18 +373,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          license-key-formatting
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/19/heaters/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">heaters</div>
+    <a href="/2019/12/10/generate-parentheses/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">generate-parentheses</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -370,7 +386,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#476-Number-Complement"><span class="toc-number">1.</span> <span class="toc-text">476. Number Complement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#29-Divide-Two-Integers"><span class="toc-number">1.</span> <span class="toc-text">29. Divide Two Integers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -421,13 +437,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/21/license-key-formatting/" title="上一篇: license-key-formatting">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/19/heaters/" title="下一篇: heaters">
+            <a href="/2019/12/10/generate-parentheses/" title="下一篇: generate-parentheses">
                 <i class="fa fa-angle-right"></i>
             </a>
         
