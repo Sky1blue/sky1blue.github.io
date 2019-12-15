@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>max-consecutive-ones | Simon的个人博客</title>
+  <title>search-in-rotated-sorted-array | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="33. Search in Rotated Sorted ArraySuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="max-consecutive-ones">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/22/max-consecutive-ones/index.html">
+<meta property="og:title" content="search-in-rotated-sorted-array">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/15/search-in-rotated-sorted-array/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta property="og:description" content="33. Search in Rotated Sorted ArraySuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-22T14:18:04.604Z">
+<meta property="og:updated_time" content="2019-12-15T15:08:12.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="max-consecutive-ones">
-<meta name="twitter:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta name="twitter:title" content="search-in-rotated-sorted-array">
+<meta name="twitter:description" content="33. Search in Rotated Sorted ArraySuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-max-consecutive-ones" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-search-in-rotated-sorted-array" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/22/max-consecutive-ones/" class="article-date">
-      <time datetime="2019-11-22T13:57:00.000Z" itemprop="datePublished">2019-11-22</time>
+      <a href="/2019/12/15/search-in-rotated-sorted-array/" class="article-date">
+      <time datetime="2019-12-15T15:07:44.000Z" itemprop="datePublished">2019-12-15</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      max-consecutive-ones
+      search-in-rotated-sorted-array
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,44 +240,69 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="485-Max-Consecutive-Ones"><a href="#485-Max-Consecutive-Ones" class="headerlink" title="485. Max Consecutive Ones"></a>485. Max Consecutive Ones</h3><p>Given a binary array, find the maximum number of consecutive 1s in this array.<a id="more"></a></p>
+        <h3 id="33-Search-in-Rotated-Sorted-Array"><a href="#33-Search-in-Rotated-Sorted-Array" class="headerlink" title="33. Search in Rotated Sorted Array"></a>33. Search in Rotated Sorted Array</h3><p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<a id="more"></a></p>
 
 
 
-<p><b>Example 1:</b><br>
+<p>(i.e., <code>[0,1,2,4,5,6,7]</code> might become <code>[4,5,6,7,0,1,2]</code>).</p>
+
+
+
+<p>You are given a target value to search. If found in the array return its index, otherwise return <code>-1</code>.</p>
+
+
+
+<p>You may assume no duplicate exists in the array.</p>
+
+
+
+<p>Your algorithm&#39;s runtime complexity must be in the order of&nbsp;<em>O</em>(log&nbsp;<em>n</em>).</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
 
 <pre>
 
-<b>Input:</b> [1,1,0,1,1,1]
+<strong>Input:</strong> nums = [<code>4,5,6,7,0,1,2]</code>, target = 0
 
-<b>Output:</b> 3
-
-<b>Explanation:</b> The first two digits or the last three digits are consecutive 1s.
-
-    The maximum number of consecutive 1s is 3.
+<strong>Output:</strong> 4
 
 </pre>
 
-</p>
+
+
+<p><strong>Example 2:</strong></p>
 
 
 
-<p><b>Note:</b>
+<pre>
 
-<ul>
+<strong>Input:</strong> nums = [<code>4,5,6,7,0,1,2]</code>, target = 3
 
-<li>The input array will only contain <code>0</code> and <code>1</code>.</li>
+<strong>Output:</strong> -1</pre>
 
-<li>The length of input array is a positive integer and will not exceed 10,000</li>
 
-</ul>
-
-</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：本题比较简单，需要注意的是，因为每次都是以0作为结束条件，所以如果数组不是以0结尾，就会少算一次，所以选哟在程序的最后比较numsofzero和rv的大小；</p>
-<p>另外一种直接在原始的数组后面自己添加一个0作为结束条件，也可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// nums.push_back(0);</span></span><br><span class="line">        <span class="keyword">int</span> numsofzero = <span class="number">0</span>, rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++numsofzero;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (numsofzero &gt; rv)</span><br><span class="line">                &#123;</span><br><span class="line">                    rv = numsofzero;</span><br><span class="line">                &#125;</span><br><span class="line">                numsofzero = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(rv, numsofzero);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意：将原始的升序排序数组沿着某个值偏移之后形成新的数组，但这个偏移并不知道，要求给定某个数，在$log(n)$的时间复杂度，找出给定的数。</p>
+<p>参考解法1：解法很精妙。整个解有两部分组成，第一部分，找到当前数组的偏移量，即找到的原始升序数组中的最小值，就能得到当前的数组的每个index对应原来数组的哪个值$(index + bias) % n$；第二部分使用常规二分搜索。每次只关心中间值。两部分的时间复杂度都为$log(n)$。</p>
+<p>简单地说，就是把当前数组当作一个有序的，因为<strong>二分法只考虑mid的值</strong>，所以我们只要找到原始数组中的mid找到就可以做判断了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, n = nums.size(), r = n - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 找到最小的值的index</span></span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &gt; nums[r])</span><br><span class="line">            &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                r = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> rot = r;</span><br><span class="line">        </span><br><span class="line">        l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 得到原始有序数组中，中间值的index</span></span><br><span class="line">            <span class="keyword">int</span> realmid = (mid + rot) % n;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[realmid] &lt; target) </span><br><span class="line">            &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[realmid] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> realmid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考解法2：基于一个事实，每个数组从中间劈开，肯定能得到一半是有序。</p>
+<p>例如 4， 5，6，7，0，1，2</p>
+<p>从中间劈开得到4，5，6和7，0，1，2，每次在判断target在不在有序的那边，如果在，那么就把另一半丢弃。如果不在，那么就把这一段丢弃。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (start &lt;= end) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (start + end) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target == nums[mid]) &#123;</span><br><span class="line">                <span class="keyword">return</span> mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//左半段是有序的</span></span><br><span class="line">            <span class="keyword">if</span> (nums[start] &lt;= nums[mid]) &#123;</span><br><span class="line">                <span class="comment">//target 在这段里</span></span><br><span class="line">                <span class="keyword">if</span> (target &gt;= nums[start] &amp;&amp; target &lt; nums[mid]) &#123;</span><br><span class="line">                    end = mid - <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    start = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="comment">//右半段是有序的</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (target &gt; nums[mid] &amp;&amp; target &lt;= nums[end]) &#123;</span><br><span class="line">                    start = mid + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    end = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考解法3：将数组看作两个有序数组，每次判断当前值与目标值是否属于同一边，不在那边用无限小或无限大代替之后，整个数组就是一个有序数组。</p>
+<p>同样用 [4,5,6,7,0,1,2]作为例子</p>
+<p>如果target = 0，那么数组变为[-inf -inf - inf -inf 0 1 2]</p>
+<p>如果target = 5，那么数组变为[4 5 6  7 inf inf inf ]</p>
+<p>当然我们不是对数组中的每个值都这样，我们只关注mid值。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> lo = <span class="number">0</span>, hi = nums.size();</span><br><span class="line">    <span class="keyword">while</span> (lo &lt; hi) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (lo + hi) / <span class="number">2</span>;</span><br><span class="line">        </span><br><span class="line">				<span class="comment">// 判断mid与target是否属于同一边，不属于同一边，再考虑用inf还是-inf代替</span></span><br><span class="line">        <span class="keyword">double</span> num = (nums[mid] &lt; nums[<span class="number">0</span>]) == (target &lt; nums[<span class="number">0</span>])</span><br><span class="line">                   ? nums[mid]</span><br><span class="line">                   : target &lt; nums[<span class="number">0</span>] ? -INFINITY : INFINITY;</span><br><span class="line">                   </span><br><span class="line">        <span class="keyword">if</span> (num &lt; target)</span><br><span class="line">            lo = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (num &gt; target)</span><br><span class="line">            hi = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -334,13 +359,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月22日 - 21时57分</p>
-        <p><span>最后更新:</span>2019年11月22日 - 22时18分</p>
+        <p><span>发布时间:</span>2019年12月15日 - 23时07分</p>
+        <p><span>最后更新:</span>2019年12月15日 - 23时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/22/max-consecutive-ones/" title="max-consecutive-ones">https://sky1blue.github.io/2019/11/22/max-consecutive-ones/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/22/max-consecutive-ones/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/15/search-in-rotated-sorted-array/" title="search-in-rotated-sorted-array">https://sky1blue.github.io/2019/12/15/search-in-rotated-sorted-array/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/15/search-in-rotated-sorted-array/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,18 +378,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/22/construct-the-rectangle/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          construct-the-rectangle
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">license-key-formatting</div>
+    <a href="/2019/12/13/next-permutation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">next-permutation</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -375,7 +391,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#485-Max-Consecutive-Ones"><span class="toc-number">1.</span> <span class="toc-text">485. Max Consecutive Ones</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#33-Search-in-Rotated-Sorted-Array"><span class="toc-number">1.</span> <span class="toc-text">33. Search in Rotated Sorted Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -426,13 +442,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/22/construct-the-rectangle/" title="上一篇: construct-the-rectangle">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/21/license-key-formatting/" title="下一篇: license-key-formatting">
+            <a href="/2019/12/13/next-permutation/" title="下一篇: next-permutation">
                 <i class="fa fa-angle-right"></i>
             </a>
         
