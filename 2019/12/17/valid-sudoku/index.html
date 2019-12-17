@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-of-1-bits | Simon的个人博客</title>
+  <title>valid-sudoku | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="191. Number of 1 BitsWrite a function that takes an unsigned integer and return&amp;nbsp;the number of &amp;#39;1&amp;#39;&amp;nbsp;bits it has (also known as the Hamming weight).">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-of-1-bits">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/number-of-1-bits/index.html">
+<meta property="og:title" content="valid-sudoku">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/17/valid-sudoku/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="191. Number of 1 BitsWrite a function that takes an unsigned integer and return&amp;nbsp;the number of &amp;#39;1&amp;#39;&amp;nbsp;bits it has (also known as the Hamming weight).">
+<meta property="og:description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://leetcode.com/media/original_images/191_Number_Of_Bits.png">
-<meta property="og:updated_time" content="2019-11-17T03:17:58.000Z">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png">
+<meta property="og:updated_time" content="2019-12-17T14:50:18.069Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-of-1-bits">
-<meta name="twitter:description" content="191. Number of 1 BitsWrite a function that takes an unsigned integer and return&amp;nbsp;the number of &amp;#39;1&amp;#39;&amp;nbsp;bits it has (also known as the Hamming weight).">
-<meta name="twitter:image" content="https://leetcode.com/media/original_images/191_Number_Of_Bits.png">
+<meta name="twitter:title" content="valid-sudoku">
+<meta name="twitter:description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -200,11 +200,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-of-1-bits" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-valid-sudoku" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/number-of-1-bits/" class="article-date">
-      <time datetime="2019-11-17T03:17:56.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2019/12/17/valid-sudoku/" class="article-date">
+      <time datetime="2019-12-17T14:48:56.000Z" itemprop="datePublished">2019-12-17</time>
 </a>
     </div>
   
@@ -217,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-of-1-bits
+      valid-sudoku
     </h1>
   
 
@@ -232,7 +232,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -242,56 +242,128 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="191-Number-of-1-Bits"><a href="#191-Number-of-1-Bits" class="headerlink" title="191. Number of 1 Bits"></a>191. Number of 1 Bits</h3><p>Write a function that takes an unsigned integer and return&nbsp;the number of &#39;1&#39;&nbsp;bits it has (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank">Hamming weight</a>).<a id="more"></a></p>
+        <h3 id="36-Valid-Sudoku"><a href="#36-Valid-Sudoku" class="headerlink" title="36. Valid Sudoku"></a>36. Valid Sudoku</h3><p>Determine if a&nbsp;9x9 Sudoku board&nbsp;is valid.&nbsp;Only the filled cells need to be validated&nbsp;<strong>according to the following rules</strong>:<a id="more"></a></p>
 
-<p>&nbsp;</p>
+
+
+<ol>
+
+<pre><code>&lt;li&gt;Each row&amp;nbsp;must contain the&amp;nbsp;digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt; without repetition.&lt;/li&gt;
+
+&lt;li&gt;Each column must contain the digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt;&amp;nbsp;without repetition.&lt;/li&gt;
+
+&lt;li&gt;Each of the 9 &lt;code&gt;3x3&lt;/code&gt; sub-boxes of the grid must contain the digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt;&amp;nbsp;without repetition.&lt;/li&gt;</code></pre></ol>
+
+
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" style="height:250px; width:250px"><br>
+
+</p><p><small>A partially filled sudoku which is valid.</small></p><p></p>
+<p>The Sudoku board could be partially filled, where empty cells are filled with the character <code>&#39;.&#39;</code>.</p>
+
+
 
 <p><strong>Example 1:</strong></p>
 
+
+
 <pre>
-<strong>Input:</strong> 00000000000000000000000000001011
-<strong>Output:</strong> 3
-<strong>Explanation: </strong>The input binary string <code><strong>00000000000000000000000000001011</strong>&nbsp;has a total of three &#39;1&#39; bits.</code>
+
+<strong>Input:</strong>
+
+[
+
+  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+
+  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+
+  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],
+
+  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],
+
+  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],
+
+  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],
+
+  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],
+
+  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],
+
+  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]
+
+]
+
+<strong>Output:</strong> true
+
 </pre>
+
+
 
 <p><strong>Example 2:</strong></p>
 
+
+
 <pre>
-<strong>Input:</strong> 00000000000000000000000010000000
-<strong>Output:</strong> 1
-<strong>Explanation: </strong>The input binary string <strong>00000000000000000000000010000000</strong>&nbsp;has a total of one &#39;1&#39; bit.
+
+<strong>Input:</strong>
+
+[
+
+&nbsp; [&quot;8&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+
+&nbsp; [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+
+&nbsp; [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],
+
+&nbsp; [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],
+
+&nbsp; [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],
+
+&nbsp; [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],
+
+&nbsp; [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],
+
+&nbsp; [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],
+
+&nbsp; [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]
+
+]
+
+<strong>Output:</strong> false
+
+<strong>Explanation:</strong> Same as Example 1, except with the <strong>5</strong> in the top left corner being 
+
+    modified to <strong>8</strong>. Since there are two 8&#39;s in the top left 3x3 sub-box, it is invalid.
+
 </pre>
 
-<p><strong>Example 3:</strong></p>
 
-<pre>
-<strong>Input:</strong> 11111111111111111111111111111101
-<strong>Output:</strong> 31
-<strong>Explanation: </strong>The input binary string <strong>11111111111111111111111111111101</strong> has a total of thirty one &#39;1&#39; bits.</pre>
-
-<p>&nbsp;</p>
 
 <p><strong>Note:</strong></p>
 
+
+
 <ul>
-    <li>Note that in some languages such as Java, there is no unsigned integer type. In this case, the input will be given as signed integer type and should not affect your implementation, as the internal binary representation of the integer is the same whether it is signed or unsigned.</li>
-    <li>In Java,&nbsp;the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">2&#39;s complement notation</a>. Therefore, in <strong>Example 3</strong>&nbsp;above the input represents the signed integer <code>-3</code>.</li>
-</ul>
 
-<p>&nbsp;</p>
+<pre><code>&lt;li&gt;A Sudoku board (partially filled) could be valid but is not necessarily solvable.&lt;/li&gt;
 
-<p><b>Follow up</b>:</p>
+&lt;li&gt;Only the filled cells need to be validated according to the mentioned&amp;nbsp;rules.&lt;/li&gt;
 
-<p>If this function is called many times, how would you optimize it?</p>
+&lt;li&gt;The given board&amp;nbsp;contain only digits &lt;code&gt;1-9&lt;/code&gt; and the character &lt;code&gt;&amp;#39;.&amp;#39;&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;The given board size is always &lt;code&gt;9x9&lt;/code&gt;.&lt;/li&gt;</code></pre></ul>
+
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>常规解法：遍历数的所有位，判断是否为1.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">uint32_t</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">uint32_t</span> num = <span class="number">32</span>, rv = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; ++i, n &gt;&gt;= <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        rv += (n &amp; <span class="number">0x01</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意：要求判断所给的数独是否合法，根据三个原则判断，即行、列、子块中不能出现重复的数字。</p>
+<p>解法：暴力法</p>
+<p>建立三个9*9的数组，分别用于判断第i行，第j列，第k子块，某个数字是否出现过。<br>其中子块的序号，是按照从左到右，从上到下的顺序编号的。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 表示第i行某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> a[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        <span class="comment">// 表示第j列某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> b[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        <span class="comment">// 表示第i块某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> c[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">isdigit</span>(board[i][j]))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> digit = board[i][j] - <span class="string">'0'</span>;</span><br><span class="line">                    <span class="keyword">if</span> (!a[i][digit - <span class="number">1</span>] &amp;&amp; !b[j][digit - <span class="number">1</span>] &amp;&amp; !c[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][digit - <span class="number">1</span>])</span><br><span class="line">                    &#123;</span><br><span class="line">                        a[i][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                        b[j][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                        c[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>高赞解：主要思想：不是按照顺序检查每个bit位，而是每次检查最低有效位，示意图如下。</p>
-<p><img src="https://leetcode.com/media/original_images/191_Number_Of_Bits.png" alt="示意图"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n != <span class="number">0</span>) &#123;</span><br><span class="line">        sum++;</span><br><span class="line">        n &amp;= (n - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>空间优化：3个9x9的数组可以用3 个长为9的vector代替，每个vector的某个值的第i位表示，数字(i+1)是否出现过。即位操作的方法，节省了空间。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; col(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; block(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; row(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (board[i][j] != <span class="string">'.'</span>) &#123;</span><br><span class="line">             <span class="keyword">int</span> idx = <span class="number">1</span> &lt;&lt; (board[i][j] - <span class="string">'0'</span>);</span><br><span class="line">             <span class="keyword">if</span> (row[i] &amp; idx || col[j] &amp; idx || block[i/<span class="number">3</span> * <span class="number">3</span> + j / <span class="number">3</span>] &amp; idx)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            row[i] |= idx;</span><br><span class="line">            col[j] |= idx;</span><br><span class="line">            block[i/<span class="number">3</span> * <span class="number">3</span> + j/<span class="number">3</span>] |= idx;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -348,13 +420,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/17/valid-sudoku/">valid-sudoku</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时17分</p>
-        <p><span>最后更新:</span>2019年11月17日 - 11时17分</p>
+        <p><span>发布时间:</span>2019年12月17日 - 22时48分</p>
+        <p><span>最后更新:</span>2019年12月17日 - 22时50分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/number-of-1-bits/" title="number-of-1-bits">https://sky1blue.github.io/2019/11/17/number-of-1-bits/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/number-of-1-bits/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/17/valid-sudoku/" title="valid-sudoku">https://sky1blue.github.io/2019/12/17/valid-sudoku/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/17/valid-sudoku/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -367,18 +439,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/power-of-two/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          power-of-two
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/reverse-bits/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">reverse-bits</div>
+    <a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">find-first-and-last-position-of-element-in-sorted-array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -389,7 +452,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#191-Number-of-1-Bits"><span class="toc-number">1.</span> <span class="toc-text">191. Number of 1 Bits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#36-Valid-Sudoku"><span class="toc-number">1.</span> <span class="toc-text">36. Valid Sudoku</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -440,13 +503,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/power-of-two/" title="上一篇: power-of-two">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/reverse-bits/" title="下一篇: reverse-bits">
+            <a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" title="下一篇: find-first-and-last-position-of-element-in-sorted-array">
                 <i class="fa fa-angle-right"></i>
             </a>
         
