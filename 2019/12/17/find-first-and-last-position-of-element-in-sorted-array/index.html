@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>3sum | Simon的个人博客</title>
+  <title>find-first-and-last-position-of-element-in-sorted-array | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
+  <meta name="description" content="34. Find First and Last Position of Element in Sorted ArrayGiven an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3sum">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/05/3sum/index.html">
+<meta property="og:title" content="find-first-and-last-position-of-element-in-sorted-array">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
+<meta property="og:description" content="34. Find First and Last Position of Element in Sorted ArrayGiven an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-05T14:00:57.433Z">
+<meta property="og:updated_time" content="2019-12-17T01:28:34.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3sum">
-<meta name="twitter:description" content="15. 3SumGiven an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.">
+<meta name="twitter:title" content="find-first-and-last-position-of-element-in-sorted-array">
+<meta name="twitter:description" content="34. Find First and Last Position of Element in Sorted ArrayGiven an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-3sum" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-find-first-and-last-position-of-element-in-sorted-array" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/05/3sum/" class="article-date">
-      <time datetime="2019-12-05T13:59:12.000Z" itemprop="datePublished">2019-12-05</time>
+      <a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" class="article-date">
+      <time datetime="2019-12-17T01:28:02.000Z" itemprop="datePublished">2019-12-17</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      3sum
+      find-first-and-last-position-of-element-in-sorted-array
     </h1>
   
 
@@ -240,44 +240,51 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15. 3Sum"></a>15. 3Sum</h3><p>Given an array <code>nums</code> of <em>n</em> integers, are there elements <em>a</em>, <em>b</em>, <em>c</em> in <code>nums</code> such that <em>a</em> + <em>b</em> + <em>c</em> = 0? Find all unique triplets in the array which gives the sum of zero.<a id="more"></a></p>
+        <h3 id="34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><a href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array" class="headerlink" title="34. Find First and Last Position of Element in Sorted Array"></a>34. Find First and Last Position of Element in Sorted Array</h3><p>Given an array of integers <code>nums</code> sorted in ascending order, find the starting and ending position of a given <code>target</code> value.<a id="more"></a></p>
 
 
 
-<p><strong>Note:</strong></p>
+<p>Your algorithm&#39;s runtime complexity must be in the order of <em>O</em>(log <em>n</em>).</p>
 
 
 
-<p>The solution set must not contain duplicate triplets.</p>
+<p>If the target is not found in the array, return <code>[-1, -1]</code>.</p>
 
 
 
-<p><strong>Example:</strong></p>
+<p><strong>Example 1:</strong></p>
 
 
 
 <pre>
 
-Given array nums = [-1, 0, 1, 2, -1, -4],
+<strong>Input:</strong> nums = [<code>5,7,7,8,8,10]</code>, target = 8
+
+<strong>Output:</strong> [3,4]</pre>
 
 
 
-A solution set is:
+<p><strong>Example 2:</strong></p>
 
-[
 
-  [-1, 0, 1],
 
-  [-1, -1, 2]
+<pre>
 
-]
+<strong>Input:</strong> nums = [<code>5,7,7,8,8,10]</code>, target = 6
 
-</pre>
+<strong>Output:</strong> [-1,-1]</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：$a + b + c = 0$，先固定a，那么最终变为解 $b+c = -a$，这样可能会出现重复的解，</p>
-<p>解决方法，先排序，然后依次固定a，从当前数往后找解。同时如果$a &gt; 0$，那么$b, c &gt; 0$，$b + c &gt; a &gt; 0$，所以 $b+c = -a$不可能存在解。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; threeSum(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; res;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::sort(num.begin(), num.end());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.size(); i++) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> target = -num[i];</span><br><span class="line">        <span class="keyword">int</span> front = i + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> back = num.size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (target &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (front &lt; back) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> sum = num[front] + num[back];</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// Finding answer which start from number num[i]</span></span><br><span class="line">            <span class="keyword">if</span> (sum &lt; target)</span><br><span class="line">                front++;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (sum &gt; target)</span><br><span class="line">                back--;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; triplet(<span class="number">3</span>, <span class="number">0</span>);</span><br><span class="line">                triplet[<span class="number">0</span>] = num[i];</span><br><span class="line">                triplet[<span class="number">1</span>] = num[front];</span><br><span class="line">                triplet[<span class="number">2</span>] = num[back];</span><br><span class="line">                res.push_back(triplet);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// Processing duplicates of Number 2</span></span><br><span class="line">                <span class="comment">// Rolling the front pointer to the next different number forwards</span></span><br><span class="line">                <span class="keyword">while</span> (front &lt; back &amp;&amp; num[front] == triplet[<span class="number">1</span>]) ++front;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Processing duplicates of Number 3</span></span><br><span class="line">                <span class="comment">// Rolling the back pointer to the next different number backwards</span></span><br><span class="line">                <span class="keyword">while</span> (front &lt; back &amp;&amp; num[back] == triplet[<span class="number">2</span>]) --back;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Processing duplicates of Number 1</span></span><br><span class="line">        <span class="keyword">while</span> (i + <span class="number">1</span> &lt; num.size() &amp;&amp; num[i + <span class="number">1</span>] == num[i]) </span><br><span class="line">            i++;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：two binary search 使用两个二分搜索，分别搜索左边界和右边界。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, n = nums.size(), r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; rv = &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                rv[<span class="number">0</span>] = mid;</span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target)</span><br><span class="line">            &#123;</span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        l = <span class="number">0</span>, r = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                rv[<span class="number">1</span>] = mid;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target)</span><br><span class="line">            &#123;</span><br><span class="line">                r = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>改进：cpp, <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14699/Clean-iterative-solution-with-two-binary-searches-(with-explanation)" target="_blank" rel="noopener">代码来自</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; searchRange(int A[], int n, int target) &#123;</span><br><span class="line">    int i = 0, j = n - 1;</span><br><span class="line">    vector&lt;int&gt; ret(2, -1);</span><br><span class="line">    // Search for the left one</span><br><span class="line">    while (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        int mid = (i + j) /2;</span><br><span class="line">        if (A[mid] &lt; target) i = mid + 1;</span><br><span class="line">        else j = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    if (A[i]!=target) return ret;</span><br><span class="line">    else ret[0] = i;</span><br><span class="line">    </span><br><span class="line">    // Search for the right one</span><br><span class="line">    j = n-1;  // We don&apos;t have to set i to 0 the second time.</span><br><span class="line">    while (i &lt; j)</span><br><span class="line">    &#123;</span><br><span class="line">        int mid = (i + j) /2 + 1;	// Make mid biased to the right</span><br><span class="line">        if (A[mid] &gt; target) j = mid - 1;  </span><br><span class="line">        else i = mid;				// So that this won&apos;t make the search range stuck.</span><br><span class="line">    &#125;</span><br><span class="line">    ret[1] = j;</span><br><span class="line">    return ret; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：分治法：在数组的左半边和右半边搜索target，分别得到left和right两个起始坐标，最终将两边的坐标整合，即左半边的起点和右半边的终点组合即得到最终整个数组的结果。<strong>要注意的是，如果某一边不存在，那么就要返回另外一边的结果</strong>.<a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14707/9-11-lines-O(log-n)" target="_blank" rel="noopener">解释来自</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; searchRange(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">       <span class="keyword">return</span> search(nums, <span class="number">0</span>, nums.size() - <span class="number">1</span>, target);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; search(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> target)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span> (l &lt;= r)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (nums[l] == target &amp;&amp; nums[r] == target)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">return</span> &#123;l, r&#125;;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> ( nums[l] &lt;= target &amp;&amp; target &lt;= nums[r])</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="comment">// 这边 &gt;&gt; 优先级低于 +，（）不能少</span></span><br><span class="line">               <span class="keyword">int</span> mid = l + ((r - l) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">               <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; left = search(nums, l, mid, target);</span><br><span class="line">               <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; right = search(nums, mid + <span class="number">1</span>, r, target);</span><br><span class="line"></span><br><span class="line">               <span class="comment">// 只出现在一边</span></span><br><span class="line">               <span class="keyword">if</span> (left[<span class="number">0</span>] == <span class="number">-1</span>) <span class="keyword">return</span> right;</span><br><span class="line">               <span class="keyword">if</span> (right[<span class="number">0</span>] == <span class="number">-1</span>) <span class="keyword">return</span> left;</span><br><span class="line"></span><br><span class="line">               <span class="keyword">return</span> &#123;left[<span class="number">0</span>], right[<span class="number">1</span>]&#125;;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> &#123;<span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -334,13 +341,13 @@ A solution set is:
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/05/3sum/">3sum</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月05日 - 21时59分</p>
-        <p><span>最后更新:</span>2019年12月05日 - 22时00分</p>
+        <p><span>发布时间:</span>2019年12月17日 - 09时28分</p>
+        <p><span>最后更新:</span>2019年12月17日 - 09时28分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/05/3sum/" title="3sum">https://sky1blue.github.io/2019/12/05/3sum/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/05/3sum/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" title="find-first-and-last-position-of-element-in-sorted-array">https://sky1blue.github.io/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,18 +360,9 @@ A solution set is:
 
 <nav id="article-nav">
   
-    <a href="/2019/12/07/3sum-closest/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          3sum-closest
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/05/integer-to-roman/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">integer-to-roman</div>
+    <a href="/2019/12/15/search-in-rotated-sorted-array/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">search-in-rotated-sorted-array</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -375,7 +373,7 @@ A solution set is:
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3Sum"><span class="toc-number">1.</span> <span class="toc-text">15. 3Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array"><span class="toc-number">1.</span> <span class="toc-text">34. Find First and Last Position of Element in Sorted Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -426,13 +424,11 @@ A solution set is:
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/07/3sum-closest/" title="上一篇: 3sum-closest">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/05/integer-to-roman/" title="下一篇: integer-to-roman">
+            <a href="/2019/12/15/search-in-rotated-sorted-array/" title="下一篇: search-in-rotated-sorted-array">
                 <i class="fa fa-angle-right"></i>
             </a>
         
