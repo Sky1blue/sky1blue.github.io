@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Simon的个人博客">
 <meta property="og:description" content="40. Combination Sum IIGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates&amp;nbsp;where the candidate numbers sums to target.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-22T15:04:58.436Z">
+<meta property="og:updated_time" content="2019-12-23T05:49:52.098Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="combination-sum-ii">
 <meta name="twitter:description" content="40. Combination Sum IIGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates&amp;nbsp;where the candidate numbers sums to target.">
@@ -242,42 +242,82 @@
           
         <h3 id="40-Combination-Sum-II"><a href="#40-Combination-Sum-II" class="headerlink" title="40. Combination Sum II"></a>40. Combination Sum II</h3><p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sums to <code>target</code>.<a id="more"></a></p>
 
+
+
 <p>Each number in <code>candidates</code>&nbsp;may only be used <strong>once</strong> in the combination.</p>
+
+
 
 <p><strong>Note:</strong></p>
 
+
+
 <ul>
-    <li>All numbers (including <code>target</code>) will be positive integers.</li>
-    <li>The solution set must not contain duplicate combinations.</li>
-</ul>
+
+<pre><code>&lt;li&gt;All numbers (including &lt;code&gt;target&lt;/code&gt;) will be positive integers.&lt;/li&gt;
+
+&lt;li&gt;The solution set must not contain duplicate combinations.&lt;/li&gt;</code></pre></ul>
+
+
 
 <p><strong>Example 1:</strong></p>
 
+
+
 <pre>
+
 <strong>Input:</strong> candidates =&nbsp;<code>[10,1,2,7,6,1,5]</code>, target =&nbsp;<code>8</code>,
+
 <strong>A solution set is:</strong>
+
 [
+
   [1, 7],
+
   [1, 2, 5],
+
   [2, 6],
+
   [1, 1, 6]
+
 ]
+
 </pre>
+
+
 
 <p><strong>Example 2:</strong></p>
 
+
+
 <pre>
+
 <strong>Input:</strong> candidates =&nbsp;[2,5,2,1,2], target =&nbsp;5,
+
 <strong>A solution set is:</strong>
+
 [
+
 &nbsp; [1,2,2],
+
 &nbsp; [5]
+
 ]
+
 </pre>
 
 
+
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>None</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法2：与<a href="https://leetcode.com/problems/combination-sum/" target="_blank" rel="noopener">题39</a>，大致上的解法相似；题目的不同点在于，题39给定的数组的所有数都不相同，同时每个数都可以使用若干次；而本题给定的数组可能存在重复的数字，同时数组中的每个数字只能使用一次。</p>
+<p>总体的架构还是回溯法，解决；但需要先排序，将相同的数字集中的一起；同时为了解决重复的解，将当前数值与之前的数值进行比较，相同的情况丢弃，但这样会导致解丢失。</p>
+<p>例如题中所给 candidates = [10,1,2,7,6,1,5], target = 8,</p>
+<p>得出的解：</p>
+<p>[<br>  [1, 7],<br>  [1, 2, 5],<br>  [2, 6],<br>]</p>
+<p>虽然解决了重复的解的问题，但也缺少了解 [ 1 1 6]。</p>
+<p>仔细分析，我们的解法，helper中的循环可以看作是最终的每个解每个位置的不同尝试，我们需要做的是解决的是，每个位置当前尝试的值与<strong>上一次尝试的值不同</strong>，而不是每个解上一个位置的值，与下一个位置的值不同。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combinationSum2(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; rv;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r;</span><br><span class="line">        sort(candidates.begin(), candidates.end());</span><br><span class="line">        </span><br><span class="line">        helper(rv, r, candidates, target, <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target, <span class="keyword">int</span> next)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (target == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(r);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = next; i &lt; candidates.size(); ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (candidates[i] &gt; target)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 第一个条件，防止索引出现负数；第二个条件解决重复问题；最后一个条件至关重要，保留了类似[1 1 2 5]这样的解。</span></span><br><span class="line">                <span class="keyword">if</span> (i &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>] &amp;&amp; i &gt; next)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                r.push_back(candidates[i]);</span><br><span class="line">                helper(re, r, candidates, target - candidates[i], i + <span class="number">1</span>);</span><br><span class="line">                r.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 
       
       
@@ -336,7 +376,7 @@
         <p><span>本文标题:</span><a href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
         <p><span>发布时间:</span>2019年12月22日 - 23时04分</p>
-        <p><span>最后更新:</span>2019年12月22日 - 23时04分</p>
+        <p><span>最后更新:</span>2019年12月23日 - 13时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/12/22/combination-sum-ii/" title="combination-sum-ii">https://sky1blue.github.io/2019/12/22/combination-sum-ii/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/22/combination-sum-ii/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -351,6 +391,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2019/12/24/multiply-strings/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          multiply-strings
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/19/combination-sum/" id="article-nav-older" class="article-nav-link-wrap">
@@ -416,7 +465,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/12/24/multiply-strings/" title="上一篇: multiply-strings">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -425,7 +476,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/multiply-strings/">multiply-strings</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>power-of-three | Simon的个人博客</title>
+  <title>multiply-strings | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="326. Power of ThreeGiven an integer, write a function to determine if it is a power of three.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="43. Multiply StringsGiven two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="power-of-three">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/power-of-three/index.html">
+<meta property="og:title" content="multiply-strings">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/24/multiply-strings/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="326. Power of ThreeGiven an integer, write a function to determine if it is a power of three.">
+<meta property="og:description" content="43. Multiply StringsGiven two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T03:18:30.000Z">
+<meta property="og:updated_time" content="2019-12-24T14:50:00.814Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="power-of-three">
-<meta name="twitter:description" content="326. Power of ThreeGiven an integer, write a function to determine if it is a power of three.">
+<meta name="twitter:title" content="multiply-strings">
+<meta name="twitter:description" content="43. Multiply StringsGiven two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-power-of-three" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-multiply-strings" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/power-of-three/" class="article-date">
-      <time datetime="2019-11-17T03:18:28.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2019/12/24/multiply-strings/" class="article-date">
+      <time datetime="2019-12-24T14:50:00.000Z" itemprop="datePublished">2019-12-24</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      power-of-three
+      multiply-strings
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,43 +240,33 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="326-Power-of-Three"><a href="#326-Power-of-Three" class="headerlink" title="326. Power of Three"></a>326. Power of Three</h3><p>Given an integer, write a function to determine if it is a power of three.<a id="more"></a></p>
+        <h3 id="43-Multiply-Strings"><a href="#43-Multiply-Strings" class="headerlink" title="43. Multiply Strings"></a>43. Multiply Strings</h3><p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as strings, return the product of <code>num1</code> and <code>num2</code>, also represented as a string.<a id="more"></a></p>
 
-<p><b>Example 1:</b></p>
+<p><strong>Example 1:</strong></p>
 
 <pre>
-<strong>Input:</strong> 27
-<strong>Output:</strong> true
+<strong>Input:</strong> num1 = &quot;2&quot;, num2 = &quot;3&quot;
+<strong>Output:</strong> &quot;6&quot;</pre>
+
+<p><strong>Example 2:</strong></p>
+
+<pre>
+<strong>Input:</strong> num1 = &quot;123&quot;, num2 = &quot;456&quot;
+<strong>Output:</strong> &quot;56088&quot;
 </pre>
 
-<p><b>Example 2:</b></p>
+<p><strong>Note:</strong></p>
 
-<pre>
-<strong>Input:</strong> 0
-<strong>Output:</strong> false</pre>
+<ol>
+    <li>The length of both <code>num1</code> and <code>num2</code> is &lt; 110.</li>
+    <li>Both <code>num1</code> and <code>num2</code> contain&nbsp;only digits <code>0-9</code>.</li>
+    <li>Both <code>num1</code> and <code>num2</code>&nbsp;do not contain any leading zero, except the number 0 itself.</li>
+    <li>You <strong>must not use any built-in BigInteger library</strong> or <strong>convert the inputs to integer</strong> directly.</li>
+</ol>
 
-<p><b>Example 3:</b></p>
-
-<pre>
-<strong>Input:</strong> 9
-<strong>Output:</strong> true</pre>
-
-<p><b>Example 4:</b></p>
-
-<pre>
-<strong>Input:</strong> 45
-<strong>Output:</strong> false</pre>
-
-<p><b>Follow up:</b><br>
-Could you do it without using any loop / recursion?</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>常规解法：对三取余判断是否为0，再除以3循环判断。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfThree</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(n % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        n /= <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (n == <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>高赞解法：int范围内，3的最大次幂为3^19，因为3是质数，所以3^19的除数为3^0, 3^1, 3^2…3^19。<br>所以只要判断3^19能够整除所给的数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfThree</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1162261467 is 3^19,  3^20 is bigger than int  </span></span><br><span class="line">        <span class="keyword">return</span> ( n&gt;<span class="number">0</span> &amp;&amp;  <span class="number">1162261467</span>%n==<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>None</p>
 
       
       
@@ -332,13 +322,13 @@ Could you do it without using any loop / recursion?</p>
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/power-of-three/">power-of-three</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/24/multiply-strings/">multiply-strings</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时18分</p>
-        <p><span>最后更新:</span>2019年11月17日 - 11时18分</p>
+        <p><span>发布时间:</span>2019年12月24日 - 22时50分</p>
+        <p><span>最后更新:</span>2019年12月24日 - 22时50分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/power-of-three/" title="power-of-three">https://sky1blue.github.io/2019/11/17/power-of-three/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/power-of-three/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/24/multiply-strings/" title="multiply-strings">https://sky1blue.github.io/2019/12/24/multiply-strings/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/24/multiply-strings/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -351,18 +341,9 @@ Could you do it without using any loop / recursion?</p>
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/power-of-four/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          power-of-four
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/power-of-two/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">power-of-two</div>
+    <a href="/2019/12/22/combination-sum-ii/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">combination-sum-ii</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -373,7 +354,7 @@ Could you do it without using any loop / recursion?</p>
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#326-Power-of-Three"><span class="toc-number">1.</span> <span class="toc-text">326. Power of Three</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#43-Multiply-Strings"><span class="toc-number">1.</span> <span class="toc-text">43. Multiply Strings</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -424,13 +405,11 @@ Could you do it without using any loop / recursion?</p>
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/power-of-four/" title="上一篇: power-of-four">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/power-of-two/" title="下一篇: power-of-two">
+            <a href="/2019/12/22/combination-sum-ii/" title="下一篇: combination-sum-ii">
                 <i class="fa fa-angle-right"></i>
             </a>
         
