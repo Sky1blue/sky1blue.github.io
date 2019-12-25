@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>string-to-integer-atoi | Simon的个人博客</title>
+  <title>permutations | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
-<meta name="keywords" content="Medium">
+  <meta name="description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
+<meta name="keywords" content="Medium,backtrack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="string-to-integer-atoi">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/index.html">
+<meta property="og:title" content="permutations">
+<meta property="og:url" content="https://sky1blue.github.io/2019/12/25/permutations/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
+<meta property="og:description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-03T14:34:06.295Z">
+<meta property="og:updated_time" content="2019-12-25T15:08:13.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="string-to-integer-atoi">
-<meta name="twitter:description" content="8. String to Integer (atoi)Implement atoi which&amp;nbsp;converts a string to an integer.">
+<meta name="twitter:title" content="permutations">
+<meta name="twitter:description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-string-to-integer-atoi" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-permutations" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/03/string-to-integer-atoi/" class="article-date">
-      <time datetime="2019-12-03T14:32:40.000Z" itemprop="datePublished">2019-12-03</time>
+      <a href="/2019/12/25/permutations/" class="article-date">
+      <time datetime="2019-12-25T15:07:38.000Z" itemprop="datePublished">2019-12-25</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      string-to-integer-atoi
+      permutations
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/backtrack/">backtrack</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,127 +240,56 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="8-String-to-Integer-atoi"><a href="#8-String-to-Integer-atoi" class="headerlink" title="8. String to Integer (atoi)"></a>8. String to Integer (atoi)</h3><p>Implement <code><span>atoi</span></code> which&nbsp;converts a string to an integer.<a id="more"></a></p>
+        <h3 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h3><p>Given a collection of <strong>distinct</strong> integers, return all possible permutations.<a id="more"></a></p>
 
 
 
-<p>The function first discards as many whitespace characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial plus or minus sign followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
-
-
-
-<p>The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
-
-
-
-<p>If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
-
-
-
-<p>If no valid conversion could be performed, a zero value is returned.</p>
-
-
-
-<p><strong>Note:</strong></p>
-
-
-
-<ul>
-
-<pre><code>&lt;li&gt;Only the space character &lt;code&gt;&amp;#39; &amp;#39;&lt;/code&gt; is considered as whitespace character.&lt;/li&gt;
-
-&lt;li&gt;Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [&amp;minus;2&lt;sup&gt;31&lt;/sup&gt;,&amp;nbsp; 2&lt;sup&gt;31&amp;nbsp;&lt;/sup&gt;&amp;minus; 1]. If the numerical value is out of the range of representable values, INT_MAX (2&lt;sup&gt;31&amp;nbsp;&lt;/sup&gt;&amp;minus; 1) or INT_MIN (&amp;minus;2&lt;sup&gt;31&lt;/sup&gt;) is returned.&lt;/li&gt;</code></pre></ul>
-
-
-
-<p><strong>Example 1:</strong></p>
+<p><strong>Example:</strong></p>
 
 
 
 <pre>
 
-<strong>Input:</strong> &quot;42&quot;
+<strong>Input:</strong> [1,2,3]
 
-<strong>Output:</strong> 42
+<strong>Output:</strong>
+
+[
+
+  [1,2,3],
+
+  [1,3,2],
+
+  [2,1,3],
+
+  [2,3,1],
+
+  [3,1,2],
+
+  [3,2,1]
+
+]
 
 </pre>
-
-
-
-<p><strong>Example 2:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> &quot;   -42&quot;
-
-<strong>Output:</strong> -42
-
-<strong>Explanation:</strong> The first non-whitespace character is &#39;-&#39;, which is the minus sign.
-
-&nbsp;            Then take as many numerical digits as possible, which gets 42.
-
-</pre>
-
-
-
-<p><strong>Example 3:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> &quot;4193 with words&quot;
-
-<strong>Output:</strong> 4193
-
-<strong>Explanation:</strong> Conversion stops at digit &#39;3&#39; as the next character is not a numerical digit.
-
-</pre>
-
-
-
-<p><strong>Example 4:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> &quot;words and 987&quot;
-
-<strong>Output:</strong> 0
-
-<strong>Explanation:</strong> The first non-whitespace character is &#39;w&#39;, which is not a numerical 
-
-&nbsp;            digit or a +/- sign. Therefore no valid conversion could be performed.</pre>
-
-
-
-<p><strong>Example 5:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> &quot;-91283472332&quot;
-
-<strong>Output:</strong> -2147483648
-
-<strong>Explanation:</strong> The number &quot;-91283472332&quot; is out of the range of a 32-bit signed integer.
-
-&nbsp;            Thefore INT_MIN (&minus;2<sup>31</sup>) is returned.</pre>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题主要考虑四种情况：</p>
-<ul>
-<li>丢弃所有前面无效空格</li>
-<li>处理数字的符号</li>
-<li>溢出 <strong>(当数值大于INT_MAX，需要输出INT_MAX;小于INT_MIN也一样）</strong></li>
-<li>输入无效</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (str.size() == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, n = str.size(), sign = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 去除前面的空格</span></span><br><span class="line">        <span class="keyword">while</span>(str[i] == <span class="string">' '</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            ++i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 处理符号位</span></span><br><span class="line">        <span class="keyword">if</span> (str[i] == <span class="string">'-'</span> || str[i] == <span class="string">'+'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            sign = <span class="number">1</span> - <span class="number">2</span> * (str[i++] == <span class="string">'-'</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">isdigit</span>(str[i]) == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            rv = rv * <span class="number">10</span> + str[i] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="comment">// 处理溢出</span></span><br><span class="line">            <span class="keyword">if</span>(rv * sign &gt;= INT_MAX) <span class="keyword">return</span> INT_MAX;</span><br><span class="line">            <span class="keyword">if</span>(rv * sign &lt;= INT_MIN) <span class="keyword">return</span> INT_MIN; </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv * sign;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：回溯法，每个位置尝试n种可能。</p>
+<p>回溯法的通用框架，递归+循环.<a href="https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning" target="_blank" rel="noopener">here</a>ju’li介绍了回溯法的通用解法。</p>
+<p>回溯法的模式：choose –&gt; explore –&gt; unchoose，对应</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp.push_back(nums[i]);</span><br><span class="line">helper(re, nums, temp);</span><br><span class="line">temp.pop_back();</span><br></pre></td></tr></table></figure>
+
+<p>这三句。</p>
+<p>具体代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">    <span class="comment">// 一共有 A(n,n)种情况，n为数组的长度。</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">    </span><br><span class="line">    helper(re, nums, temp);</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (temp.size() == nums.size())</span><br><span class="line">    &#123;</span><br><span class="line">        re.push_back(temp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 每个位置尝试n个可能的数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="comment">// 判断当前数组是否有这个值</span></span><br><span class="line">        <span class="keyword">if</span> (find(temp.begin(), temp.end(), nums[i]) != temp.end())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push_back(nums[i]);</span><br><span class="line">        helper(re, nums, temp);</span><br><span class="line">        temp.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>优化：由于find的时间复杂度为O(n)，所以增加一个bool数组用于判断每个位置的数是否被使用，时间复杂度为O(1)。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="comment">// 一共有 A(n,n)种情况，n为数组的长度。</span></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; visited(nums.size(), <span class="literal">false</span>);</span><br><span class="line">        </span><br><span class="line">        helper(re, nums, temp, visited);</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; &amp;visited)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.size() == nums.size())</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="literal">true</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            visited[i] = <span class="literal">true</span>;</span><br><span class="line">            temp.push_back(nums[i]);</span><br><span class="line">            helper(re, nums, temp, visited);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">            visited[i] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：固定前面m个数字，对第m+1个数字用它后面的数字一次进行替换</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num) &#123;</span><br><span class="line">	    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; result;</span><br><span class="line">	    </span><br><span class="line">	    permuteRecursive(num, <span class="number">0</span>, result);</span><br><span class="line">	    <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// permute num[begin..end]</span></span><br><span class="line">    <span class="comment">// invariant: num[0..begin-1] have been fixed/permuted</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">permuteRecursive</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num, <span class="keyword">int</span> begin, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; &amp;result)</span>	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (begin &gt;= num.size()) &#123;</span><br><span class="line">		    <span class="comment">// one permutation instance</span></span><br><span class="line">		    result.push_back(num);</span><br><span class="line">		    <span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; num.size(); i++) &#123;</span><br><span class="line">		    swap(num[begin], num[i]);</span><br><span class="line">		    permuteRecursive(num, begin + <span class="number">1</span>, result);</span><br><span class="line">		    <span class="comment">// reset</span></span><br><span class="line">		    swap(num[begin], num[i]);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -417,13 +346,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/25/permutations/">permutations</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月03日 - 22时32分</p>
-        <p><span>最后更新:</span>2019年12月03日 - 22时34分</p>
+        <p><span>发布时间:</span>2019年12月25日 - 23时07分</p>
+        <p><span>最后更新:</span>2019年12月25日 - 23时08分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/03/string-to-integer-atoi/" title="string-to-integer-atoi">https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/03/string-to-integer-atoi/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/25/permutations/" title="permutations">https://sky1blue.github.io/2019/12/25/permutations/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/25/permutations/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -436,18 +365,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/04/container-with-most-water/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          container-with-most-water
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/02/zigzag-conversion/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">zigzag-conversion</div>
+    <a href="/2019/12/24/multiply-strings/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">multiply-strings</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -458,7 +378,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-String-to-Integer-atoi"><span class="toc-number">1.</span> <span class="toc-text">8. String to Integer (atoi)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#46-Permutations"><span class="toc-number">1.</span> <span class="toc-text">46. Permutations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -509,13 +429,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/04/container-with-most-water/" title="上一篇: container-with-most-water">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/02/zigzag-conversion/" title="下一篇: zigzag-conversion">
+            <a href="/2019/12/24/multiply-strings/" title="下一篇: multiply-strings">
                 <i class="fa fa-angle-right"></i>
             </a>
         

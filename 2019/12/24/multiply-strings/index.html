@@ -13,10 +13,12 @@
 <meta property="og:site_name" content="Simon的个人博客">
 <meta property="og:description" content="43. Multiply StringsGiven two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-24T14:50:00.814Z">
+<meta property="og:image" content="https://drscdn.500px.org/photo/130178585/m%3D2048/300d71f784f679d5e70fadda8ad7d68f">
+<meta property="og:updated_time" content="2019-12-25T01:13:31.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="multiply-strings">
 <meta name="twitter:description" content="43. Multiply StringsGiven two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.">
+<meta name="twitter:image" content="https://drscdn.500px.org/photo/130178585/m%3D2048/300d71f784f679d5e70fadda8ad7d68f">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -134,7 +136,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/Medium/" style="font-size: 17.5px;">Medium</a> <a href="/tags/backtrack/" style="font-size: 12.5px;">backtrack</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 12.5px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 15px;">tree</a> <a href="/tags/位操作/" style="font-size: 10px;">位操作</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/Easy/" style="font-size: 20px;">Easy</a> <a href="/tags/Medium/" style="font-size: 17.5px;">Medium</a> <a href="/tags/backtrack/" style="font-size: 15px;">backtrack</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 12.5px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 15px;">tree</a> <a href="/tags/位操作/" style="font-size: 10px;">位操作</a> <a href="/tags/动态规划/" style="font-size: 10px;">动态规划</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -242,31 +244,57 @@
           
         <h3 id="43-Multiply-Strings"><a href="#43-Multiply-Strings" class="headerlink" title="43. Multiply Strings"></a>43. Multiply Strings</h3><p>Given two non-negative integers <code>num1</code> and <code>num2</code> represented as strings, return the product of <code>num1</code> and <code>num2</code>, also represented as a string.<a id="more"></a></p>
 
+
+
 <p><strong>Example 1:</strong></p>
 
+
+
 <pre>
+
 <strong>Input:</strong> num1 = &quot;2&quot;, num2 = &quot;3&quot;
+
 <strong>Output:</strong> &quot;6&quot;</pre>
+
+
 
 <p><strong>Example 2:</strong></p>
 
+
+
 <pre>
+
 <strong>Input:</strong> num1 = &quot;123&quot;, num2 = &quot;456&quot;
+
 <strong>Output:</strong> &quot;56088&quot;
+
 </pre>
+
+
 
 <p><strong>Note:</strong></p>
 
+
+
 <ol>
-    <li>The length of both <code>num1</code> and <code>num2</code> is &lt; 110.</li>
-    <li>Both <code>num1</code> and <code>num2</code> contain&nbsp;only digits <code>0-9</code>.</li>
-    <li>Both <code>num1</code> and <code>num2</code>&nbsp;do not contain any leading zero, except the number 0 itself.</li>
-    <li>You <strong>must not use any built-in BigInteger library</strong> or <strong>convert the inputs to integer</strong> directly.</li>
-</ol>
+
+<pre><code>&lt;li&gt;The length of both &lt;code&gt;num1&lt;/code&gt; and &lt;code&gt;num2&lt;/code&gt; is &amp;lt; 110.&lt;/li&gt;
+
+&lt;li&gt;Both &lt;code&gt;num1&lt;/code&gt; and &lt;code&gt;num2&lt;/code&gt; contain&amp;nbsp;only digits &lt;code&gt;0-9&lt;/code&gt;.&lt;/li&gt;
+
+&lt;li&gt;Both &lt;code&gt;num1&lt;/code&gt; and &lt;code&gt;num2&lt;/code&gt;&amp;nbsp;do not contain any leading zero, except the number 0 itself.&lt;/li&gt;
+
+&lt;li&gt;You &lt;strong&gt;must not use any built-in BigInteger library&lt;/strong&gt; or &lt;strong&gt;convert the inputs to integer&lt;/strong&gt; directly.&lt;/li&gt;</code></pre></ol>
+
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>None</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：</p>
+<p>传统上，求乘法的步骤：从右到左将一个数的所有位分别乘以另一个数的所有位，然后将所有结果相加得到。</p>
+<p>示意图如下：<img src="https://drscdn.500px.org/photo/130178585/m%3D2048/300d71f784f679d5e70fadda8ad7d68f" alt="示意图">，得到每个位置的结果，然后将每个位置上的数求和。</p>
+<p>最后去掉leading 0，得到最终的结果。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">multiply</span><span class="params">(<span class="built_in">string</span> num1, <span class="built_in">string</span> num2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = num1.size(), m = num2.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v(m + n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = m - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = n - <span class="number">1</span>; j &gt;= <span class="number">0</span>; --j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> p1 = i + j, p2 = p1 + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">int</span> sum = (num2[i] - <span class="string">'0'</span>) * (num1[j] - <span class="string">'0'</span>) + v[p2];</span><br><span class="line">                </span><br><span class="line">                v[p1] += sum / <span class="number">10</span>;</span><br><span class="line">                v[p2] = sum % <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : v)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!(rv.size() == <span class="number">0</span> &amp;&amp; i == <span class="number">0</span>))</span><br><span class="line">            &#123;</span><br><span class="line">                rv += to_string(i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (rv.size() == <span class="number">0</span>) ? <span class="string">"0"</span> : rv;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 
       
       
@@ -325,7 +353,7 @@
         <p><span>本文标题:</span><a href="/2019/12/24/multiply-strings/">multiply-strings</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
         <p><span>发布时间:</span>2019年12月24日 - 22时50分</p>
-        <p><span>最后更新:</span>2019年12月24日 - 22时50分</p>
+        <p><span>最后更新:</span>2019年12月25日 - 09时13分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/12/24/multiply-strings/" title="multiply-strings">https://sky1blue.github.io/2019/12/24/multiply-strings/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/24/multiply-strings/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -340,6 +368,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2019/12/25/permutations/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          permutations
+        
+      </div>
+    </a>
   
   
     <a href="/2019/12/22/combination-sum-ii/" id="article-nav-older" class="article-nav-link-wrap">
@@ -405,7 +442,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/12/25/permutations/" title="上一篇: permutations">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -414,7 +453,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/multiply-strings/">multiply-strings</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/12/25/permutations/">permutations</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/multiply-strings/">multiply-strings</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
