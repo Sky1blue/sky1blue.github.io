@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>max-consecutive-ones | Simon的个人博客</title>
+  <title>rotate-image | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="48. Rotate ImageYou are given an n x n 2D matrix representing an image.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="max-consecutive-ones">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/22/max-consecutive-ones/index.html">
+<meta property="og:title" content="rotate-image">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/01/rotate-image/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta property="og:description" content="48. Rotate ImageYou are given an n x n 2D matrix representing an image.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-22T14:18:04.604Z">
+<meta property="og:updated_time" content="2020-03-01T12:32:03.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="max-consecutive-ones">
-<meta name="twitter:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta name="twitter:title" content="rotate-image">
+<meta name="twitter:description" content="48. Rotate ImageYou are given an n x n 2D matrix representing an image.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-max-consecutive-ones" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-rotate-image" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/22/max-consecutive-ones/" class="article-date">
-      <time datetime="2019-11-22T13:57:00.000Z" itemprop="datePublished">2019-11-22</time>
+      <a href="/2020/03/01/rotate-image/" class="article-date">
+      <time datetime="2020-03-01T12:31:32.000Z" itemprop="datePublished">2020-03-01</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      max-consecutive-ones
+      rotate-image
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,44 +240,101 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="485-Max-Consecutive-Ones"><a href="#485-Max-Consecutive-Ones" class="headerlink" title="485. Max Consecutive Ones"></a>485. Max Consecutive Ones</h3><p>Given a binary array, find the maximum number of consecutive 1s in this array.<a id="more"></a></p>
+        <h3 id="48-Rotate-Image"><a href="#48-Rotate-Image" class="headerlink" title="48. Rotate Image"></a>48. Rotate Image</h3><p>You are given an <em>n</em> x <em>n</em> 2D matrix representing an image.<a id="more"></a></p>
 
 
 
-<p><b>Example 1:</b><br>
+<p>Rotate the image by 90 degrees (clockwise).</p>
+
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<p>You have to rotate the image <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>, which means you have to modify the input 2D matrix directly. <strong>DO NOT</strong> allocate another 2D matrix and do the rotation.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
 
 <pre>
 
-<b>Input:</b> [1,1,0,1,1,1]
+Given <strong>input matrix</strong> = 
 
-<b>Output:</b> 3
+[
 
-<b>Explanation:</b> The first two digits or the last three digits are consecutive 1s.
+  [1,2,3],
 
-    The maximum number of consecutive 1s is 3.
+  [4,5,6],
+
+  [7,8,9]
+
+],
+
+
+
+rotate the input matrix <strong>in-place</strong> such that it becomes:
+
+[
+
+  [7,4,1],
+
+  [8,5,2],
+
+  [9,6,3]
+
+]
 
 </pre>
 
-</p>
+
+
+<p><strong>Example 2:</strong></p>
 
 
 
-<p><b>Note:</b>
+<pre>
 
-<ul>
+Given <strong>input matrix</strong> =
 
-<li>The input array will only contain <code>0</code> and <code>1</code>.</li>
+[
 
-<li>The length of input array is a positive integer and will not exceed 10,000</li>
+  [ 5, 1, 9,11],
 
-</ul>
+  [ 2, 4, 8,10],
 
-</p>
+  [13, 3, 6, 7],
+
+  [15,14,12,16]
+
+], 
+
+
+
+rotate the input matrix <strong>in-place</strong> such that it becomes:
+
+[
+
+  [15,13, 2, 5],
+
+  [14, 3, 4, 1],
+
+  [12, 6, 8, 9],
+
+  [16, 7,10,11]
+
+]
+
+</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：本题比较简单，需要注意的是，因为每次都是以0作为结束条件，所以如果数组不是以0结尾，就会少算一次，所以选哟在程序的最后比较numsofzero和rv的大小；</p>
-<p>另外一种直接在原始的数组后面自己添加一个0作为结束条件，也可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// nums.push_back(0);</span></span><br><span class="line">        <span class="keyword">int</span> numsofzero = <span class="number">0</span>, rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++numsofzero;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (numsofzero &gt; rv)</span><br><span class="line">                &#123;</span><br><span class="line">                    rv = numsofzero;</span><br><span class="line">                &#125;</span><br><span class="line">                numsofzero = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(rv, numsofzero);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思路：先交换行，再转置或者先转置再交换列。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * clockwise rotate</span></span><br><span class="line"><span class="comment">         * first reverse up to down, then swap the symmetry </span></span><br><span class="line"><span class="comment">         * 1 2 3     7 8 9     7 4 1</span></span><br><span class="line"><span class="comment">         * 4 5 6  =&gt; 4 5 6  =&gt; 8 5 2</span></span><br><span class="line"><span class="comment">         * 7 8 9     1 2 3     9 6 3</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        reverse(matrix.begin(), matrix.end());</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; matrix.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; matrix[i].size(); ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                swap(matrix[i][j], matrix[j][i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -334,13 +391,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/01/rotate-image/">rotate-image</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月22日 - 21时57分</p>
-        <p><span>最后更新:</span>2019年11月22日 - 22时18分</p>
+        <p><span>发布时间:</span>2020年03月01日 - 20时31分</p>
+        <p><span>最后更新:</span>2020年03月01日 - 20时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/22/max-consecutive-ones/" title="max-consecutive-ones">https://sky1blue.github.io/2019/11/22/max-consecutive-ones/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/22/max-consecutive-ones/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/01/rotate-image/" title="rotate-image">https://sky1blue.github.io/2020/03/01/rotate-image/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/01/rotate-image/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -353,18 +410,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/22/construct-the-rectangle/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          construct-the-rectangle
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">license-key-formatting</div>
+    <a href="/2020/01/01/permutations-ii/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">permutations-ii</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -375,7 +423,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#485-Max-Consecutive-Ones"><span class="toc-number">1.</span> <span class="toc-text">485. Max Consecutive Ones</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#48-Rotate-Image"><span class="toc-number">1.</span> <span class="toc-text">48. Rotate Image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -426,13 +474,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/22/construct-the-rectangle/" title="上一篇: construct-the-rectangle">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/21/license-key-formatting/" title="下一篇: license-key-formatting">
+            <a href="/2020/01/01/permutations-ii/" title="下一篇: permutations-ii">
                 <i class="fa fa-angle-right"></i>
             </a>
         
