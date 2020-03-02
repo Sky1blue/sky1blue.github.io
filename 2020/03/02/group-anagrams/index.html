@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>permutations | Simon的个人博客</title>
+  <title>group-anagrams | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
-<meta name="keywords" content="Medium,backtrack">
+  <meta name="description" content="49. Group AnagramsGiven an array of strings, group anagrams together.  Example:  Input: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],Output:[  [“ate”,”eat”,”tea”],  [“nat”,”tan”],  [“bat”]] Note:  All i">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="permutations">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/25/permutations/index.html">
+<meta property="og:title" content="group-anagrams">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/02/group-anagrams/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
+<meta property="og:description" content="49. Group AnagramsGiven an array of strings, group anagrams together.  Example:  Input: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],Output:[  [“ate”,”eat”,”tea”],  [“nat”,”tan”],  [“bat”]] Note:  All i">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-25T15:08:13.300Z">
+<meta property="og:updated_time" content="2020-03-02T14:40:22.078Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="permutations">
-<meta name="twitter:description" content="46. PermutationsGiven a collection of distinct integers, return all possible permutations.">
+<meta name="twitter:title" content="group-anagrams">
+<meta name="twitter:description" content="49. Group AnagramsGiven an array of strings, group anagrams together.  Example:  Input: [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],Output:[  [“ate”,”eat”,”tea”],  [“nat”,”tan”],  [“bat”]] Note:  All i">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-permutations" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-group-anagrams" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/25/permutations/" class="article-date">
-      <time datetime="2019-12-25T15:07:38.000Z" itemprop="datePublished">2019-12-25</time>
+      <a href="/2020/03/02/group-anagrams/" class="article-date">
+      <time datetime="2020-03-02T14:33:22.000Z" itemprop="datePublished">2020-03-02</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      permutations
+      group-anagrams
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/backtrack/">backtrack</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,57 +240,28 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="46-Permutations"><a href="#46-Permutations" class="headerlink" title="46. Permutations"></a>46. Permutations</h3><p>Given a collection of <strong>distinct</strong> integers, return all possible permutations.<a id="more"></a></p>
+        <h3 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a>49. Group Anagrams</h3><p>Given an array of strings, group anagrams together.</p>
 
+<p><b>Example:</b>
 
+</p><p><b>Input:</b> [“eat”, “tea”, “tan”, “ate”, “nat”, “bat”],<br><br><b>Output:</b><br>[<br>  [“ate”,”eat”,”tea”],<br>  [“nat”,”tan”],<br>  [“bat”]<br>]</p>
+<p><b>Note:</b>
 
-<p><strong>Example:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> [1,2,3]
-
-<strong>Output:</strong>
-
-[
-
-  [1,2,3],
-
-  [1,3,2],
-
-  [2,1,3],
-
-  [2,3,1],
-
-  [3,1,2],
-
-  [3,2,1]
-
-]
-
-</pre>
-
-
+</p><p>All inputs will be in lowercase.
+The order of your output does not matter</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：回溯法，每个位置尝试n种可能。</p>
-<p>回溯法的通用框架，递归+循环.<a href="https://leetcode.com/problems/permutations/discuss/18239/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partioning" target="_blank" rel="noopener">here</a>ju’li介绍了回溯法的通用解法。</p>
-<p>回溯法的模式：choose –&gt; explore –&gt; unchoose，对应</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">temp.push_back(nums[i]);</span><br><span class="line">helper(re, nums, temp);</span><br><span class="line">temp.pop_back();</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思路：使用排序后的字符串来判断两个原始字符串是否含有相同元素，使用map实现查找。<br>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; groupAnagrams(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; um;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> str : strs)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> t = str;</span><br><span class="line">            sort(t.begin(), t.end());</span><br><span class="line">            um[t].push_back(str);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; r;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> m : um)</span><br><span class="line">        &#123;</span><br><span class="line">            r.push_back(m.second);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>这三句。</p>
-<p>具体代码：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">    <span class="comment">// 一共有 A(n,n)种情况，n为数组的长度。</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">    </span><br><span class="line">    helper(re, nums, temp);</span><br><span class="line">    <span class="keyword">return</span> re;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (temp.size() == nums.size())</span><br><span class="line">    &#123;</span><br><span class="line">        re.push_back(temp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 每个位置尝试n个可能的数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">		<span class="comment">// 判断当前数组是否有这个值</span></span><br><span class="line">        <span class="keyword">if</span> (find(temp.begin(), temp.end(), nums[i]) != temp.end())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push_back(nums[i]);</span><br><span class="line">        helper(re, nums, temp);</span><br><span class="line">        temp.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>优化：由于字符串只含有小写字母，所以使用计数排序提升排序性能<br>方法如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; groupAnagrams(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs) &#123;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="built_in">string</span>, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; mp;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> s : strs) &#123;</span><br><span class="line">            mp[strSort(s)].push_back(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; anagrams;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> p : mp) &#123; </span><br><span class="line">            anagrams.push_back(p.second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> anagrams;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">		<span class="comment">// 统计每个字母出现的次数，然后将次数和对应字母组合成字符串，用该字符串代替之前排序后的字符串</span></span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">strSort</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> counter[<span class="number">26</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">char</span> c : s) &#123;</span><br><span class="line">            counter[c - <span class="string">'a'</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> t;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; <span class="number">26</span>; c++) &#123;</span><br><span class="line">            t += <span class="built_in">string</span>(counter[c], c + <span class="string">'a'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>优化：由于find的时间复杂度为O(n)，所以增加一个bool数组用于判断每个位置的数是否被使用，时间复杂度为O(1)。</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="comment">// 一共有 A(n,n)种情况，n为数组的长度。</span></span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; visited(nums.size(), <span class="literal">false</span>);</span><br><span class="line">        </span><br><span class="line">        helper(re, nums, temp, visited);</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; &amp;visited)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.size() == nums.size())</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (visited[i] == <span class="literal">true</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            visited[i] = <span class="literal">true</span>;</span><br><span class="line">            temp.push_back(nums[i]);</span><br><span class="line">            helper(re, nums, temp, visited);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">            visited[i] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>解法2：固定前面m个数字，对第m+1个数字用它后面的数字一次进行替换</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; permute(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num) &#123;</span><br><span class="line">	    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; result;</span><br><span class="line">	    </span><br><span class="line">	    permuteRecursive(num, <span class="number">0</span>, result);</span><br><span class="line">	    <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// permute num[begin..end]</span></span><br><span class="line">    <span class="comment">// invariant: num[0..begin-1] have been fixed/permuted</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">permuteRecursive</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;num, <span class="keyword">int</span> begin, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; &amp;result)</span>	</span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (begin &gt;= num.size()) &#123;</span><br><span class="line">		    <span class="comment">// one permutation instance</span></span><br><span class="line">		    result.push_back(num);</span><br><span class="line">		    <span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; num.size(); i++) &#123;</span><br><span class="line">		    swap(num[begin], num[i]);</span><br><span class="line">		    permuteRecursive(num, begin + <span class="number">1</span>, result);</span><br><span class="line">		    <span class="comment">// reset</span></span><br><span class="line">		    swap(num[begin], num[i]);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+<p>启示：</p>
+<ol>
+<li>判断两个字符串元素是否相同可以使用排序后的来判断；</li>
+<li>判断数组中相同的元素可以使用map来查找 </li>
+</ol>
 
       
       
@@ -346,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/25/permutations/">permutations</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/02/group-anagrams/">group-anagrams</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月25日 - 23时07分</p>
-        <p><span>最后更新:</span>2019年12月25日 - 23时08分</p>
+        <p><span>发布时间:</span>2020年03月02日 - 22时33分</p>
+        <p><span>最后更新:</span>2020年03月02日 - 22时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/25/permutations/" title="permutations">https://sky1blue.github.io/2019/12/25/permutations/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/25/permutations/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/02/group-anagrams/" title="group-anagrams">https://sky1blue.github.io/2020/03/02/group-anagrams/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/02/group-anagrams/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -365,18 +336,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/01/01/permutations-ii/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          permutations-ii
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/24/multiply-strings/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">multiply-strings</div>
+    <a href="/2020/03/01/rotate-image/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rotate-image</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -387,7 +349,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#46-Permutations"><span class="toc-number">1.</span> <span class="toc-text">46. Permutations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#49-Group-Anagrams"><span class="toc-number">1.</span> <span class="toc-text">49. Group Anagrams</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -438,13 +400,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/01/01/permutations-ii/" title="上一篇: permutations-ii">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/24/multiply-strings/" title="下一篇: multiply-strings">
+            <a href="/2020/03/01/rotate-image/" title="下一篇: rotate-image">
                 <i class="fa fa-angle-right"></i>
             </a>
         
