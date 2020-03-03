@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>zigzag-conversion | Simon的个人博客</title>
+  <title>pow(x,n) | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
+  <meta name="description" content="50. Pow(x, n) Implement pow(x, n), which calculates x raised to the power n (xn).">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zigzag-conversion">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/02/zigzag-conversion/index.html">
+<meta property="og:title" content="pow(x,n)">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/03/pow-x-n/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
+<meta property="og:description" content="50. Pow(x, n) Implement pow(x, n), which calculates x raised to the power n (xn).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-02T15:06:03.508Z">
+<meta property="og:updated_time" content="2020-03-03T15:18:32.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zigzag-conversion">
-<meta name="twitter:description" content="6. ZigZag ConversionThe string &amp;quot;PAYPALISHIRING&amp;quot; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibilit">
+<meta name="twitter:title" content="pow(x,n)">
+<meta name="twitter:description" content="50. Pow(x, n) Implement pow(x, n), which calculates x raised to the power n (xn).">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-zigzag-conversion" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-pow-x-n" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/02/zigzag-conversion/" class="article-date">
-      <time datetime="2019-12-02T14:51:59.000Z" itemprop="datePublished">2019-12-02</time>
+      <a href="/2020/03/03/pow-x-n/" class="article-date">
+      <time datetime="2020-03-03T15:10:02.000Z" itemprop="datePublished">2020-03-03</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      zigzag-conversion
+      pow(x,n)
     </h1>
   
 
@@ -240,95 +240,29 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="6-ZigZag-Conversion"><a href="#6-ZigZag-Conversion" class="headerlink" title="6. ZigZag Conversion"></a>6. ZigZag Conversion</h3><p>The string <code>&quot;PAYPALISHIRING&quot;</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)<a id="more"></a></p>
+        <h3 id="50-Pow-x-n"><a href="#50-Pow-x-n" class="headerlink" title="50. Pow(x, n)"></a>50. Pow(x, n)</h3><p> Implement pow(x, n), which calculates x raised to the power n (xn).<a id="more"></a></p>
 
-
-
-<pre>
-
-P   A   H   N
-
-A P L S I I G
-
-Y   I   R
-
-</pre>
-
-
-
-<p>And then read line by line: <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>
-
-
-
-<p>Write the code that will take a string and make this conversion given a number of rows:</p>
-
-
-
-<pre>
-
-string convert(string s, int numRows);</pre>
-
-
-
-<p><strong>Example 1:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows = 3
-
-<strong>Output:</strong> &quot;PAHNAPLSIIGYIR&quot;
-
-</pre>
-
-
-
-<p><strong>Example 2:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> s = &quot;PAYPALISHIRING&quot;, numRows =&nbsp;4
-
-<strong>Output:</strong>&nbsp;&quot;PINALSIGYAHRPI&quot;
-
-<strong>Explanation:</strong>
-
-
-
-P     I    N
-
-A   L S  I G
-
-Y A   H R
-
-P     I</pre>
-
-
-
+<p>Example 1:</p>
+<p>Input: 2.00000, 10</p>
+<p>Output: 1024.00000</p>
+<p>Example 2:</p>
+<p>Input: 2.10000, 3</p>
+<p>Output: 9.26100</p>
+<p>Example 3:</p>
+<p>Input: 2.00000, -2<br>Output: 0.25000<br>Explanation: $2^{-2} = 1/2^{2} = 1/4 = 0.25$</p>
+<p>Note:</p>
+<ul>
+<li>-100.0 &lt; x &lt; 100.0</li>
+<li>n is a 32-bit signed integer, within the range $[−2^{31}, 2^{31} − 1]$</li>
+</ul>
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：首先决定字符串中的每个值属于第几行，然后将每行组成的字符串相加即可。</p>
-<p>如何决定属于第几行？</p>
-<p>方法：可以使用两个变量跟踪相应的行：当前行和当前方向。如果当前行为0，那么下面行号依次递增，如果当前行为numRows - 1，那么下面的行号一次递减。</p>
-<p>比如 给定”PAYPALISHIRING”, numRows = 4;</p>
-<p>那么<br>P 0<br>A 1<br>Y 2<br>P 3 改变方向，行号递减<br>A 2<br>L 1<br>I 0 改变方向，行号递增<br>。。。。</p>
-<p>参考方法：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rows(numRows);</span><br><span class="line">        <span class="keyword">int</span> step = <span class="number">1</span>, row = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            rows[row] += s[i];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (row == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                step = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (row == numRows - <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                step = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            row += step;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> str : rows)</span><br><span class="line">        &#123;</span><br><span class="line">            rv += str;</span><br><span class="line">        &#125;</span><br><span class="line">                     </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>我的解比较繁琐，还是确定每个值在第几行。</p>
-<p>首先确定周期所占的个数，还是确定是在前半个周期还是后半个周期，来判断行数</p>
-
-
-
-
-<p>P     I    N</p>
-<p>A   L S  I G</p>
-<p>Y A   H R</p>
-<p>P     I</p>
-<p>上面给的实例周期为4 + 2 = 6，PAYP处于前半个周期，AL处于后半个周期。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> numRows)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (numRows &lt;= <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; rows(min(numRows, (<span class="keyword">int</span>)s.size()));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> cycleLen = numRows * <span class="number">2</span> - <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = s.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = i % cycleLen;</span><br><span class="line">            <span class="keyword">int</span> rown = temp &gt;= numRows ? (cycleLen - temp) : temp;</span><br><span class="line">            rows[rown] += s[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> rv;</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">string</span> str : rows)</span><br><span class="line">        &#123;</span><br><span class="line">            rv += str;</span><br><span class="line">        &#125;</span><br><span class="line">                     </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思想：将指数分解为2的幂。</p>
+<p>例如：</p>
+<p>$N = 9 = 2^3 + 2^0 = 1001$ in binary. Then:</p>
+<p>$x^9 = x^{2^3} * x^{2^0}$</p>
+<p>时间复杂度为：$log(n)$</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">        <span class="comment">// 这里使用long是为了处理n = min_int</span></span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> m = (n &gt;= <span class="number">0</span> ? n : -(<span class="keyword">long</span> <span class="keyword">long</span>)n);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">double</span> r = <span class="number">1.00000</span>;</span><br><span class="line">        <span class="keyword">while</span>(m)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(m &amp; <span class="number">0x01</span>)</span><br><span class="line">                r *= x;</span><br><span class="line">            x *= x;</span><br><span class="line">            m &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> ? r : <span class="number">1</span> / r;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -383,13 +317,13 @@ P     I</pre>
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/03/pow-x-n/">pow(x,n)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月02日 - 22时51分</p>
-        <p><span>最后更新:</span>2019年12月02日 - 23时06分</p>
+        <p><span>发布时间:</span>2020年03月03日 - 23时10分</p>
+        <p><span>最后更新:</span>2020年03月03日 - 23时18分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/02/zigzag-conversion/" title="zigzag-conversion">https://sky1blue.github.io/2019/12/02/zigzag-conversion/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/02/zigzag-conversion/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/03/pow-x-n/" title="pow(x,n)">https://sky1blue.github.io/2020/03/03/pow-x-n/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/03/pow-x-n/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -402,18 +336,9 @@ P     I</pre>
 
 <nav id="article-nav">
   
-    <a href="/2019/12/03/string-to-integer-atoi/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          string-to-integer-atoi
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/01/k-diff-pairs-in-an-array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">k-diff-pairs-in-an-array</div>
+    <a href="/2020/03/02/group-anagrams/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">group-anagrams</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -424,7 +349,7 @@ P     I</pre>
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-ZigZag-Conversion"><span class="toc-number">1.</span> <span class="toc-text">6. ZigZag Conversion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#50-Pow-x-n"><span class="toc-number">1.</span> <span class="toc-text">50. Pow(x, n)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -475,13 +400,11 @@ P     I</pre>
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/03/string-to-integer-atoi/" title="上一篇: string-to-integer-atoi">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/01/k-diff-pairs-in-an-array/" title="下一篇: k-diff-pairs-in-an-array">
+            <a href="/2020/03/02/group-anagrams/" title="下一篇: group-anagrams">
                 <i class="fa fa-angle-right"></i>
             </a>
         
