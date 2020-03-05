@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>3sum-closest | Simon的个人博客</title>
+  <title>jump-game | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="16. 3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums&amp;nbsp;such that the sum is closest to&amp;nbsp;target. Return the sum of the three integers. You may ass">
-<meta name="keywords" content="Medium">
+  <meta name="description" content="55. Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array.">
+<meta name="keywords" content="Medium,动态规划,回溯法,贪婪法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3sum-closest">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/07/3sum-closest/index.html">
+<meta property="og:title" content="jump-game">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/06/jump-game/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="16. 3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums&amp;nbsp;such that the sum is closest to&amp;nbsp;target. Return the sum of the three integers. You may ass">
+<meta property="og:description" content="55. Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-07T14:19:10.393Z">
+<meta property="og:updated_time" content="2020-03-05T16:06:38.073Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3sum-closest">
-<meta name="twitter:description" content="16. 3Sum ClosestGiven an array nums of n integers and an integer target, find three integers in nums&amp;nbsp;such that the sum is closest to&amp;nbsp;target. Return the sum of the three integers. You may ass">
+<meta name="twitter:title" content="jump-game">
+<meta name="twitter:description" content="55. Jump GameGiven an array of non-negative integers, you are initially positioned at the first index of the array.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-3sum-closest" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jump-game" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/07/3sum-closest/" class="article-date">
-      <time datetime="2019-12-07T03:26:18.000Z" itemprop="datePublished">2019-12-07</time>
+      <a href="/2020/03/06/jump-game/" class="article-date">
+      <time datetime="2020-03-05T16:03:34.000Z" itemprop="datePublished">2020-03-06</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      3sum-closest
+      jump-game
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/回溯法/">回溯法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪婪法/">贪婪法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,31 +240,30 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="16-3Sum-Closest"><a href="#16-3Sum-Closest" class="headerlink" title="16. 3Sum Closest"></a>16. 3Sum Closest</h3><p>Given an array <code>nums</code> of <em>n</em> integers and an integer <code>target</code>, find three integers in <code>nums</code>&nbsp;such that the sum is closest to&nbsp;<code>target</code>. Return the sum of the three integers. You may assume that each input would have exactly one solution.<a id="more"></a></p>
-
-
-
-<p><strong>Example:</strong></p>
-
-
-
-<pre>
-
-Given array nums = [-1, 2, 1, -4], and target = 1.
-
-
-
-The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
-
-</pre>
-
-
-
+        <h3 id="55-Jump-Game"><a href="#55-Jump-Game" class="headerlink" title="55. Jump Game"></a>55. Jump Game</h3><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.<a id="more"></a></p>
+<p>Each element in the array represents your maximum jump length at that position.</p>
+<p>Determine if you are able to reach the last index.</p>
+<p>Example 1:</p>
+<p>Input: [2,3,1,1,4]</p>
+<p>Output: true</p>
+<p>Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</p>
+<p>Example 2:</p>
+<p>Input: [3,2,1,0,4]</p>
+<p>Output: false</p>
+<p>Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.</p>
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：与<a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">题15.3Sum</a>，做法类似，固定一个值，剩余的两个一个指向当前值的下一个，一个指向最后一个（双指针解法）。不同的是，比较当前三个值的sum与target的差，如果绝对值小于，上一次的三个数的sum就更新差。时间复杂度$O(N^{2})$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">threeSumClosest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        <span class="keyword">int</span> min_diff = INT_MAX;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = target - nums[i];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> l = i + <span class="number">1</span>, r = n - <span class="number">1</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> temp = nums[l] + nums[r];</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (temp &lt; sum)</span><br><span class="line">                &#123;</span><br><span class="line">                    ++l;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (temp &gt; sum)</span><br><span class="line">                &#123;</span><br><span class="line">                    --r;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> target;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 比较当前三个值的sum与target的差，如果绝对值小于，上一次的三个数的sum就更新差。</span></span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">abs</span>(target - temp - nums[i]) &lt; <span class="built_in">abs</span>(min_diff))</span><br><span class="line">                &#123;</span><br><span class="line">                    min_diff = target - temp - nums[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> target - min_diff;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>方法一：回溯法，Time limit Exceeded，超时；：上限$O(2^n)$</p>
+<p>每个位置先以最大的移动位置移动，如果不行，移动位置减一。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canJump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> helper(nums, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> index)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= nums.size() - <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums[index]; i &gt;= <span class="number">1</span>; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (helper(nums, index + i))</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<p>方法二：针对回溯法的优化，备忘录法，动态规划。</p>
+<p>回溯法：每个位置会被重复判断，建立一个备忘录用于记录从当前位置出发是否可以到达终点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">canJump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; memo(nums.size(), <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> helper(nums, <span class="number">0</span>, memo);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> index, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; memo)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (index &gt;= nums.size() - <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (memo[index] != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> memo[index] == <span class="number">2</span> ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = nums[index]; i &gt;= <span class="number">1</span>; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (helper(nums, index + i, memo))</span><br><span class="line">            &#123;</span><br><span class="line">                memo[index] = <span class="number">2</span>;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        memo[index] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<p>方法三：贪婪法，时间复杂度O(n)</p>
+<p>定义一个好点：即如果从当前位置出发能到达终点，那么当前位置我们称作一个好点</p>
+<p>数组从后往前迭代，在每个位置检查从当前位置出发能否到达一个最左边的好点，即当前index+nums[index]能否超过好点的位置，相应地当前位置也成为新的最左边的好点，一直迭代直到到达数组的开始，最终检查第一个位置是否是好点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">canJump</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> lastPos = nums.size() - <span class="number">1</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (i + nums[i] &gt;= lastPos)</span><br><span class="line">           &#123;</span><br><span class="line">               lastPos = i;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> lastPos == <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
       
       
         <div class="page-reward">
@@ -319,13 +318,13 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/07/3sum-closest/">3sum-closest</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/06/jump-game/">jump-game</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月07日 - 11时26分</p>
-        <p><span>最后更新:</span>2019年12月07日 - 22时19分</p>
+        <p><span>发布时间:</span>2020年03月06日 - 00时03分</p>
+        <p><span>最后更新:</span>2020年03月06日 - 00时06分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/07/3sum-closest/" title="3sum-closest">https://sky1blue.github.io/2019/12/07/3sum-closest/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/07/3sum-closest/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/06/jump-game/" title="jump-game">https://sky1blue.github.io/2020/03/06/jump-game/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/06/jump-game/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -338,18 +337,9 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
 <nav id="article-nav">
   
-    <a href="/2019/12/08/letter-combinations-of-a-phone-number/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          letter-combinations-of-a-phone-number
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/05/3sum/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">3sum</div>
+    <a href="/2020/03/04/spiral-matrix/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spiral-matrix</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -360,7 +350,7 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#16-3Sum-Closest"><span class="toc-number">1.</span> <span class="toc-text">16. 3Sum Closest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#55-Jump-Game"><span class="toc-number">1.</span> <span class="toc-text">55. Jump Game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -411,13 +401,11 @@ The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/08/letter-combinations-of-a-phone-number/" title="上一篇: letter-combinations-of-a-phone-number">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/05/3sum/" title="下一篇: 3sum">
+            <a href="/2020/03/04/spiral-matrix/" title="下一篇: spiral-matrix">
                 <i class="fa fa-angle-right"></i>
             </a>
         
