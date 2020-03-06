@@ -201,6 +201,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-heaters" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/19/heaters/" class="article-date">
+      <time datetime="2019-11-19T15:21:23.000Z" itemprop="datePublished">2019-11-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/19/heaters/">heaters</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="475-Heaters"><a href="#475-Heaters" class="headerlink" title="475. Heaters"></a>475. Heaters</h3><p>Winter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心算法/">贪心算法</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/11/19/heaters/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-island-perimeter" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -805,93 +872,9 @@ Assume you are an awesome parent and want to give your children some cookies. Bu
 
 
   
-    <article id="post-minimum-moves-to-equal-array-elements" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/14/minimum-moves-to-equal-array-elements/" class="article-date">
-      <time datetime="2019-11-14T14:24:18.000Z" itemprop="datePublished">2019-11-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="453-Minimum-Moves-to-Equal-Array-Elements"><a href="#453-Minimum-Moves-to-Equal-Array-Elements" class="headerlink" title="453. Minimum Moves to Equal Array Elements"></a>453. Minimum Moves to Equal Array Elements</h3><p>Given a <b>non-empty</b> integer array of size <i>n</i>, find the minimum number of moves required to make all array elements equal, where a move is incrementing <i>n</i> - 1 elements by 1.</p>
-
-<p><b>Example:</b>
-<pre>
-<b>Input:</b>
-[1,2,3]
-
-<p><b>Output:</b><br>3</p>
-<p><b>Explanation:</b><br>Only three moves are needed (remember each move increments two elements):</p>
-<p>[1,2,3]  =&gt;  [2,3,3]  =&gt;  [3,4,3]  =&gt;  [4,4,4]<br></p></pre></p>
-<p></p>
-
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题使用公式推导得$k = sum - n * min$</p>
-<p>其中k表示需要移动的次数，n表示数组的长度，min表示数组的最小值，sum表示数组的总和。</p>
-<p>说明如下：数组最终所有的数相等应该等于 $min + k$</p>
-<p>所以数组最终的总和为$n*(min+k)$</p>
-<p>而这期间k次，每次都有$n - 1$个元素加1，所有得到的结果为$sum + k*(n - 1)$</p>
-<p>所以得到$n * (min + k) = sum + k*(n-1)$</p>
-<p>化简后得到 $k = sum - n * min$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minMoves</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> iter = nums.begin(); iter &lt; nums.end(); ++iter)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += *iter;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> minval = *min_element(nums.begin(), nums.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum - nums.size() * minval;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
     </nav>
   
 </div>
