@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>k-diff-pairs-in-an-array | Simon的个人博客</title>
+  <title>rotate-list | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="532. K-diff Pairs in an Array  Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), wh">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="61. Rotate ListGiven a linked&amp;nbsp;list, rotate the list to the right by k places, where k is non-negative.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="k-diff-pairs-in-an-array">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/01/k-diff-pairs-in-an-array/index.html">
+<meta property="og:title" content="rotate-list">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/09/rotate-list/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="532. K-diff Pairs in an Array  Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), wh">
+<meta property="og:description" content="61. Rotate ListGiven a linked&amp;nbsp;list, rotate the list to the right by k places, where k is non-negative.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-01T14:30:19.404Z">
+<meta property="og:updated_time" content="2020-03-09T15:46:53.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="k-diff-pairs-in-an-array">
-<meta name="twitter:description" content="532. K-diff Pairs in an Array  Given an array of integers and an integer k, you need to find the number of unique k-diff pairs in the array. Here a k-diff pair is defined as an integer pair (i, j), wh">
+<meta name="twitter:title" content="rotate-list">
+<meta name="twitter:description" content="61. Rotate ListGiven a linked&amp;nbsp;list, rotate the list to the right by k places, where k is non-negative.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-k-diff-pairs-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-rotate-list" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/01/k-diff-pairs-in-an-array/" class="article-date">
-      <time datetime="2019-12-01T14:20:21.000Z" itemprop="datePublished">2019-12-01</time>
+      <a href="/2020/03/09/rotate-list/" class="article-date">
+      <time datetime="2020-03-09T15:46:29.000Z" itemprop="datePublished">2020-03-09</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      k-diff-pairs-in-an-array
+      rotate-list
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,80 +240,62 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="532-K-diff-Pairs-in-an-Array"><a href="#532-K-diff-Pairs-in-an-Array" class="headerlink" title="532. K-diff Pairs in an Array"></a>532. K-diff Pairs in an Array</h3><p>
-
-</p><p>Given an array of integers and an integer <b>k</b>, you need to find the number of <b>unique</b> k-diff pairs in the array. Here a <b>k-diff</b> pair is defined as an integer pair (i, j), where <b>i</b> and <b>j</b> are both numbers in the array and their <a href="https://en.wikipedia.org/wiki/Absolute_difference" target="_blank" rel="noopener">absolute difference</a> is <b>k</b>.</p>
-<a id="more"></a><p></p>
+        <h3 id="61-Rotate-List"><a href="#61-Rotate-List" class="headerlink" title="61. Rotate List"></a>61. Rotate List</h3><p>Given a linked&nbsp;list, rotate the list to the right by <em>k</em> places, where <em>k</em> is non-negative.<a id="more"></a></p>
 
 
 
+<p><strong>Example 1:</strong></p>
 
 
-<p><b>Example 1:</b><br>
 
 <pre>
 
-<b>Input:</b> [3, 1, 4, 1, 5], k = 2
+<strong>Input:</strong> 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, k = 2
 
-<b>Output:</b> 2
+<strong>Output:</strong> 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
 
-<b>Explanation: </b>There are two 2-diff pairs in the array, (1, 3) and (3, 5).<br>Although we have two 1s in the input, we should only return the number of <b>unique</b> pairs.
+<strong>Explanation:</strong>
+
+rotate 1 steps to the right: 5-&gt;1-&gt;2-&gt;3-&gt;4-&gt;NULL
+
+rotate 2 steps to the right: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
 
 </pre>
 
-</p>
 
 
+<p><strong>Example 2:</strong></p>
 
-<p><b>Example 2:</b><br>
+
 
 <pre>
 
-<b>Input:</b>[1, 2, 3, 4, 5], k = 1
+<strong>Input:</strong> 0-&gt;1-&gt;2-&gt;NULL, k = 4
 
-<b>Output: </b>4
+<strong>Output:</strong> <code>2-&gt;0-&gt;1-&gt;NULL</code>
 
-<b>Explanation:</b> There are four 1-diff pairs in the array, (1, 2), (2, 3), (3, 4) and (4, 5).
+<strong>Explanation:</strong>
 
-</pre>
+rotate 1 steps to the right: 2-&gt;0-&gt;1-&gt;NULL
 
-</p>
+rotate 2 steps to the right: 1-&gt;2-&gt;0-&gt;NULL
 
+rotate 3 steps to the right:&nbsp;<code>0-&gt;1-&gt;2-&gt;NULL</code>
 
-
-<p><b>Example 3:</b><br>
-
-<pre>
-
-<b>Input: </b>[1, 3, 1, 5, 4], k = 0
-
-<b>Output: </b>1
-
-<b>Explanation:</b> There is one 0-diff pair in the array, (1, 1).
-
-</pre>
-
-</p>
+rotate 4 steps to the right:&nbsp;<code>2-&gt;0-&gt;1-&gt;NULL</code></pre>
 
 
-
-<p><b>Note:</b><br>
-
-<ol>
-
-<li>The pairs (i, j) and (j, i) count as the same pair.</li>
-
-<li>The length of the array won't exceed 10,000.</li>
-
-<li>All the integers in the given input belong to the range: [-1e7, 1e7].</li>
-
-</ol>
-
-</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题思路：使用map记录每个值出现的次数；然后对k的值分情况：k = 0, 统计重复出现的值的个数；k非0，查找map中是否存在 i + k，其中i是当前值。本题其实与题1.Two Sum类似。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findPairs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (k &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> n : nums)</span><br><span class="line">        &#123;</span><br><span class="line">            m[n]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> p : m)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> ((!k &amp;&amp; p.second &gt; <span class="number">1</span>) ||</span><br><span class="line">              (k &amp;&amp; m.count(p.first + k))) <span class="comment">// 这里m.count(p.first + k)不能换成m[p.first + k];因为对于map的操作符[],如果没有匹配到容器中的任何值，会自动插入一个新的值同时返回一个reference</span></span><br><span class="line">            &#123;</span><br><span class="line">              ++cnt;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：快慢指针法。</p>
+<p>先求出list的长度len，在算出k = k % len，k为实际旋转次数。</p>
+<p>快指针领先慢指针k个位置，当快指针到达末尾时，满指针指向的就是新的list的末尾。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">rotateRight</span><span class="params">(ListNode* head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (!head) <span class="keyword">return</span> head;</span><br><span class="line">       ListNode* headTemp = head;</span><br><span class="line">       <span class="keyword">int</span> listLen = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">while</span>(headTemp)</span><br><span class="line">       &#123;</span><br><span class="line">           ++listLen;</span><br><span class="line">           headTemp = headTemp-&gt;next;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       k = k % listLen;</span><br><span class="line">       <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">return</span> head;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       ListNode* a = head;</span><br><span class="line">       ListNode* b = head;</span><br><span class="line">       <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">while</span>(a &amp;&amp; a-&gt;next)</span><br><span class="line">       &#123;</span><br><span class="line">           ++count;</span><br><span class="line">           a = a-&gt;next;</span><br><span class="line">           <span class="keyword">if</span> (count &gt; k)</span><br><span class="line">           &#123;</span><br><span class="line">               b = b-&gt;next;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       headTemp = b-&gt;next;</span><br><span class="line">       b-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">       a-&gt;next = head;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> headTemp;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：先将链表首尾相联，尾指针向后移动len - k次即得到新的尾指针，</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ListNode* <span class="title">rotateRight</span><span class="params">(ListNode* head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!head) <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> len=<span class="number">1</span>; <span class="comment">// number of nodes</span></span><br><span class="line">        ListNode *newH, *tail;</span><br><span class="line">        newH=tail=head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(tail-&gt;next)  <span class="comment">// get the number of nodes in the list</span></span><br><span class="line">        &#123;</span><br><span class="line">            tail = tail-&gt;next;</span><br><span class="line">            len++;</span><br><span class="line">        &#125;</span><br><span class="line">        tail-&gt;next = head; <span class="comment">// circle the link</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(k %= len) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">auto</span> i=<span class="number">0</span>; i&lt;len-k; i++) tail = tail-&gt;next; <span class="comment">// the tail node is the (len-k)-th node (1st node is head)</span></span><br><span class="line">        &#125;</span><br><span class="line">        newH = tail-&gt;next; </span><br><span class="line">        tail-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> newH;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -370,13 +352,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/09/rotate-list/">rotate-list</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月01日 - 22时20分</p>
-        <p><span>最后更新:</span>2019年12月01日 - 22时30分</p>
+        <p><span>发布时间:</span>2020年03月09日 - 23时46分</p>
+        <p><span>最后更新:</span>2020年03月09日 - 23时46分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/01/k-diff-pairs-in-an-array/" title="k-diff-pairs-in-an-array">https://sky1blue.github.io/2019/12/01/k-diff-pairs-in-an-array/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/01/k-diff-pairs-in-an-array/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/09/rotate-list/" title="rotate-list">https://sky1blue.github.io/2020/03/09/rotate-list/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/09/rotate-list/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -389,18 +371,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/02/zigzag-conversion/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          zigzag-conversion
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/01/minimum-absolute-difference-in-bst/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">minimum-absolute-difference-in-bst</div>
+    <a href="/2020/03/09/permutation-sequence/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">permutation-sequence</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -411,7 +384,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#532-K-diff-Pairs-in-an-Array"><span class="toc-number">1.</span> <span class="toc-text">532. K-diff Pairs in an Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-Rotate-List"><span class="toc-number">1.</span> <span class="toc-text">61. Rotate List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -462,13 +435,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/02/zigzag-conversion/" title="上一篇: zigzag-conversion">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/01/minimum-absolute-difference-in-bst/" title="下一篇: minimum-absolute-difference-in-bst">
+            <a href="/2020/03/09/permutation-sequence/" title="下一篇: permutation-sequence">
                 <i class="fa fa-angle-right"></i>
             </a>
         
