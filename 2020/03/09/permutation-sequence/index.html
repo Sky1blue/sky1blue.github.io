@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>string-compression | Simon的个人博客</title>
+  <title>permutation-sequence | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="443. String CompressionGiven an array of characters, compress it in-place.  The length after compression must always be smaller than or equal to the original array.  Every element of the array should">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="string-compression">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/13/string-compression/index.html">
+<meta property="og:title" content="permutation-sequence">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/09/permutation-sequence/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="443. String CompressionGiven an array of characters, compress it in-place.  The length after compression must always be smaller than or equal to the original array.  Every element of the array should">
+<meta property="og:description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-13T13:10:28.000Z">
+<meta property="og:updated_time" content="2020-03-09T05:41:03.274Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="string-compression">
-<meta name="twitter:description" content="443. String CompressionGiven an array of characters, compress it in-place.  The length after compression must always be smaller than or equal to the original array.  Every element of the array should">
+<meta name="twitter:title" content="permutation-sequence">
+<meta name="twitter:description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-string-compression" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-permutation-sequence" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/13/string-compression/" class="article-date">
-      <time datetime="2019-11-13T13:10:27.000Z" itemprop="datePublished">2019-11-13</time>
+      <a href="/2020/03/09/permutation-sequence/" class="article-date">
+      <time datetime="2020-03-09T04:55:09.000Z" itemprop="datePublished">2020-03-09</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      string-compression
+      permutation-sequence
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,82 +240,90 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="443-String-Compression"><a href="#443-String-Compression" class="headerlink" title="443. String Compression"></a>443. String Compression</h3><p>Given an array of characters, compress it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><b>in-place</b></a>.</p>
+        <h3 id="60-Permutation-Sequence"><a href="#60-Permutation-Sequence" class="headerlink" title="60. Permutation Sequence"></a>60. Permutation Sequence</h3><p>The set <code>[1,2,3,...,<em>n</em>]</code> contains a total of <em>n</em>! unique permutations.<a id="more"></a></p>
 
-<p>The length after compression must always be smaller than or equal to the original array.</p>
 
-<p>Every element of the array should be a <b>character</b> (not int) of length 1.</p>
 
-<p>After you are done <b>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></b>, return the new length of the array.</p>
-&nbsp;
+<p>By listing and labeling all of the permutations in order, we get the following sequence for <em>n</em> = 3:</p>
 
-<p><b>Follow up:</b><br>
-Could you solve it using only O(1) extra space?</p>
-&nbsp;
 
-<p><b>Example 1:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;c&quot;,&quot;c&quot;,&quot;c&quot;]
-
-<b>Output:</b>
-Return 6, and the first 6 characters of the input array should be: [&quot;a&quot;,&quot;2&quot;,&quot;b&quot;,&quot;2&quot;,&quot;c&quot;,&quot;3&quot;]
-
-<b>Explanation:</b>
-&quot;aa&quot; is replaced by &quot;a2&quot;. &quot;bb&quot; is replaced by &quot;b2&quot;. &quot;ccc&quot; is replaced by &quot;c3&quot;.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Example 2:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;]
-
-<b>Output:</b>
-Return 1, and the first 1 characters of the input array should be: [&quot;a&quot;]
-
-<b>Explanation:</b>
-Nothing is replaced.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Example 3:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;]
-
-<b>Output:</b>
-Return 4, and the first 4 characters of the input array should be: [&quot;a&quot;,&quot;b&quot;,&quot;1&quot;,&quot;2&quot;].
-
-<b>Explanation:</b>
-Since the character &quot;a&quot; does not repeat, it is not compressed. &quot;bbbbbbbbbbbb&quot; is replaced by &quot;b12&quot;.
-Notice each digit has it&#39;s own entry in the array.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Note:</b></p>
 
 <ol>
-    <li>All characters have an ASCII value in <code>[35, 126]</code>.</li>
-    <li><code>1 &lt;= len(chars) &lt;= 1000</code>.</li>
-</ol>
+
+<pre><code>&lt;li&gt;&lt;code&gt;&amp;quot;123&amp;quot;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;&amp;quot;132&amp;quot;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;&amp;quot;213&amp;quot;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;&amp;quot;231&amp;quot;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;&amp;quot;312&amp;quot;&lt;/code&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;code&gt;&amp;quot;321&amp;quot;&lt;/code&gt;&lt;/li&gt;</code></pre></ol>
+
+
+
+<p>Given <em>n</em> and <em>k</em>, return the <em>k</em><sup>th</sup> permutation sequence.</p>
+
+
+
+<p><strong>Note:</strong></p>
+
+
+
+<ul>
+
+<pre><code>&lt;li&gt;Given &lt;em&gt;n&lt;/em&gt; will be between 1 and 9 inclusive.&lt;/li&gt;
+
+&lt;li&gt;Given&amp;nbsp;&lt;em&gt;k&lt;/em&gt;&amp;nbsp;will be between 1 and &lt;em&gt;n&lt;/em&gt;! inclusive.&lt;/li&gt;</code></pre></ul>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> n = 3, k = 3
+
+<strong>Output:</strong> &quot;213&quot;
+
+</pre>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> n = 4, k = 9
+
+<strong>Output:</strong> &quot;2314&quot;
+
+</pre>
+
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>双指针解法</p>
-<p>index用来指向新的字符串的末尾。</p>
-<p>注意：每个元素重复的长度不止是个位数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">int compress(vector&lt;char&gt;&amp; chars) &#123;</span><br><span class="line">        int index = 0, len = 0;</span><br><span class="line">        for (int i = 0, n = chars.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            if (i == 0 || chars[i - 1] != chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                if (len &gt; 0)</span><br><span class="line">                &#123;   </span><br><span class="line">                    string s = to_string(len + 1);</span><br><span class="line">                    for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">                    &#123;</span><br><span class="line">                        chars[index++] = s[j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                len = 0;</span><br><span class="line">                chars[index++] = chars[i];</span><br><span class="line">            &#125;</span><br><span class="line">            else if (chars[i - 1] == chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if (len &gt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            string s = to_string(len + 1);</span><br><span class="line">            for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                chars[index++] = s[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return index;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>存在的问题：不清晰，有重复的代码</p>
-<p>参考解法：双指针 + 计数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public int compress(char[] chars) &#123;</span><br><span class="line">        int indexAns = 0, index = 0;</span><br><span class="line">        while(index &lt; chars.length)&#123;</span><br><span class="line">            char currentChar = chars[index];</span><br><span class="line">            int count = 0;</span><br><span class="line">            while(index &lt; chars.length &amp;&amp; chars[index] == currentChar)&#123;// 统计重复字符的个数</span><br><span class="line">                index++;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            chars[indexAns++] = currentChar;</span><br><span class="line">            if(count != 1)</span><br><span class="line">                for(char c : Integer.toString(count).toCharArray()) </span><br><span class="line">                    chars[indexAns++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">        return indexAns;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：找到一种模式，以n = 4， k = 14说明。</p>
+<p>[1,2,3,4]所有的permutation，为</p>
+<p>1 + (permutations of 2, 3, 4)</p>
+<p>2 + (permutations of 1, 3, 4)</p>
+<p>3 + (permutations of 1, 2, 4)</p>
+<p>4 + (permutations of 1, 2, 3)</p>
+<p>即以1，2，3，4开头的permutation各有3! = 6个，所以第14个permutation应该处于3 + (permutations of 1, 2, 4)子集中，取k = 13(从0开始)，3 =  13 / 3！+ 1= 13 / 6 =2，所以第一个数应该为3。k = 13 - 2 * 6 = 2，然后重复上述操作，[1,3,4]所有permutation为</p>
+<p>1 + (permutations of  3, 4)</p>
+<p>3 + (permutations of 1, 4)</p>
+<p>4 + (permutations of 1, 2)</p>
+<p>0 = 1 / 2！，所以接下的数为1，依次类推。</p>
+<p>解释一下为什么k取从0开始？</p>
+<p>这样操作省去了，检查k/n！的余数来判断，当前数处于第几个。</p>
+<p>例如：14 / 6 = 2 余1，所以第一个数应该取第三个，如果k= 12，12 / 6 = 2 余0，所以应该取第2个，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; p(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; q(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        p[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[i] = i * p[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            q[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        k--;<span class="comment">// 这一步很妙，省去了通过检查k % p[n - i]的余数，判断j的取值。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = k / p[n - i];</span><br><span class="line">            s += (q[j + <span class="number">1</span>] + <span class="string">'0'</span>);</span><br><span class="line">            k = k - j * p[n - i];</span><br><span class="line">            q.erase(q.begin() + j + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -372,13 +380,13 @@ Notice each digit has it&#39;s own entry in the array.
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/13/string-compression/">string-compression</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/09/permutation-sequence/">permutation-sequence</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月13日 - 21时10分</p>
-        <p><span>最后更新:</span>2019年11月13日 - 21时10分</p>
+        <p><span>发布时间:</span>2020年03月09日 - 12时55分</p>
+        <p><span>最后更新:</span>2020年03月09日 - 13时41分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/13/string-compression/" title="string-compression">https://sky1blue.github.io/2019/11/13/string-compression/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/13/string-compression/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/09/permutation-sequence/" title="permutation-sequence">https://sky1blue.github.io/2020/03/09/permutation-sequence/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/09/permutation-sequence/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -391,18 +399,9 @@ Notice each digit has it&#39;s own entry in the array.
 
 <nav id="article-nav">
   
-    <a href="/2019/11/13/number-of-boomerangs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          number-of-boomerangs
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/13/arranging-coins/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">arranging-coins</div>
+    <a href="/2020/03/07/spiral-matrix-II/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">spiral-matrix-II</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -413,7 +412,7 @@ Notice each digit has it&#39;s own entry in the array.
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#443-String-Compression"><span class="toc-number">1.</span> <span class="toc-text">443. String Compression</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#60-Permutation-Sequence"><span class="toc-number">1.</span> <span class="toc-text">60. Permutation Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -464,13 +463,11 @@ Notice each digit has it&#39;s own entry in the array.
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/13/number-of-boomerangs/" title="上一篇: number-of-boomerangs">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/13/arranging-coins/" title="下一篇: arranging-coins">
+            <a href="/2020/03/07/spiral-matrix-II/" title="下一篇: spiral-matrix-II">
                 <i class="fa fa-angle-right"></i>
             </a>
         
