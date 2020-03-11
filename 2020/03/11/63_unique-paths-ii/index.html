@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>spiral-matrix | Simon的个人博客</title>
+  <title>unique-paths-ii | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="54. Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.">
+  <meta name="description" content="63. Unique Paths IIA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spiral-matrix">
-<meta property="og:url" content="https://sky1blue.github.io/2020/03/04/spiral-matrix/index.html">
+<meta property="og:title" content="unique-paths-ii">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/11/63_unique-paths-ii/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="54. Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.">
+<meta property="og:description" content="63. Unique Paths IIA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://leetcode.com/problems/spiral-matrix/Figures/54_spiralmatrix.png">
-<meta property="og:updated_time" content="2020-03-07T15:27:21.813Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png">
+<meta property="og:updated_time" content="2020-03-11T14:39:33.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spiral-matrix">
-<meta name="twitter:description" content="54. Spiral MatrixGiven a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.">
-<meta name="twitter:image" content="https://leetcode.com/problems/spiral-matrix/Figures/54_spiralmatrix.png">
+<meta name="twitter:title" content="unique-paths-ii">
+<meta name="twitter:description" content="63. Unique Paths IIA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -200,11 +200,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-spiral-matrix" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-63_unique-paths-ii" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/04/spiral-matrix/" class="article-date">
-      <time datetime="2020-03-04T15:33:38.000Z" itemprop="datePublished">2020-03-04</time>
+      <a href="/2020/03/11/63_unique-paths-ii/" class="article-date">
+      <time datetime="2020-03-11T14:39:03.000Z" itemprop="datePublished">2020-03-11</time>
 </a>
     </div>
   
@@ -217,7 +217,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      spiral-matrix
+      unique-paths-ii
     </h1>
   
 
@@ -242,31 +242,76 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="54-Spiral-Matrix"><a href="#54-Spiral-Matrix" class="headerlink" title="54. Spiral Matrix"></a>54. Spiral Matrix</h3><p>Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.<a id="more"></a></p>
+        <h3 id="63-Unique-Paths-II"><a href="#63-Unique-Paths-II" class="headerlink" title="63. Unique Paths II"></a>63. Unique Paths II</h3><p>A robot is located at the top-left corner of a <em>m</em> x <em>n</em> grid (marked &#39;Start&#39; in the diagram below).<a id="more"></a></p>
+
+
+
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked &#39;Finish&#39; in the diagram below).</p>
+
+
+
+<p>Now consider if some obstacles are added to the grids. How many unique paths would there be?</p>
+
+
+
+<p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" style="width: 400px; height: 183px;"></p>
+
+
+
+<p>An obstacle and empty space is marked as <code>1</code> and <code>0</code> respectively in the grid.</p>
+
+
+
+<p><strong>Note:</strong> <em>m</em> and <em>n</em> will be at most 100.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
 <pre>
-Example 1:
 
-<p>Input:<br>[<br>    [ 1, 2, 3 ],<br>    [ 4, 5, 6 ],<br>    [ 7, 8, 9 ]<br>]</p>
-<p>Output: [1,2,3,6,9,8,7,4,5]</p>
-<p>Example 2:</p>
-<p>Input:<br>[<br>  [1, 2, 3, 4],<br>  [5, 6, 7, 8],<br>  [9,10,11,12]<br>]</p>
-<p>Output: [1,2,3,4,8,12,11,10,9,5,6,7]<br></p></pre><p></p>
+<strong>Input:
+
+</strong>[
+
+&nbsp; [0,0,0],
+
+&nbsp; [0,1,0],
+
+&nbsp; [0,0,0]
+
+]
+
+<strong>Output:</strong> 2
+
+<strong>Explanation:</strong>
+
+There is one obstacle in the middle of the 3x3 grid above.
+
+There are two ways to reach the bottom-right corner:
+
+1. Right -&gt; Right -&gt; Down -&gt; Down
+
+2. Down -&gt; Down -&gt; Right -&gt; Right
+
+</pre>
+
+
+
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意：以螺旋的顺序输出数组的所有元素。</p>
-<p>解法：一圈一圈的解决，示意图如下<img src="https://leetcode.com/problems/spiral-matrix/Figures/54_spiralmatrix.png" alt>。</p>
-<p>从最外层到里层，每层都包括四个步骤：</p>
-<ul>
-<li>行不变，列增加</li>
-<li>列不变，行增加</li>
-<li>行不变，列减小</li>
-<li>列不变，行减小</li>
-</ul>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：与<a href="https://leetcode.com/problems/unique-paths/" target="_blank" rel="noopener">题62. Unique Paths</a>思想相同，动态规划，不同的时，在右障碍的点，$f(m,n) = 0$,</p>
 <p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; spiralOrder(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; re;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() == <span class="number">0</span>) <span class="keyword">return</span> re;</span><br><span class="line">        <span class="comment">// 一圈一圈的解决</span></span><br><span class="line">        <span class="keyword">int</span> rowBegin = <span class="number">0</span>, rowEnd = matrix.size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> colBegin = <span class="number">0</span>, colEnd = matrix[<span class="number">0</span>].size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (rowBegin &lt;= rowEnd &amp;&amp; colBegin &lt;= colEnd)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = colBegin; i &lt;= colEnd; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                re.push_back(matrix[rowBegin][i]);</span><br><span class="line">            &#125;</span><br><span class="line">            ++rowBegin;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = rowBegin; i &lt;= rowEnd; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                re.push_back(matrix[i][colEnd]);</span><br><span class="line">            &#125;</span><br><span class="line">            --colEnd;</span><br><span class="line">						<span class="comment">// 因为rowBegin和colEnd的变化，这个判断条件要加</span></span><br><span class="line">            <span class="keyword">if</span> (rowBegin &lt;= rowEnd)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = colEnd; i &gt;= colBegin; --i)</span><br><span class="line">                &#123;</span><br><span class="line">                    re.push_back(matrix[rowEnd][i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            --rowEnd;</span><br><span class="line">						<span class="comment">// 同上</span></span><br><span class="line">            <span class="keyword">if</span> (colBegin &lt;= colEnd)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = rowEnd; i &gt;= rowBegin; --i)</span><br><span class="line">                &#123;</span><br><span class="line">                    re.push_back(matrix[i][colBegin]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ++colBegin;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (obstacleGrid.size() &lt; <span class="number">1</span> ||</span><br><span class="line">            obstacleGrid[<span class="number">0</span>].size() &lt; <span class="number">1</span> ||</span><br><span class="line">            obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> m = obstacleGrid.size(), n = obstacleGrid[<span class="number">0</span>].size();</span><br><span class="line">        <span class="keyword">if</span> (obstacleGrid[m - <span class="number">1</span>][n - <span class="number">1</span>]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;&gt; table(m, <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (obstacleGrid[i][j])</span><br><span class="line">                &#123;</span><br><span class="line">                    table[i][j] = <span class="number">0</span>; </span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">0</span> &amp;&amp; j == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    table[i][j] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    table[i][j] += table[i][j - <span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (j == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    table[i][j] += table[i - <span class="number">1</span>][j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    table[i][j] = table[i - <span class="number">1</span>][j] + table[i][j - <span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> table[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>我们可以利用一个记录所有方向偏移的方向矩阵，然后使用两个元素组成的数组，分别存储水平和垂直移动的偏移量。这样，我们实际上只需要一个for循环而不是四个。</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; spiralOrder(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt; dirs&#123;&#123;<span class="number">0</span>, <span class="number">1</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, <span class="number">-1</span>&#125;, &#123;<span class="number">-1</span>, <span class="number">0</span>&#125;&#125;;<span class="comment">// 这个矩阵对应上面的四个步骤中行和列的每次的变化范围。</span></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">int</span> nr = matrix.size();     <span class="keyword">if</span> (nr == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">    <span class="keyword">int</span> nc = matrix[<span class="number">0</span>].size();  <span class="keyword">if</span> (nc == <span class="number">0</span>) <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nSteps&#123;nc, nr<span class="number">-1</span>&#125;;<span class="comment">// 这个矩阵用来说明当前行或者列在变化</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> iDir = <span class="number">0</span>;   <span class="comment">// index of direction.</span></span><br><span class="line">    <span class="keyword">int</span> ir = <span class="number">0</span>, ic = <span class="number">-1</span>;    <span class="comment">// initial position</span></span><br><span class="line">    <span class="keyword">while</span> (nSteps[iDir%<span class="number">2</span>]) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nSteps[iDir%<span class="number">2</span>]; ++i) &#123;</span><br><span class="line">            ir += dirs[iDir][<span class="number">0</span>]; ic += dirs[iDir][<span class="number">1</span>];</span><br><span class="line">            res.push_back(matrix[ir][ic]);</span><br><span class="line">        &#125;</span><br><span class="line">        nSteps[iDir%<span class="number">2</span>]--;</span><br><span class="line">        iDir = (iDir + <span class="number">1</span>) % <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>先对边界的点赋值，增加两个循环，减少条件判断。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (obstacleGrid.size() &lt; <span class="number">1</span> ||</span><br><span class="line">           obstacleGrid[<span class="number">0</span>].size() &lt; <span class="number">1</span> ||</span><br><span class="line">           obstacleGrid[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">1</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">int</span> m = obstacleGrid.size(), n = obstacleGrid[<span class="number">0</span>].size();</span><br><span class="line">       <span class="keyword">if</span> (obstacleGrid[m - <span class="number">1</span>][n - <span class="number">1</span>]) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;&gt; table(m, <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (obstacleGrid[i][<span class="number">0</span>])</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           table[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">if</span> (obstacleGrid[<span class="number">0</span>][i])</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           table[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; ++i)</span><br><span class="line">       &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">if</span> (obstacleGrid[i][j])</span><br><span class="line">               &#123;</span><br><span class="line">                   table[i][j] = <span class="number">0</span>;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   table[i][j] = table[i - <span class="number">1</span>][j] + table[i][j - <span class="number">1</span>];</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> table[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>或者这样</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">uniquePathsWithObstacles</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; obstacleGrid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = obstacleGrid.size(), n = obstacleGrid[<span class="number">0</span>].size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; &gt; dp(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">long</span>&gt; (n + <span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">                <span class="keyword">if</span> (!obstacleGrid[i - <span class="number">1</span>][j - <span class="number">1</span>])</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
       
       
         <div class="page-reward">
@@ -321,13 +366,13 @@ Example 1:
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/04/spiral-matrix/">spiral-matrix</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/11/63_unique-paths-ii/">unique-paths-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2020年03月04日 - 23时33分</p>
-        <p><span>最后更新:</span>2020年03月07日 - 23时27分</p>
+        <p><span>发布时间:</span>2020年03月11日 - 22时39分</p>
+        <p><span>最后更新:</span>2020年03月11日 - 22时39分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/04/spiral-matrix/" title="spiral-matrix">https://sky1blue.github.io/2020/03/04/spiral-matrix/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/04/spiral-matrix/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/11/63_unique-paths-ii/" title="unique-paths-ii">https://sky1blue.github.io/2020/03/11/63_unique-paths-ii/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/11/63_unique-paths-ii/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -340,18 +385,9 @@ Example 1:
 
 <nav id="article-nav">
   
-    <a href="/2020/03/06/jump-game/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          jump-game
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/03/pow-x-n/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">pow(x,n)</div>
+    <a href="/2020/03/11/62_unique-paths/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">unique-paths</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -362,7 +398,7 @@ Example 1:
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#54-Spiral-Matrix"><span class="toc-number">1.</span> <span class="toc-text">54. Spiral Matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#63-Unique-Paths-II"><span class="toc-number">1.</span> <span class="toc-text">63. Unique Paths II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -413,13 +449,11 @@ Example 1:
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/06/jump-game/" title="上一篇: jump-game">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2020/03/03/pow-x-n/" title="下一篇: pow(x,n)">
+            <a href="/2020/03/11/62_unique-paths/" title="下一篇: unique-paths">
                 <i class="fa fa-angle-right"></i>
             </a>
         
