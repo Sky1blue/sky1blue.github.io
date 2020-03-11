@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>container-with-most-water | Simon的个人博客</title>
+  <title>unique-paths | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+  <meta name="description" content="62. Unique PathsA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="container-with-most-water">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/04/container-with-most-water/index.html">
+<meta property="og:title" content="unique-paths">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/11/unique-paths/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
+<meta property="og:description" content="62. Unique PathsA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
-<meta property="og:updated_time" content="2019-12-04T14:55:15.585Z">
+<meta property="og:image" content="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/005JKRxRgy1gcp89lixbrj30lc0ac0tp.jpg">
+<meta property="og:updated_time" content="2020-03-11T03:02:44.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="container-with-most-water">
-<meta name="twitter:description" content="11. Container With Most WaterGiven n non-negative integers a1, a2, ..., an&amp;nbsp;, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i">
-<meta name="twitter:image" content="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg">
+<meta name="twitter:title" content="unique-paths">
+<meta name="twitter:description" content="62. Unique PathsA robot is located at the top-left corner of a m x n grid (marked &amp;#39;Start&amp;#39; in the diagram below).">
+<meta name="twitter:image" content="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -200,11 +201,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-container-with-most-water" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-unique-paths" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/04/container-with-most-water/" class="article-date">
-      <time datetime="2019-12-04T14:54:30.000Z" itemprop="datePublished">2019-12-04</time>
+      <a href="/2020/03/11/unique-paths/" class="article-date">
+      <time datetime="2020-03-11T03:00:38.000Z" itemprop="datePublished">2020-03-11</time>
 </a>
     </div>
   
@@ -217,7 +218,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      container-with-most-water
+      unique-paths
     </h1>
   
 
@@ -242,51 +243,57 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a>11. Container With Most Water</h3><p>Given <i>n</i> non-negative integers <i>a<sub>1</sub></i>, <i>a<sub>2</sub></i>, ..., <i>a<sub>n&nbsp;</sub></i>, where each represents a point at coordinate (<i>i</i>, <i>a<sub>i</sub></i>). <i>n</i> vertical lines are drawn such that the two endpoints of line <i>i</i> is at (<i>i</i>, <i>a<sub>i</sub></i>) and (<i>i</i>, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.<a id="more"></a></p>
+        <h3 id="62-Unique-Paths"><a href="#62-Unique-Paths" class="headerlink" title="62. Unique Paths"></a>62. Unique Paths</h3><p>A robot is located at the top-left corner of a <em>m</em> x <em>n</em> grid (marked &#39;Start&#39; in the diagram below).<a id="more"></a></p>
 
+<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked &#39;Finish&#39; in the diagram below).</p>
 
+<p>How many possible unique paths are there?</p>
 
-<p><strong>Note:&nbsp;</strong>You may not slant the container and <i>n</i> is at least 2.</p>
-
-
-
-<p>&nbsp;</p>
-
-
-
-<p><img alt src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;"></p>
-
-
-
-<p><small>The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain&nbsp;is 49. </small></p>
-
-
+<p><img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" style="width: 400px; height: 183px;"><br>
+<small>Above is a 7 x 3 grid. How many possible unique paths are there?</small></p>
 
 <p>&nbsp;</p>
-
-
-
-<p><strong>Example:</strong></p>
-
-
+<p><strong>Example 1:</strong></p>
 
 <pre>
+<strong>Input:</strong> m = 3, n = 2
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -&gt; Right -&gt; Down
+2. Right -&gt; Down -&gt; Right
+3. Down -&gt; Right -&gt; Right
+</pre>
 
-<strong>Input:</strong> [1,8,6,2,5,4,8,3,7]
+<p><strong>Example 2:</strong></p>
 
-<strong>Output:</strong> 49</pre>
+<pre>
+<strong>Input:</strong> m = 7, n = 3
+<strong>Output:</strong> 28
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+    <li><code>1 &lt;= m, n &lt;= 100</code></li>
+    <li>It&#39;s guaranteed that the answer will be less than or equal to <code>2 * 10 ^ 9</code>.</li>
+</ul>
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：</p>
-<p>容器中的水量是由容器的宽度和高度决定的，高度是由容器两边中的较短边决定的，宽度越宽，高度越高，那么容器的容量越大。</p>
-<p>基于这样的思路，</p>
-<ul>
-<li>首先选择第一个和最后一个边作为容器候选，是个不错的选择，因为此时的宽度最宽，它的水位是第一行和最后一行中较小的一个的高度。</li>
-<li>那么其他容器的宽度一定比第一个容器宽度小，想要容量大，必须要提高容器的高度，即高度要高于此时容器的最短边，才有可能容量更大，所以从短边开始找，直到找到一个更大的边此时来计算容量是否更大，依次进行下去。</li>
-</ul>
-<p>时间复杂度为$O(n)$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = height.size() - <span class="number">1</span>, maxarea = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> h = min(height[l], height[r]);</span><br><span class="line">            maxarea = max(maxarea, h * (r - l));</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span> (height[l] &lt;= h &amp;&amp; l &lt; r) ++l;</span><br><span class="line">            <span class="keyword">while</span> (height[r] &lt;= h &amp;&amp; l &lt; r) --r;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> maxarea;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：动态规划，$f(m,n) = f(m -1,n) + f(m,n-1)$</p>
+<p>因为只能机器人只能往右和下走，往右走$f(m-1,n)$；往下走$f(m,n-1)$，如图<br><img src="http://ww1.sinaimg.cn/large/005JKRxRgy1gcp89lixbrj30lc0ac0tp.jpg" alt="1583852447(1).jpg"></p>
+<ol>
+<li><p>递归，自上而下，然而<strong>超时</strong>，由于压栈出栈费时，代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int uniquePaths(int m, int n) &#123;</span><br><span class="line">        if (m == 1 || n == 1)</span><br><span class="line">        &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return uniquePaths(m - 1, n) + uniquePaths(m, n - 1);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备忘录法，自下而上，时间复杂度$O(m<em>n)$，空间复杂度$O(m</em>n)$</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int uniquePaths(int m, int n) &#123;</span><br><span class="line">        if (m == 1 || n == 1)</span><br><span class="line">        &#123;</span><br><span class="line">            return 1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        vector&lt;vector&lt;int&gt;&gt; table(m, vector(n, 1));</span><br><span class="line">        </span><br><span class="line">        for (int i = 1; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j = 1; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                table[i][j] = table[i][j - 1] + table[i - 1][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return table[m - 1][n - 1];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<p><a href="https://leetcode.com/problems/unique-paths/discuss/22954/C%2B%2B-DP" target="_blank" rel="noopener">空间复杂度可以进一步优化</a></p>
 
       
       
@@ -342,13 +349,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/04/container-with-most-water/">container-with-most-water</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/11/unique-paths/">unique-paths</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月04日 - 22时54分</p>
-        <p><span>最后更新:</span>2019年12月04日 - 22时55分</p>
+        <p><span>发布时间:</span>2020年03月11日 - 11时00分</p>
+        <p><span>最后更新:</span>2020年03月11日 - 11时02分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/04/container-with-most-water/" title="container-with-most-water">https://sky1blue.github.io/2019/12/04/container-with-most-water/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/04/container-with-most-water/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/11/unique-paths/" title="unique-paths">https://sky1blue.github.io/2020/03/11/unique-paths/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/11/unique-paths/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -361,18 +368,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/05/integer-to-roman/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          integer-to-roman
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/03/string-to-integer-atoi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">string-to-integer-atoi</div>
+    <a href="/2020/03/09/rotate-list/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">rotate-list</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -383,7 +381,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Container-With-Most-Water"><span class="toc-number">1.</span> <span class="toc-text">11. Container With Most Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#62-Unique-Paths"><span class="toc-number">1.</span> <span class="toc-text">62. Unique Paths</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -434,13 +432,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/05/integer-to-roman/" title="上一篇: integer-to-roman">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/03/string-to-integer-atoi/" title="下一篇: string-to-integer-atoi">
+            <a href="/2020/03/09/rotate-list/" title="下一篇: rotate-list">
                 <i class="fa fa-angle-right"></i>
             </a>
         
