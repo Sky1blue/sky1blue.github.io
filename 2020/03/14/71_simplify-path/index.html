@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>number-complement | Simon的个人博客</title>
+  <title>simplify-path | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="71. Simplify PathGiven an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="number-complement">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/20/number-complement/index.html">
+<meta property="og:title" content="simplify-path">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/14/71_simplify-path/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta property="og:description" content="71. Simplify PathGiven an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-20T14:18:40.000Z">
+<meta property="og:updated_time" content="2020-03-13T16:29:23.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="number-complement">
-<meta name="twitter:description" content="476. Number ComplementGiven a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.">
+<meta name="twitter:title" content="simplify-path">
+<meta name="twitter:description" content="71. Simplify PathGiven an absolute path for a file (Unix-style), simplify it. Or in other words, convert it to the canonical path.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-number-complement" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-71_simplify-path" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/20/number-complement/" class="article-date">
-      <time datetime="2019-11-20T14:18:39.000Z" itemprop="datePublished">2019-11-20</time>
+      <a href="/2020/03/14/71_simplify-path/" class="article-date">
+      <time datetime="2020-03-13T16:28:18.000Z" itemprop="datePublished">2020-03-14</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      number-complement
+      simplify-path
     </h1>
   
 
@@ -230,7 +230,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -240,39 +240,127 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="476-Number-Complement"><a href="#476-Number-Complement" class="headerlink" title="476. Number Complement"></a>476. Number Complement</h3><p>Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary representation.<a id="more"></a></p>
+        <h3 id="71-Simplify-Path"><a href="#71-Simplify-Path" class="headerlink" title="71. Simplify Path"></a>71. Simplify Path</h3><p>Given an <strong>absolute path</strong> for a file (Unix-style), simplify it. Or in other words, convert it to the <strong>canonical path</strong>.<a id="more"></a></p>
 
-<p><b>Note:</b><br>
-<ol>
-<li>The given integer is guaranteed to fit within the range of a 32-bit signed integer.</li>
-<li>You could assume no leading zero bit in the integer’s binary representation.</li>
-</ol>
-</p>
 
-<p><b>Example 1:</b><br>
+
+<p>In a UNIX-style file system, a period <code>.</code>&nbsp;refers to the current directory. Furthermore, a double period <code>..</code>&nbsp;moves the directory up a level. For more information, see:&nbsp;<a href="https://www.linuxnix.com/abslute-path-vs-relative-path-in-linuxunix/" target="_blank">Absolute path&nbsp;vs&nbsp;relative&nbsp;path&nbsp;in&nbsp;Linux/Unix</a></p>
+
+
+
+<p>Note that the returned canonical path must always begin&nbsp;with a slash <code>/</code>, and there must be only a single slash <code>/</code>&nbsp;between two directory names.&nbsp;The last directory name (if it exists) <b>must not</b>&nbsp;end with a trailing <code>/</code>. Also, the canonical path must be the <strong>shortest</strong> string&nbsp;representing the absolute path.</p>
+
+
+
+<p>&nbsp;</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
 <pre>
-<b>Input:</b> 5
-<b>Output:</b> 2
-<b>Explanation:</b> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
-</pre>
-</p>
 
-<p><b>Example 2:</b><br>
-<pre>
-<b>Input:</b> 1
-<b>Output:</b> 0
-<b>Explanation:</b> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+<strong>Input: &quot;</strong><span id="example-input-1-1">/home/&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/home&quot;
+
+<strong>Explanation:</strong> Note that there is no trailing slash after the last directory name.</span>
+
 </pre>
-</p>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+<strong>Input: &quot;</strong><span id="example-input-1-1">/../&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/&quot;</span>
+
+<strong>Explanation:</strong> Going one level up from the root directory is a no-op, as the root level is the highest level you can go.
+
+</pre>
+
+
+
+<p><strong>Example 3:</strong></p>
+
+
+
+<pre>
+
+<strong>Input: &quot;</strong><span id="example-input-1-1">/home//foo/&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/home/foo&quot;</span>
+
+<strong>Explanation: </strong>In the canonical path, multiple consecutive slashes are replaced by a single one.
+
+</pre>
+
+
+
+<p><strong>Example 4:</strong></p>
+
+
+
+<pre>
+
+<strong>Input: &quot;</strong><span id="example-input-1-1">/a/./b/../../c/&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/c&quot;</span>
+
+</pre>
+
+
+
+<p><strong>Example 5:</strong></p>
+
+
+
+<pre>
+
+<strong>Input: &quot;</strong><span id="example-input-1-1">/a/../../b/../c//.//&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/c&quot;</span>
+
+</pre>
+
+
+
+<p><strong>Example 6:</strong></p>
+
+
+
+<pre>
+
+<strong>Input: &quot;</strong><span id="example-input-1-1">/a//b////c/d//././/..&quot;</span>
+
+<strong>Output: &quot;</strong><span id="example-output-1">/a/b/c&quot;</span>
+
+</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：找到给定数bit为1的最高位置，将原数取反后，取该位置以后的数。  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">unsigned</span> mask = ~<span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (num &amp; mask)</span><br><span class="line">        &#123;</span><br><span class="line">            mask &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ~mask &amp; ~num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思想：先将字符串以“/”分割，得到若干个子字符串，</p>
+<p>建立一个栈，用于存储最终得到的目录，不含”/“</p>
+<p>遍历所有子字符串，</p>
+<p><strong>如果是”.”表示同一级目录，当前不变；</strong></p>
+<p><strong>如果是”..”表示回到上一级目录，所以将当前目录删除，即将栈顶字符串弹出;</strong></p>
+<p>否则的话，将字符串压栈。</p>
+<p>具体代码如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">simplifyPath</span><span class="params">(<span class="built_in">string</span> path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> * cstr = <span class="keyword">new</span> <span class="keyword">char</span> [path.length()+<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">strcpy</span> (cstr, path.c_str());</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 分割字符串，以"/"为边界</span></span><br><span class="line">        <span class="keyword">char</span> * p = <span class="built_in">std</span>::strtok (cstr,<span class="string">"/"</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; vs;</span><br><span class="line">        <span class="keyword">while</span> (p!=<span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> s = p;</span><br><span class="line">            vs.push_back(s);</span><br><span class="line">            p = strtok(<span class="literal">NULL</span>, <span class="string">"/"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; s;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vs.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (vs[i] == <span class="string">".."</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (!s.empty())</span><br><span class="line">                &#123;</span><br><span class="line">                    s.pop();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (vs[i] == <span class="string">"."</span> || vs[i] == <span class="string">""</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                s.push(vs[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        <span class="keyword">while</span>(!s.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            result = <span class="string">"/"</span> + s.top() + result;</span><br><span class="line">            s.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (result.size() == <span class="number">0</span>) ? <span class="string">"/"</span> : result;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// delete[] cstr;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：同样是找最高bit为1的位置，找大于给定数的最小2的幂。</p>
-<p>例如：输入5    0x101</p>
-<p>最小2的幂为n = 0x1000, n - 1 = 0xfff</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findComplement</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> t=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(t&lt;=num)</span><br><span class="line">            t=t&lt;&lt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> (t<span class="number">-1</span>)^num;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p> 优化后的版本，在分割时判断</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">simplifyPath</span><span class="params">(<span class="built_in">string</span> path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> * cstr = <span class="keyword">new</span> <span class="keyword">char</span> [path.length() + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">strcpy</span> (cstr, path.c_str());</span><br><span class="line">        <span class="keyword">char</span> * p = <span class="built_in">std</span>::strtok (cstr, <span class="string">"/"</span>);</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; vs;</span><br><span class="line">        <span class="built_in">string</span> result;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (p != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">string</span> s = p;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (s == <span class="string">".."</span> &amp;&amp; !vs.empty())</span><br><span class="line">            &#123;</span><br><span class="line">                vs.pop();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (s != <span class="string">"."</span> &amp;&amp; s != <span class="string">""</span> &amp;&amp; s != <span class="string">".."</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                vs.push(s);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            p = strtok(<span class="literal">NULL</span>, <span class="string">"/"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!vs.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            result = <span class="string">"/"</span> + vs.top() + result;</span><br><span class="line">            vs.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (result.size() == <span class="number">0</span>) ? <span class="string">"/"</span> : result;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// delete[] cstr;</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>参考的字符串分割方法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">simplifyPath</span><span class="params">(<span class="built_in">string</span> path)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res, tmp;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; stk;</span><br><span class="line">        <span class="function"><span class="built_in">stringstream</span> <span class="title">ss</span><span class="params">(path)</span></span>;</span><br><span class="line">        <span class="keyword">while</span>(getline(ss,tmp,<span class="string">'/'</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (tmp == <span class="string">""</span> <span class="keyword">or</span> tmp == <span class="string">"."</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (tmp == <span class="string">".."</span> <span class="keyword">and</span> !stk.empty()) stk.pop_back();</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (tmp != <span class="string">".."</span>) stk.push_back(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> str : stk) res += <span class="string">"/"</span>+str;</span><br><span class="line">        <span class="keyword">return</span> res.empty() ? <span class="string">"/"</span> : res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -329,13 +417,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/20/number-complement/">number-complement</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/14/71_simplify-path/">simplify-path</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年11月20日 - 22时18分</p>
-        <p><span>最后更新:</span>2019年11月20日 - 22时18分</p>
+        <p><span>发布时间:</span>2020年03月14日 - 00时28分</p>
+        <p><span>最后更新:</span>2020年03月14日 - 00时29分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/20/number-complement/" title="number-complement">https://sky1blue.github.io/2019/11/20/number-complement/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/20/number-complement/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/14/71_simplify-path/" title="simplify-path">https://sky1blue.github.io/2020/03/14/71_simplify-path/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/14/71_simplify-path/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -348,18 +436,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          license-key-formatting
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/19/heaters/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">heaters</div>
+    <a href="/2020/03/12/64_minimum-path-sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">minimum-path-sum</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -370,7 +449,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#476-Number-Complement"><span class="toc-number">1.</span> <span class="toc-text">476. Number Complement</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#71-Simplify-Path"><span class="toc-number">1.</span> <span class="toc-text">71. Simplify Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -421,13 +500,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/21/license-key-formatting/" title="上一篇: license-key-formatting">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/19/heaters/" title="下一篇: heaters">
+            <a href="/2020/03/12/64_minimum-path-sum/" title="下一篇: minimum-path-sum">
                 <i class="fa fa-angle-right"></i>
             </a>
         
