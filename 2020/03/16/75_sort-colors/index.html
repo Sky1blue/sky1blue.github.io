@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>combination-sum-ii | Simon的个人博客</title>
+  <title>sort-colors | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="40. Combination Sum IIGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates&amp;nbsp;where the candidate numbers sums to target.">
+  <meta name="description" content="75. Sort ColorsGiven an array with n objects colored red, white or blue, sort them in-place&amp;nbsp;so that objects of the same color are adjacent, with the colors in the order red, white and blue.">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="combination-sum-ii">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/22/combination-sum-ii/index.html">
+<meta property="og:title" content="sort-colors">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/16/75_sort-colors/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="40. Combination Sum IIGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates&amp;nbsp;where the candidate numbers sums to target.">
+<meta property="og:description" content="75. Sort ColorsGiven an array with n objects colored red, white or blue, sort them in-place&amp;nbsp;so that objects of the same color are adjacent, with the colors in the order red, white and blue.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-23T05:49:52.098Z">
+<meta property="og:updated_time" content="2020-03-16T15:01:52.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="combination-sum-ii">
-<meta name="twitter:description" content="40. Combination Sum IIGiven a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates&amp;nbsp;where the candidate numbers sums to target.">
+<meta name="twitter:title" content="sort-colors">
+<meta name="twitter:description" content="75. Sort ColorsGiven an array with n objects colored red, white or blue, sort them in-place&amp;nbsp;so that objects of the same color are adjacent, with the colors in the order red, white and blue.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -198,11 +198,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-combination-sum-ii" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-75_sort-colors" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/22/combination-sum-ii/" class="article-date">
-      <time datetime="2019-12-22T15:04:58.000Z" itemprop="datePublished">2019-12-22</time>
+      <a href="/2020/03/16/75_sort-colors/" class="article-date">
+      <time datetime="2020-03-16T15:00:46.000Z" itemprop="datePublished">2020-03-16</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      combination-sum-ii
+      sort-colors
     </h1>
   
 
@@ -240,83 +240,56 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="40-Combination-Sum-II"><a href="#40-Combination-Sum-II" class="headerlink" title="40. Combination Sum II"></a>40. Combination Sum II</h3><p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code>&nbsp;where the candidate numbers sums to <code>target</code>.<a id="more"></a></p>
+        <h3 id="75-Sort-Colors"><a href="#75-Sort-Colors" class="headerlink" title="75. Sort Colors"></a>75. Sort Colors</h3><p>Given an array with <em>n</em> objects colored red, white or blue, sort them <strong><a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a>&nbsp;</strong>so that objects of the same color are adjacent, with the colors in the order red, white and blue.<a id="more"></a></p>
 
 
 
-<p>Each number in <code>candidates</code>&nbsp;may only be used <strong>once</strong> in the combination.</p>
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
 
 
 
-<p><strong>Note:</strong></p>
+<p><strong>Note:</strong>&nbsp;You are not suppose to use the library&#39;s sort function for this problem.</p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> [2,0,2,1,1,0]
+
+<strong>Output:</strong> [0,0,1,1,2,2]</pre>
+
+
+
+<p><strong>Follow up:</strong></p>
 
 
 
 <ul>
 
-<pre><code>&lt;li&gt;All numbers (including &lt;code&gt;target&lt;/code&gt;) will be positive integers.&lt;/li&gt;
+<pre><code>&lt;li&gt;A rather straight forward solution is a two-pass algorithm using counting sort.&lt;br /&gt;
 
-&lt;li&gt;The solution set must not contain duplicate combinations.&lt;/li&gt;</code></pre></ul>
+First, iterate the array counting number of 0&amp;#39;s, 1&amp;#39;s, and 2&amp;#39;s, then overwrite array with total number of 0&amp;#39;s, then 1&amp;#39;s and followed by 2&amp;#39;s.&lt;/li&gt;
 
-
-
-<p><strong>Example 1:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> candidates =&nbsp;<code>[10,1,2,7,6,1,5]</code>, target =&nbsp;<code>8</code>,
-
-<strong>A solution set is:</strong>
-
-[
-
-  [1, 7],
-
-  [1, 2, 5],
-
-  [2, 6],
-
-  [1, 1, 6]
-
-]
-
-</pre>
-
-
-
-<p><strong>Example 2:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong> candidates =&nbsp;[2,5,2,1,2], target =&nbsp;5,
-
-<strong>A solution set is:</strong>
-
-[
-
-&nbsp; [1,2,2],
-
-&nbsp; [5]
-
-]
-
-</pre>
+&lt;li&gt;Could you come up with a&amp;nbsp;one-pass algorithm using only constant space?&lt;/li&gt;</code></pre></ul>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法2：与<a href="https://leetcode.com/problems/combination-sum/" target="_blank" rel="noopener">题39</a>，大致上的解法相似；题目的不同点在于，题39给定的数组的所有数都不相同，同时每个数都可以使用若干次；而本题给定的数组可能存在重复的数字，同时数组中的每个数字只能使用一次。</p>
-<p>总体的架构还是回溯法，解决；但需要先排序，将相同的数字集中的一起；同时为了解决重复的解，将当前数值与之前的数值进行比较，相同的情况丢弃，但这样会导致解丢失。</p>
-<p>例如题中所给 candidates = [10,1,2,7,6,1,5], target = 8,</p>
-<p>得出的解：</p>
-<p>[<br>  [1, 7],<br>  [1, 2, 5],<br>  [2, 6],<br>]</p>
-<p>虽然解决了重复的解的问题，但也缺少了解 [ 1 1 6]。</p>
-<p>仔细分析，我们的解法，helper中的循环可以看作是最终的每个解每个位置的不同尝试，我们需要做的是解决的是，每个位置当前尝试的值与<strong>上一次尝试的值不同</strong>，而不是每个解上一个位置的值，与下一个位置的值不同。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combinationSum2(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; rv;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r;</span><br><span class="line">        sort(candidates.begin(), candidates.end());</span><br><span class="line">        </span><br><span class="line">        helper(rv, r, candidates, target, <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; r, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; candidates, <span class="keyword">int</span> target, <span class="keyword">int</span> next)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (target &lt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (target == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(r);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = next; i &lt; candidates.size(); ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (candidates[i] &gt; target)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">// 第一个条件，防止索引出现负数；第二个条件解决重复问题；最后一个条件至关重要，保留了类似[1 1 2 5]这样的解。</span></span><br><span class="line">                <span class="keyword">if</span> (i &amp;&amp; candidates[i] == candidates[i - <span class="number">1</span>] &amp;&amp; i &gt; next)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                r.push_back(candidates[i]);</span><br><span class="line">                helper(re, r, candidates, target - candidates[i], i + <span class="number">1</span>);</span><br><span class="line">                r.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：将0存储首地址设为数组头，2存储的首地址设为数组尾，每次遇到0，将它与数组第一个不是0的数交换，遇到2时，与数组从后起第一个不是2的数交换。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = nums.size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= end; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                swap(nums[i], nums[begin++]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] == <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">						    <span class="comment">// 这里i--是必须，因为与2交换的值是1或是0，必须对该值再进行依次判断，否则会漏pan</span></span><br><span class="line">                swap(nums[i--], nums[end--]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：正常逻辑上，数组每次增加一个数，只要将该数后面的值同时右移一个位置即可。本题因为只含有0，1，2三个数，而且相同的数都是相邻存储，所以不要将所有的数后移，只需要再每种数存储的最右边的位置补上上一个相同的数即可。</p>
+<p>基于这样的思想，</p>
+<p>遇到0时，先将2最右边的位置补上2，1的最右边的位置补上1，这样1就会覆盖掉一个2，2的数目不变，同样将0的最右边补上0，0覆盖掉1，1的数目保持不变，0的数目增加一个。</p>
+<p>同理，遇到1时，先补上2，再补1</p>
+<p>遇到2时，补上2</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n0 = <span class="number">-1</span>, n1 = <span class="number">-1</span>, n2 = <span class="number">-1</span>, n = nums.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) </span><br><span class="line">            &#123;</span><br><span class="line">                nums[++n2] = <span class="number">2</span>; nums[++n1] = <span class="number">1</span>; nums[++n0] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] == <span class="number">1</span>) </span><br><span class="line">            &#123;</span><br><span class="line">                nums[++n2] = <span class="number">2</span>; nums[++n1] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[i] == <span class="number">2</span>) </span><br><span class="line">            &#123;</span><br><span class="line">                nums[++n2] = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -373,13 +346,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/16/75_sort-colors/">sort-colors</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
-        <p><span>发布时间:</span>2019年12月22日 - 23时04分</p>
-        <p><span>最后更新:</span>2019年12月23日 - 13时49分</p>
+        <p><span>发布时间:</span>2020年03月16日 - 23时00分</p>
+        <p><span>最后更新:</span>2020年03月16日 - 23时01分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/22/combination-sum-ii/" title="combination-sum-ii">https://sky1blue.github.io/2019/12/22/combination-sum-ii/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/22/combination-sum-ii/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/16/75_sort-colors/" title="sort-colors">https://sky1blue.github.io/2020/03/16/75_sort-colors/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/16/75_sort-colors/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -392,18 +365,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/24/multiply-strings/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          multiply-strings
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/19/combination-sum/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">combination-sum</div>
+    <a href="/2020/03/15/73_set-matrix-zeroes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">set-matrix-zeroes</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -414,7 +378,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#40-Combination-Sum-II"><span class="toc-number">1.</span> <span class="toc-text">40. Combination Sum II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#75-Sort-Colors"><span class="toc-number">1.</span> <span class="toc-text">75. Sort Colors</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -465,13 +429,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/24/multiply-strings/" title="上一篇: multiply-strings">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/19/combination-sum/" title="下一篇: combination-sum">
+            <a href="/2020/03/15/73_set-matrix-zeroes/" title="下一篇: set-matrix-zeroes">
                 <i class="fa fa-angle-right"></i>
             </a>
         
