@@ -3,22 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>valid-sudoku | Simon的个人博客</title>
+  <title>combinations | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
+  <meta name="description" content="77. CombinationsGiven two integers n and k, return all possible combinations of k numbers out of 1 ... n.">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="valid-sudoku">
-<meta property="og:url" content="https://sky1blue.github.io/2019/12/17/valid-sudoku/index.html">
+<meta property="og:title" content="combinations">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/18/77_combinations/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
+<meta property="og:description" content="77. CombinationsGiven two integers n and k, return all possible combinations of k numbers out of 1 ... n.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png">
-<meta property="og:updated_time" content="2019-12-17T14:50:18.069Z">
+<meta property="og:updated_time" content="2020-03-18T06:00:53.671Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="valid-sudoku">
-<meta name="twitter:description" content="36. Valid SudokuDetermine if a&amp;nbsp;9x9 Sudoku board&amp;nbsp;is valid.&amp;nbsp;Only the filled cells need to be validated&amp;nbsp;according to the following rules:">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png">
+<meta name="twitter:title" content="combinations">
+<meta name="twitter:description" content="77. CombinationsGiven two integers n and k, return all possible combinations of k numbers out of 1 ... n.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -204,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-valid-sudoku" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-77_combinations" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/12/17/valid-sudoku/" class="article-date">
-      <time datetime="2019-12-17T14:48:56.000Z" itemprop="datePublished">2019-12-17</time>
+      <a href="/2020/03/18/77_combinations/" class="article-date">
+      <time datetime="2020-03-18T05:59:53.000Z" itemprop="datePublished">2020-03-18</time>
 </a>
     </div>
   
@@ -221,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      valid-sudoku
+      combinations
     </h1>
   
 
@@ -246,128 +244,59 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="36-Valid-Sudoku"><a href="#36-Valid-Sudoku" class="headerlink" title="36. Valid Sudoku"></a>36. Valid Sudoku</h3><p>Determine if a&nbsp;9x9 Sudoku board&nbsp;is valid.&nbsp;Only the filled cells need to be validated&nbsp;<strong>according to the following rules</strong>:<a id="more"></a></p>
+        <h3 id="77-Combinations"><a href="#77-Combinations" class="headerlink" title="77. Combinations"></a>77. Combinations</h3><p>Given two integers <em>n</em> and <em>k</em>, return all possible combinations of <em>k</em> numbers out of 1 ... <em>n</em>.<a id="more"></a></p>
 
 
 
-<ol>
-
-<pre><code>&lt;li&gt;Each row&amp;nbsp;must contain the&amp;nbsp;digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt; without repetition.&lt;/li&gt;
-
-&lt;li&gt;Each column must contain the digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt;&amp;nbsp;without repetition.&lt;/li&gt;
-
-&lt;li&gt;Each of the 9 &lt;code&gt;3x3&lt;/code&gt; sub-boxes of the grid must contain the digits&amp;nbsp;&lt;code&gt;1-9&lt;/code&gt;&amp;nbsp;without repetition.&lt;/li&gt;</code></pre></ol>
-
-
-
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" style="height:250px; width:250px"><br>
-
-</p><p><small>A partially filled sudoku which is valid.</small></p><p></p>
-<p>The Sudoku board could be partially filled, where empty cells are filled with the character <code>&#39;.&#39;</code>.</p>
-
-
-
-<p><strong>Example 1:</strong></p>
+<p><strong>Example:</strong></p>
 
 
 
 <pre>
 
-<strong>Input:</strong>
+<strong>Input:</strong>&nbsp;n = 4, k = 2
+
+<strong>Output:</strong>
 
 [
 
-  [&quot;5&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+  [2,4],
 
-  [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
+  [3,4],
 
-  [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],
+  [2,3],
 
-  [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],
+  [1,2],
 
-  [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],
+  [1,3],
 
-  [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],
-
-  [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],
-
-  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],
-
-  [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]
+  [1,4],
 
 ]
 
-<strong>Output:</strong> true
-
 </pre>
-
-
-
-<p><strong>Example 2:</strong></p>
-
-
-
-<pre>
-
-<strong>Input:</strong>
-
-[
-
-&nbsp; [&quot;8&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
-
-&nbsp; [&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;,&quot;9&quot;,&quot;5&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;],
-
-&nbsp; [&quot;.&quot;,&quot;9&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;],
-
-&nbsp; [&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;3&quot;],
-
-&nbsp; [&quot;4&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;3&quot;,&quot;.&quot;,&quot;.&quot;,&quot;1&quot;],
-
-&nbsp; [&quot;7&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;6&quot;],
-
-&nbsp; [&quot;.&quot;,&quot;6&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;2&quot;,&quot;8&quot;,&quot;.&quot;],
-
-&nbsp; [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;4&quot;,&quot;1&quot;,&quot;9&quot;,&quot;.&quot;,&quot;.&quot;,&quot;5&quot;],
-
-&nbsp; [&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;.&quot;,&quot;8&quot;,&quot;.&quot;,&quot;.&quot;,&quot;7&quot;,&quot;9&quot;]
-
-]
-
-<strong>Output:</strong> false
-
-<strong>Explanation:</strong> Same as Example 1, except with the <strong>5</strong> in the top left corner being 
-
-    modified to <strong>8</strong>. Since there are two 8&#39;s in the top left 3x3 sub-box, it is invalid.
-
-</pre>
-
-
-
-<p><strong>Note:</strong></p>
-
-
-
-<ul>
-
-<pre><code>&lt;li&gt;A Sudoku board (partially filled) could be valid but is not necessarily solvable.&lt;/li&gt;
-
-&lt;li&gt;Only the filled cells need to be validated according to the mentioned&amp;nbsp;rules.&lt;/li&gt;
-
-&lt;li&gt;The given board&amp;nbsp;contain only digits &lt;code&gt;1-9&lt;/code&gt; and the character &lt;code&gt;&amp;#39;.&amp;#39;&lt;/code&gt;.&lt;/li&gt;
-
-&lt;li&gt;The given board size is always &lt;code&gt;9x9&lt;/code&gt;.&lt;/li&gt;</code></pre></ul>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意：要求判断所给的数独是否合法，根据三个原则判断，即行、列、子块中不能出现重复的数字。</p>
-<p>解法：暴力法</p>
-<p>建立三个9*9的数组，分别用于判断第i行，第j列，第k子块，某个数字是否出现过。<br>其中子块的序号，是按照从左到右，从上到下的顺序编号的。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// 表示第i行某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> a[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        <span class="comment">// 表示第j列某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> b[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        <span class="comment">// 表示第i块某个数字是否出现</span></span><br><span class="line">        <span class="keyword">bool</span> c[<span class="number">9</span>][<span class="number">9</span>] = &#123;<span class="literal">false</span>&#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="built_in">isdigit</span>(board[i][j]))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> digit = board[i][j] - <span class="string">'0'</span>;</span><br><span class="line">                    <span class="keyword">if</span> (!a[i][digit - <span class="number">1</span>] &amp;&amp; !b[j][digit - <span class="number">1</span>] &amp;&amp; !c[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][digit - <span class="number">1</span>])</span><br><span class="line">                    &#123;</span><br><span class="line">                        a[i][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                        b[j][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                        c[<span class="number">3</span> * (i / <span class="number">3</span>) + j / <span class="number">3</span>][digit - <span class="number">1</span>] = <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：回溯法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        </span><br><span class="line">        helper(n, k, <span class="number">1</span>, re, temp);</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k, <span class="keyword">int</span> next, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.size() == k)</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = next; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push_back(i);</span><br><span class="line">            helper(n, k, i + <span class="number">1</span>, re, temp);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>空间优化：3个9x9的数组可以用3 个长为9的vector代替，每个vector的某个值的第i位表示，数字(i+1)是否出现过。即位操作的方法，节省了空间。</p>
-<p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isValidSudoku</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt;&gt;&amp; board)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; col(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; block(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">short</span>&gt; row(<span class="number">9</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++)</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">         <span class="keyword">if</span> (board[i][j] != <span class="string">'.'</span>) &#123;</span><br><span class="line">             <span class="keyword">int</span> idx = <span class="number">1</span> &lt;&lt; (board[i][j] - <span class="string">'0'</span>);</span><br><span class="line">             <span class="keyword">if</span> (row[i] &amp; idx || col[j] &amp; idx || block[i/<span class="number">3</span> * <span class="number">3</span> + j / <span class="number">3</span>] &amp; idx)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            row[i] |= idx;</span><br><span class="line">            col[j] |= idx;</span><br><span class="line">            block[i/<span class="number">3</span> * <span class="number">3</span> + j/<span class="number">3</span>] |= idx;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>对回溯法的优化，</p>
+<p>for循环中 i 从next到n，可以改为到n - ( k - temp.size ( ) ) + 1，时间和空间大大缩小。</p>
+<p>k - temp.size()表示当前的temp还缺少多少个元素才能构成一个解，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        </span><br><span class="line">        helper(n, k, <span class="number">1</span>, re, temp);</span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k, <span class="keyword">int</span> next, <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.size() == k)</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = next; i &lt;= n - (k - temp.size ( )) + <span class="number">1</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push_back(i);</span><br><span class="line">            helper(n, k, i + <span class="number">1</span>, re, temp);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：short iterative，将回溯法改成迭代实现</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span><br><span class="line">&#123;</span><br><span class="line">				<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">				<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">				<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; p(k, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">				<span class="keyword">while</span> (i &gt;= <span class="number">0</span>)</span><br><span class="line">				&#123;</span><br><span class="line">								p[i]++;</span><br><span class="line">								<span class="comment">// for循环的条件，i &lt;= end</span></span><br><span class="line">								<span class="keyword">if</span> (p[i] &gt; n)</span><br><span class="line">								&#123;</span><br><span class="line">												--i;</span><br><span class="line">								&#125;</span><br><span class="line">								<span class="comment">// 当前temp个数满足</span></span><br><span class="line">								<span class="keyword">else</span> <span class="keyword">if</span> (i == k - <span class="number">1</span>)</span><br><span class="line">								&#123;</span><br><span class="line">												result.push_back(p);</span><br><span class="line">								&#125;</span><br><span class="line">								<span class="keyword">else</span> </span><br><span class="line">								&#123;</span><br><span class="line">												++i;</span><br><span class="line">												p[i] = p[i - <span class="number">1</span>];</span><br><span class="line">								&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法3：递归，动态规划，基于C(n,k)=C(n-1,k-1)+C(n-1,k)</p>
+<p>即从 n 个数字选 k 个，我们把所有结果分为两种，包含第 n 个数和不包含第 n 个数。这样的话，就可以把问题转换成</p>
+<ul>
+<li>从 n - 1 里边选 k - 1 个，然后每个结果加上 n</li>
+<li>从 n - 1 个里边直接选 k 个。</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; combine(<span class="keyword">int</span> n, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n == k || k == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re1;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                v.push_back(i);</span><br><span class="line">            &#125;</span><br><span class="line">            re1.push_back(v);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">return</span> re1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re, temp;</span><br><span class="line">        re = combine(n - <span class="number">1</span>, k - <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 一定注意这里必须使用引用，否则re的结果不会改变</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; r : re)</span><br><span class="line">        &#123;</span><br><span class="line">            r.push_back(n);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        temp = combine(n - <span class="number">1</span>, k);</span><br><span class="line">        </span><br><span class="line">        re.insert(re.end(), temp.begin(), temp.end());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -378,13 +307,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/12/17/valid-sudoku/">valid-sudoku</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/18/77_combinations/">combinations</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年12月17日 - 22时48分</p>
-        <p><span>最后更新:</span>2019年12月17日 - 22时50分</p>
+        <p><span>发布时间:</span>2020年03月18日 - 13时59分</p>
+        <p><span>最后更新:</span>2020年03月18日 - 14时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/12/17/valid-sudoku/" title="valid-sudoku">https://sky1blue.github.io/2019/12/17/valid-sudoku/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/12/17/valid-sudoku/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/18/77_combinations/" title="combinations">https://sky1blue.github.io/2020/03/18/77_combinations/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/18/77_combinations/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -397,18 +326,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/12/19/combination-sum/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          combination-sum
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">find-first-and-last-position-of-element-in-sorted-array</div>
+    <a href="/2020/03/16/75_sort-colors/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sort-colors</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -419,7 +339,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#36-Valid-Sudoku"><span class="toc-number">1.</span> <span class="toc-text">36. Valid Sudoku</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#77-Combinations"><span class="toc-number">1.</span> <span class="toc-text">77. Combinations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -470,13 +390,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/12/19/combination-sum/" title="上一篇: combination-sum">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/" title="下一篇: find-first-and-last-position-of-element-in-sorted-array">
+            <a href="/2020/03/16/75_sort-colors/" title="下一篇: sort-colors">
                 <i class="fa fa-angle-right"></i>
             </a>
         

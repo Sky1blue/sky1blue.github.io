@@ -46,7 +46,7 @@
           isArchive: false,
           isTag: false,
           isCategory: false,
-          open_in_new: false
+          open_in_new: true
       }
   </script>
 </head></html>
@@ -63,9 +63,11 @@
         </a>
 
         <hgroup>
-          <h1 class="header-author"><a href="/" title="Hi Mate">Simon Xia</a></h1>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Simon</a></h1>
         </hgroup>
 
+        
+        <p class="header-subtitle">Talk is cheap. Show me the code.</p>
         
         
         
@@ -165,7 +167,7 @@
       <nav id="mobile-nav">
       <div class="overlay">
           <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Simon Xia</a></h1>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Simon</a></h1>
       </div>
     <div class="intrude-less">
         <header id="header" class="inner">
@@ -175,8 +177,10 @@
                 
             </a>
             <hgroup>
-              <h1 class="header-author"><a href="/" title="Me">Simon Xia</a></h1>
+              <h1 class="header-author"><a href="/" title="Me">Simon</a></h1>
             </hgroup>
+            
+            <p class="header-subtitle">Talk is cheap. Show me the code.</p>
             
             <nav class="header-menu">
                 <ul>
@@ -281,52 +285,6 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; findRelativeRanks(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; result(nums.size());</span><br><span class="line">        priority_queue&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;&gt; pq;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">            pq.push(&#123;nums[i],i&#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Gold Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Silver Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        <span class="keyword">if</span> (pq.size() &gt; <span class="number">0</span>) &#123; result[pq.top().second] = <span class="string">"Bronze Medal"</span>; pq.pop(); &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt; nums.size(); ++i) &#123;</span><br><span class="line">            result[pq.top().second] = to_string(i + <span class="number">1</span>);</span><br><span class="line">            pq.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
       
       
-        <div class="page-reward">
-          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
-          <div class="hide_box"></div>
-          <div class="shang_box">
-            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
-            <div class="shang_tit">
-              <p>纯属好玩</p>
-            </div>
-            <div class="shang_payimg">
-              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
-            </div>
-              <div class="pay_explain">扫码打赏，你说多少就多少</div>
-            <div class="shang_payselect">
-              
-                <div class="pay_item checked" data-id="alipay">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
-                </div>
-              
-              
-                <div class="pay_item" data-id="wechat">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
-                </div>
-              
-            </div>
-            <div class="shang_info">
-              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-        <script type="text/javascript">
-          $(".pay_item").click(function(){
-            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
-            var dataid=$(this).attr('data-id');
-            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
-            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
-          });
-          function dashangToggle(){
-            
-            $(".hide_box").fadeToggle();
-            $(".shang_box").fadeToggle();
-          }
-        </script>
-      
     </div>
     
   </div>
@@ -334,12 +292,12 @@
     
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2019/11/25/relative-ranks/">relative-ranks</a></p>
-        <p><span>文章作者:</span><a href="/" title="访问 Simon Xia 的个人博客">Simon Xia</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
         <p><span>发布时间:</span>2019年11月25日 - 23时10分</p>
         <p><span>最后更新:</span>2019年11月25日 - 23时10分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/11/25/relative-ranks/" title="relative-ranks">https://sky1blue.github.io/2019/11/25/relative-ranks/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/25/relative-ranks/　　作者: Simon Xia" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/25/relative-ranks/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -436,7 +394,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/16/75_sort-colors/">sort-colors</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/73_set-matrix-zeroes/">set-matrix-zeroes</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/74_search-a-2d-matrix/">search-a-2d-matrix</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/71_simplify-path/">simplify-path</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/12/64_minimum-path-sum/">minimum-path-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/63_unique-paths-ii/">unique-paths-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/62_unique-paths/">unique-paths</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/unique-paths/">unique-paths</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/rotate-list/">rotate-list</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/permutation-sequence/">permutation-sequence</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/07/spiral-matrix-II/">spiral-matrix-II</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/06/merge-intervals/">merge-intervals</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/06/jump-game/">jump-game</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/04/spiral-matrix/">spiral-matrix</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/pow-x-n/">pow(x,n)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/02/group-anagrams/">group-anagrams</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/01/rotate-image/">rotate-image</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/permutations-ii/">permutations-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/25/permutations/">permutations</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/multiply-strings/">multiply-strings</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2020/03/18/77_combinations/">combinations</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/16/75_sort-colors/">sort-colors</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/73_set-matrix-zeroes/">set-matrix-zeroes</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/15/74_search-a-2d-matrix/">search-a-2d-matrix</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/14/71_simplify-path/">simplify-path</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/12/64_minimum-path-sum/">minimum-path-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/63_unique-paths-ii/">unique-paths-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/62_unique-paths/">unique-paths</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/11/unique-paths/">unique-paths</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/rotate-list/">rotate-list</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/09/permutation-sequence/">permutation-sequence</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/07/spiral-matrix-II/">spiral-matrix-II</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/06/merge-intervals/">merge-intervals</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/06/jump-game/">jump-game</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/04/spiral-matrix/">spiral-matrix</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/03/pow-x-n/">pow(x,n)</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/02/group-anagrams/">group-anagrams</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/03/01/rotate-image/">rotate-image</a></li><li class="post-list-item"><a class="post-list-link" href="/2020/01/01/permutations-ii/">permutations-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/25/permutations/">permutations</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/24/multiply-strings/">multiply-strings</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/22/combination-sum-ii/">combination-sum-ii</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/19/combination-sum/">combination-sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/valid-sudoku/">valid-sudoku</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/17/find-first-and-last-position-of-element-in-sorted-array/">find-first-and-last-position-of-element-in-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/15/search-in-rotated-sorted-array/">search-in-rotated-sorted-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/13/next-permutation/">next-permutation</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/12/divide-two-integers/">divide-two-integers</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/10/generate-parentheses/">generate-parentheses</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/09/4sum/">4sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/08/letter-combinations-of-a-phone-number/">letter-combinations-of-a-phone-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/07/3sum-closest/">3sum-closest</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/3sum/">3sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/05/integer-to-roman/">integer-to-roman</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/04/container-with-most-water/">container-with-most-water</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/03/string-to-integer-atoi/">string-to-integer-atoi</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/02/zigzag-conversion/">zigzag-conversion</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/k-diff-pairs-in-an-array/">k-diff-pairs-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/12/01/minimum-absolute-difference-in-bst/">minimum-absolute-difference-in-bst</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/30/longest-uncommon-subsequence-i/">longest-uncommon-subsequence-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/fibonacci-number/">fibonacci-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/28/detect-capital/">detect-capital</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/26/perfect-number/">perfect-number</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/relative-ranks/">relative-ranks</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/25/base-7/">base-7</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/find-mode-in-binary-search-tree/">find-mode-in-binary-search-tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/keyboard-row/">keyboard-row</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/24/next-greater-element-i/">next-greater-element-i</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/construct-the-rectangle/">construct-the-rectangle</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/21/license-key-formatting/">license-key-formatting</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/20/number-complement/">number-complement</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/heaters/">heaters</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/19/island-perimeter/">island-perimeter</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/18/hamming-distance/">hamming-distance</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/repeated-substring-pattern/">repeated-substring-pattern</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-four/">power-of-four</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-three/">power-of-three</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/power-of-two/">power-of-two</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/number-of-1-bits/">number-of-1-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/reverse-bits/">reverse-bits</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/17/assign-cookies/">assign-cookies</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/14/minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/number-of-boomerangs/">number-of-boomerangs</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/string-compression/">string-compression</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/11/13/arranging-coins/">arranging-coins</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/11/栈和队列/">栈和队列</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/k分位数/">k分位数</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -466,7 +424,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2020 Simon Xia
+                &copy; 2020 Simon
             </div>
             <div class="footer-right">
                 <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
@@ -502,8 +460,8 @@
 
     <script>
         $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            var backgroundnum = 11;
+            var backgroundimg = "url(/background/bg-" + backgroundnum +".jpg)";
             $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
             $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
         })
