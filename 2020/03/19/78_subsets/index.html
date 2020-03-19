@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>power-of-four | Simon的个人博客</title>
+  <title>subsets | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="78. SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="power-of-four">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/power-of-four/index.html">
+<meta property="og:title" content="subsets">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/19/78_subsets/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta property="og:description" content="78. SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-17T03:18:42.000Z">
+<meta property="og:updated_time" content="2020-03-19T06:49:30.251Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="power-of-four">
-<meta name="twitter:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta name="twitter:title" content="subsets">
+<meta name="twitter:description" content="78. SubsetsGiven a set of distinct integers, nums, return all possible subsets (the power set).">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-power-of-four" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-78_subsets" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/power-of-four/" class="article-date">
-      <time datetime="2019-11-17T03:18:41.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2020/03/19/78_subsets/" class="article-date">
+      <time datetime="2020-03-19T06:46:31.000Z" itemprop="datePublished">2020-03-19</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      power-of-four
+      subsets
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,50 +244,75 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="342-Power-of-Four"><a href="#342-Power-of-Four" class="headerlink" title="342. Power of Four"></a>342. Power of Four</h3><p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.<a id="more"></a></p>
+        <h3 id="78-Subsets"><a href="#78-Subsets" class="headerlink" title="78. Subsets"></a>78. Subsets</h3><p>Given a set of <strong>distinct</strong> integers, <em>nums</em>, return all possible subsets (the power set).<a id="more"></a></p>
 
-<p><strong>Example 1:</strong></p>
+
+
+<p><strong>Note:</strong> The solution set must not contain duplicate subsets.</p>
+
+
+
+<p><strong>Example:</strong></p>
+
+
 
 <pre>
-<strong>Input: </strong><span id="example-input-1-1">16</span>
-<strong>Output: </strong><span id="example-output-1">true</span>
-</pre>
 
-<div>
-<p><strong>Example 2:</strong></p>
+<strong>Input:</strong> nums = [1,2,3]
 
-<pre>
-<strong>Input: </strong><span id="example-input-2-1">5</span>
-<strong>Output: </strong><span id="example-output-2">false</span></pre>
-</div>
+<strong>Output:</strong>
 
-<p><b>Follow up</b>: Could you solve it without loops/recursion?</p>
+[
+
+  [3],
+
+&nbsp; [1],
+
+&nbsp; [2],
+
+&nbsp; [1,2,3],
+
+&nbsp; [1,3],
+
+&nbsp; [2,3],
+
+&nbsp; [1,2],
+
+&nbsp; []
+
+]</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：与 题231 Power of Two 类似，区别在于 4 ^ n = 2 ^ (2n)为2的偶数次幂，所以只要在加上一个判断条件，判断二进制的奇数位上为0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//                   判断是二的倍数         筛选其中为4的倍数</span></span><br><span class="line">        <span class="keyword">return</span> num &gt; <span class="number">0</span> &amp;&amp; (num &amp; (num - <span class="number">1</span>)) == <span class="number">0</span> &amp;&amp; (num &amp; <span class="number">0x55555555</span>) != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：回溯法</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsets(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        re.push_back(temp);</span><br><span class="line">        helper(re, nums, temp, <span class="number">0</span>);</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">helper</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; re, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp, <span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start == nums.size())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            temp.push_back(nums[i]);</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            helper(re, nums, temp, i + <span class="number">1</span>);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：将int转成double型</p>
-<p>double数的组成：</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号位(s)</th>
-<th align="center">阶码 (e)</th>
-<th align="center">尾数(m)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">11</td>
-<td align="center">52</td>
-</tr>
-</tbody></table>
-<p>最终数 = $(-1)^s * 2^{e - 1023} * (1 + 2^{-1} + 2^{-2}………………)$</p>
-<p>所以的2的幂的数的尾数一定为0，</p>
-<p>所以4的幂 $4^n = 2^{2 * n}$</p>
-<p>阶码一定是奇数，因为e - 1023是偶数，且小数位为0，所以只要保证阶码的最低位为1（保证为奇数），小数位为0（后52位），并且为正（最高位为0）。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> n = num;</span><br><span class="line">        <span class="keyword">return</span> (*(<span class="keyword">long</span>*)&amp;n &amp; <span class="number">0x801FFFFFFFFFFFFF</span>) == <span class="number">0x10000000000000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>解法2：动态规划，递归，</p>
+<p>C(k)表示nums中前k个数的子集(<strong>不包括空集</strong>)；</p>
+<p>C(k) = C(k-1) + nums[k]+对所有C(k-1)子集数加入nums[k]；</p>
+<p>解释为：前k个数的子集数 = 前k-1数的子集数 + 第k个数单独构成的子集 + 所有前k-1数的子集数加入第k个数。</p>
+<p>代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsets(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            result.push_back(temp);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        result = helper(nums, nums.size() - <span class="number">1</span>);</span><br><span class="line">        result.push_back(temp);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">     <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; helper(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> index)</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="keyword">if</span> (index == <span class="number">0</span>)</span><br><span class="line">         &#123;</span><br><span class="line">             <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; first(<span class="number">1</span>, nums[index]);</span><br><span class="line">             <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re(<span class="number">1</span>, first);</span><br><span class="line">             </span><br><span class="line">             <span class="keyword">return</span> re;</span><br><span class="line">         &#125;</span><br><span class="line">         </span><br><span class="line">         <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; lastResult = helper(nums, index - <span class="number">1</span>);</span><br><span class="line">         <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; temp;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">auto</span> v : lastResult)</span><br><span class="line">         &#123;</span><br><span class="line">             v.push_back(nums[index]);</span><br><span class="line">             temp.push_back(v);</span><br><span class="line">         &#125;</span><br><span class="line">         </span><br><span class="line">         lastResult.push_back(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; (<span class="number">1</span>, nums[index]));</span><br><span class="line">         lastResult.insert(lastResult.end(), temp.begin(), temp.end());</span><br><span class="line">         </span><br><span class="line">         <span class="keyword">return</span> lastResult;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法3：位操作</p>
+<p>假定：给定的数组含有元素的个数为n，那么所有子集的总数数目为$2^{n}$。</p>
+<p>为什么？数组中所有数都有两种情况，出现在子集中，不出现在子集中。所以一共n个2相乘。</p>
+<p>以{1,2,3}举例，子集数目为2^3 = 8;</p>
+<p>0) 0 0 0  -&gt; Dont take 3 , Dont take 2 , Dont take 1 = { } </p>
+<p>1) 0 0 1  -&gt; Dont take 3 , Dont take 2 ,   take 1       =  {1 } </p>
+<p>2) 0 1 0  -&gt; Dont take 3 ,    take 2       , Dont take 1 = { 2 } </p>
+<p>3) 0 1 1  -&gt; Dont take 3 ,    take 2       ,      take 1    = { 1 , 2 } </p>
+<p>4) 1 0 0  -&gt;    take 3      , Dont take 2  , Dont take 1 = { 3 } </p>
+<p>5) 1 0 1  -&gt;    take 3      , Dont take 2  ,     take 1     = { 1 , 3 } </p>
+<p>6) 1 1 0  -&gt;    take 3      ,    take 2       , Dont take 1 = { 2 , 3 } </p>
+<p>7) 1 1 1  -&gt;    take 3     ,      take 2     ,      take 1     = { 1 , 2 , 3 } </p>
+<p>基于上面的逻辑，nums[i]出现在第j个子集中，当j的第i是1。</p>
+<blockquote>
+<p>In the above logic ,Insert S[i] only if (j&gt;&gt;i)&amp;1 ==true   { j E { 0,1,2,3,4,5,6,7 }   i = ith element in the input array }</p>
+</blockquote>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsets(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> elem_size = nums.size();</span><br><span class="line">        <span class="keyword">int</span> subset_size = <span class="built_in">pow</span>(<span class="number">2</span>, elem_size);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; result(subset_size, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; elem_size; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; subset_size; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> ((j &gt;&gt; i) &amp; <span class="number">1</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    result[j].push_back(nums[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -298,13 +323,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/power-of-four/">power-of-four</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/19/78_subsets/">subsets</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时18分</p>
-        <p><span>最后更新:</span>2019年11月17日 - 11时18分</p>
+        <p><span>发布时间:</span>2020年03月19日 - 14时46分</p>
+        <p><span>最后更新:</span>2020年03月19日 - 14时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/power-of-four/" title="power-of-four">https://sky1blue.github.io/2019/11/17/power-of-four/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/power-of-four/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/19/78_subsets/" title="subsets">https://sky1blue.github.io/2020/03/19/78_subsets/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/19/78_subsets/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -317,18 +342,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/repeated-substring-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          repeated-substring-pattern
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/power-of-three/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">power-of-three</div>
+    <a href="/2020/03/18/77_combinations/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">combinations</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -339,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#342-Power-of-Four"><span class="toc-number">1.</span> <span class="toc-text">342. Power of Four</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#78-Subsets"><span class="toc-number">1.</span> <span class="toc-text">78. Subsets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -390,13 +406,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/repeated-substring-pattern/" title="上一篇: repeated-substring-pattern">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/power-of-three/" title="下一篇: power-of-three">
+            <a href="/2020/03/18/77_combinations/" title="下一篇: combinations">
                 <i class="fa fa-angle-right"></i>
             </a>
         
