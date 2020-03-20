@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>max-consecutive-ones | Simon的个人博客</title>
+  <title>remove-duplicates-from-sorted-array-ii | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="80. Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most&amp;nbsp;twice and return the new length.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="max-consecutive-ones">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/22/max-consecutive-ones/index.html">
+<meta property="og:title" content="remove-duplicates-from-sorted-array-ii">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/20/80_remove-duplicates-from-sorted-array-ii/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta property="og:description" content="80. Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most&amp;nbsp;twice and return the new length.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-22T14:18:04.604Z">
+<meta property="og:updated_time" content="2020-03-20T15:28:41.904Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="max-consecutive-ones">
-<meta name="twitter:description" content="485. Max Consecutive OnesGiven a binary array, find the maximum number of consecutive 1s in this array.">
+<meta name="twitter:title" content="remove-duplicates-from-sorted-array-ii">
+<meta name="twitter:description" content="80. Remove Duplicates from Sorted Array IIGiven a sorted array nums, remove the duplicates in-place such that duplicates appeared at most&amp;nbsp;twice and return the new length.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-max-consecutive-ones" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-80_remove-duplicates-from-sorted-array-ii" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/22/max-consecutive-ones/" class="article-date">
-      <time datetime="2019-11-22T13:57:00.000Z" itemprop="datePublished">2019-11-22</time>
+      <a href="/2020/03/20/80_remove-duplicates-from-sorted-array-ii/" class="article-date">
+      <time datetime="2020-03-20T15:27:45.000Z" itemprop="datePublished">2020-03-20</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      max-consecutive-ones
+      remove-duplicates-from-sorted-array-ii
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,44 +244,98 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="485-Max-Consecutive-Ones"><a href="#485-Max-Consecutive-Ones" class="headerlink" title="485. Max Consecutive Ones"></a>485. Max Consecutive Ones</h3><p>Given a binary array, find the maximum number of consecutive 1s in this array.<a id="more"></a></p>
+        <h3 id="80-Remove-Duplicates-from-Sorted-Array-II"><a href="#80-Remove-Duplicates-from-Sorted-Array-II" class="headerlink" title="80. Remove Duplicates from Sorted Array II"></a>80. Remove Duplicates from Sorted Array II</h3><p>Given a sorted array <em>nums</em>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that duplicates appeared at most&nbsp;<em>twice</em> and return the new length.<a id="more"></a></p>
 
 
 
-<p><b>Example 1:</b><br>
+<p>Do not allocate extra space for another array, you must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
 
 <pre>
 
-<b>Input:</b> [1,1,0,1,1,1]
+Given <em>nums</em> = <strong>[1,1,1,2,2,3]</strong>,
 
-<b>Output:</b> 3
 
-<b>Explanation:</b> The first two digits or the last three digits are consecutive 1s.
 
-    The maximum number of consecutive 1s is 3.
+Your function should return length = <strong><code>5</code></strong>, with the first five elements of <em><code>nums</code></em> being <strong><code>1, 1, 2, 2</code></strong> and <strong>3</strong> respectively.
+
+
+
+It doesn&#39;t matter what you leave beyond the returned length.</pre>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+Given <em>nums</em> = <strong>[0,0,1,1,1,1,2,3,3]</strong>,
+
+
+
+Your function should return length = <strong><code>7</code></strong>, with the first seven elements of <em><code>nums</code></em> being modified to&nbsp;<strong><code>0</code></strong>, <strong>0</strong>, <strong>1</strong>, <strong>1</strong>, <strong>2</strong>, <strong>3</strong> and&nbsp;<strong>3</strong> respectively.
+
+
+
+It doesn&#39;t matter what values are set beyond&nbsp;the returned length.
 
 </pre>
 
-</p>
+
+
+<p><strong>Clarification:</strong></p>
 
 
 
-<p><b>Note:</b>
+<p>Confused why the returned value is an integer but your answer is an array?</p>
 
-<ul>
 
-<li>The input array will only contain <code>0</code> and <code>1</code>.</li>
 
-<li>The length of input array is a positive integer and will not exceed 10,000</li>
+<p>Note that the input array is passed in by <strong>reference</strong>, which means modification to the input array will be known to the caller as well.</p>
 
-</ul>
 
-</p>
+
+<p>Internally you can think of this:</p>
+
+
+
+<pre>
+
+// <strong>nums</strong> is passed in by reference. (i.e., without making a copy)
+
+int len = removeDuplicates(nums);
+
+
+
+// any modification to <strong>nums</strong> in your function would be known by the caller.
+
+// using the length returned by your function, it prints the first <strong>len</strong> elements.
+
+for (int i = 0; i &lt; len; i++) {
+
+&nbsp; &nbsp; print(nums[i]);
+
+}
+
+</pre>
+
+
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：本题比较简单，需要注意的是，因为每次都是以0作为结束条件，所以如果数组不是以0结尾，就会少算一次，所以选哟在程序的最后比较numsofzero和rv的大小；</p>
-<p>另外一种直接在原始的数组后面自己添加一个0作为结束条件，也可。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findMaxConsecutiveOnes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// nums.push_back(0);</span></span><br><span class="line">        <span class="keyword">int</span> numsofzero = <span class="number">0</span>, rv = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = nums.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++numsofzero;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (numsofzero &gt; rv)</span><br><span class="line">                &#123;</span><br><span class="line">                    rv = numsofzero;</span><br><span class="line">                &#125;</span><br><span class="line">                numsofzero = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max(rv, numsofzero);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：统计当前数出现的次数，次数小于2加入新数组，否则不添加。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 新数组的起始</span></span><br><span class="line">        <span class="keyword">int</span> newindex = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// num用于当前数字出现的次数</span></span><br><span class="line">        <span class="keyword">int</span> val = nums[<span class="number">0</span>], num = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == val)</span><br><span class="line">            &#123;</span><br><span class="line">                ++num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                val = nums[i];</span><br><span class="line">                num = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (num &lt;= <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                nums[newindex++] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> newindex;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>看到<a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/discuss/27976/3-6-easy-lines-C%2B%2B-Java-Python-Ruby" target="_blank" rel="noopener">StefanPochmann大神的解法</a>感觉自己宛如智障。。。</p>
+<p>题目要求每个数至多出现两次，又因为是有序数组，所以只要判断当前数是否等于前一个的前一个数。</p>
+<p>这种解法可以通用到每个数至多出现k次的情况。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n : nums)</span><br><span class="line">        <span class="keyword">if</span> (i &lt; <span class="number">2</span> || n &gt; nums[i<span class="number">-2</span>])</span><br><span class="line">            nums[i++] = n;</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -292,13 +346,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/22/max-consecutive-ones/">max-consecutive-ones</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/20/80_remove-duplicates-from-sorted-array-ii/">remove-duplicates-from-sorted-array-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年11月22日 - 21时57分</p>
-        <p><span>最后更新:</span>2019年11月22日 - 22时18分</p>
+        <p><span>发布时间:</span>2020年03月20日 - 23时27分</p>
+        <p><span>最后更新:</span>2020年03月20日 - 23时28分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/22/max-consecutive-ones/" title="max-consecutive-ones">https://sky1blue.github.io/2019/11/22/max-consecutive-ones/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/22/max-consecutive-ones/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/20/80_remove-duplicates-from-sorted-array-ii/" title="remove-duplicates-from-sorted-array-ii">https://sky1blue.github.io/2020/03/20/80_remove-duplicates-from-sorted-array-ii/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/20/80_remove-duplicates-from-sorted-array-ii/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -311,18 +365,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/22/construct-the-rectangle/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          construct-the-rectangle
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/21/license-key-formatting/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">license-key-formatting</div>
+    <a href="/2020/03/20/79_word-search/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">word-search</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -333,7 +378,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#485-Max-Consecutive-Ones"><span class="toc-number">1.</span> <span class="toc-text">485. Max Consecutive Ones</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#80-Remove-Duplicates-from-Sorted-Array-II"><span class="toc-number">1.</span> <span class="toc-text">80. Remove Duplicates from Sorted Array II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -384,13 +429,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/22/construct-the-rectangle/" title="上一篇: construct-the-rectangle">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/21/license-key-formatting/" title="下一篇: license-key-formatting">
+            <a href="/2020/03/20/79_word-search/" title="下一篇: word-search">
                 <i class="fa fa-angle-right"></i>
             </a>
         
