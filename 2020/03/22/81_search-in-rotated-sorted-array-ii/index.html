@@ -3,20 +3,22 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>permutation-sequence | Simon的个人博客</title>
+  <title>search-in-rotated-sorted-array-ii | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
+  <meta name="description" content="81. Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="permutation-sequence">
-<meta property="og:url" content="https://sky1blue.github.io/2020/03/09/permutation-sequence/index.html">
+<meta property="og:title" content="search-in-rotated-sorted-array-ii">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/22/81_search-in-rotated-sorted-array-ii/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
+<meta property="og:description" content="81. Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-09T05:41:03.274Z">
+<meta property="og:image" content="https://sky1blue.github.io/2020/03/22/81_search-in-rotated-sorted-array-ii/81.jpg">
+<meta property="og:updated_time" content="2020-03-21T16:25:13.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="permutation-sequence">
-<meta name="twitter:description" content="60. Permutation SequenceThe set [1,2,3,...,n] contains a total of n! unique permutations.">
+<meta name="twitter:title" content="search-in-rotated-sorted-array-ii">
+<meta name="twitter:description" content="81. Search in Rotated Sorted Array IISuppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.">
+<meta name="twitter:image" content="https://sky1blue.github.io/2020/03/22/81_search-in-rotated-sorted-array-ii/81.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +204,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-permutation-sequence" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-81_search-in-rotated-sorted-array-ii" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/09/permutation-sequence/" class="article-date">
-      <time datetime="2020-03-09T04:55:09.000Z" itemprop="datePublished">2020-03-09</time>
+      <a href="/2020/03/22/81_search-in-rotated-sorted-array-ii/" class="article-date">
+      <time datetime="2020-03-21T16:16:54.000Z" itemprop="datePublished">2020-03-22</time>
 </a>
     </div>
   
@@ -219,7 +221,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      permutation-sequence
+      search-in-rotated-sorted-array-ii
     </h1>
   
 
@@ -244,43 +246,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="60-Permutation-Sequence"><a href="#60-Permutation-Sequence" class="headerlink" title="60. Permutation Sequence"></a>60. Permutation Sequence</h3><p>The set <code>[1,2,3,...,<em>n</em>]</code> contains a total of <em>n</em>! unique permutations.<a id="more"></a></p>
+        <h3 id="81-Search-in-Rotated-Sorted-Array-II"><a href="#81-Search-in-Rotated-Sorted-Array-II" class="headerlink" title="81. Search in Rotated Sorted Array II"></a>81. Search in Rotated Sorted Array II</h3><p>Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.<a id="more"></a></p>
 
 
 
-<p>By listing and labeling all of the permutations in order, we get the following sequence for <em>n</em> = 3:</p>
+<p>(i.e., <code>[0,0,1,2,2,5,6]</code> might become <code>[2,5,6,0,0,1,2]</code>).</p>
 
 
 
-<ol>
-
-<pre><code>&lt;li&gt;&lt;code&gt;&amp;quot;123&amp;quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;&amp;quot;132&amp;quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;&amp;quot;213&amp;quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;&amp;quot;231&amp;quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;&amp;quot;312&amp;quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;code&gt;&amp;quot;321&amp;quot;&lt;/code&gt;&lt;/li&gt;</code></pre></ol>
-
-
-
-<p>Given <em>n</em> and <em>k</em>, return the <em>k</em><sup>th</sup> permutation sequence.</p>
-
-
-
-<p><strong>Note:</strong></p>
-
-
-
-<ul>
-
-<pre><code>&lt;li&gt;Given &lt;em&gt;n&lt;/em&gt; will be between 1 and 9 inclusive.&lt;/li&gt;
-
-&lt;li&gt;Given&amp;nbsp;&lt;em&gt;k&lt;/em&gt;&amp;nbsp;will be between 1 and &lt;em&gt;n&lt;/em&gt;! inclusive.&lt;/li&gt;</code></pre></ul>
+<p>You are given a target value to search. If found in the array return <code>true</code>, otherwise return <code>false</code>.</p>
 
 
 
@@ -290,9 +264,9 @@
 
 <pre>
 
-<strong>Input:</strong> n = 3, k = 3
+<strong>Input:</strong> nums = [2<code>,5,6,0,0,1,2]</code>, target = 0
 
-<strong>Output:</strong> &quot;213&quot;
+<strong>Output:</strong> true
 
 </pre>
 
@@ -304,30 +278,36 @@
 
 <pre>
 
-<strong>Input:</strong> n = 4, k = 9
+<strong>Input:</strong> nums = [2<code>,5,6,0,0,1,2]</code>, target = 3
 
-<strong>Output:</strong> &quot;2314&quot;
+<strong>Output:</strong> false</pre>
 
-</pre>
+
+
+<p><strong>Follow up:</strong></p>
+
+
+
+<ul>
+
+<pre><code>&lt;li&gt;This is a follow up problem to&amp;nbsp;&lt;a href=&quot;/problems/search-in-rotated-sorted-array/description/&quot;&gt;Search in Rotated Sorted Array&lt;/a&gt;, where &lt;code&gt;nums&lt;/code&gt; may contain duplicates.&lt;/li&gt;
+
+&lt;li&gt;Would this affect the run-time complexity? How and why?&lt;/li&gt;</code></pre></ul>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：找到一种模式，以n = 4， k = 14说明。</p>
-<p>[1,2,3,4]所有的permutation，为</p>
-<p>1 + (permutations of 2, 3, 4)</p>
-<p>2 + (permutations of 1, 3, 4)</p>
-<p>3 + (permutations of 1, 2, 4)</p>
-<p>4 + (permutations of 1, 2, 3)</p>
-<p>即以1，2，3，4开头的permutation各有3! = 6个，所以第14个permutation应该处于3 + (permutations of 1, 2, 4)子集中，取k = 13(从0开始)，3 =  13 / 3！+ 1= 13 / 6 =2，所以第一个数应该为3。k = 13 - 2 * 6 = 2，然后重复上述操作，[1,3,4]所有permutation为</p>
-<p>1 + (permutations of  3, 4)</p>
-<p>3 + (permutations of 1, 4)</p>
-<p>4 + (permutations of 1, 2)</p>
-<p>0 = 1 / 2！，所以接下的数为1，依次类推。</p>
-<p>解释一下为什么k取从0开始？</p>
-<p>这样操作省去了，检查k/n！的余数来判断，当前数处于第几个。</p>
-<p>例如：14 / 6 = 2 余1，所以第一个数应该取第三个，如果k= 12，12 / 6 = 2 余0，所以应该取第2个，</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">getPermutation</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; p(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; q(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        p[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            p[i] = i * p[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            q[i] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        k--;<span class="comment">// 这一步很妙，省去了通过检查k % p[n - i]的余数，判断j的取值。</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = k / p[n - i];</span><br><span class="line">            s += (q[j + <span class="number">1</span>] + <span class="string">'0'</span>);</span><br><span class="line">            k = k - j * p[n - i];</span><br><span class="line">            q.erase(q.begin() + j + <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：时间复杂度O(n+logn)，先找到pivot，再将坐标映射。例如</p>
+<p>[2,5,6,0,0,1,2] pivot的坐标为3，即数组整体右移3，所以要想得到原始坐标为3的值2，只要将（3 + 3）% 7 = 6，就得到当前2坐标为6，接着使用binary search就可以得到结果。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> offset = <span class="number">0</span>, length = nums.size();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (length &lt; <span class="number">1</span> || (length == <span class="number">1</span> &amp;&amp; nums[<span class="number">0</span>] != target))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 找到偏移</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; length; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt; nums[i - <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                offset = i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(begin &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (begin + end) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (target &lt; nums[(mid + offset) % length])</span><br><span class="line">            &#123;</span><br><span class="line">                end = mid - <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (target &gt; nums[(mid + offset) % length])</span><br><span class="line">            &#123;</span><br><span class="line">                begin = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：从数组中间一定会将数组分为一个有序数组和一个无序的数组。<br><img src="81.jpg" alt><br>1）所以先判断mid值与begin值得大小，</p>
+<p>2）如果nums[begin] &lt; nums[mid]，那么左边是有序的，右边不是，接下来如果target &lt; nums[begin]或者target &gt; nums[mid]，那么target一定再数组的右边，反之的话，target再左边；</p>
+<p>3）如果nums[begin] &gt; nums[mid]，那么右边是有序的，左边不是，接下来如果target &gt; nums[end]或者target &lt; nums[mid]，那么target一定再数组的左边，反之的话，target再右边；</p>
+<p>重复1~3步，</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">search</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>, end = nums.size() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(begin &lt;= end)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">long</span> mid = (begin + end) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (nums[begin] &lt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (target &lt; nums[begin] || target &gt; nums[mid])</span><br><span class="line">                &#123;</span><br><span class="line">                    begin = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    end = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (nums[begin] &gt; nums[mid])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (target &gt; nums[end] || target &lt; nums[mid])</span><br><span class="line">                &#123;</span><br><span class="line">                    end = mid - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    begin = mid + <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                ++begin;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -338,13 +318,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/09/permutation-sequence/">permutation-sequence</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/22/81_search-in-rotated-sorted-array-ii/">search-in-rotated-sorted-array-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2020年03月09日 - 12时55分</p>
-        <p><span>最后更新:</span>2020年03月09日 - 13时41分</p>
+        <p><span>发布时间:</span>2020年03月22日 - 00时16分</p>
+        <p><span>最后更新:</span>2020年03月22日 - 00时25分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/09/permutation-sequence/" title="permutation-sequence">https://sky1blue.github.io/2020/03/09/permutation-sequence/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/09/permutation-sequence/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/22/81_search-in-rotated-sorted-array-ii/" title="search-in-rotated-sorted-array-ii">https://sky1blue.github.io/2020/03/22/81_search-in-rotated-sorted-array-ii/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/22/81_search-in-rotated-sorted-array-ii/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -357,18 +337,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/09/rotate-list/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          rotate-list
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/07/spiral-matrix-II/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">spiral-matrix-II</div>
+    <a href="/2020/03/20/80_remove-duplicates-from-sorted-array-ii/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">remove-duplicates-from-sorted-array-ii</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -379,7 +350,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#60-Permutation-Sequence"><span class="toc-number">1.</span> <span class="toc-text">60. Permutation Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#81-Search-in-Rotated-Sorted-Array-II"><span class="toc-number">1.</span> <span class="toc-text">81. Search in Rotated Sorted Array II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -430,13 +401,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/09/rotate-list/" title="上一篇: rotate-list">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2020/03/07/spiral-matrix-II/" title="下一篇: spiral-matrix-II">
+            <a href="/2020/03/20/80_remove-duplicates-from-sorted-array-ii/" title="下一篇: remove-duplicates-from-sorted-array-ii">
                 <i class="fa fa-angle-right"></i>
             </a>
         
