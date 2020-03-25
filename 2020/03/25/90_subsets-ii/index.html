@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>set-matrix-zeroes | Simon的个人博客</title>
+  <title>subsets-ii | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="73. Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.">
+  <meta name="description" content="90. Subsets IIGiven a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="set-matrix-zeroes">
-<meta property="og:url" content="https://sky1blue.github.io/2020/03/15/73_set-matrix-zeroes/index.html">
+<meta property="og:title" content="subsets-ii">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/25/90_subsets-ii/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="73. Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.">
+<meta property="og:description" content="90. Subsets IIGiven a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-15T13:13:27.485Z">
+<meta property="og:updated_time" content="2020-03-25T14:40:34.735Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="set-matrix-zeroes">
-<meta name="twitter:description" content="73. Set Matrix ZeroesGiven a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.">
+<meta name="twitter:title" content="subsets-ii">
+<meta name="twitter:description" content="90. Subsets IIGiven a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-73_set-matrix-zeroes" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-90_subsets-ii" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/15/73_set-matrix-zeroes/" class="article-date">
-      <time datetime="2020-03-15T13:13:02.000Z" itemprop="datePublished">2020-03-15</time>
+      <a href="/2020/03/25/90_subsets-ii/" class="article-date">
+      <time datetime="2020-03-25T14:39:52.000Z" itemprop="datePublished">2020-03-25</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      set-matrix-zeroes
+      subsets-ii
     </h1>
   
 
@@ -244,105 +244,53 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="73-Set-Matrix-Zeroes"><a href="#73-Set-Matrix-Zeroes" class="headerlink" title="73. Set Matrix Zeroes"></a>73. Set Matrix Zeroes</h3><p>Given a <em>m</em> x <em>n</em> matrix, if an element is 0, set its entire row and column to 0. Do it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>.<a id="more"></a></p>
+        <h3 id="90-Subsets-II"><a href="#90-Subsets-II" class="headerlink" title="90. Subsets II"></a>90. Subsets II</h3><p>Given a collection of integers that might contain duplicates, <strong><em>nums</em></strong>, return all possible subsets (the power set).<a id="more"></a></p>
 
 
 
-<p><strong>Example 1:</strong></p>
+<p><strong>Note:</strong> The solution set must not contain duplicate subsets.</p>
 
 
 
-<pre>
-
-<strong>Input:</strong> 
-
-[
-
-&nbsp; [1,1,1],
-
-&nbsp; [1,0,1],
-
-&nbsp; [1,1,1]
-
-]
-
-<strong>Output:</strong> 
-
-[
-
-&nbsp; [1,0,1],
-
-&nbsp; [0,0,0],
-
-&nbsp; [1,0,1]
-
-]
-
-</pre>
-
-
-
-<p><strong>Example 2:</strong></p>
+<p><strong>Example:</strong></p>
 
 
 
 <pre>
 
-<strong>Input:</strong> 
+<strong>Input:</strong> [1,2,2]
+
+<strong>Output:</strong>
 
 [
 
-&nbsp; [0,1,2,0],
+  [2],
 
-&nbsp; [3,4,5,2],
+  [1],
 
-&nbsp; [1,3,1,5]
+  [1,2,2],
 
-]
+  [2,2],
 
-<strong>Output:</strong> 
+  [1,2],
 
-[
-
-&nbsp; [0,0,0,0],
-
-&nbsp; [0,4,5,0],
-
-&nbsp; [0,3,1,0]
+  []
 
 ]
 
 </pre>
-
-
-
-<p><strong>Follow up:</strong></p>
-
-
-
-<ul>
-
-<pre><code>&lt;li&gt;A straight forward solution using O(&lt;em&gt;m&lt;/em&gt;&lt;em&gt;n&lt;/em&gt;) space is probably a bad idea.&lt;/li&gt;
-
-&lt;li&gt;A simple improvement uses O(&lt;em&gt;m&lt;/em&gt; + &lt;em&gt;n&lt;/em&gt;) space, but still not the best solution.&lt;/li&gt;
-
-&lt;li&gt;Could you devise a constant space solution?&lt;/li&gt;</code></pre></ul>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题意：如果数组中的某个值为0，就将当前位置所在行和列的值都置为0。</p>
-<p>解法1：新建一个与原数组一样的数组，遍历该数组，如果出现值为0，就将原数组的该位置所在的行列置0。时间空间复杂度$O(mn)$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() &lt; <span class="number">1</span> || matrix[<span class="number">0</span>].size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">int</span> m = matrix.size(), n = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; temp(m, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(n, <span class="number">0</span>));</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                temp[i][j] = matrix[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (temp[i][j] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; m; ++k)</span><br><span class="line">                    &#123;</span><br><span class="line">                        matrix[k][j] = <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; n; ++k)</span><br><span class="line">                    &#123;</span><br><span class="line">                        matrix[i][k] = <span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：回溯法 + DFS，与<a href="https://leetcode.com/problems/subsets/" target="_blank" rel="noopener">78. Subsets</a>类似，不同的是nums含有的元素有重复，如何去掉重复的结果？</p>
+<p>在回溯法中，出现重复的可能出现在同一个位置出现同样的数。那么在当前位置做选择时加入一个unordered_map用来储存某个数出现的次数，如果当前数出现过就不在选择。</p>
+<p>另外要对数组先排序。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsetsWithDup(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        re.push_back(temp);</span><br><span class="line">        dfs(re, nums, <span class="number">0</span>, temp);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> start, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start == nums.size())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; um;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (um.find(nums[i]) == um.end())</span><br><span class="line">            &#123;</span><br><span class="line">                um[nums[i]] = <span class="number">1</span>;               </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            temp.push_back(nums[i]);</span><br><span class="line">            re.push_back(temp);</span><br><span class="line">            dfs(re, nums, i + <span class="number">1</span>, temp);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法2：针对解法1的优化，遍历整个数组，如果当前位置为0，则将所在的行列不为0的值设定为一个数组中不会出现的数（假定的），最后遍历原始数组将所有的这个数统一设定为0.</p>
-<p>为什么将不为0的数设置？</p>
-<p>这样不会影响后面对0的判断</p>
-<p>时间复杂度$O(mn + m + n)$</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> MODIFIED = -<span class="number">1000000</span>;</span><br><span class="line">    <span class="keyword">int</span> R = matrix.length;</span><br><span class="line">    <span class="keyword">int</span> C = matrix[<span class="number">0</span>].length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; R; r++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; C; c++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix[r][c] == <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="comment">// We modify the corresponding rows and column elements in place.</span></span><br><span class="line">          <span class="comment">// Note, we only change the non zeroes to MODIFIED</span></span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; C; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[r][k] != <span class="number">0</span>) &#123;</span><br><span class="line">              matrix[r][k] = MODIFIED;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; R; k++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[k][c] != <span class="number">0</span>) &#123;</span><br><span class="line">              matrix[k][c] = MODIFIED;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> r = <span class="number">0</span>; r &lt; R; r++) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> c = <span class="number">0</span>; c &lt; C; c++) &#123;</span><br><span class="line">        <span class="comment">// Make a second pass and change all MODIFIED elements to 0 """</span></span><br><span class="line">        <span class="keyword">if</span> (matrix[r][c] == MODIFIED) &#123;</span><br><span class="line">          matrix[r][c] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>解法3：如果某位置为0，将该位置所在的行和列的第一个值置0，最后通过根据每行每列的第一个值来判断当前行和列是否需要置为0，需要注意将第一行和第一列单独操作。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setZeroes</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix.size() &lt; <span class="number">1</span> || matrix[<span class="number">0</span>].size() &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 用于判断第0列是否需要标记为0</span></span><br><span class="line">        <span class="keyword">bool</span> isFirstCol = <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> m = matrix.size(), n = matrix[<span class="number">0</span>].size();</span><br><span class="line">        <span class="comment">// 将0所在的列和行的第0个值标记为0，</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                isFirstCol = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    matrix[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">                    matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 根据每行、每列的第0个值判断是否需要标记为0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][<span class="number">0</span>] == <span class="number">0</span> || matrix[<span class="number">0</span>][j] == <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    matrix[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断是否需要将第0行标记为0</span></span><br><span class="line">        <span class="keyword">if</span> (matrix[<span class="number">0</span>][<span class="number">0</span>] == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                matrix[<span class="number">0</span>][j] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (isFirstCol)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                matrix[j][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>优化：因为对数组排过序，相同的数一定相邻，所以只要判断当前数是否与之前一个数相同即可，这样就省去了一个map来记录使用情况。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; subsetsWithDup(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        sort(nums.begin(), nums.end());</span><br><span class="line">        re.push_back(temp);</span><br><span class="line">        dfs(re, nums, <span class="number">0</span>, temp);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; &amp;re, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> start, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (start == nums.size())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; nums.size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i == start || nums[i] != nums[i - <span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                temp.push_back(nums[i]);</span><br><span class="line">                re.push_back(temp);</span><br><span class="line">                dfs(re, nums, i + <span class="number">1</span>, temp);</span><br><span class="line">                temp.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -353,13 +301,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/15/73_set-matrix-zeroes/">set-matrix-zeroes</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/25/90_subsets-ii/">subsets-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2020年03月15日 - 21时13分</p>
-        <p><span>最后更新:</span>2020年03月15日 - 21时13分</p>
+        <p><span>发布时间:</span>2020年03月25日 - 22时39分</p>
+        <p><span>最后更新:</span>2020年03月25日 - 22时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/15/73_set-matrix-zeroes/" title="set-matrix-zeroes">https://sky1blue.github.io/2020/03/15/73_set-matrix-zeroes/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/15/73_set-matrix-zeroes/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/25/90_subsets-ii/" title="subsets-ii">https://sky1blue.github.io/2020/03/25/90_subsets-ii/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/25/90_subsets-ii/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -372,18 +320,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/16/75_sort-colors/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          sort-colors
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/15/74_search-a-2d-matrix/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">search-a-2d-matrix</div>
+    <a href="/2020/03/24/89_gray-code/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gray-code</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -394,7 +333,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#73-Set-Matrix-Zeroes"><span class="toc-number">1.</span> <span class="toc-text">73. Set Matrix Zeroes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#90-Subsets-II"><span class="toc-number">1.</span> <span class="toc-text">90. Subsets II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -445,13 +384,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/16/75_sort-colors/" title="上一篇: sort-colors">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2020/03/15/74_search-a-2d-matrix/" title="下一篇: search-a-2d-matrix">
+            <a href="/2020/03/24/89_gray-code/" title="下一篇: gray-code">
                 <i class="fa fa-angle-right"></i>
             </a>
         
