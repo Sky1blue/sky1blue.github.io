@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>partition-list | Simon的个人博客</title>
+  <title>decode-ways | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="86. Partition ListGiven a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.">
+  <meta name="description" content="91. Decode WaysA message containing letters from A-Z is being encoded to numbers using the following mapping:">
 <meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="partition-list">
-<meta property="og:url" content="https://sky1blue.github.io/2020/03/23/86_partition-list/index.html">
+<meta property="og:title" content="decode-ways">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/26/91_decode-ways/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="86. Partition ListGiven a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.">
+<meta property="og:description" content="91. Decode WaysA message containing letters from A-Z is being encoded to numbers using the following mapping:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-23T15:21:21.991Z">
+<meta property="og:updated_time" content="2020-03-26T15:01:38.146Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="partition-list">
-<meta name="twitter:description" content="86. Partition ListGiven a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.">
+<meta name="twitter:title" content="decode-ways">
+<meta name="twitter:description" content="91. Decode WaysA message containing letters from A-Z is being encoded to numbers using the following mapping:">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-86_partition-list" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-91_decode-ways" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/03/23/86_partition-list/" class="article-date">
-      <time datetime="2020-03-23T15:20:43.000Z" itemprop="datePublished">2020-03-23</time>
+      <a href="/2020/03/26/91_decode-ways/" class="article-date">
+      <time datetime="2020-03-26T14:58:08.000Z" itemprop="datePublished">2020-03-26</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      partition-list
+      decode-ways
     </h1>
   
 
@@ -244,32 +244,71 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="86-Partition-List"><a href="#86-Partition-List" class="headerlink" title="86. Partition List"></a>86. Partition List</h3><p>Given a linked list and a value <em>x</em>, partition it such that all nodes less than <em>x</em> come before nodes greater than or equal to <em>x</em>.<a id="more"></a></p>
-
-
-
-<p>You should preserve the original relative order of the nodes in each of the two partitions.</p>
-
-
-
-<p><strong>Example:</strong></p>
+        <h3 id="91-Decode-Ways"><a href="#91-Decode-Ways" class="headerlink" title="91. Decode Ways"></a>91. Decode Ways</h3><p>A message containing letters from <code>A-Z</code> is being encoded to numbers using the following mapping:<a id="more"></a></p>
 
 
 
 <pre>
 
-<strong>Input:</strong> head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, <em>x</em> = 3
+&#39;A&#39; -&gt; 1
 
-<strong>Output:</strong> 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5
+&#39;B&#39; -&gt; 2
+
+...
+
+&#39;Z&#39; -&gt; 26
 
 </pre>
 
 
 
+<p>Given a <strong>non-empty</strong> string containing only digits, determine the total number of ways to decode it.</p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;12&quot;
+
+<strong>Output:</strong> 2
+
+<strong>Explanation:</strong>&nbsp;It could be decoded as &quot;AB&quot; (1 2) or &quot;L&quot; (12).
+
+</pre>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<pre>
+
+<strong>Input:</strong> &quot;226&quot;
+
+<strong>Output:</strong> 3
+
+<strong>Explanation:</strong>&nbsp;It could be decoded as &quot;BZ&quot; (2 26), &quot;VF&quot; (22 6), or &quot;BBF&quot; (2 2 6).</pre>
+
+
+
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：本题比较简单，设置两个dummy 头，一个用于接受小于x的node，一个用于接受大于等于x 的node，最后把两个链表相接。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法：动态规划，dp</p>
+<p>设dp[i]代表，s[0],s[1],….s[i]组成的字符串，解码方式的数量</p>
+<p>如果’1’&lt;=s[i]&lt;=’9’，即s[i]可以单独解码，那么dp[i] = dp[i - 1];</p>
+<p>如果10&lt;=s[i-1]s[i]&lt;=26,即s[i-1]s[i]可以解码，那么dp[i] = dp[i - 2];</p>
+<p>如果’1’&lt;=s[i]&lt;=’9’，10&lt;=s[i-1]s[i]&lt;=26,同时成立，dp[i]=dp[i-1]+dp[i-2];</p>
+<p>例如”123“</p>
+<p>因为’3’可以单独解码，’23’也可以解码，所以”123”的解码方式=”12”解码方式+”1”的解码方式。</p>
+<p>(1,2,3)</p>
+<p>(12,3)</p>
+<p>(1,23)</p>
 <p>代码如下：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">partition</span><span class="params">(ListNode* head, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        ListNode *dummy0 = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode *dummy1 = <span class="keyword">new</span> ListNode(<span class="number">1</span>);</span><br><span class="line">        ListNode* p = dummy1, *ptr = dummy0;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (head)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (head-&gt;val &lt; x)</span><br><span class="line">            &#123;</span><br><span class="line">                ptr-&gt;next = head;</span><br><span class="line">                ptr = ptr-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                p-&gt;next = head;</span><br><span class="line">                p = p-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        p-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">        ptr-&gt;next = dummy1-&gt;next;</span><br><span class="line">        </span><br><span class="line">        p = dummy0-&gt;next;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">delete</span> dummy0;</span><br><span class="line">        <span class="keyword">delete</span> dummy1;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s.size() == <span class="number">0</span> || s[<span class="number">0</span>] == <span class="string">'0'</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = s.size();</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp(n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (s[i - <span class="number">1</span>] &gt;= <span class="string">'1'</span> &amp;&amp; s[i - <span class="number">1</span>] &lt;= <span class="string">'9'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[i] = dp[i - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">int</span> val = (s[i - <span class="number">2</span>] - <span class="string">'0'</span>) * <span class="number">10</span> + (s[i - <span class="number">1</span>] - <span class="string">'0'</span>);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (val &gt;= <span class="number">10</span> &amp;&amp; val &lt;= <span class="number">26</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                dp[i] += dp[i - <span class="number">2</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -280,13 +319,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/03/23/86_partition-list/">partition-list</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/26/91_decode-ways/">decode-ways</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2020年03月23日 - 23时20分</p>
-        <p><span>最后更新:</span>2020年03月23日 - 23时21分</p>
+        <p><span>发布时间:</span>2020年03月26日 - 22时58分</p>
+        <p><span>最后更新:</span>2020年03月26日 - 23时01分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/03/23/86_partition-list/" title="partition-list">https://sky1blue.github.io/2020/03/23/86_partition-list/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/23/86_partition-list/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/26/91_decode-ways/" title="decode-ways">https://sky1blue.github.io/2020/03/26/91_decode-ways/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/26/91_decode-ways/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -299,18 +338,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/03/24/89_gray-code/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          gray-code
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/03/22/82_remove-duplicates-from-sorted-list-ii/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">remove-duplicates-from-sorted-list-ii</div>
+    <a href="/2020/03/25/90_subsets-ii/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">subsets-ii</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -321,7 +351,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#86-Partition-List"><span class="toc-number">1.</span> <span class="toc-text">86. Partition List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#91-Decode-Ways"><span class="toc-number">1.</span> <span class="toc-text">91. Decode Ways</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -372,13 +402,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/03/24/89_gray-code/" title="上一篇: gray-code">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2020/03/22/82_remove-duplicates-from-sorted-list-ii/" title="下一篇: remove-duplicates-from-sorted-list-ii">
+            <a href="/2020/03/25/90_subsets-ii/" title="下一篇: subsets-ii">
                 <i class="fa fa-angle-right"></i>
             </a>
         
