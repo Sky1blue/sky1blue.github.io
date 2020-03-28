@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>heaters | Simon的个人博客</title>
+  <title>restore-ip-addresses | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="475. HeatersWinter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.">
-<meta name="keywords" content="Easy,贪心算法">
+  <meta name="description" content="93. Restore IP AddressesGiven a string containing only digits, restore it by returning all possible valid IP address combinations.">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="heaters">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/19/475_heaters/index.html">
+<meta property="og:title" content="restore-ip-addresses">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/29/93_restore-ip-addresses/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="475. HeatersWinter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.">
+<meta property="og:description" content="93. Restore IP AddressesGiven a string containing only digits, restore it by returning all possible valid IP address combinations.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-23T15:16:12.977Z">
+<meta property="og:updated_time" content="2020-03-28T16:10:58.018Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="heaters">
-<meta name="twitter:description" content="475. HeatersWinter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.">
+<meta name="twitter:title" content="restore-ip-addresses">
+<meta name="twitter:description" content="93. Restore IP AddressesGiven a string containing only digits, restore it by returning all possible valid IP address combinations.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-475_heaters" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-93_restore-ip-addresses" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/19/475_heaters/" class="article-date">
-      <time datetime="2019-11-19T15:21:23.000Z" itemprop="datePublished">2019-11-19</time>
+      <a href="/2020/03/29/93_restore-ip-addresses/" class="article-date">
+      <time datetime="2020-03-28T16:09:28.000Z" itemprop="datePublished">2020-03-29</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      heaters
+      restore-ip-addresses
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心算法/">贪心算法</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,95 +244,36 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="475-Heaters"><a href="#475-Heaters" class="headerlink" title="475. Heaters"></a>475. Heaters</h3><p>Winter is coming! Your first job during the contest is to design a standard heater with fixed warm radius to warm all the houses.<a id="more"></a></p>
+        <h3 id="93-Restore-IP-Addresses"><a href="#93-Restore-IP-Addresses" class="headerlink" title="93. Restore IP Addresses"></a>93. Restore IP Addresses</h3><p>Given a string containing only digits, restore it by returning all possible valid IP address combinations.<a id="more"></a></p>
 
 
 
-<p>Now, you are given positions of houses and heaters on a horizontal line, find out minimum radius of heaters so that all houses could be covered by those heaters.</p>
-
-
-
-<p>So, your input will be the positions of houses and heaters seperately, and your expected output will be the minimum radius standard of heaters.</p>
-
-
-
-<p><b>Note:</b></p>
-
-
-
-<ol>
-
-<pre><code>&lt;li&gt;Numbers of houses and heaters you are given are non-negative and will not exceed 25000.&lt;/li&gt;
-
-&lt;li&gt;Positions of houses and heaters you are given are non-negative and will not exceed 10^9.&lt;/li&gt;
-
-&lt;li&gt;As long as a house is in the heaters&amp;#39; warm radius range, it can be warmed.&lt;/li&gt;
-
-&lt;li&gt;All the heaters follow your radius standard and the warm radius will the same.&lt;/li&gt;</code></pre></ol>
-
-
-
-<p>&nbsp;</p>
-
-
-
-<p><b>Example 1:</b></p>
+<p><strong>Example:</strong></p>
 
 
 
 <pre>
 
-<b>Input:</b> [1,2,3],[2]
+<strong>Input:</strong> &quot;25525511135&quot;
 
-<b>Output:</b> 1
+<strong>Output:</strong> <code>[&quot;255.255.11.135&quot;, &quot;255.255.111.35&quot;]
 
-<b>Explanation:</b> The only heater was placed in the position 2, and if we use the radius 1 standard, then all the houses can be warmed.
-
-</pre>
-
-
-
-<p>&nbsp;</p>
-
-
-
-<p><b>Example 2:</b></p>
-
-
-
-<pre>
-
-<b>Input:</b> [1,2,3,4],[1,4]
-
-<b>Output:</b> 1
-
-<b>Explanation:</b> The two heater was placed in the position 1 and 4. We need to use radius 1 standard, then all the houses can be warmed.
-
-</pre>
-
-
-
-<p>&nbsp;</p>
+</code></pre>
 
 
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：先对houses和heater排序</p>
-<p>然后为每个house找最近的heater记录距离，下一个house从上一个house的heater开始找最近的heater，记录距离。</p>
-<p>最后在所有最近距离中找最大的那个距离，即为所求半径。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findRadius</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; houses, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; heaters)</span> </span>&#123;</span><br><span class="line">       sort(houses.begin(), houses.end());</span><br><span class="line">       sort(heaters.begin(), heaters.end());</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">int</span> biggest, smallest, j = <span class="number">0</span>;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = houses.size(), m = heaters.size(); i &lt; n; ++i)</span><br><span class="line">       &#123;   </span><br><span class="line">           smallest = <span class="built_in">abs</span>(heaters[j] - houses[i]);</span><br><span class="line">           <span class="keyword">for</span> (; j &lt; m; ++j)</span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">int</span> temp = <span class="built_in">abs</span>(houses[i] - heaters[j]);</span><br><span class="line">               <span class="keyword">if</span> (temp &lt;= smallest)</span><br><span class="line">               &#123;</span><br><span class="line">                   smallest = temp;</span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">else</span></span><br><span class="line">               &#123;</span><br><span class="line">                   --j;</span><br><span class="line">                   <span class="keyword">if</span> (j &lt; <span class="number">0</span>) j = <span class="number">0</span>;</span><br><span class="line">                   <span class="keyword">break</span>;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (j == m)</span><br><span class="line">           &#123;</span><br><span class="line">               j = m - <span class="number">1</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">if</span> (i == <span class="number">0</span>)</span><br><span class="line">           &#123;</span><br><span class="line">               biggest = smallest;              </span><br><span class="line">           &#125;</span><br><span class="line">           <span class="keyword">else</span></span><br><span class="line">           &#123;</span><br><span class="line">               <span class="keyword">if</span> (biggest &lt; smallest)</span><br><span class="line">               &#123;</span><br><span class="line">                   biggest = smallest;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">return</span> biggest;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法1：回溯法+DFS，用一个vector存储ip中的4个部分。</p>
+<p>本人的代码：比较粗糙，基本遵循回溯法的原则。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; restoreIpAddresses(<span class="built_in">string</span> s) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; re;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp;</span><br><span class="line">        dfs(re, <span class="number">0</span>, temp, s);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;re, <span class="keyword">int</span> start, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; temp, <span class="built_in">string</span> &amp;s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (temp.size() == <span class="number">4</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (start &gt;= s.size())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> s = <span class="string">""</span>;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; ++i)</span><br><span class="line">                &#123;</span><br><span class="line">                    s += to_string(temp[i]) + <span class="string">"."</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                s += to_string(temp[<span class="number">3</span>]);</span><br><span class="line">                re.push_back(s);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> i = start;</span><br><span class="line">        <span class="comment">// 尝试选择三个数作为ip中的一段，且不以0开头</span></span><br><span class="line">        <span class="keyword">if</span> (i + <span class="number">2</span> &lt; s.size() &amp;&amp; s[i] != <span class="string">'0'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> val = (s[i] - <span class="string">'0'</span>) * <span class="number">100</span> + (s[i + <span class="number">1</span>] - <span class="string">'0'</span>) * <span class="number">10</span> + s[i + <span class="number">2</span>] - <span class="string">'0'</span>;</span><br><span class="line">            <span class="keyword">if</span> (val &lt;= <span class="number">255</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                temp.push_back(val);</span><br><span class="line">                dfs(re, i + <span class="number">3</span>, temp, s);</span><br><span class="line">                temp.pop_back();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 尝试选择两个数，且不以0开头</span></span><br><span class="line">        <span class="keyword">if</span> (i + <span class="number">1</span> &lt; s.size() &amp;&amp; s[i] != <span class="string">'0'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> val = (s[i] - <span class="string">'0'</span>) * <span class="number">10</span> + (s[i + <span class="number">1</span>] - <span class="string">'0'</span>);</span><br><span class="line">            temp.push_back(val);</span><br><span class="line">            dfs(re, i + <span class="number">2</span>, temp, s);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 尝试选择一个数</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt; s.size())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> val = s[i] - <span class="string">'0'</span>;</span><br><span class="line">            temp.push_back(val);</span><br><span class="line">            dfs(re, i + <span class="number">1</span>, temp, s);</span><br><span class="line">            temp.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>高赞解：思路与我差不多，但更简化，清晰。</p>
-<p>尤其是$heaters[i] + heaters[i + 1] &lt;= house * 2$用来判断house最近的heater最为精妙。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findRadius</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; houses, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; heaters)</span> </span>&#123;</span><br><span class="line">        sort(houses.begin(), houses.end());</span><br><span class="line">        sort(heaters.begin(), heaters.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> house : houses) &#123;</span><br><span class="line">            <span class="keyword">while</span> (i &lt; heaters.size() - <span class="number">1</span> &amp;&amp; heaters[i] + heaters[i + <span class="number">1</span>] &lt;= house * <span class="number">2</span>) &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            res = max(res, <span class="built_in">abs</span>(heaters[i] - house));</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>精简后的回溯法：stoi函数用来将字符串转为int型</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; restoreIpAddresses(<span class="built_in">string</span> s) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ret;</span><br><span class="line"></span><br><span class="line">        dfs(ret, <span class="number">0</span>, <span class="string">""</span>, s);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> ret; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// n用来说明当前是ip中的第几段</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; &amp;re, <span class="keyword">int</span> n, <span class="built_in">string</span> temp, <span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">4</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.size() == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                re.push_back(temp.substr(<span class="number">0</span>, temp.size() - <span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 有3中长度来选择</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">3</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(s.size() &lt; i) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> val = stoi(s.substr(<span class="number">0</span>, i));</span><br><span class="line">			<span class="comment">// 剔除大于255和以0开头的结果</span></span><br><span class="line">            <span class="keyword">if</span> (val &gt; <span class="number">255</span> || to_string(val).size() != i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            dfs(re, n + <span class="number">1</span>, temp + to_string(val) + <span class="string">"."</span>, s.substr(i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：整体思路也是寻找每个house最近的heater，记录距离，最后比较所有的house。</p>
-<p>遍历两次，</p>
-<p>第一遍寻找每个house的右边最近的heater并记录距离；</p>
-<p>第二遍寻找每个house左边最近的heater并记录距离；</p>
-<p>对每个house取两次中最小的距离。</p>
-<p>最后取house中最大的距离。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Example:    h = house,  * = heater  M = INT_MAX</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        h   h   h   h   h   h   h   h   h    houses</span></span><br><span class="line"><span class="comment">        1   2   3   4   5   6   7   8   9    index</span></span><br><span class="line"><span class="comment">        *           *       *                heaters</span></span><br><span class="line"><span class="comment">                </span></span><br><span class="line"><span class="comment">        0   2   1   0   1   0   -   -   -    (distance to nearest RHS heater)</span></span><br><span class="line"><span class="comment">        0   1   2   0   1   0   1   2   3    (distance to nearest LHS heater)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        0   1   1   0   1   0   1   2   3    (res = minimum of above two)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">Result is maximum value in res, which is 3.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">findRadius</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; H)</span> </span>&#123;</span><br><span class="line">        sort(A.begin(), A.end());</span><br><span class="line">        sort(H.begin(), H.end());</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res(A.size(), INT_MAX); </span><br><span class="line">        </span><br><span class="line">        <span class="comment">// For each house, calculate distance to nearest RHS heater</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, h = <span class="number">0</span>; i &lt; A.size() &amp;&amp; h &lt; H.size(); ) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &lt;= H[h]) &#123; res[i] = H[h] - A[i]; i++; &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; h++; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// For each house, calculate distance to nearest LHS heater</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = A.size()<span class="number">-1</span>, h = H.size()<span class="number">-1</span>; i &gt;= <span class="number">0</span> &amp;&amp; h &gt;= <span class="number">0</span>; ) &#123;</span><br><span class="line">            <span class="keyword">if</span> (A[i] &gt;= H[h]) &#123; res[i] = min(res[i], A[i] - H[h]); i--; &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123; h--; &#125;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        <span class="keyword">return</span> *max_element(res.begin(), res.end());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>解法2：很精妙，ip中每个数字部分的最大长度为3，直接看代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; restoreIpAddresses(<span class="built_in">string</span> s) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; ret;</span><br><span class="line">        <span class="built_in">string</span> ans;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> a=<span class="number">1</span>; a&lt;=<span class="number">3</span>; a++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> b=<span class="number">1</span>; b&lt;=<span class="number">3</span>; b++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> c=<span class="number">1</span>; c&lt;=<span class="number">3</span>; c++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> d=<span class="number">1</span>; d&lt;=<span class="number">3</span>; d++)</span><br><span class="line">			<span class="comment">// 先凑长度，然后划分</span></span><br><span class="line">            <span class="keyword">if</span> (a+b+c+d == s.length()) </span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> A = stoi(s.substr(<span class="number">0</span>, a));</span><br><span class="line">                <span class="keyword">int</span> B = stoi(s.substr(a, b));</span><br><span class="line">                <span class="keyword">int</span> C = stoi(s.substr(a+b, c));</span><br><span class="line">                <span class="keyword">int</span> D = stoi(s.substr(a+b+c, d));</span><br><span class="line">				<span class="comment">// 保证每个部分的数字合法，即小于255，</span></span><br><span class="line">                <span class="keyword">if</span> (A&lt;=<span class="number">255</span> &amp;&amp; B&lt;=<span class="number">255</span> &amp;&amp; C&lt;=<span class="number">255</span> &amp;&amp; D&lt;=<span class="number">255</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans = to_string(A)+<span class="string">"."</span>+to_string(B)+<span class="string">"."</span>+to_string(C)+<span class="string">"."</span>+to_string(D);</span><br><span class="line">                    <span class="comment">// 这个判断可以排除以0为开头的结果，因为以0开头的数字转成字符串没有0</span></span><br><span class="line">                    <span class="keyword">if</span> (ans.size() == s.size() + <span class="number">3</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        ret.push_back(ans);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;                        </span><br><span class="line">            &#125;    </span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
       
       
     </div>
@@ -341,13 +282,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/19/475_heaters/">heaters</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/29/93_restore-ip-addresses/">restore-ip-addresses</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年11月19日 - 23时21分</p>
-        <p><span>最后更新:</span>2020年03月23日 - 23时16分</p>
+        <p><span>发布时间:</span>2020年03月29日 - 00时09分</p>
+        <p><span>最后更新:</span>2020年03月29日 - 00时10分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/19/475_heaters/" title="heaters">https://sky1blue.github.io/2019/11/19/475_heaters/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/19/475_heaters/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/29/93_restore-ip-addresses/" title="restore-ip-addresses">https://sky1blue.github.io/2020/03/29/93_restore-ip-addresses/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/29/93_restore-ip-addresses/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -360,18 +301,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/20/476_number-complement/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          number-complement
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/19/463_island-perimeter/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">island-perimeter</div>
+    <a href="/2020/03/27/206_reverse-linked-list/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">reverse-linked-list</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -382,7 +314,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#475-Heaters"><span class="toc-number">1.</span> <span class="toc-text">475. Heaters</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#93-Restore-IP-Addresses"><span class="toc-number">1.</span> <span class="toc-text">93. Restore IP Addresses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -433,13 +365,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/20/476_number-complement/" title="上一篇: number-complement">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/19/463_island-perimeter/" title="下一篇: island-perimeter">
+            <a href="/2020/03/27/206_reverse-linked-list/" title="下一篇: reverse-linked-list">
                 <i class="fa fa-angle-right"></i>
             </a>
         
