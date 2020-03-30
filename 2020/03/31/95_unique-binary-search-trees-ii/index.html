@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>power-of-four | Simon的个人博客</title>
+  <title>unique-binary-search-trees-ii | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="95. Unique Binary Search Trees IIGiven an integer n, generate all structurally unique BST&amp;#39;s (binary search trees) that store values 1 ...&amp;nbsp;n.">
+<meta name="keywords" content="Medium,动态规划,tree">
 <meta property="og:type" content="article">
-<meta property="og:title" content="power-of-four">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/17/342_power-of-four/index.html">
+<meta property="og:title" content="unique-binary-search-trees-ii">
+<meta property="og:url" content="https://sky1blue.github.io/2020/03/31/95_unique-binary-search-trees-ii/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta property="og:description" content="95. Unique Binary Search Trees IIGiven an integer n, generate all structurally unique BST&amp;#39;s (binary search trees) that store values 1 ...&amp;nbsp;n.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-23T15:19:35.878Z">
+<meta property="og:updated_time" content="2020-03-30T17:00:35.010Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="power-of-four">
-<meta name="twitter:description" content="342. Power of FourGiven an integer (signed 32 bits), write a function to check whether it is a power of 4.">
+<meta name="twitter:title" content="unique-binary-search-trees-ii">
+<meta name="twitter:description" content="95. Unique Binary Search Trees IIGiven an integer n, generate all structurally unique BST&amp;#39;s (binary search trees) that store values 1 ...&amp;nbsp;n.">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-342_power-of-four" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-95_unique-binary-search-trees-ii" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/17/342_power-of-four/" class="article-date">
-      <time datetime="2019-11-17T03:18:41.000Z" itemprop="datePublished">2019-11-17</time>
+      <a href="/2020/03/31/95_unique-binary-search-trees-ii/" class="article-date">
+      <time datetime="2020-03-30T16:11:30.000Z" itemprop="datePublished">2020-03-31</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      power-of-four
+      unique-binary-search-trees-ii
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tree/">tree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,50 +244,100 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="342-Power-of-Four"><a href="#342-Power-of-Four" class="headerlink" title="342. Power of Four"></a>342. Power of Four</h3><p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.<a id="more"></a></p>
+        <h3 id="95-Unique-Binary-Search-Trees-II"><a href="#95-Unique-Binary-Search-Trees-II" class="headerlink" title="95. Unique Binary Search Trees II"></a>95. Unique Binary Search Trees II</h3><p>Given an integer <em>n</em>, generate all structurally unique <strong>BST&#39;s</strong> (binary search trees) that store values 1 ...&nbsp;<em>n</em>.<a id="more"></a></p>
 
-<p><strong>Example 1:</strong></p>
+
+
+<p><strong>Example:</strong></p>
+
+
 
 <pre>
-<strong>Input: </strong><span id="example-input-1-1">16</span>
-<strong>Output: </strong><span id="example-output-1">true</span>
+
+<strong>Input:</strong> 3
+
+<strong>Output:</strong>
+
+[
+
+&nbsp; [1,null,3,2],
+
+&nbsp; [3,2,null,1],
+
+&nbsp; [3,1,null,null,2],
+
+&nbsp; [2,1,3],
+
+&nbsp; [1,null,2,null,3]
+
+]
+
+<strong>Explanation:</strong>
+
+The above output corresponds to the 5 unique BST&#39;s shown below:
+
+
+
+   1         3     3      2      1
+
+    \       /     /      / \      \
+
+     3     2     1      1   3      2
+
+    /     /       \                 \
+
+   2     1         2                 3
+
 </pre>
 
-<div>
-<p><strong>Example 2:</strong></p>
 
-<pre>
-<strong>Input: </strong><span id="example-input-2-1">5</span>
-<strong>Output: </strong><span id="example-output-2">false</span></pre>
-</div>
-
-<p><b>Follow up</b>: Could you solve it without loops/recursion?</p>
 
 <hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>解法一：与 题231 Power of Two 类似，区别在于 4 ^ n = 2 ^ (2n)为2的偶数次幂，所以只要在加上一个判断条件，判断二进制的奇数位上为0。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//                   判断是二的倍数         筛选其中为4的倍数</span></span><br><span class="line">        <span class="keyword">return</span> num &gt; <span class="number">0</span> &amp;&amp; (num &amp; (num - <span class="number">1</span>)) == <span class="number">0</span> &amp;&amp; (num &amp; <span class="number">0x55555555</span>) != <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><h4 id="解法1：动态规划"><a href="#解法1：动态规划" class="headerlink" title="解法1：动态规划"></a>解法1：动态规划</h4><p>分析：二叉搜索树的性质，左子树的所有值小于根节点，右子树的所有值大于根节点</p>
+<p><a href="https://leetcode.wang/leetCode-95-Unique-Binary-Search-TreesII.html#%E8%A7%A3%E6%B3%95%E4%B8%89-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" rel="noopener">分析来源</a></p>
+<p>所以求 1…n 的所有可能。</p>
+<p>我们只需要把 1 作为根节点，[ ] 空作为左子树，[ 2 … n ] 的所有可能作为右子树。</p>
+<p>2 作为根节点，[ 1 ] 作为左子树，[ 3…n ] 的所有可能作为右子树。</p>
+<p>3 作为根节点，[ 1 2 ] 的所有可能作为左子树，[ 4 … n ] 的所有可能作为右子树，然后左子树和右子树两两组合。</p>
+<p>4 作为根节点，[ 1 2 3 ] 的所有可能作为左子树，[ 5 … n ] 的所有可能作为右子树，然后左子树和右子树两两组合。</p>
+<p>…</p>
+<p>n 作为根节点，[ 1… n ] 的所有可能作为左子树，[ ] 作为右子树。</p>
+<p>至于，[ 2 … n ] 的所有可能以及 [ 4 … n ] 以及其他情况的所有可能，可以利用上边的方法，把每个数字作为根节点，然后把所有可能的左子树和右子树组合起来即可。</p>
+<p>如果只有一个数字，那么所有可能就是一种情况，把该数字作为一棵树。而如果是 [ ]，那就返回 null。</p>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;TreeNode*&gt; generateTrees(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="keyword">return</span> gen(<span class="number">1</span>, n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">vector</span>&lt;TreeNode*&gt; gen(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; re;</span><br><span class="line">        <span class="keyword">if</span> (start &gt; end)</span><br><span class="line">        &#123;</span><br><span class="line">            re.push_back(<span class="literal">NULL</span>);</span><br><span class="line">            <span class="keyword">return</span> re;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (start == end)</span><br><span class="line">        &#123;</span><br><span class="line">            TreeNode* node = <span class="keyword">new</span> TreeNode(start);</span><br><span class="line">            re.push_back(node);</span><br><span class="line">            <span class="keyword">return</span> re;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt;= end; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 得到所有的左子树</span></span><br><span class="line">            <span class="built_in">vector</span>&lt;TreeNode*&gt; leftTree = gen(start, i - <span class="number">1</span>);</span><br><span class="line">            <span class="comment">// 得到所有的右子树</span></span><br><span class="line">            <span class="built_in">vector</span>&lt;TreeNode*&gt; rightTree = gen(i + <span class="number">1</span>, end);</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> left : leftTree)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">auto</span> right : rightTree)</span><br><span class="line">                &#123;</span><br><span class="line">                    TreeNode* node = <span class="keyword">new</span> TreeNode(i);</span><br><span class="line">                    node-&gt;left = left;</span><br><span class="line">                    node-&gt;right = right;</span><br><span class="line">                    re.push_back(node);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>解法二：将int转成double型</p>
-<p>double数的组成：</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号位(s)</th>
-<th align="center">阶码 (e)</th>
-<th align="center">尾数(m)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">11</td>
-<td align="center">52</td>
-</tr>
-</tbody></table>
-<p>最终数 = $(-1)^s * 2^{e - 1023} * (1 + 2^{-1} + 2^{-2}………………)$</p>
-<p>所以的2的幂的数的尾数一定为0，</p>
-<p>所以4的幂 $4^n = 2^{2 * n}$</p>
-<p>阶码一定是奇数，因为e - 1023是偶数，且小数位为0，所以只要保证阶码的最低位为1（保证为奇数），小数位为0（后52位），并且为正（最高位为0）。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> n = num;</span><br><span class="line">        <span class="keyword">return</span> (*(<span class="keyword">long</span>*)&amp;n &amp; <span class="number">0x801FFFFFFFFFFFFF</span>) == <span class="number">0x10000000000000</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="解法2：动态规划"><a href="#解法2：动态规划" class="headerlink" title="解法2：动态规划"></a>解法2：动态规划</h4><p>设V(n-1)为1…n-1得到的所有二叉搜索树，那么如何根据V(n-1)的结果得到V(n)呢。</p>
+<p>由二叉搜索数的性质，直到根的值大于左子树和右子树的值，V(n)相较于V(n-1)增加了值n，应该是二叉树中最大的值，n必须放在数的最右边，</p>
+<p>1) n作为root，将V(n-1)作为n的左子树即可；</p>
+<p>2) n不是root，只要将n替代V(n-1)每层的右子树，同时将原来的右子树当作n的左子树。</p>
+<p>例如  </p>
+<pre>
+n = 2,
+output：
+
+&nbsp; [1,null,2]
+
+&nbsp; [2,1]
+
+所以n=3,
+3作为root，
+
+&nbsp; [3,1,null,null,2]
+
+&nbsp; [3,2,null,1]
+
+3不作为root
+
+&nbsp; [1,null,2,null,3]
+
+&nbsp; [1,null,3,2],
+
+&nbsp; [2,1,3]
+</pre>
+
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;TreeNode*&gt; generateTrees(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!n) <span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;<span class="keyword">new</span> TreeNode(<span class="number">1</span>)&#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; v = generateTrees(n - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">vector</span>&lt;TreeNode*&gt; re;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> root : v)</span><br><span class="line">        &#123;</span><br><span class="line">            TreeNode* node = <span class="keyword">new</span> TreeNode(n);</span><br><span class="line">            <span class="comment">// 作为root</span></span><br><span class="line">            node-&gt;left = root;</span><br><span class="line">            re.push_back(node);</span><br><span class="line">            <span class="comment">// 不作为root</span></span><br><span class="line">            <span class="comment">// 最多尝试n次</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode *cur = treeCopy(root);</span><br><span class="line">                TreeNode* temp = cur;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; ++j)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!temp)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    temp = temp-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (!temp)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                TreeNode* t = temp-&gt;right;</span><br><span class="line">                TreeNode* node = <span class="keyword">new</span> TreeNode(n);</span><br><span class="line">                temp-&gt;right = node;</span><br><span class="line">                node-&gt;left = t;</span><br><span class="line">                re.push_back(cur);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> re;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 拷贝一棵树</span></span><br><span class="line">    <span class="function">TreeNode* <span class="title">treeCopy</span><span class="params">(TreeNode* root)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!root)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        TreeNode* newroot = <span class="keyword">new</span> TreeNode(root-&gt;val);</span><br><span class="line">        newroot-&gt;left = treeCopy(root-&gt;left);</span><br><span class="line">        newroot-&gt;right = treeCopy(root-&gt;right);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> newroot;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -298,13 +348,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/17/342_power-of-four/">power-of-four</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/31/95_unique-binary-search-trees-ii/">unique-binary-search-trees-ii</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年11月17日 - 11时18分</p>
-        <p><span>最后更新:</span>2020年03月23日 - 23时19分</p>
+        <p><span>发布时间:</span>2020年03月31日 - 00时11分</p>
+        <p><span>最后更新:</span>2020年03月31日 - 01时00分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/17/342_power-of-four/" title="power-of-four">https://sky1blue.github.io/2019/11/17/342_power-of-four/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/17/342_power-of-four/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/31/95_unique-binary-search-trees-ii/" title="unique-binary-search-trees-ii">https://sky1blue.github.io/2020/03/31/95_unique-binary-search-trees-ii/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/03/31/95_unique-binary-search-trees-ii/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -317,18 +367,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/11/17/459_repeated-substring-pattern/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          repeated-substring-pattern
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/17/326_power-of-three/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">power-of-three</div>
+    <a href="/2020/03/29/94_binary-tree-inorder-traversal/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">binary-tree-inorder-traversal</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -339,7 +380,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#342-Power-of-Four"><span class="toc-number">1.</span> <span class="toc-text">342. Power of Four</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#95-Unique-Binary-Search-Trees-II"><span class="toc-number">1.</span> <span class="toc-text">95. Unique Binary Search Trees II</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#解法1：动态规划"><span class="toc-number">2.1.</span> <span class="toc-text">解法1：动态规划</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法2：动态规划"><span class="toc-number">2.2.</span> <span class="toc-text">解法2：动态规划</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -390,13 +431,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/17/459_repeated-substring-pattern/" title="上一篇: repeated-substring-pattern">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/17/326_power-of-three/" title="下一篇: power-of-three">
+            <a href="/2020/03/29/94_binary-tree-inorder-traversal/" title="下一篇: binary-tree-inorder-traversal">
                 <i class="fa fa-angle-right"></i>
             </a>
         
