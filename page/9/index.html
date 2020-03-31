@@ -205,6 +205,142 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-441_arranging-coins" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/441_arranging-coins/" class="article-date">
+      <time datetime="2019-11-13T12:54:05.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/441_arranging-coins/">arranging-coins</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="441-Arranging-Coins"><a href="#441-Arranging-Coins" class="headerlink" title="441. Arranging Coins"></a>441. Arranging Coins</h3><p>You have a total of <i>n</i> coins that you want to form in a staircase shape, where every <i>k</i>-th row must have exactly <i>k</i> coins.</p>
+
+
+
+<p>Given <i>n</i>, find the total number of <b>full</b> staircase rows that can be formed.</p>
+
+
+
+<p><i>n</i> is a non-negative integer and fits within the range of a 32-bit signed integer.</p>
+
+
+
+<p><b>Example 1:</b>
+
+<pre>
+
+n = 5
+
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤
+
+
+
+Because the 3rd row is incomplete, we return 2.
+
+</pre>
+
+</p>
+
+
+
+<p><b>Example 2:</b>
+
+<pre>
+
+n = 8
+
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤ ¤
+
+¤ ¤
+
+
+
+Because the 4th row is incomplete, we return 3.
+
+</pre>
+
+</p>
+
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题解法1：时间复杂度O(sqrt(n)) 思路求和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int arrangeCoins(int n) &#123;</span><br><span class="line">     long sum = 0;</span><br><span class="line">     </span><br><span class="line">     for (long i = 1, k = n; i &lt;= k + 1; ++i)</span><br><span class="line">     &#123;</span><br><span class="line">         sum += i;</span><br><span class="line">         if (sum &gt; n)</span><br><span class="line">         &#123;</span><br><span class="line">             return i - 1;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：使用求根公式 O(1) 时间的复杂度</p>
+<p>解方程 等差数列求和</p>
+<p>k * (k + 1) / 2 = n</p>
+<p>得到 n  = sqrt(2 * n + 1 / 4) - 1 / 2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int arrangeCoins(int n) &#123;</span><br><span class="line">        return sqrt(2 * (long)n + 1 / 4.0) - 1 / 2.0;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/">easy</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-leetcode-tree相关题目" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
