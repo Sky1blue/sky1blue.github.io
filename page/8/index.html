@@ -205,6 +205,73 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-459_repeated-substring-pattern" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/17/459_repeated-substring-pattern/" class="article-date">
+      <time datetime="2019-11-17T14:24:44.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/459_repeated-substring-pattern/">repeated-substring-pattern</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="459-Repeated-Substring-Pattern"><a href="#459-Repeated-Substring-Pattern" class="headerlink" title="459. Repeated Substring Pattern"></a>459. Repeated Substring Pattern</h3><p>Given a non-empty string check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. You may assume the given string consists of lowercase English letters only and its length will not exceed 10000.
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/11/17/459_repeated-substring-pattern/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-342_power-of-four" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -831,145 +898,6 @@ The two boomerangs are <b>[[1,0],[0,0],[2,0]]</b> and <b>[[1,0],[2,0],[0,0]]</b>
 <p>排列数组合，m个中取2个 $A^{2}_{m}$ </p>
 <p>得到以当前点为第一点的组合数，依次类推。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numberOfBoomerangs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt;&amp; points)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// iterate over all the points</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; points.size(); ++i) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="built_in">unordered_map</span>&lt;<span class="keyword">long</span>, <span class="keyword">int</span>&gt; group(points.size());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 记录以i个点，为第一个点，到其他点的距离</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; points.size(); ++j) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (j == i) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">long</span> key = getDistance(points[i], points[j]);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 记录每个距离出现的次数，即得到距离相等点的个数</span></span><br><span class="line">                ++group[key];</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span>&amp; p : group) &#123;</span><br><span class="line">						    <span class="comment">// 对次数大于1 的做排列组合</span></span><br><span class="line">                <span class="keyword">if</span> (p.second &gt; <span class="number">1</span>) &#123; </span><br><span class="line">                    <span class="comment">/*</span></span><br><span class="line"><span class="comment">                     * for all the groups of points, </span></span><br><span class="line"><span class="comment">                     * number of ways to select 2 from n = </span></span><br><span class="line"><span class="comment">                     * nP2 = n!/(n - 2)! = n * (n - 1)</span></span><br><span class="line"><span class="comment">                     */</span></span><br><span class="line">                    res += p.second * (p.second - <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">    <span class="comment">// 计算距离</span></span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getDistance</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point1, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; point2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">long</span>)(point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) * (point1[<span class="number">0</span>] - point2[<span class="number">0</span>]) +</span><br><span class="line">               (<span class="keyword">long</span>)(point1[<span class="number">1</span>] - point2[<span class="number">1</span>]) * (point1[<span class="number">1</span>] - point2[<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-443_string-compression" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/13/443_string-compression/" class="article-date">
-      <time datetime="2019-11-13T13:10:27.000Z" itemprop="datePublished">2019-11-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/13/443_string-compression/">string-compression</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="443-String-Compression"><a href="#443-String-Compression" class="headerlink" title="443. String Compression"></a>443. String Compression</h3><p>Given an array of characters, compress it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><b>in-place</b></a>.</p>
-
-<p>The length after compression must always be smaller than or equal to the original array.</p>
-
-<p>Every element of the array should be a <b>character</b> (not int) of length 1.</p>
-
-<p>After you are done <b>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></b>, return the new length of the array.</p>
-&nbsp;
-
-<p><b>Follow up:</b><br>
-Could you solve it using only O(1) extra space?</p>
-&nbsp;
-
-<p><b>Example 1:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;c&quot;,&quot;c&quot;,&quot;c&quot;]
-
-<b>Output:</b>
-Return 6, and the first 6 characters of the input array should be: [&quot;a&quot;,&quot;2&quot;,&quot;b&quot;,&quot;2&quot;,&quot;c&quot;,&quot;3&quot;]
-
-<b>Explanation:</b>
-&quot;aa&quot; is replaced by &quot;a2&quot;. &quot;bb&quot; is replaced by &quot;b2&quot;. &quot;ccc&quot; is replaced by &quot;c3&quot;.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Example 2:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;]
-
-<b>Output:</b>
-Return 1, and the first 1 characters of the input array should be: [&quot;a&quot;]
-
-<b>Explanation:</b>
-Nothing is replaced.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Example 3:</b></p>
-
-<pre>
-<b>Input:</b>
-[&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;]
-
-<b>Output:</b>
-Return 4, and the first 4 characters of the input array should be: [&quot;a&quot;,&quot;b&quot;,&quot;1&quot;,&quot;2&quot;].
-
-<b>Explanation:</b>
-Since the character &quot;a&quot; does not repeat, it is not compressed. &quot;bbbbbbbbbbbb&quot; is replaced by &quot;b12&quot;.
-Notice each digit has it&#39;s own entry in the array.
-</pre>
-
-<p>&nbsp;</p>
-
-<p><b>Note:</b></p>
-
-<ol>
-    <li>All characters have an ASCII value in <code>[35, 126]</code>.</li>
-    <li><code>1 &lt;= len(chars) &lt;= 1000</code>.</li>
-</ol>
-
-
-<hr>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>双指针解法</p>
-<p>index用来指向新的字符串的末尾。</p>
-<p>注意：每个元素重复的长度不止是个位数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">int compress(vector&lt;char&gt;&amp; chars) &#123;</span><br><span class="line">        int index = 0, len = 0;</span><br><span class="line">        for (int i = 0, n = chars.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            if (i == 0 || chars[i - 1] != chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                if (len &gt; 0)</span><br><span class="line">                &#123;   </span><br><span class="line">                    string s = to_string(len + 1);</span><br><span class="line">                    for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">                    &#123;</span><br><span class="line">                        chars[index++] = s[j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                len = 0;</span><br><span class="line">                chars[index++] = chars[i];</span><br><span class="line">            &#125;</span><br><span class="line">            else if (chars[i - 1] == chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if (len &gt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            string s = to_string(len + 1);</span><br><span class="line">            for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                chars[index++] = s[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return index;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<p>存在的问题：不清晰，有重复的代码</p>
-<p>参考解法：双指针 + 计数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public int compress(char[] chars) &#123;</span><br><span class="line">        int indexAns = 0, index = 0;</span><br><span class="line">        while(index &lt; chars.length)&#123;</span><br><span class="line">            char currentChar = chars[index];</span><br><span class="line">            int count = 0;</span><br><span class="line">            while(index &lt; chars.length &amp;&amp; chars[index] == currentChar)&#123;// 统计重复字符的个数</span><br><span class="line">                index++;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            chars[indexAns++] = currentChar;</span><br><span class="line">            if(count != 1)</span><br><span class="line">                for(char c : Integer.toString(count).toCharArray()) </span><br><span class="line">                    chars[indexAns++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">        return indexAns;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
