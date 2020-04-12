@@ -137,7 +137,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Easy/" style="font-size: 18.57px;">Easy</a> <a href="/tags/Medium/" style="font-size: 20px;">Medium</a> <a href="/tags/backtrack/" style="font-size: 14.29px;">backtrack</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 11.43px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 17.14px;">tree</a> <a href="/tags/中序遍历/" style="font-size: 11.43px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/位操作/" style="font-size: 10px;">位操作</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/动态规划/" style="font-size: 15.71px;">动态规划</a> <a href="/tags/回溯法/" style="font-size: 12.86px;">回溯法</a> <a href="/tags/层序遍历/" style="font-size: 10px;">层序遍历</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪婪法/" style="font-size: 10px;">贪婪法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/链表/" style="font-size: 11.43px;">链表</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
+                        <a href="/tags/Easy/" style="font-size: 18.57px;">Easy</a> <a href="/tags/Medium/" style="font-size: 20px;">Medium</a> <a href="/tags/backtrack/" style="font-size: 14.29px;">backtrack</a> <a href="/tags/bfs/" style="font-size: 10px;">bfs</a> <a href="/tags/c/" style="font-size: 10px;">c</a> <a href="/tags/easy/" style="font-size: 11.43px;">easy</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/leetcode/" style="font-size: 10px;">leetcode</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/tree/" style="font-size: 17.14px;">tree</a> <a href="/tags/中序遍历/" style="font-size: 12.86px;">中序遍历</a> <a href="/tags/二叉搜索树/" style="font-size: 10px;">二叉搜索树</a> <a href="/tags/位操作/" style="font-size: 10px;">位操作</a> <a href="/tags/先序遍历/" style="font-size: 10px;">先序遍历</a> <a href="/tags/动态规划/" style="font-size: 15.71px;">动态规划</a> <a href="/tags/后序遍历/" style="font-size: 10px;">后序遍历</a> <a href="/tags/回溯法/" style="font-size: 12.86px;">回溯法</a> <a href="/tags/层序遍历/" style="font-size: 10px;">层序遍历</a> <a href="/tags/栈/" style="font-size: 10px;">栈</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/贪婪法/" style="font-size: 10px;">贪婪法</a> <a href="/tags/贪心算法/" style="font-size: 10px;">贪心算法</a> <a href="/tags/链表/" style="font-size: 11.43px;">链表</a> <a href="/tags/队列/" style="font-size: 10px;">队列</a>
                     </div>
                 </section>
                 
@@ -204,6 +204,1101 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-443_string-compression" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/443_string-compression/" class="article-date">
+      <time datetime="2019-11-13T13:10:27.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/443_string-compression/">string-compression</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="443-String-Compression"><a href="#443-String-Compression" class="headerlink" title="443. String Compression"></a>443. String Compression</h3><p>Given an array of characters, compress it <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><b>in-place</b></a>.</p>
+
+<p>The length after compression must always be smaller than or equal to the original array.</p>
+
+<p>Every element of the array should be a <b>character</b> (not int) of length 1.</p>
+
+<p>After you are done <b>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></b>, return the new length of the array.</p>
+&nbsp;
+
+<p><b>Follow up:</b><br>
+Could you solve it using only O(1) extra space?</p>
+&nbsp;
+
+<p><b>Example 1:</b></p>
+
+<pre>
+<b>Input:</b>
+[&quot;a&quot;,&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;c&quot;,&quot;c&quot;,&quot;c&quot;]
+
+<b>Output:</b>
+Return 6, and the first 6 characters of the input array should be: [&quot;a&quot;,&quot;2&quot;,&quot;b&quot;,&quot;2&quot;,&quot;c&quot;,&quot;3&quot;]
+
+<b>Explanation:</b>
+&quot;aa&quot; is replaced by &quot;a2&quot;. &quot;bb&quot; is replaced by &quot;b2&quot;. &quot;ccc&quot; is replaced by &quot;c3&quot;.
+</pre>
+
+<p>&nbsp;</p>
+
+<p><b>Example 2:</b></p>
+
+<pre>
+<b>Input:</b>
+[&quot;a&quot;]
+
+<b>Output:</b>
+Return 1, and the first 1 characters of the input array should be: [&quot;a&quot;]
+
+<b>Explanation:</b>
+Nothing is replaced.
+</pre>
+
+<p>&nbsp;</p>
+
+<p><b>Example 3:</b></p>
+
+<pre>
+<b>Input:</b>
+[&quot;a&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;,&quot;b&quot;]
+
+<b>Output:</b>
+Return 4, and the first 4 characters of the input array should be: [&quot;a&quot;,&quot;b&quot;,&quot;1&quot;,&quot;2&quot;].
+
+<b>Explanation:</b>
+Since the character &quot;a&quot; does not repeat, it is not compressed. &quot;bbbbbbbbbbbb&quot; is replaced by &quot;b12&quot;.
+Notice each digit has it&#39;s own entry in the array.
+</pre>
+
+<p>&nbsp;</p>
+
+<p><b>Note:</b></p>
+
+<ol>
+    <li>All characters have an ASCII value in <code>[35, 126]</code>.</li>
+    <li><code>1 &lt;= len(chars) &lt;= 1000</code>.</li>
+</ol>
+
+
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>双指针解法</p>
+<p>index用来指向新的字符串的末尾。</p>
+<p>注意：每个元素重复的长度不止是个位数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">int compress(vector&lt;char&gt;&amp; chars) &#123;</span><br><span class="line">        int index = 0, len = 0;</span><br><span class="line">        for (int i = 0, n = chars.size(); i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            if (i == 0 || chars[i - 1] != chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                if (len &gt; 0)</span><br><span class="line">                &#123;   </span><br><span class="line">                    string s = to_string(len + 1);</span><br><span class="line">                    for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">                    &#123;</span><br><span class="line">                        chars[index++] = s[j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                len = 0;</span><br><span class="line">                chars[index++] = chars[i];</span><br><span class="line">            &#125;</span><br><span class="line">            else if (chars[i - 1] == chars[i])</span><br><span class="line">            &#123;</span><br><span class="line">                ++len;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        if (len &gt; 0)</span><br><span class="line">        &#123;</span><br><span class="line">            string s = to_string(len + 1);</span><br><span class="line">            for (int j = 0, n = s.size(); j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                chars[index++] = s[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        return index;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>存在的问题：不清晰，有重复的代码</p>
+<p>参考解法：双指针 + 计数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public int compress(char[] chars) &#123;</span><br><span class="line">        int indexAns = 0, index = 0;</span><br><span class="line">        while(index &lt; chars.length)&#123;</span><br><span class="line">            char currentChar = chars[index];</span><br><span class="line">            int count = 0;</span><br><span class="line">            while(index &lt; chars.length &amp;&amp; chars[index] == currentChar)&#123;// 统计重复字符的个数</span><br><span class="line">                index++;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            chars[indexAns++] = currentChar;</span><br><span class="line">            if(count != 1)</span><br><span class="line">                for(char c : Integer.toString(count).toCharArray()) </span><br><span class="line">                    chars[indexAns++] = c;</span><br><span class="line">        &#125;</span><br><span class="line">        return indexAns;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-441_arranging-coins" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/13/441_arranging-coins/" class="article-date">
+      <time datetime="2019-11-13T12:54:05.000Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/13/441_arranging-coins/">arranging-coins</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="441-Arranging-Coins"><a href="#441-Arranging-Coins" class="headerlink" title="441. Arranging Coins"></a>441. Arranging Coins</h3><p>You have a total of <i>n</i> coins that you want to form in a staircase shape, where every <i>k</i>-th row must have exactly <i>k</i> coins.</p>
+
+
+
+<p>Given <i>n</i>, find the total number of <b>full</b> staircase rows that can be formed.</p>
+
+
+
+<p><i>n</i> is a non-negative integer and fits within the range of a 32-bit signed integer.</p>
+
+
+
+<p><b>Example 1:</b>
+
+<pre>
+
+n = 5
+
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤
+
+
+
+Because the 3rd row is incomplete, we return 2.
+
+</pre>
+
+</p>
+
+
+
+<p><b>Example 2:</b>
+
+<pre>
+
+n = 8
+
+
+
+The coins can form the following rows:
+
+¤
+
+¤ ¤
+
+¤ ¤ ¤
+
+¤ ¤
+
+
+
+Because the 4th row is incomplete, we return 3.
+
+</pre>
+
+</p>
+
+<hr>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>本题解法1：时间复杂度O(sqrt(n)) 思路求和</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int arrangeCoins(int n) &#123;</span><br><span class="line">     long sum = 0;</span><br><span class="line">     </span><br><span class="line">     for (long i = 1, k = n; i &lt;= k + 1; ++i)</span><br><span class="line">     &#123;</span><br><span class="line">         sum += i;</span><br><span class="line">         if (sum &gt; n)</span><br><span class="line">         &#123;</span><br><span class="line">             return i - 1;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     </span><br><span class="line">     return 0;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法2：使用求根公式 O(1) 时间的复杂度</p>
+<p>解方程 等差数列求和</p>
+<p>k * (k + 1) / 2 = n</p>
+<p>得到 n  = sqrt(2 * n + 1 / 4) - 1 / 2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int arrangeCoins(int n) &#123;</span><br><span class="line">        return sqrt(2 * (long)n + 1 / 4.0) - 1 / 2.0;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy/">easy</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-leetcode-tree相关题目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/12/leetcode-tree相关题目/" class="article-date">
+      <time datetime="2019-10-12T03:07:05.000Z" itemprop="datePublished">2019-10-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/12/leetcode-tree相关题目/">leetcode tree相关题目</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="leetcode-tree相关题目小结"><a href="#leetcode-tree相关题目小结" class="headerlink" title="leetcode tree相关题目小结"></a>leetcode tree相关题目小结</h3><p>所使用的方法不外乎<strong>递归</strong>，<strong>DFS</strong>，<strong>BFS</strong>。</p>
+<h4 id="1-题100-Same-Tree"><a href="#1-题100-Same-Tree" class="headerlink" title="1. 题100 Same Tree"></a>1. 题100 Same Tree</h4><p>Given two binary trees, write a function to check if they are the same or not.<br>Two binary trees are considered the same if they are structurally identical and the nodes have the same value</p>
+<p>Example 1:</p>
+<p>Input:</p>
+<pre><code>   1         1
+  / \       / \
+ 2   3     2   3
+
+[1,2,3],   [1,2,3]</code></pre><p>Output: true</p>
+<p>Example 2:</p>
+<p>Input:</p>
+<pre><code>   1         1
+  /           \
+ 2             2
+
+[1,2],     [1,null,2]</code></pre><p>Output: false</p>
+<p>Example 3:</p>
+<p>Input:</p>
+<pre><code>   1         1
+  / \       / \
+ 2   1     1   2
+
+[1,2,1],   [1,1,2]</code></pre><p>Output: false</p>
+<p>这道题让我们判断两个树是否相同。解法就是递归，判断两个树的子树是否相同。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSameTree</span><span class="params">(TreeNode* p, TreeNode* q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p == <span class="literal">NULL</span> || q == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> (p == q);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (p-&gt;val == q-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> isSameTree(p-&gt;left, q-&gt;left) &amp;&amp; isSameTree(p-&gt;right, q-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-题101-Symmetric-Tree"><a href="#2-题101-Symmetric-Tree" class="headerlink" title="2. 题101 Symmetric Tree"></a>2. 题101 Symmetric Tree</h4><p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+<p>For example, this binary tree [1,2,2,3,4,4,3] is symmetric:</p>
+<pre><code>    1
+   /  \
+  2    2
+ / \  / \
+3  4  4  3</code></pre><p>But the following [1,2,2,null,3,null,3] is not:</p>
+<pre><code> 1
+/  \
+2   2
+\    \
+ 3    3</code></pre><p>Note:<br>Bonus points if you could solve it both recursively and iteratively.</p>
+<p>这题要求判断树是否对称，即判断左子树与右子树是否相同，解法与题100类似。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetric</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> isSymmetr(root-&gt;left, root-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isSymmetr</span><span class="params">(TreeNode* left, TreeNode* right)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left == <span class="literal">NULL</span> || right == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> (left == right);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (left-&gt;val == right-&gt;val)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> isSymmetr(left-&gt;left, right-&gt;right) &amp;&amp; isSymmetr(right-&gt;left, left-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-题104-Maximum-Depth-of-Binary-Tree"><a href="#3-题104-Maximum-Depth-of-Binary-Tree" class="headerlink" title="3. 题104 Maximum Depth of Binary Tree"></a>3. 题104 Maximum Depth of Binary Tree</h4><p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p>Note: A leaf is a node with no children.</p>
+<p>Example:</p>
+<p>Given binary tree [3,9,20,null,null,15,7],</p>
+<pre><code>     3
+    / \
+   9  20
+     /  \
+    15   7
+return its depth = 3.</code></pre><p>这题求树的最大深度，有两种解法。</p>
+<p>解法一：广度优先搜索</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode*&gt; q;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            ++depth;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = q.size(); i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode *p = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;left != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;left);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (p-&gt;right != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> depth;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>解法二：深度优先搜索</p>
+<p>计算左子树和右子树的深度，取较大者 + 1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(maxDepth(root-&gt;left), maxDepth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-题111-Minimum-Depth-of-Binary-Tree"><a href="#4-题111-Minimum-Depth-of-Binary-Tree" class="headerlink" title="4. 题111. Minimum Depth of Binary Tree"></a>4. 题111. Minimum Depth of Binary Tree</h4><p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p>Note: A leaf is a node with no children.</p>
+<p>Example:</p>
+<p>Given binary tree [3,9,20,null,null,15,7],</p>
+<pre><code>  3
+ / \
+9  20
+  /  \
+ 15   7</code></pre><p>return its minimum depth = 2.</p>
+<p>这题要求求解树的最小高度.</p>
+<p>解法一：</p>
+<p>自底向上</p>
+<p>与上面求最大高度类似，递归求解子树的最小高度，再加一即得到最终树的最小高度，但要注意的是，<strong><em>如果任一子树为NULL，那么树的最小高度不是 0 + 1，因为高度是叶子到根的距离，所以递归时要加上一个判断条件。</em></strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> left = minDepth(root-&gt;left);</span><br><span class="line">        <span class="keyword">int</span> right = minDepth(root-&gt;right);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ((min(left, right) == <span class="number">0</span>) ? max(left, right) : min(left, right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解法二：</p>
+<p>自顶向下</p>
+<p>采用类似广度优先搜索的办法，自上而下层层搜索，直到某一层的某个节点没有子树，即为最小高度</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minDepth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode *&gt; q;</span><br><span class="line">        q.push(root);</span><br><span class="line">        <span class="keyword">int</span> mindepth = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            ++mindepth;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = q.size(); i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode* p = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;left != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;left);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;right != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;right);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;left == p-&gt;right) <span class="comment">// 判断是否为叶子， left = right = NULL</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> mindepth;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-题110-Balanced-Binary-Tree"><a href="#5-题110-Balanced-Binary-Tree" class="headerlink" title="5. 题110 Balanced Binary Tree"></a>5. 题110 Balanced Binary Tree</h4><p>Given a binary tree, determine if it is height-balanced.</p>
+<p>For this problem, a height-balanced binary tree is defined as:</p>
+<blockquote>
+<p>a binary tree in which the depth of the two subtrees of every node never differ by more than 1.</p>
+</blockquote>
+<p>Example 1:</p>
+<p>Given the following tree [3,9,20,null,null,15,7]:</p>
+<pre><code>     3
+    / \
+   9  20
+     /  \
+    15   7
+Return true.</code></pre><p>Example 2:</p>
+<p>Given the following tree [1,2,2,3,3,null,null,4,4]:</p>
+<pre><code>         1
+        / \
+       2   2
+      / \
+     3   3
+    / \
+   4   4
+Return false.</code></pre><p>本题要求判断所给的树是否为高度平衡树，所谓高度平衡树，即所有节点的左子树和右子树的深度差别不超过1。</p>
+<p>解法：计算左子树和右子树的高度，判断是否差是否小于1，递归判断。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isBalanced</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> (<span class="built_in">abs</span>(depth(root-&gt;left) - depth(root-&gt;right)) &lt;= <span class="number">1</span>) &amp;&amp; isBalanced(root-&gt;left) &amp;&amp; isBalanced(root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算高度</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">depth</span><span class="params">(TreeNode* root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max(depth(root-&gt;left), depth(root-&gt;right)) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-题107-Binary-Tree-Level-Order-Traversal-II"><a href="#6-题107-Binary-Tree-Level-Order-Traversal-II" class="headerlink" title="6. 题107 Binary Tree Level Order Traversal II"></a>6. 题107 Binary Tree Level Order Traversal II</h4><p>Given a binary tree, return the bottom-up level order traversal of its nodes’ values. (ie, from left to right, level by level from leaf to root).</p>
+<p>For example:<br>Given binary tree [3,9,20,null,null,15,7],</p>
+<pre><code>  3
+ / \
+9  20
+  /  \
+ 15   7</code></pre><p>return its bottom-up level order traversal as:</p>
+<pre><code>[
+  [15,7],
+  [9,20],
+  [3]
+]</code></pre><p>本题要求给出树自底向上的层序遍历</p>
+<p>解法：广度优先搜索</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; levelOrderBottom(TreeNode* root) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; rv;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> rv;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">queue</span>&lt;TreeNode *&gt; q;</span><br><span class="line">        q.push(root);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = q.size(); i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                TreeNode *p = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                v.push_back(p-&gt;val);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;left != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;left);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (p-&gt;right != <span class="literal">NULL</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    q.push(p-&gt;right);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            rv.push_back(v);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        reverse(rv.begin(), rv.end());</span><br><span class="line">        <span class="keyword">return</span> rv;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-题112-Path-Sum"><a href="#7-题112-Path-Sum" class="headerlink" title="7. 题112 Path Sum"></a>7. 题112 Path Sum</h4><p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p>
+<p>Note: A leaf is a node with no children.</p>
+<p>Example:</p>
+<p>Given the below binary tree and sum = 22,</p>
+<pre><code>      5
+     / \
+    4   8
+   /   / \
+  11  13  4
+ /  \      \
+7    2      1</code></pre><p>return true, as there exist a root-to-leaf path 5-&gt;4-&gt;11-&gt;2 which sum is 22.</p>
+<p>本题要求判断树中是否存在一条根到叶子的路径是的路径上的所有节点和为sum。依然是递归解法，问题可分解为子树中是否存在一条路径使得和为sum - 当前节点的值</p>
+<p>解法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">hasPathSum</span><span class="params">(TreeNode* root, <span class="keyword">int</span> sum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="literal">NULL</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;<span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> ((root-&gt;val == sum) &amp;&amp; (root-&gt;left == <span class="literal">NULL</span>) &amp;&amp; (root-&gt;right == <span class="literal">NULL</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> hasPathSum(root-&gt;left, sum - root-&gt;val) || hasPathSum(root-&gt;right, sum - root-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/leetcode/">leetcode</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/leetcode/">leetcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tree/">tree</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-tf-app-flags使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/14/tf-app-flags使用/" class="article-date">
+      <time datetime="2019-08-14T07:59:04.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/tf-app-flags使用/">tf.app.flags使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="tf-app-flags作用"><a href="#tf-app-flags作用" class="headerlink" title="tf.app.flags作用"></a>tf.app.flags作用</h3><p><code>tf.app.flags.DEFINE_xxx()</code>就是添加命令行的<code>optional</code><br><code>argument</code>（可选参数），而<code>tf.app.flags.FLAGS</code>可以从对应的命令行参数取出参数。</p>
+<h3 id="使用意义"><a href="#使用意义" class="headerlink" title="使用意义"></a>使用意义</h3><p>机器学习模型是丑陋的并且通常需要在模型的开头设置很多参数。同时，这些参数易于调节可能是有益的。例如是神经网络中的神经元数量，学习率甚至优化器的情况，因为其中很多都将受到优化</p>
+<h3 id="参数选项"><a href="#参数选项" class="headerlink" title="参数选项"></a>参数选项</h3><p><code>tf.app.flags.DEFINE_xxx()</code></p>
+<p>第一个参数为参数名；第二个为默认值；第三个为描述.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tf.app.flags.DEFINE_string(&apos;string&apos;, &apos;hello&apos;, &apos;description1&apos;)</span><br><span class="line">tf.app.flags.DEFINE_integer(&apos;int&apos;, 20, &apos;description2&apos;)</span><br><span class="line">tf.app.flags.DEFINE_boolean(&apos;bool&apos;, False, &apos;description3&apos;)</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/tensorflow/">tensorflow</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tensorflow/">tensorflow</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-C语言中，static关键字作用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/28/C语言中，static关键字作用/" class="article-date">
+      <time datetime="2019-07-28T06:32:32.000Z" itemprop="datePublished">2019-07-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/28/C语言中，static关键字作用/">static关键字在C语言中的作用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="static修饰变量"><a href="#static修饰变量" class="headerlink" title="static修饰变量"></a>static修饰变量</h3><ol>
+<li><p>在块中使用static修饰变量</p>
+<ul>
+<li><p>它具有静态存储持续时间、块范围和无链接。</p>
+<ul>
+<li>即作用域只能在块中，无法被块外的程序调用；变量在程序加载时创建，在程序终止时结束。</li>
+</ul>
+</li>
+<li><p>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0.</p>
+</li>
+</ul>
+</li>
+</ol>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">	<span class="keyword">for</span> (count = <span class="number">1</span>; count &lt;= <span class="number">3</span>; count++)</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Here comes iteration %d:\n"</span>, count);</span><br><span class="line">        trystat();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">trystat</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> fade = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> stay = <span class="number">1</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"fade = %d and stay = %d\n"</span>, fade++, stay++);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> <strong>程序执行结果</strong>：</p>
+<p>Here comes iteration 1:<br>fade = 1 and stay = 1<br>Here comes iteration 2:<br>fade = 1 and stay = 2<br>Here comes iteration 3:<br>fade = 1 and stay = 3</p>
+<p>(1) 这里变量<code>stay</code> ,它从程序加载时开始存在，直到程序终止。但是它的范围仅限于<code>trystat()</code>函数块。只有当这个函数执行时，程序才能使用<code>stay</code>访问它指定的对象.<br>(2) 变量<code>stay</code>记得它的值增加了1，但是变量fade每次都会重新开始。这指出了初始化的不同之处:<code>fade</code>在<code>trystat()</code>每次调用都从新初始化，而<code>stay</code>变量只初始化一次。<br>(3) 静态变量在程序加载到内存之后就已经就位了。将语句<code>static int stay = 1;</code>放在trystat()函数中告诉编译器，只允许<code>trystat()</code>函数查看变量;它不是在运行时执行的语句。</p>
+<ol start="2">
+<li>在任何函数外部使用static修饰变量</li>
+</ol>
+<ul>
+<li><p>它具有静态存储时间、文件范围和内部链接。</p>
+<p>  即作用域在当前文件之中(只能被同一文件中的函数使用)，无法被其他文件调用</p>
+</li>
+<li><p>它只在编译时初始化一次。如果没有显式初始化，默认初始化为0。</p>
+</li>
+</ul>
+<h3 id="使用static修饰函数"><a href="#使用static修饰函数" class="headerlink" title="使用static修饰函数"></a>使用static修饰函数</h3><ul>
+<li>作用域限制在当前定义的文件中使用，从而避免了多文件函数名称冲突的可能性。通常文件中不作为接口的函数，建议使用static修饰，这样避免不同文件使用相同的函数名发生冲突。<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> BOOL wavTaskCreated = FALSE;</span><br><span class="line"><span class="keyword">static</span> QueueHandle_t wav_msg_queue = <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">static</span> WAV_PLAY_QUEUE_t wavPlayQueue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">bool</span> wav_get_version_flag = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">char</span> wav_version[<span class="number">32</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> uint8_t *<span class="title">Wav_GetFileName</span><span class="params">(WAV_TYPE_t wav_type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetFileInfo</span><span class="params">(WAV_FILE_INFO_t *pFileInfo, <span class="keyword">uint8_t</span> *pFileName)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetVersion_Internal</span><span class="params">(WAV_FILE_INFO_t *pFileInfo)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_ReadFile</span><span class="params">(<span class="keyword">uint8_t</span> *pData, <span class="keyword">uint32_t</span> offset, <span class="keyword">uint32_t</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_SendToDA</span><span class="params">(<span class="keyword">uint8_t</span> *pFile, <span class="keyword">uint32_t</span> <span class="built_in">size</span>,  <span class="keyword">uint32_t</span> volume)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Put_Queue</span><span class="params">(WAV_TYPE_t wav_type, BOOL fromISR)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Get_Queue</span><span class="params">(WAV_TYPE_t *pWavType)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_Play_Inernal</span><span class="params">(WAV_TYPE_t wav_type)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Wav_Init</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    DA_Init(<span class="number">16000</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!wavTaskCreated)</span><br><span class="line">    &#123;</span><br><span class="line">        wavTaskCreated = TRUE;</span><br><span class="line">        xTaskCreate(wav_task, <span class="string">"WAV"</span>, STACK_SIZE_TASK_WAV, <span class="literal">NULL</span>, PRIORITY_TASK_WAV, <span class="literal">NULL</span>);</span><br><span class="line">        wav_msg_queue = xQueueCreate(WAV_MSG_QUEUE_LENGTH, <span class="keyword">sizeof</span>(WAV_MESSAGE_t));</span><br><span class="line"></span><br><span class="line">        wavPlayQueue.pWavTypeTable = <span class="built_in">malloc</span>(WAV_PALY_QUEUE_MAX * <span class="keyword">sizeof</span>(WAV_TYPE_t));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    wavPlayQueue.front = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.<span class="built_in">end</span> = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.sizeNow = <span class="number">0</span>;</span><br><span class="line">    wavPlayQueue.totalSize = WAV_PALY_QUEUE_MAX;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Wav_Play</span><span class="params">(WAV_TYPE_t wav_type, <span class="keyword">bool</span> force)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!wavTaskCreated)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (force)</span><br><span class="line">    &#123;</span><br><span class="line">        vPortEnterCritical();</span><br><span class="line"></span><br><span class="line">        watchdog_feed();</span><br><span class="line">        </span><br><span class="line">        Wav_Play_Inernal(wav_type);</span><br><span class="line">        </span><br><span class="line">        vPortExitCritical();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">bool</span> rv = Wav_Put_Queue(wav_type, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    vTaskDelay(<span class="number">30</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>上述为某平台使用DA播放wav的程序片段，</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> uint8_t *<span class="title">Wav_GetFileName</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetFileInfo</span><span class="params">(WAV_FILE_INFO_t *pFileInfo, <span class="keyword">uint8_t</span> *pFileName)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_GetVersion_Internal</span><span class="params">(WAV_FILE_INFO_t *pFileInfo)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_ReadFile</span><span class="params">(<span class="keyword">uint8_t</span> *pData, <span class="keyword">uint32_t</span> offset, <span class="keyword">uint32_t</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_SendToDA</span><span class="params">(<span class="keyword">uint8_t</span> *pFile, <span class="keyword">uint32_t</span> <span class="built_in">size</span>,  <span class="keyword">uint32_t</span> volume)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Put_Queue</span><span class="params">(WAV_TYPE_t wav_type, BOOL fromISR)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> BOOL <span class="title">Wav_Get_Queue</span><span class="params">(WAV_TYPE_t *pWavType)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">Wav_Play_Inernal</span><span class="params">(WAV_TYPE_t wav_type)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述函数为内部函数使用<code>static</code>修饰。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Wav_Init</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Wav_Play</span><span class="params">(WAV_TYPE_t wav_type, <span class="keyword">bool</span> force)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述两个函数为模块接口（初始化DA和播放wav功能）供外部调用，没有使用static修饰。</p>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a><a class="article-category-link" href="/categories/编程语言/c/">c</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript高级程序笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/17/javascript高级程序笔记/" class="article-date">
+      <time datetime="2019-07-17T06:55:48.000Z" itemprop="datePublished">2019-07-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/17/javascript高级程序笔记/">javascript高级程序笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>[TOC]</p>
+<h3 id="1-null和undefined"><a href="#1-null和undefined" class="headerlink" title="1. null和undefined"></a>1. null和undefined</h3><ul>
+<li><p>null表示一个空的值，undefined表示值未定义。</p>
+</li>
+<li><p>undefined仅仅用在判断函数参数是否传递的情况下使用。</p>
+</li>
+</ul>
+<h3 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2. 数据类型"></a>2. 数据类型</h3><ul>
+<li><p>五种基本数据类型：<code>Undefined</code>, <code>Null</code>, <code>Boolean</code>, <code>Number</code>和<code>String</code>。</p>
+</li>
+<li><p>复杂数据类型：<code>object</code>，本质上是由一组无序的名值对组成的。</p>
+</li>
+<li><p><code>typeof</code>检测给定变量的数据类型。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> message = <span class="string">"some string"</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> message); <span class="comment">// "String"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Undefined</code>类型：该类型只有一个值<code>undefined</code>。使用var声明变量，但未对其加以初始化， 变量的值即为<code>undefined</code>。<strong><em>无论什么情况都没有必要把一个变量显式的设置为<code>undefined</code>.*</em></strong><code>undefined</code>派生自<code>null</code>值。*</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="literal">null</span> == <span class="literal">undefined</span>); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Null</code>类型：该类型也只有一个值<code>null</code>.<code>null</code>表示一个空对象指针。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car = <span class="literal">null</span>;</span><br><span class="line">alert(<span class="keyword">typeof</span> car); <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>只要准备用来保存对象的变量没有真正保存对象，就应该明确地将这变量初始化为<code>null</code>值。</em></strong></p>
+</li>
+<li><p><code>Boolean</code>类型：只有两个字面值<code>true</code>和<code>false</code>，<strong>区分大小写</strong>。<code>True</code>和<code>False</code>只是标识符。</p>
+<p><code>Boolean()</code>转型函数</p>
+<table>
+<thead>
+<tr>
+<th align="left">数据类型</th>
+<th>true</th>
+<th align="left">false</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Boolean</td>
+<td>true</td>
+<td align="left">false</td>
+</tr>
+<tr>
+<td align="left">String</td>
+<td>任何非空字符</td>
+<td align="left">“”(空字符)</td>
+</tr>
+<tr>
+<td align="left">Number</td>
+<td>任何非零（包括无穷大）</td>
+<td align="left">0和NaN</td>
+</tr>
+<tr>
+<td align="left">Object</td>
+<td>任何对象</td>
+<td align="left">null</td>
+</tr>
+<tr>
+<td align="left">Undefined</td>
+<td></td>
+<td align="left">undefined</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>浮点数值：<strong>小数点后面必须至少有一位数字</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> floatNum1 = <span class="number">1.</span>; <span class="comment">// 解析为1</span></span><br><span class="line"><span class="keyword">var</span> floatNum2 = <span class="number">10.0</span> <span class="comment">// 解析为10</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>永远不要测试某个特定的浮点数值</em></strong>。如<code>0.1 + 0.2 = 0.30000000000000004</code>不等于<code>0.3</code>.</p>
+</li>
+</ul>
+<ul>
+<li><p><code>NaN</code>：用于表示本来要返回数值的操作数未返回数值得情况。</p>
+<pre><code>***`NaN`*** 与其它所有的值都不相等，包括它自己；任何涉及`NaN`都返回`NaN`。</code></pre></li>
+<li><p><code>String</code>：<code>null</code>和<code>undefined</code>没有<code>toString()</code>方法。</p>
+</li>
+<li><p>基本数据类型占固定大小，保存在<strong><em>栈内存</em></strong>中；引用数据类型保存在<strong><em>堆内存</em></strong>中。</p>
+</li>
+</ul>
+<h3 id="3-一元操作符"><a href="#3-一元操作符" class="headerlink" title="3. 一元操作符"></a>3. 一元操作符</h3><ul>
+<li><p>递加递减：前置型和后置型</p>
+</li>
+<li><p>遵循的规则：</p>
+<ul>
+<li>应用包含有效数字字符串，先转换为数字值，再执行。</li>
+<li>不包含有效数字字符串，将变量的值设置为<code>NaN</code>，再执行。</li>
+<li><code>false</code>先转换为0，<code>true</code>转换为1， 再执行。</li>
+<li>应用于对象时，先调用对象的<code>valueof()</code>方法，再执行操作。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s1 = <span class="string">"2"</span>;</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="string">"z"</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> f = <span class="number">1.1</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    valueof: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">s1++; <span class="comment">// 值变为3</span></span><br><span class="line">s2++; <span class="comment">// 值变成NaN</span></span><br><span class="line">b++; <span class="comment">// 值变成1</span></span><br><span class="line">f--; <span class="comment">// 值变为0.10000000000000009</span></span><br><span class="line">o--; <span class="comment">// 值变为-2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-比较运算符"><a href="#4-比较运算符" class="headerlink" title="4. 比较运算符"></a>4. 比较运算符</h3><ul>
+<li>第一种 ==， 它会自动转换数据类型再比较，会出现诡异的结果。</li>
+<li>第二种 === ， 它不会自动转换数据类型，如果数据类型不一致，返回<code>false</code>，如果一直一致，再比较。<strong>应该坚持使用</strong>。</li>
+</ul>
+<h3 id="5-语句"><a href="#5-语句" class="headerlink" title="5. 语句"></a>5. 语句</h3><ul>
+<li><p><code>for-in</code>语句是一种精准迭代语句，用来枚举对象属性。</p>
+<ul>
+<li>语法：<code>for (property in expression) statement</code></li>
+<li>建议在使用循环之前，先检测对象的值不是<code>null</code>或<code>undefined</code>。</li>
+</ul>
+</li>
+<li><p><code>label</code>语句：在代码中添加标签</p>
+<ul>
+<li>语法：<code>label: statement</code></li>
+</ul>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">    outPoint:</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span> ; i++) &#123;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span> ; j &lt; <span class="number">10</span> ; j++) &#123;</span><br><span class="line">              <span class="keyword">if</span>( i == <span class="number">5</span> &amp;&amp; j == <span class="number">5</span> ) &#123;</span><br><span class="line">                    <span class="keyword">break</span> outPoint;</span><br><span class="line">              &#125;</span><br><span class="line">         	  num++;</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    alert(num); <span class="comment">// 输出为55</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="6-理解函数参数"><a href="#6-理解函数参数" class="headerlink" title="6. 理解函数参数"></a>6. 理解函数参数</h3><ul>
+<li><p><strong><code>ECMAScript</code></strong>（或<code>ES</code>）是由<code>Ecma International</code>标准化的脚本语言规范。</p>
+</li>
+<li><p>参数在内部是用一个数组来表示，函数体内可以通过<code>arguments</code>对象来访问这个参数数组，获取传递的每个参数 。<code>arguments</code>对象与数组类似（但并不是<code>array</code>的实例）。</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line">sayHi(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过访问<code>arguments</code>对象的<code>length</code>属性可以获知有多少个参数传递给函数，利用这一点让函数接收任意参数实现相应的功能（类似重载功能）。</p>
+</li>
+<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doAdd</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(num1 + <span class="number">10</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">arguments</span>.length == <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>] + num2); <span class="comment">// </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doAdd(<span class="number">1</span>); <span class="comment">// 11</span></span><br><span class="line">doAdd(<span class="number">1</span>, <span class="number">3</span>); <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>没有重载功能，只能通过上述方法实现类似重载功能。</p>
+</li>
+<li><p>非 <code>严格模式</code>下，修改<code>arguments</code>会影响对应的参数值，反之不行。内存空间独立，值单向同步。</p>
+</li>
+</ul>
+<h3 id="7-变量"><a href="#7-变量" class="headerlink" title="7.变量"></a>7.变量</h3><ul>
+<li><p>变量赋值引用类型的值时，两个变量实际上引用同一个对象，指针指向存储在堆中的一个对象，改变一个会影响另一个。</p>
+</li>
+<li><p>所有函数的参数都是按值传递的。</p>
+</li>
+<li><p><code>instanceof</code>监测引用类型的值，判断是什么类型的对象</p>
+</li>
+<li><p>没有块级作用域：<code>if</code>语句中的变量声明会将变量添加到当前的执行环境，<strong><em>使用<code>for</code>要牢记之一差异</em></strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i++) &#123;</span><br><span class="line">    doSomething(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>管理内存：一单数据不在有用，最好通过将其值设置为<code>null</code>来释放其应用，叫<strong>解除引用</strong>。</p>
+</li>
+</ul>
+<h3 id="8-引用类型"><a href="#8-引用类型" class="headerlink" title="8. 引用类型"></a>8. 引用类型</h3><ul>
+<li><p>访问对象属性的方法：点表示法，方括号表示法。(通常采用点表示法）</p>
+<p>方括号表示法的优点：<em>属性名中包含会导致语法错误的字符，或者使用的关键字或者保留字</em>，可以使用此方法。<code>person[&quot;first name&quot;] = &quot;nicholas</code>“</p>
+</li>
+<li><p><code>Array</code>创建的两种方式：</p>
+<ol>
+<li>Array构造函数      <code>var colors = new Array(3);</code></li>
+<li>字面量表示法(不会调用Array构造函数)。    <code>var colors = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;]</code></li>
+</ol>
+</li>
+<li><p>Array:</p>
+<ul>
+<li><code>push()</code>接收任意数量参数，加到数组末尾，返回数组长度。</li>
+<li><code>pop()</code>从数组末尾移除最后一项。</li>
+<li><code>shift()</code>移除数组第一项并返回该项。</li>
+<li><code>unshift()</code>在数组前端添加任意个项并返回数组的长度。</li>
+<li><code>reverse()</code>反转数组项的顺序。</li>
+<li><code>sort()</code>调用每项的<code>toString()</code>方法，再比较字符串升序排列</li>
+</ul>
+</li>
+</ul>
+<h3 id="9-Function类型"><a href="#9-Function类型" class="headerlink" title="9. Function类型"></a>9. Function类型</h3><ul>
+<li><p>函数声明与函数表达式：解析器会率先读取函数声明，将它们放到源代码树的顶部，使其在执行任何代码之前可用；表达式必须等到解析器执行到所在代码行时才会真正被执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TypeError: functionOne is not a function</span></span><br><span class="line">functionOne();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> functionOne = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello!"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/*-------------------------------------------*/</span></span><br><span class="line"><span class="comment">// Outputs: "Hello!"</span></span><br><span class="line">functionTwo();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">functionTwo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数内部属性：<code>arguments</code>和<code>this</code>.</p>
+<ul>
+<li>arguments：用于保存函数参数，该对象还有一个callee属性（指向拥有对象的函数的指针）。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 阶乘函数，递归算法，消除紧密耦合</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> num * <span class="built_in">arguments</span>.callee(num - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>this</code>:引用的是函数当前执行的环境对象（全局作用域调用函数时，this对象引用的window）。</li>
+<li>函数名字仅仅是包含指针的变量而已，不同环境中执行，指向的任然是同一个函数。</li>
+<li><code>caller</code>保存着调用当前函数的函数的引用。</li>
+</ul>
+</li>
+<li><p>函数的属性和方法：</p>
+<ul>
+<li><p>属性：length和prototype。</p>
+<ul>
+<li>length：表示函数希望接收到的命名参数的个数。</li>
+<li>prototype：保存所有实例方法。</li>
+</ul>
+</li>
+<li><p>方法：<code>apply()</code>和<code>call()</code>，用于在特定的作用域中调用函数。</p>
+<ul>
+<li><p><code>apply()</code>:接收两个参数：运行函数的运行域和参数数组。</p>
+</li>
+<li><p><code>call()</code>:作用相同，区别在与第二个参数必须逐个列举出来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.call(<span class="keyword">this</span>, num1, num2);<span class="comment">// 逐个传入参数</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">applySum</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> sum.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);<span class="comment">// 传入参数数组</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>扩充函数的作用域。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.color = <span class="string">"red"</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123;<span class="attr">color</span>: <span class="string">"blue"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">sayColor(); 		<span class="comment">// red</span></span><br><span class="line">sayColor(<span class="keyword">this</span>);		<span class="comment">// red</span></span><br><span class="line">sayColor(<span class="built_in">window</span>);	<span class="comment">// red</span></span><br><span class="line">sayColor(o);		<span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="10-创建对象"><a href="#10-创建对象" class="headerlink" title="10. 创建对象"></a>10. 创建对象</h3><ul>
+<li><p>构造函数模式：</p>
+<ul>
+<li>函数名首字母使用大写，构造函数本身也是函数，只不过是用来创建对象的而已。</li>
+<li>创建新实例，必须使用<code>new</code>操作符。调用构造函数会经历一下步骤：<ol>
+<li>创建一个新的对象。</li>
+<li>将构造函数作用域赋给新对象（this指向这个新对象）。</li>
+<li>执行构造函数代码。</li>
+<li>返回新对象。</li>
+</ol>
+</li>
+<li>每个实例对象都有一个<code>constructor</code>（构造函数）属性，该属性指向构造函数。</li>
+<li>构造函数问题：每个方法都要在实例上重新创建一遍。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, job</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.job = job;</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>（）</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原型模式：每个函数都有一个<code>prototype</code>属性，该属性是一个指针，指向一个原型对象。</p>
+<ul>
+<li><p><img src="https://img-blog.csdnimg.cn/20190717151541368.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzM3NTc2,size_16,color_FFFFFF,t_70" alt="构造函数、原型属性和实例之间的关系"></p>
+</li>
+<li><p>原型对象默认只会取得<code>constructor</code>属性，其他方法都是从Object继承而来的。</p>
+</li>
+<li><p>可以通过<code>isPrototypeOf()</code>方法确定对象之间是否存在关系。</p>
+<p><code>Person.prototype.isPrototypeOf(person1)</code></p>
+</li>
+<li><p>当代吗读取某个对象的属性时，会执行一次搜索，目标是具有给定名字的属性。<strong><em>首先从对象实例本身开始，如果没有找到，则继续搜索指针指向的原型对象，在原型对象中查找属性</em></strong>。</p>
+</li>
+<li><p>当为对象实例添加一个属性时，这个属性只会屏蔽原型对象中保存的同名属性，不会修改那个属性。</p>
+<p>使用<code>delete</code>可以完全删除实例属性，重新访问原型中的属性。</p>
+</li>
+<li><p><code>hasOwnProperty()</code>方法可以检测属性是否存在于实例中还是存在于原型中。</p>
+</li>
+<li><p><code>in</code>操作符：通过对象能够访问给定属性时返回true，无论该属性存在于实例还是原型中。</p>
+</li>
+<li><p>简单的原型语法：例如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Person.prototype = &#123;</span><br><span class="line">    <span class="keyword">constructor</span>: Person,// 设置<span class="keyword">constructor</span>值</span><br><span class="line">    name: "Ni",</span><br><span class="line">    sayName: function() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>这样写的问题是重写了<code>prototype</code>，导致<code>constructor</code>属性变成了新的对象的属性，无法通过<code>constructor</code>确定对象类型。如果<code>constructor</code>很重要，可以加入一行设置<code>constructor</code>值。<strong><em>实例中的指针仅指向原始原型对象，不指向构造函数</em></strong>。</p>
+</li>
+<li><p>组合使用构造函数模式和原型模式</p>
+<ul>
+<li>构造函数模式用于定义实力属性，而原型模式定义方法和共享的属性。</li>
+<li>使用最广泛，认同度最高。</li>
+</ul>
+</li>
+</ul>
+<h3 id="11-闭包"><a href="#11-闭包" class="headerlink" title="11. 闭包"></a>11. 闭包</h3><ul>
+<li><p>闭包：指有权访问<strong><em>另一个函数作用域</em></strong>中的变量的函数。</p>
+</li>
+<li><p>在创建函数时，会预先创建包含全局变量对象的作用域链，被保存在内部的<code>scope</code>属性中，调用函数时会创建执一个执行环境并复制<code>scope</code>属性中的对象从而构建起作用域链。</p>
+</li>
+<li><p>在另一个函数内部定义的函数会将包含函数的活动对象添加到它的作用域中。函数返回匿名函数后，执行环境的作用链会被销毁，但活动对象仍然留在内存中，知道匿名函数销毁后。</p>
+</li>
+<li><p>闭包与变量：闭包只能取得包含函数中任何变量的最后一个值。</p>
+</li>
+<li><p><code>this</code>对象：是运行时基于函数的执行环境绑定的。</p>
+</li>
+<li><p>私有变量：</p>
+<ul>
+<li>有权访问私有变量和私有函数的公有方法称为特权方法。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 私有变量和私有函数</span></span><br><span class="line">    <span class="keyword">var</span> privateVariable = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 特权方法</span></span><br><span class="line">    <span class="keyword">this</span>.publicMethod = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        privateVariable++;</span><br><span class="line">        <span class="keyword">return</span> privateVariable;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>静态私有变量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 私有变量和私有函数</span></span><br><span class="line">    <span class="keyword">var</span> privateVariable = <span class="number">10</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 构造函数</span></span><br><span class="line">    MyObject = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">// MyObject 为全局变量</span></span><br><span class="line">        </span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    MyObject.prototype.publicMethod = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        privateVariable++;</span><br><span class="line">        <span class="keyword">return</span> privateVariable;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 与在构造函数中定义特权方法的主要区别为：私有变量和函数是由实例共享的。</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="12-继承"><a href="#12-继承" class="headerlink" title="12. 继承"></a>12. 继承</h3><ul>
+<li><p>原型链（很少单独使用）</p>
+<ul>
+<li>构造函数、原型对象和实例的关系：每个构造函数有一个原型对象，原型对象包含一个指向构造函数的指针，实例都包含一个指向原型对象的内部指针。</li>
+<li>让原型对象等于另一个类型的实例，此时原型对象包含执行另一个原型的指针，相应的，另一个原型中也包含指向另一个构造函数的指针，层层递进，构成实例与原型的链条。<img src="https://img-blog.csdnimg.cn/2019071715181384.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NzM3NTc2,size_16,color_FFFFFF,t_70" alt="原型链"></li>
+<li>搜索过程沿着原型链向上：例调用<code>instance.getSuperValue()</code>经历的三个搜索步骤：<ol>
+<li>搜索实例;</li>
+<li>搜索<code>SubType.prototype</code>;</li>
+<li>搜索<code>SuperType.prototype</code>;</li>
+</ol>
+</li>
+<li>所有引用类型默认都继承了<code>Object</code></li>
+<li>两种确定原型和实例之间的关系：<code>instanceof</code>和<code>isPrototypeOf</code>。</li>
+<li>子类型重写超类型的某个方法或添加超类型中不存在的某个方法，<strong><em>一定放在替换原型的语句之后</em></strong>。</li>
+</ul>
+</li>
+<li><p>借用构造函数</p>
+<ul>
+<li>在子类型的构造函数中调用超类型的构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.colors = [<span class="string">"red"</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 继承了SuperType</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合继承：使用原型链实现对原型属性和方法的继承，通过构造函数完成对实例属性的继承。（<strong>最常用的</strong>）</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name  = name;</span><br><span class="line">    <span class="keyword">this</span>.color = [<span class="string">"red"</span>, <span class="string">"blue"</span>];</span><br><span class="line">&#125;</span><br><span class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name, age</span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 继承属性</span></span><br><span class="line">    SuperType.call(<span class="keyword">this</span>, name);</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 继承方法(SuperType中的相同属性会被屏蔽)</span></span><br><span class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</span><br><span class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/javaScript/">javaScript</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javaScript/">javaScript</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/11/栈和队列/" class="article-date">
+      <time datetime="2019-07-11T07:21:59.000Z" itemprop="datePublished">2019-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/11/栈和队列/">栈和队列</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="算法导论-10-1-6"><a href="#算法导论-10-1-6" class="headerlink" title="算法导论 10.1-6"></a>算法导论 10.1-6</h3><blockquote>
+<p>题目：说明如何用两个栈来实现一个队列，并分析有关队列操作的运行时间。</p>
+</blockquote>
+<ol>
+<li><p><strong>思考</strong></p>
+<p>栈实现的是先入后出策略，而队列实现的是先入先出策略。用栈实现队列重点是要实现出队。</p>
+<p>两个栈一个实现入队一个实现出队，要使出队的栈的栈顶为先入的元素，就要将入队的栈的元素弹出同时逆序压入出队的栈。</p>
+</li>
+<li><p><strong>实现</strong></p>
+<p>假定两个栈<code>A</code>和​<code>B</code>。</p>
+<p>入队：向栈<code>A</code>中压入元素。</p>
+<p>出队：从栈<code>B</code>中弹出元素。当<code>B</code>中为空时，将A中的所有元素弹出（此时得到的元素为压入的逆序）然后将这些元素压入栈<code>B</code>，在对<code>B</code>执行<code>pop</code>，完成出队。</p>
+</li>
+<li><p><strong>运行时间</strong></p>
+<p>入队：<code>O(1)</code></p>
+<p>出队：最差情况为<code>O(n)</code>，当栈<code>B</code>为空时。</p>
+</li>
+</ol>
+<h3 id="算法导论-10-1-7"><a href="#算法导论-10-1-7" class="headerlink" title="算法导论 10.1-7"></a>算法导论 10.1-7</h3><blockquote>
+<p>题目：说明如何用两个队列来实现一个栈，并分析有关栈操作的运行时间。</p>
+</blockquote>
+<ol>
+<li><p><strong>实现</strong></p>
+<p>假定两个队列<code>A</code>和<code>B</code>。先设定<code>A</code>为主队列，<code>B</code>为从队列</p>
+<p>压入：主队列（<code>A</code>）元素入队。</p>
+<p>弹出：只保留最后一个主队列（<code>A</code>）入队的元素，将<code>A</code>中的其他元素出队再入队从队列（<code>B</code>），将主队列（<code>A</code>）中最后最后一个元素出队，即为弹出的元素。此时主从队列角色互换。</p>
+</li>
+<li><p>运行时间</p>
+<p>压入：<code>O(1)</code></p>
+<p>弹出：<code>O(n)</code>，<code>n</code>为栈中元素的个数。</p>
+</li>
+</ol>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法导论/">算法导论</a><a class="article-category-link" href="/categories/算法导论/数据结构/">数据结构</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-k分位数" class="article article-type-post" itemscope itemprop="blogPost">
   
