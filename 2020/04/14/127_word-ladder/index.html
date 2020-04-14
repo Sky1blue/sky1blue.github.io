@@ -3,20 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>find-all-numbers-disappeared-in-an-array | Simon的个人博客</title>
+  <title>word-ladder | Simon的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="448. Find All Numbers Disappeared in an Array  Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.   Find all the elements of [1,">
-<meta name="keywords" content="Easy">
+  <meta name="description" content="127. Word Ladder  Given two words (beginWord and endWord), and a dictionary&apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:">
+<meta name="keywords" content="Medium">
 <meta property="og:type" content="article">
-<meta property="og:title" content="find-all-numbers-disappeared-in-an-array">
-<meta property="og:url" content="https://sky1blue.github.io/2019/11/13/448_find-all-numbers-disappeared-in-an-array/index.html">
+<meta property="og:title" content="word-ladder">
+<meta property="og:url" content="https://sky1blue.github.io/2020/04/14/127_word-ladder/index.html">
 <meta property="og:site_name" content="Simon的个人博客">
-<meta property="og:description" content="448. Find All Numbers Disappeared in an Array  Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.   Find all the elements of [1,">
+<meta property="og:description" content="127. Word Ladder  Given two words (beginWord and endWord), and a dictionary&apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-23T15:15:13.606Z">
+<meta property="og:updated_time" content="2020-04-14T06:48:26.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="find-all-numbers-disappeared-in-an-array">
-<meta name="twitter:description" content="448. Find All Numbers Disappeared in an Array  Given an array of integers where 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.   Find all the elements of [1,">
+<meta name="twitter:title" content="word-ladder">
+<meta name="twitter:description" content="127. Word Ladder  Given two words (beginWord and endWord), and a dictionary&apos;s word list, find the length of shortest transformation sequence from beginWord to endWord, such that:">
   
     <link rel="alternative" href="/atom.xml" title="Simon的个人博客" type="application/atom+xml">
   
@@ -202,11 +202,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-448_find-all-numbers-disappeared-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-127_word-ladder" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/11/13/448_find-all-numbers-disappeared-in-an-array/" class="article-date">
-      <time datetime="2019-11-13T14:33:31.000Z" itemprop="datePublished">2019-11-13</time>
+      <a href="/2020/04/14/127_word-ladder/" class="article-date">
+      <time datetime="2020-04-14T06:44:42.000Z" itemprop="datePublished">2020-04-14</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      find-all-numbers-disappeared-in-an-array
+      word-ladder
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Medium/">Medium</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,33 +244,83 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="find-all-numbers-disappeared-in-an-array">448. Find All Numbers Disappeared in an Array</h3>
+        <h3 id="word-ladder">127. Word Ladder</h3>
 <p>
-Given an array of integers where 1 ≤ a[i] ≤ <i>n</i> (<i>n</i> = size of array), some elements appear twice and others appear once.
+Given two words (<em>beginWord</em> and <em>endWord</em>), and a dictionary's word list, find the length of shortest transformation sequence from <em>beginWord</em> to <em>endWord</em>, such that:<a id="more"></a>
 </p>
-<p>
-Find all the elements of [1, <i>n</i>] inclusive that do not appear in this array.
-</p>
-<p>
-Could you do it without extra space and in O(<i>n</i>) runtime? You may assume the returned list does not count as extra space.
-</p>
-<p>
-<b>Example:</b>
-<pre>
-<b>Input:</b>
-[4,3,2,7,8,2,3,1]
+<ol>
+<pre><code>&lt;li&gt;Only one letter can be changed at a time.&lt;/li&gt;
 
-<b>Output:</b>
-[5,6]
-</pre>
+&lt;li&gt;Each transformed word must exist in the word list. Note that &lt;em&gt;beginWord&lt;/em&gt; is &lt;em&gt;not&lt;/em&gt; a transformed word.&lt;/li&gt;</code></pre>
+</ol>
+<p>
+<strong>Note:</strong>
 </p>
+<ul>
+<pre><code>&lt;li&gt;Return 0 if there is no such transformation sequence.&lt;/li&gt;
+
+&lt;li&gt;All words have the same length.&lt;/li&gt;
+
+&lt;li&gt;All words contain only lowercase alphabetic characters.&lt;/li&gt;
+
+&lt;li&gt;You may assume no duplicates in the word list.&lt;/li&gt;
+
+&lt;li&gt;You may assume &lt;em&gt;beginWord&lt;/em&gt; and &lt;em&gt;endWord&lt;/em&gt; are non-empty and are not the same.&lt;/li&gt;</code></pre>
+</ul>
+<p>
+<strong>Example 1:</strong>
+</p>
+<pre>
+
+<strong>Input:</strong>
+
+beginWord = &quot;hit&quot;,
+
+endWord = &quot;cog&quot;,
+
+wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;,&quot;cog&quot;]
+
+
+
+<strong>Output: </strong>5
+
+
+
+<strong>Explanation:</strong> As one shortest transformation is &quot;hit&quot; -&gt; &quot;hot&quot; -&gt; &quot;dot&quot; -&gt; &quot;dog&quot; -&gt; &quot;cog&quot;,
+
+return its length 5.
+
+</pre>
+<p>
+<strong>Example 2:</strong>
+</p>
+<pre>
+
+<strong>Input:</strong>
+
+beginWord = &quot;hit&quot;
+
+endWord = &quot;cog&quot;
+
+wordList = [&quot;hot&quot;,&quot;dot&quot;,&quot;dog&quot;,&quot;lot&quot;,&quot;log&quot;]
+
+
+
+<strong>Output:</strong>&nbsp;0
+
+
+
+<strong>Explanation:</strong>&nbsp;The endWord &quot;cog&quot; is not in wordList, therefore no possible<strong>&nbsp;</strong>transformation.
+
+</pre>
+<ul>
+</ul>
 <hr>
 <h3 id="思路">思路</h3>
-<p>解法：本题解法很精妙</p>
-<p>一共两次迭代，所以时间复杂度为<span class="math inline">\(O(n)\)</span>。</p>
-<p>第一次迭代将数组中的每个值作为索引，将数组中该索引位置上的值取反；</p>
-<p>第二次迭代判断数组中每个值是否小于0，如果大于0，说明当前索引没有出现在数组中过，将它返回。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; findDisappearedNumbers(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.size();</span><br><span class="line">        <span class="comment">// 第一次迭代将数组中出现过的数作为索引的数取反</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;len; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> m = <span class="built_in">abs</span>(nums[i])<span class="number">-1</span>; <span class="comment">// index start from 0</span></span><br><span class="line">            nums[m] = nums[m]&gt;<span class="number">0</span> ? -nums[m] : nums[m];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="comment">// 第二次迭代，如果某个数不小于0，说明该数所在的索引没有出现在数组中</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt; <span class="number">0</span>) res.push_back(i+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>解法：BFS，广度优先搜索，time limit exceeded，</p>
+<p>首先确定起点和终点，本题起点就是beginWord，终点就是endWord。先找到与beignWord差一个字母的word，然后再找word相差一个字母...，判断endWord是否找到。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(<span class="built_in">string</span> beginWord, <span class="built_in">string</span> endWord, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; wordList)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; us(wordList.begin(), wordList.end());</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="built_in">string</span>&gt; q;</span><br><span class="line">        <span class="keyword">int</span> ladderLength = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        q.push(beginWord);</span><br><span class="line">        <span class="keyword">while</span> (!q.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, n = q.size(); i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">string</span> t = q.front();</span><br><span class="line">                q.pop();</span><br><span class="line">                us.erase(t);</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> (t == endWord)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> ladderLength;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; t.size(); j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">char</span> c = t[j];</span><br><span class="line">                    </span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; <span class="number">26</span>; k++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        t[j] = <span class="string">'a'</span> + k;</span><br><span class="line">                        </span><br><span class="line">                        <span class="keyword">if</span> (us.find(t) != us.end())</span><br><span class="line">                        &#123;</span><br><span class="line">                            q.push(t);</span><br><span class="line">                        &#125;</span><br><span class="line">                     &#125;</span><br><span class="line">                    </span><br><span class="line">                     t[j] = c;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">                            </span><br><span class="line">            ++ladderLength;</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>基于BFS的改进，同时从beginWord和endWord开始，找他们的相邻点，如果他们中间相邻点有相同的，就完成了。 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ladderLength</span><span class="params">(<span class="built_in">string</span> beginWord, <span class="built_in">string</span> endWord, <span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; wordList)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/* head和tail分别代表起点和终点的邻节点 */</span></span><br><span class="line">        <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; dict(wordList.begin(), wordList.end()), head, tail, *phead, *ptail;</span><br><span class="line">        <span class="keyword">if</span> (dict.find(endWord) == dict.end()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        head.insert(beginWord);</span><br><span class="line">        tail.insert(endWord);</span><br><span class="line">        <span class="keyword">int</span> ladder = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (!head.empty() &amp;&amp; !tail.empty()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (head.size() &lt; tail.size()) &#123;</span><br><span class="line">                phead = &amp;head;</span><br><span class="line">                ptail = &amp;tail;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                phead = &amp;tail;</span><br><span class="line">                ptail = &amp;head;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">unordered_set</span>&lt;<span class="built_in">string</span>&gt; temp;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">auto</span> it = phead -&gt; begin(); it != phead -&gt; end(); it++) &#123;    </span><br><span class="line">                <span class="built_in">string</span> word = *it;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; word.size(); i++) &#123;</span><br><span class="line">                    <span class="keyword">char</span> t = word[i];</span><br><span class="line">                    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">26</span>; j++) &#123;</span><br><span class="line">                        word[i] = <span class="string">'a'</span> + j;</span><br><span class="line">						<span class="comment">/* 如果在对方的邻接表中找到，程序结束 */</span></span><br><span class="line">                        <span class="keyword">if</span> (ptail -&gt; find(word) != ptail -&gt; end()) &#123;</span><br><span class="line">                            <span class="keyword">return</span> ladder;</span><br><span class="line">                        &#125;</span><br><span class="line">						<span class="comment">/* 在wordlist中找到对应的临近点 */</span></span><br><span class="line">                        <span class="keyword">if</span> (dict.find(word) != dict.end()) &#123;</span><br><span class="line">                            temp.insert(word);</span><br><span class="line">                            dict.erase(word);</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                    word[i] = t;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            ladder++;</span><br><span class="line">            phead -&gt; swap(temp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
       
@@ -280,13 +330,13 @@ Could you do it without extra space and in O(<i>n</i>) runtime? You may assume t
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/11/13/448_find-all-numbers-disappeared-in-an-array/">find-all-numbers-disappeared-in-an-array</a></p>
+        <p><span>本文标题:</span><a href="/2020/04/14/127_word-ladder/">word-ladder</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Simon 的个人博客">Simon</a></p>
-        <p><span>发布时间:</span>2019年11月13日 - 22时33分</p>
-        <p><span>最后更新:</span>2020年03月23日 - 23时15分</p>
+        <p><span>发布时间:</span>2020年04月14日 - 14时44分</p>
+        <p><span>最后更新:</span>2020年04月14日 - 14时48分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/11/13/448_find-all-numbers-disappeared-in-an-array/" title="find-all-numbers-disappeared-in-an-array">https://sky1blue.github.io/2019/11/13/448_find-all-numbers-disappeared-in-an-array/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2019/11/13/448_find-all-numbers-disappeared-in-an-array/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/14/127_word-ladder/" title="word-ladder">https://sky1blue.github.io/2020/04/14/127_word-ladder/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sky1blue.github.io/2020/04/14/127_word-ladder/　　作者: Simon" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -299,18 +349,18 @@ Could you do it without extra space and in O(<i>n</i>) runtime? You may assume t
 
 <nav id="article-nav">
   
-    <a href="/2019/11/14/453_minimum-moves-to-equal-array-elements/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/14/129_sum-root-to-leaf-numbers/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          minimum-moves-to-equal-array-elements
+          sum-root-to-leaf-numbers
         
       </div>
     </a>
   
   
-    <a href="/2019/11/13/447_number-of-boomerangs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">number-of-boomerangs</div>
+    <a href="/2020/04/12/120_triangle/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">triangle</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -321,7 +371,7 @@ Could you do it without extra space and in O(<i>n</i>) runtime? You may assume t
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#find-all-numbers-disappeared-in-an-array"><span class="toc-number">1.</span> <span class="toc-text">448. Find All Numbers Disappeared in an Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#word-ladder"><span class="toc-number">1.</span> <span class="toc-text">127. Word Ladder</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -372,13 +422,13 @@ Could you do it without extra space and in O(<i>n</i>) runtime? You may assume t
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/11/14/453_minimum-moves-to-equal-array-elements/" title="上一篇: minimum-moves-to-equal-array-elements">
+            <a href="/2020/04/14/129_sum-root-to-leaf-numbers/" title="上一篇: sum-root-to-leaf-numbers">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/11/13/447_number-of-boomerangs/" title="下一篇: number-of-boomerangs">
+            <a href="/2020/04/12/120_triangle/" title="下一篇: triangle">
                 <i class="fa fa-angle-right"></i>
             </a>
         
