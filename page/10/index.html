@@ -121,7 +121,9 @@
                         
                             <li><a href="/archives">所有文章</a></li>
                         
-                            <li><a href="/tags">标签</a></li>
+                            <li><a href="/tags">标签分类</a></li>
+                        
+                            <li><a href="/about">留言打卡</a></li>
                         
                         </ul>
                     </nav>
@@ -188,7 +190,9 @@
                 
                     <li><a href="/archives">所有文章</a></li>
                 
-                    <li><a href="/tags">标签</a></li>
+                    <li><a href="/tags">标签分类</a></li>
+                
+                    <li><a href="/about">留言打卡</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -204,6 +208,166 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-455_assign-cookies" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/17/455_assign-cookies/" class="article-date">
+      <time datetime="2019-11-17T02:45:33.000Z" itemprop="datePublished">2019-11-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/17/455_assign-cookies/">assign-cookies</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="assign-cookies">455. Assign Cookies</h3>
+<p>
+Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie. Each child i has a greed factor g<sub>i</sub>, which is the minimum size of a cookie that the child will be content with; and each cookie j has a size s<sub>j</sub>. If s<sub>j</sub> &gt;= g<sub>i</sub>, we can assign the cookie j to the child i, and the child i will be content. Your goal is to maximize the number of your content children and output the maximum number.
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/11/17/455_assign-cookies/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-453_minimum-moves-to-equal-array-elements" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/14/453_minimum-moves-to-equal-array-elements/" class="article-date">
+      <time datetime="2019-11-14T14:24:18.000Z" itemprop="datePublished">2019-11-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/14/453_minimum-moves-to-equal-array-elements/">minimum-moves-to-equal-array-elements</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="minimum-moves-to-equal-array-elements">453. Minimum Moves to Equal Array Elements</h3>
+<p>
+Given a <b>non-empty</b> integer array of size <i>n</i>, find the minimum number of moves required to make all array elements equal, where a move is incrementing <i>n</i> - 1 elements by 1.
+</p>
+<p>
+<b>Example:</b>
+<pre>
+<b>Input:</b>
+[1,2,3]
+
+<b>Output:</b>
+3
+
+<b>Explanation:</b>
+Only three moves are needed (remember each move increments two elements):
+
+[1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]
+</pre>
+</p>
+<hr>
+<h3 id="思路">思路</h3>
+<p>本题使用公式推导得<span class="math inline">\(k = sum - n * min\)</span></p>
+<p>其中k表示需要移动的次数，n表示数组的长度，min表示数组的最小值，sum表示数组的总和。</p>
+<p>说明如下：数组最终所有的数相等应该等于 <span class="math inline">\(min + k\)</span></p>
+<p>所以数组最终的总和为<span class="math inline">\(n*(min+k)\)</span></p>
+<p>而这期间k次，每次都有<span class="math inline">\(n - 1\)</span>个元素加1，所有得到的结果为<span class="math inline">\(sum + k*(n - 1)\)</span></p>
+<p>所以得到<span class="math inline">\(n * (min + k) = sum + k*(n-1)\)</span></p>
+<p>化简后得到 <span class="math inline">\(k = sum - n * min\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">minMoves</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> iter = nums.begin(); iter &lt; nums.end(); ++iter)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += *iter;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> minval = *min_element(nums.begin(), nums.end());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sum - nums.size() * minval;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/每日leetcode系列/">每日leetcode系列</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Easy/">Easy</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-448_find-all-numbers-disappeared-in-an-array" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -1335,176 +1499,9 @@ Return false.</code></pre>
 
 
   
-    <article id="post-栈和队列" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/11/栈和队列/" class="article-date">
-      <time datetime="2019-07-11T07:21:59.000Z" itemprop="datePublished">2019-07-11</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/栈和队列/">栈和队列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h3 id="算法导论-10.1-6">算法导论 10.1-6</h3>
-<blockquote>
-<p>题目：说明如何用两个栈来实现一个队列，并分析有关队列操作的运行时间。</p>
-</blockquote>
-<ol type="1">
-<li><p><strong>思考</strong></p>
-<p>栈实现的是先入后出策略，而队列实现的是先入先出策略。用栈实现队列重点是要实现出队。</p>
-<p>两个栈一个实现入队一个实现出队，要使出队的栈的栈顶为先入的元素，就要将入队的栈的元素弹出同时逆序压入出队的栈。</p></li>
-<li><p><strong>实现</strong></p>
-<p>假定两个栈<code>A</code>和​<code>B</code>。</p>
-<p>入队：向栈<code>A</code>中压入元素。</p>
-<p>出队：从栈<code>B</code>中弹出元素。当<code>B</code>中为空时，将A中的所有元素弹出（此时得到的元素为压入的逆序）然后将这些元素压入栈<code>B</code>，在对<code>B</code>执行<code>pop</code>，完成出队。</p></li>
-<li><p><strong>运行时间</strong></p>
-<p>入队：<code>O(1)</code></p>
-<p>出队：最差情况为<code>O(n)</code>，当栈<code>B</code>为空时。</p></li>
-</ol>
-<h3 id="算法导论-10.1-7">算法导论 10.1-7</h3>
-<blockquote>
-<p>题目：说明如何用两个队列来实现一个栈，并分析有关栈操作的运行时间。</p>
-</blockquote>
-<ol type="1">
-<li><p><strong>实现</strong></p>
-<p>假定两个队列<code>A</code>和<code>B</code>。先设定<code>A</code>为主队列，<code>B</code>为从队列</p>
-<p>压入：主队列（<code>A</code>）元素入队。</p>
-<p>弹出：只保留最后一个主队列（<code>A</code>）入队的元素，将<code>A</code>中的其他元素出队再入队从队列（<code>B</code>），将主队列（<code>A</code>）中最后最后一个元素出队，即为弹出的元素。此时主从队列角色互换。</p></li>
-<li><p>运行时间</p>
-<p>压入：<code>O(1)</code></p>
-<p>弹出：<code>O(n)</code>，<code>n</code>为栈中元素的个数。</p></li>
-</ol>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法导论/">算法导论</a><a class="article-category-link" href="/categories/算法导论/数据结构/">数据结构</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/栈/">栈</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/队列/">队列</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-k分位数" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/10/k分位数/" class="article-date">
-      <time datetime="2019-07-10T10:29:29.000Z" itemprop="datePublished">2019-07-10</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/k分位数/">k分位数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <blockquote>
-<p>The <span class="math inline">\(k\)</span>th <strong><em>quantiles</em></strong> of an <span class="math inline">\(n\)</span>-element set are the <span class="math inline">\(k - 1\)</span> order statistics that divide the sorted set into <span class="math inline">\(k\)</span> equal-sized sets (to within <span class="math inline">\(1\)</span>). Give an <span class="math inline">\(O(n\lg k)\)</span>-time algorithm to list the <span class="math inline">\(k\)</span>th quantiles of a set.</p>
-</blockquote>
-<ul>
-<li>题目意思：给定一个<span class="math inline">\(n\)</span>个元素的数组，要求找出该数组的已排序的情况下，将数组划分为<span class="math inline">\(k\)</span>个大小相等的集合的<span class="math inline">\(k - 1\)</span>个统计量。 例如：<span class="math inline">\(k\)</span>为4，<span class="math inline">\(n\)</span>为12. 给定数组为：11 23 21 9 11 9 13 13 21 17 11 11 排序后数组为：23 21 21 <strong><em>17</em></strong> 13 13 <strong><em>11</em></strong> 11 11 <strong><em>11</em></strong> 9 9 所求的<span class="math inline">\(k\)</span>分位数即为图中加粗倾斜的3个数：11，11，17。 <strong>注意</strong>：题目所给的数组并不是已排序的数组。</li>
-<li>解决思路如下：</li>
-</ul>
-<blockquote>
-<p>Pre-calculate the positions of the quantiles in <span class="math inline">\(O(k)\)</span>, we use the <span class="math inline">\(O(n)\)</span> select algorithm to find the <span class="math inline">\(\lfloor k / 2 \rfloor\)</span>th position, after that the elements are divided into two sets by the pivot the <span class="math inline">\(\lfloor k / 2 \rfloor\)</span>th position, we do it recursively in the two sets to find other positions. Since the maximum depth is <span class="math inline">\(\lceil \lg k \rceil\)</span>, the total running time is <span class="math inline">\(O(n\lg k)\)</span>.</p>
-</blockquote>
-<ul>
-<li>参考代码（C语言） 其中insertSort(int *num, int len)为插入排序，num为数组，len为数组长度。</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最坏的情况下，以O(n)运行时间选择出第i小的数</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"sort.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INTERVAL 7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">median</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = r - p + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> n = len / INTERVAL;</span><br><span class="line">    <span class="keyword">int</span> mod = len % INTERVAL;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判断中位数的个数</span></span><br><span class="line">    <span class="keyword">int</span> flag = (mod == <span class="number">0</span>) ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> *med = (<span class="keyword">int</span> *)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">int</span>) * (n + flag));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        insertSort(num + p + i * INTERVAL, INTERVAL);</span><br><span class="line">        med[i] = num[p + i * INTERVAL + INTERVAL / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (flag)</span><br><span class="line">    &#123;</span><br><span class="line">        insertSort(num + p + n * INTERVAL, mod);</span><br><span class="line">        med[n] = num[p + n * INTERVAL + mod / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    insertSort(med, n + flag);</span><br><span class="line">    ret = med[(n + flag) / <span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">free</span>(med);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> <span class="built_in">begin</span> = p - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = p; i &lt;= r; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num[i] &lt; x)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">begin</span>++;</span><br><span class="line">            <span class="keyword">int</span> temp = num[<span class="built_in">begin</span>];</span><br><span class="line">            num[<span class="built_in">begin</span>] = num[i];</span><br><span class="line">            num[i] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = p; i &lt;= r; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (num[i] == x)</span><br><span class="line">        &#123;</span><br><span class="line">            index = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> temp = num[<span class="built_in">begin</span> + <span class="number">1</span>];</span><br><span class="line">    num[<span class="built_in">begin</span> + <span class="number">1</span>] = num[index];</span><br><span class="line">    num[index] = temp;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">begin</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * function：选出数组第i小的元素(i = 1, 2, ....)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">select</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> num[p];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> x = median(num, p, r);</span><br><span class="line">    <span class="keyword">int</span> q = partition(num, p, r, x);</span><br><span class="line">    <span class="keyword">int</span> k = q - p + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (k == i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (i &lt; k)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> select(num, p, q - <span class="number">1</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> select(num, q + <span class="number">1</span>, r, i - k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// k分位数</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">the_kth_quantile</span><span class="params">(<span class="keyword">int</span> *num, <span class="keyword">int</span> *result, <span class="keyword">int</span> p, <span class="keyword">int</span> r, <span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (k &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> pivotIndex = ((r - p + <span class="number">1</span>) / k) * (k / <span class="number">2</span>);</span><br><span class="line">        result[j++] = select(num, p, r, pivotIndex);</span><br><span class="line"></span><br><span class="line">        the_kth_quantile(num, result, p, p + pivotIndex - <span class="number">1</span>, k / <span class="number">2</span>);</span><br><span class="line">        the_kth_quantile(num, result, p + pivotIndex, r, k - k / <span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/算法导论/">算法导论</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 </div>
